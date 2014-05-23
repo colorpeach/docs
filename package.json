@@ -1,0 +1,28 @@
+{
+  "name": "doc",
+  "version": "0.0.1",
+  "description": "a web for generate js file doc",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "~1.2.0",
+    "cookie-parser": "~1.1.0",
+    "express": "~4.2.0",
+    "method-override": "~1.0.0",
+    "serve-static": "~1.1.0",
+    "express-session": "~1.1.0",
+    "less": "~1.7.0",
+    "jade": "~1.3.1",
+    "mysql": "~2.2.0",
+    "connect-mysql": "~2.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jsdoc",
+    "web"
+  ],
+  "author": "colorpeach@live.cn",
+  "license": "ISC"
+}
