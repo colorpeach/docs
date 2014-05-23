@@ -24,8 +24,8 @@ app.use(require("cookie-parser")());
 
 app.use(require("serve-static")(path.join(__dirname,"client")));
 
-http.createServer(app).listen(process.env.PORT || 3000,"127.0.0.1",function(){
-    console.log("running 127.0.0.1:3000");
+http.createServer(app).listen(process.env.PORT || 3000,function(){
+    console.log("running");
 });
 
 require("./route")(app);
