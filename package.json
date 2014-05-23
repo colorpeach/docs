@@ -24,5 +24,8 @@
     "web"
   ],
   "author": "colorpeach@live.cn",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "0.10.x"
+  }
 }
