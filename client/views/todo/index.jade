@@ -1,19 +1,12 @@
-doctype html
-html(ng-app='app')
-  head
-    title #{title}
-    meta(charset='utf-8')
-    link(rel='stylesheet', href='../lib/bootstrap/3.0.3/css/bootstrap.css')
-    link(rel='stylesheet', href='/css/api.css')
-    block css
-    script(type='text/javascript', src='../lib/jquery/1.11.0/jquery.js')
-    script(type='text/javascript', src='../lib/angular/1.1.5/angular.js')
-    script(type='text/javascript', src='../lib/showdown/showdown.js')
-    script(type='text/javascript', src='../utils/parser.js')
-  body
-    div(ng-controller='todo')
-      button(ng-click='get()') 获取
-      div#view
-      ul#menu
+extends ../layout
+
+block content
+  div(ng-controller='todo')
+    button(ng-click='get()') 获取
+    div#view
+    ul#menu
     
-    script(type="text/javascript",src="/js/todo.js")
+block script
+  script(type='text/javascript', src='../lib/showdown/showdown.js')
+  script(type='text/javascript', src='../utils/parser.js')
+  script(type="text/javascript",src="/js/todo.js")

@@ -37,6 +37,8 @@ angular
             });
         };
     }]);
+    
+angular.bootstrap(document,["app"]);
 
 //滚动效果
 var prev;

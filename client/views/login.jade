@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title #{title}
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='../lib/bootstrap/3.0.3/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/login.css')
+    block css
+  body
+    block content
+      div.login-box
+        div.form-group
+          label(for="username") 用户名
+          input#username.form-control(type="text",placeholder="请输入用户名...")
+        div.form-group
+          label(for="password") 密码
+          input#password.form-control(type="password",placeholder="请输入密码...")
+        div.form-group
+          p你还可以通过github登陆
+            a.github-btn
+        button.btn.btn-primary(type="submit") 登陆
+    
+    script(type='text/javascript', src='../lib/jquery/1.11.0/jquery.js')
+    block script

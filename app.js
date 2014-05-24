@@ -29,3 +29,4 @@ http.createServer(app).listen(process.env.PORT || 3000,function(){
 });
 
 require("./route")(app);
+require("./route/ajax")(app);

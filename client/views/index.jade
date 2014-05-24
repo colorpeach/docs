@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  each doc in docs
+    div.col-lg-3
+      div.panel.panel-primary
+        div.panel-heading #{doc.title}
+        div.panel-body #{doc.content}
+  
+block script
