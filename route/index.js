@@ -1,12 +1,16 @@
-var rs = require("../models/readFile");
+var Doc = require('../models/doc');
+
 //页面路由
 module.exports = function(app){
+  
   app.get('/api',function(req,res){
     res.render('todo/index');
   });
   
   app.get('/',function(req,res){
-    res.render('index',{docs:[{title:"前端编码规范",content:"ddddd"}]});
+    Doc.query(null,function(list){
+      res.render('index',{docs:list});
+    });
   });
   
   app.get('/login',function(req,res){
@@ -25,7 +29,11 @@ module.exports = function(app){
     res.render('help');
   });
   
-  app.get('/users/:user',function(req,res){
-    res.end(req.user);
+  app.get('/docs/:doc',function(req,res){
+    Doc.query({title:req.params.doc},function(list){
+      res.render('doc',{
+        doc:list ? list[0] : {}
+      });
+    });
   });
 };

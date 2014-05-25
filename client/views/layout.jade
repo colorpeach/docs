@@ -3,26 +3,27 @@ html
   head
     title #{title}
     meta(charset='utf-8')
-    link(rel='stylesheet', href='../lib/bootstrap/3.0.3/css/bootstrap.css')
-    link(rel='stylesheet', href='/css/api.css')
+    link(rel='stylesheet', href='/lib/bootstrap/3.0.3/css/bootstrap.css')
     block css
   body
     nav.navbar.container
       ul.nav.navbar-nav
         li
-          a.navbar-brand(href='/') DOC
+          a.navbar-brand(href='/') DOCS
         li
-          a(href='./help') 帮助
+          a(href='/help') 帮助
       ul.nav.navbar-nav.navbar-right
         li
           a(href='/edit')
             span.glyphicon.glyphicon-plus
         li
           a(href='/account') 个人账户
+        li
+          a(href='/login') 登录
     div.container
       block content
     
-    script(type='text/javascript', src='../lib/jquery/1.11.0/jquery.js')
-    script(type='text/javascript', src='../lib/angular/1.1.5/angular.js')
-    link(rel='stylesheet', href='../lib/bootstrap/3.0.3/js/bootstrap.js')
+    script(type='text/javascript', src='/lib/jquery/1.11.0/jquery.js')
+    script(type='text/javascript', src='/lib/angular/1.1.5/angular.js')
+    script(type='text/javascript', src='/lib/bootstrap/3.0.3/js/bootstrap.js')
     block script
