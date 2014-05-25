@@ -13,6 +13,7 @@ app.use(require('body-parser')());
 // app.use(express.logger("dev"));
 app.use(require("method-override")());
 app.use(require("cookie-parser")());
+app.use(session({ secret: settings.secret, name: 'sid', cookie: { secure: true }}));
 
 app.use(require("serve-static")(path.join(__dirname,"client")));
 
@@ -22,3 +23,4 @@ http.createServer(app).listen(process.env.PORT || 3000,function(){
 
 require("./route")(app);
 require("./route/ajax")(app);
+require("./route/check")(app);

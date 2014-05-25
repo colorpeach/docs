@@ -13,13 +13,15 @@ html
         li
           a(href='/help') 帮助
       ul.nav.navbar-nav.navbar-right
-        li
-          a(href='/edit')
-            span.glyphicon.glyphicon-plus
-        li
-          a(href='/account') 个人账户
-        li
-          a(href='/login') 登录
+        if user
+          li
+            a(href='/edit')
+              span.glyphicon.glyphicon-plus
+          li
+            a(href='/account') #{user.name}
+        if !user
+          li
+            a(href='/login') 登录
     div.container
       block content
     

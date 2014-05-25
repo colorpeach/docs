@@ -1,4 +1,5 @@
-var Doc = require('../models/doc');
+var Doc = require('../models/doc'),
+    https = require('https');
 
 //页面路由
 module.exports = function(app){
