@@ -23,8 +23,10 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="19" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="10" column="19" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1401004329750" expanded="true" signature="441:444" placeholder="//..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,15 +73,6 @@
         <entry file="file://$PROJECT_DIR$/client/utils/rules.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="40" column="20" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/collection/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="23" selection-start="1876" selection-end="1876" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -385,7 +378,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="1" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293919" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -460,41 +453,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1396" column="0" selection-start="61484" selection-end="61484" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="0" selection-start="2322" selection-end="2322" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/commands/base_command.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="117" selection-end="117" vertical-scroll-proportion="0.30877194">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/commands/db_command.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="214" column="27" selection-start="7900" selection-end="7900" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/commands/insert_command.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/doc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="26" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
@@ -511,26 +469,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/connection/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="241" column="0" selection-start="6220" selection-end="6220" vertical-scroll-proportion="0.33231708">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/connect-mongo/lib/connect-mongo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="52" selection-start="5405" selection-end="5405" vertical-scroll-proportion="0.5894428">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="19" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="10" column="19" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1401004329750" expanded="true" signature="441:444" placeholder="//..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -544,13 +488,6 @@
     <entry file="file://$PROJECT_DIR$/client/views/todo/index.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="12" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/collection/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="23" selection-start="1876" selection-end="1876" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

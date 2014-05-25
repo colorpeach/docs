@@ -3,7 +3,6 @@ var path = require("path");
 var express = require("express");
 var app = express();
 var session = require("express-session");
-var MongoStore = require('connect-mongo')(session);
 var settings = require('./settings');
 
 app.set("views",__dirname+"/client/views");
@@ -14,12 +13,6 @@ app.use(require('body-parser')());
 // app.use(express.logger("dev"));
 app.use(require("method-override")());
 app.use(require("cookie-parser")());
-//app.use(session({
-//    secret:settings.secret,
-//    store:new MongoStore({
-//        url:settings.url
-//    })
-//}));
 
 app.use(require("serve-static")(path.join(__dirname,"client")));
 
