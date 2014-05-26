@@ -1,7 +1,13 @@
 extends layout
 
+block css
+  link(rel='stylesheet', href='/css/doc.css')
+  
 block content
-  div.view #{doc.content}
+  div#view
+  ul#menu
+  textarea#content.hidden #{doc.content}
   
 block script
-    script(type='text/javascript', src='/js/doc.js')
+  script(type='text/javascript', src='/lib/showdown/showdown.js')
+  script(type='text/javascript', src='/js/doc.js')

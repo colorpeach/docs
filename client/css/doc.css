@@ -1,0 +1,67 @@
+#view{
+    margin-right:210px;
+}
+
+#menu{
+    position:fixed;
+    top:72px;
+    left:50%;
+    bottom:10px;
+    overflow-y:auto;
+    text-align:right;
+    width:200px;
+    opacity:.5;
+    transition: all 0.3s;
+}
+
+#menu:hover{
+    opacity:.8;
+}
+
+#menu > li > a {
+    color: #353535;
+    font-weight: bold;
+}
+
+#menu ul{
+    height:0;
+    overflow: hidden;
+}
+
+#menu ul.active{
+    height:auto;
+    max-height:100%;
+}
+
+#menu li{
+    display:block;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space: nowrap;
+}
+
+#menu a{
+    color:#999;
+}
+
+#menu a.active{
+    color:#259DFF;
+}
+
+@media (min-width: 768px) {
+  #menu{
+      margin-left:175px;
+  }
+}
+
+@media (min-width: 992px) {
+  #menu{
+      margin-left:285px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #menu{
+      margin-left:385px;
+  }
+}

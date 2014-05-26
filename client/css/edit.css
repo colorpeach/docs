@@ -1,0 +1,51 @@
+html,body{
+    height:100%;
+}
+
+.navbar.container{
+    z-index:1;
+}
+
+.main{
+    height:100%;
+    -webkit-box-sizing:border-box;
+    margin-top:-72px;
+    padding-top:72px;
+    position:relative;
+}
+
+.edit-left,
+.edit-right{
+    position:absolute;
+    width:50%;
+    top:72px;
+    bottom:0;
+}
+
+.edit-left{
+    left:0;
+}
+
+.edit-right{
+    right:0;
+}
+
+.editor{
+    height:100%;
+    margin-top:-49px;
+    padding-top:49px;
+    padding-bottom:50px;
+}
+
+#title{
+    position:relative;
+}
+
+#editor{
+    height:100%;
+    margin-bottom: 10px;
+}
+
+#view{
+    padding:10px;
+}

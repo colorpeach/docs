@@ -1,11 +1,20 @@
 extends layout
 
+block css
+  link(rel='stylesheet', href='/css/index.css')
+  
 block content
   each doc in docs
-    a(href='/docs/'+doc.title)
-      div.col-lg-3
-        div.panel.panel-primary
-          div.panel-heading #{doc.title}
-          div.panel-body #{doc.content}
+    div.col-lg-3
+      div.panel.panel-default
+        div.panel-heading
+            a(href='/'+doc.user+'/'+doc.title) #{doc.title}
+        div.panel-body
+          span.star-span(title='赞')
+            span.glyphicon.glyphicon-star
+            |  #{doc.star||0}
+          span.user-span.pull-right(title='作者')
+            span.glyphicon.glyphicon-user
+            |  #{doc.user}
   
 block script

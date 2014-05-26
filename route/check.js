@@ -35,7 +35,7 @@ module.exports = function(app,sessionStore){
 
               response.on('end',function(){
                 data = JSON.parse(data);
-
+                req.session.user = data;
                 res.redirect('/');
               });
             });

@@ -2,7 +2,20 @@ extends layout
 
 block content
   div.col-lg-3
+    div.panel.panel-default
+      img(src='#{user.avatar_url}',width='100%')
+    h1 #{user.name}
   div.col-lg-9
-    h4 所有doc
-    
+    div.panel.panel-default
+      div.panel-heading 所有文档
+      ul.list-group.all-doc
+    div.panel.panel-default
+      div.panel-heading github仓库
+      ul.list-group.all-repos
+
 block script
+  script(type='text/javascript').
+    var url = {
+      repos: '#{user.repos_url}'
+    };
+  script(type='text/javascript',src='/js/account.js')

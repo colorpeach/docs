@@ -1,6 +1,23 @@
 extends layout
 
+block css
+  link(rel='stylesheet', href='/css/edit.css')
+
 block content
-  
+  div.edit-left
+    div.form-group
+      input#title.form-control(type="text",placeholder="请输入文档名...",value='#{doc.title||""}')
+    div.editor
+      div#editor
+      button.btn.btn-primary.col-lg-12.save-btn 保存
+      textarea#content.hidden #{doc.content||""}
+  div#view.edit-right
     
 block script
+  script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js')
+  script(type='text/javascript', src='/lib/showdown/showdown.js')
+  script(type='text/javascript').
+    var doc = {
+      _id:'#{doc._id}'
+    };
+  script(type='text/javascript', src='/js/edit.js')

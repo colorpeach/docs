@@ -1,4 +1,6 @@
 var rs = require("../models/readFile");
+var Doc = require("../models/doc");
+
 //ajax请求处理
 module.exports = function(app){
   app.get('/get',function(req,res){
@@ -13,4 +15,18 @@ module.exports = function(app){
   app.post('/login',function(req,res){
     res.end(JSON.stringify(req.body));
   });
+
+  app.post('/addDoc',function(req,res){
+    req.body.user = req.session.user.name;
+    var doc = new Doc(req.body);
+    doc.save(function(data){
+        res.end(JSON.stringify({doc:data[0]}));
+    });
+  });
+  
+  app.post('/getDoc',function(req,res){
+    Doc.query({user:req.session.user.name},function(list){
+      res.end(JSON.stringify({docs:list}));
+    });
+  })
 };
