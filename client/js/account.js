@@ -21,7 +21,7 @@
         },
         docHtml:function(list){
             return $.map(list,function(n){
-                return '<li class="list-group-item">'+
+                return '<li>'+
                             '<a href="'+n.user+'/'+n.title+'">'+n.title+'</a>'+
                             ' <a href="/edit?user='+n.user+'&_id='+n._id+'">'+
                                 '<span class="glyphicon glyphicon-pencil"></span>'+
@@ -31,11 +31,23 @@
         },
         reposHtml:function(list){
             return $.map(list,function(n){
-                return '<li class="list-group-item">'+n.name+'</li>';
+                return '<li>'+n.name+'</li>';
+            });
+        },
+        bindEvent:function(){
+            var $tabCons = $('.item-list'),
+                $tabs = $('.nav-tabs li');
+            $('.nav-tabs').on('click','li',function(){
+                var i = $(this).index();
+                $tabCons.addClass('hidden')
+                    .eq(i).removeClass('hidden');
+                $tabs.removeClass('active')
+                    .eq(i).addClass('active');
             });
         },
         init:function(){
             this._init();
+            this.bindEvent();
         }
     };
     

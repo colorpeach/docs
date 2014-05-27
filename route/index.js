@@ -28,7 +28,7 @@ module.exports = function(app){
       res.redirect("/login");
       return;
     }
-    if(req.query.user && req.query.user === req.session.user.name && req.query._id){
+    if(req.query.user && req.query.user === req.session.user.login && req.query._id){
       Doc.query({_id:new ObjectID(req.query._id)},function(list){
         res.render('edit',{user:req.session.user,doc:list[0]||{}});
       });

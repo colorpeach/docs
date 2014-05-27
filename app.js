@@ -16,7 +16,7 @@ app.use(require("cookie-parser")());
 app.use(session({
     secret: settings.secret,
     name: 'sid',
-    cookie: { maxAge:1800000 }
+    cookie: { maxAge:86400000 }
 }));
 
 app.use(require("serve-static")(path.join(__dirname,"client")));

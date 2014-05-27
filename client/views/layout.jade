@@ -4,28 +4,32 @@ html
     title #{title}
     meta(charset='utf-8')
     link(rel='stylesheet', href='/lib/bootstrap/3.0.3/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/common.css')
+    link(rel='stylesheet', href='/css/animate.css')
     block css
   body
-    nav.navbar.container
-      ul.nav.navbar-nav
-        li
-          a.navbar-brand(href='/') DOCS
-        li
-          a(href='/help') 帮助
-      ul.nav.navbar-nav.navbar-right
-        if user
+    nav.topnav
+      div.container
+        ul.nav.navbar-nav
           li
-            a(href='/edit')
-              span.glyphicon.glyphicon-plus
-          li
-            a(href='/account') #{user.name}
-        if !user
-          li
-            a(href='/login') 登录
+            a.navbar-brand(href='/') DOCS
+        ul.nav.navbar-nav.navbar-right
+          if user
+            li
+              a(href='/account',data-tip='个人中心') #{user.login}
+            li
+              a(href='/edit',data-tip='添加文档')
+                span.glyphicon.glyphicon-plus
+            li
+              a(href='/logout',data-tip='退出登录')
+                span.glyphicon.glyphicon-arrow-right
+          if !user
+            li
+              a(href='/login') 登录
     div.container.main
       block content
     
     script(type='text/javascript', src='/lib/jquery/1.11.0/jquery.js')
-    script(type='text/javascript', src='/lib/angular/1.1.5/angular.js')
     script(type='text/javascript', src='/lib/bootstrap/3.0.3/js/bootstrap.js')
+    script(type='text/javascript',src='/js/common.js')
     block script
