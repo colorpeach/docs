@@ -16,9 +16,9 @@ module.exports = function(app){
     res.end(JSON.stringify(req.body));
   });
   
-  app.post('logout',function(req,res){
+  app.post('/logout',function(req,res){
     req.session = null;
-    res.end();
+    res.redircet('/');
   });
 
   app.post('/addDoc',function(req,res){
