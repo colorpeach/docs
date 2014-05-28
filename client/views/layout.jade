@@ -21,7 +21,7 @@ html
               a(href='/edit',data-tip='添加文档')
                 span.glyphicon.glyphicon-plus
             li
-              a(href='/logout',data-tip='退出登录')
+              a#logout(href='javascript:;',data-tip='退出登录')
                 span.glyphicon.glyphicon-arrow-right
           if !user
             li
