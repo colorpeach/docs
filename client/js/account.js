@@ -10,12 +10,11 @@
                 }
             });
             
-            $.ajax({
+            $.docsajax({
                 url:"/getDoc",
                 method:'post',
                 success:function(d){
-                    var data = JSON.parse(d);
-                    $(".all-doc").html(self.docHtml(data.docs));
+                    $(".all-doc").html(self.docHtml(d.docs));
                 }
             });
         },

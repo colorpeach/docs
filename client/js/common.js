@@ -1,4 +1,8 @@
 (function(){
+    /**
+    *@name jQuery.prompt
+    *@param {Object}
+    */
     $.prompt = (function(){
         var template = function(obj){
                 var className = "alert-success";
@@ -113,6 +117,7 @@
         $(n).removeAttr('title');
     });
     
+    //退出登录
     $('#logout').click(function(){
         $.ajax({
             url:'/logout',
@@ -123,4 +128,25 @@
         });
         return false;
     });
+    
+    /**
+    *@name docsajax
+    */
+    $.docsajax = function(opts){
+        if(opts.success){
+            var success = opts.success;
+            delete opts.success;
+        }
+        var promise = $.ajax(opts);
+
+        promise.then(function(d){
+            var d = JSON.parse(d);
+            if(d.error){
+                opts.fail(d);
+                alert(d.errorList.join("\n"));
+            }else{
+                success(d);
+            }
+        });
+    };
 })();

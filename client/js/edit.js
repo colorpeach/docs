@@ -20,13 +20,19 @@
                 data._id = doc._id;
             }
             
-            $.ajax({
+            $.docsajax({
                 url:'/addDoc',
                 method:'post',
                 data:JSON.stringify(data),
                 contentType:'application/json',
                 success:function(d){
-                    console.log(d);
+                    if(!doc._id){
+                        doc._id = d.doc._id;
+                    }
+                    $.prompt({
+                        type:"success",
+                        content:"保存成功"
+                    });
                 }
             });
         }

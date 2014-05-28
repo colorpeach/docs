@@ -1,5 +1,6 @@
 var rs = require("../models/readFile");
 var Doc = require("../models/doc");
+var baseRes = require("./baseResponse");
 
 //ajax请求处理
 module.exports = function(app){
@@ -7,13 +8,13 @@ module.exports = function(app){
       rs({
         url:"./client/lib/angular/1.1.5/angular.js",
         callback:function(data){
-          res.end(JSON.stringify({str:data.toString("utf-8")}));
+          res.end(baseRes({str:data.toString("utf-8")}));
         }
       });
   });
   
   app.post('/login',function(req,res){
-    res.end(JSON.stringify(req.body));
+    res.end(baseRes(req.body));
   });
   
   app.post('/logout',function(req,res){
@@ -26,13 +27,13 @@ module.exports = function(app){
     req.body.user = req.session.user.login;
     var doc = new Doc(req.body);
     doc.save(function(data){
-        res.end(JSON.stringify({doc:data[0]}));
+        res.end(baseRes({doc:data}));
     });
   });
   
   app.post('/getDoc',function(req,res){
     Doc.query({user:req.session.user.login},function(list){
-      res.end(JSON.stringify({docs:list}));
+      res.end(baseRes({docs:list}));
     });
   })
 };

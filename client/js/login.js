@@ -4,7 +4,7 @@ $('#login-btn').click(function(){
         username:$('#username').val()
     };
     
-    $.ajax({
+    $.docsajax({
         url:'/login',
         method:'post',
         data:JSON.stringify(data),
