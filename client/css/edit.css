@@ -9,8 +9,6 @@ html,body{
 .main{
     height:100%;
     -webkit-box-sizing:border-box;
-    margin-top:-72px;
-    padding-top:72px;
     position:relative;
 }
 
@@ -18,7 +16,7 @@ html,body{
 .edit-right{
     position:absolute;
     width:50%;
-    top:72px;
+    top:0;
     bottom:0;
 }
 

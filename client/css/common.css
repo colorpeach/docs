@@ -54,11 +54,7 @@ body{
 	padding-bottom:1px;
     margin-bottom:20px;
 	background:#fff;
-	position:relative;
 	z-index:999;
-}
-
-.topnav.fixed{
 	position:fixed;
 	left:0;
 	right:0;
