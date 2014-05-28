@@ -17,8 +17,9 @@ module.exports = function(app){
   });
   
   app.post('/logout',function(req,res){
-    req.session = null;
-    res.redircet('/');
+    req.session.destroy(function(){
+      res.redircet('/');
+    });
   });
 
   app.post('/addDoc',function(req,res){
