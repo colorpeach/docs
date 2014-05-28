@@ -51,7 +51,7 @@ body{
 }
 
 .topnav{
-    border-bottom:1px solid #ddd;
+	padding-bottom:1px;
     margin-bottom:20px;
 	background:#fff;
 	position:relative;
@@ -68,4 +68,15 @@ body{
 
 .topnav:hover{
 	opacity:1;
+}
+
+.line{
+	background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #FFF), color-stop(10%, #DDD), color-stop(90%, #DDD), color-stop(100%, #FFF));
+	background-image: -webkit-linear-gradient(left, #FFF,#DDD 10%,#DDD 90%,#FFF) background-image: -moz-linear-gradient(left, #FFF,#DDD 10%,#DDD 90%,#FFF);
+	background-image: -o-linear-gradient(left, #FFF,#DDD 10%,#DDD 90%,#FFF);
+	background-image: linear-gradient(left, #FFF,#DDD 10%,#DDD 90%,#FFF);
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: 100% 1px;
+}
 }
