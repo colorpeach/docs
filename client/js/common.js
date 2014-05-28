@@ -113,11 +113,6 @@
         $(n).removeAttr('title');
     });
     
-    //滚动悬浮导航栏
-    $(document).scroll(function(){
-        $('.topnav')[$(window).scrollTop()>72 ? 'addClass':'removeClass']('fixed');
-    });
-    
     $('#logout').click(function(){
         $.ajax({
             url:'/logout',
