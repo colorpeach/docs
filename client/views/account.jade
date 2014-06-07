@@ -4,20 +4,23 @@ block css
   link(rel='stylesheet', href='/css/account.css')
 
 block content
+  div.detail-box.hidden
+    span.close-btn.glyphicon.glyphicon-remove
   div.col-lg-3
-    div.account-info.clearfix
-      img(src='#{user.avatar_url}')
-      p #{user.login}
+    div.account-left
+      div.account-info.clearfix
+        img(src='#{user.avatar_url}')
+        p #{user.login}
+      ul.slide-tabs
+        li.active
+          a 我的文档
+        li
+          a github仓库
+        li
+          a 我创建的组织
+        li
+          a 我加入的组织
   div.col-lg-9
-    ul.nav.nav-tabs.nav-justified
-      li.active
-        a 我的文档
-      li
-        a github仓库
-      li
-        a 我创建的组织
-      li
-        a 我加入的组织
     ul#all-docs.item-list
     ul#all-repos.item-list.hidden
     div#my-orgs.item-list.hidden

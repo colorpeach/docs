@@ -6,6 +6,7 @@
             $myOrgs:$('#my-orgs'),
             $joinOrgs:$('#join-orgs'),
         },
+        orgList:[],
         _init:function(){
             var self = this;
            url.repos && $.ajax({
@@ -29,6 +30,7 @@
                 method:'post',
                 success:function(d){
                     self.tabCons.$myOrgs.find("ul").append(self.myOrgsHtml(d.orgs));
+                    self.orgList.push.call(self.orgList,d.orgs);
                 }
             });
             
@@ -37,6 +39,7 @@
                 method:'post',
                 success:function(d){
                     self.tabCons.$joinOrgs.find("ul").append(self.joinOrgHtml(d.orgs));
+                    self.orgList.push.call(self.orgList,d.orgs);
                 }
             });
         },
@@ -44,12 +47,17 @@
             return $.map(list,function(n){
                 var $li = $("<li>"),
                     html = '<a href="'+n.user+'/'+n.title+'">'+n.title+'</a>'+
-                            ' <a href="/edit?user='+n.user+'&_id='+n._id+'" data-tip="编辑">'+
+                            '<div class="pull-right opera-box">'+
+                            '<a href="/edit?user='+n.user+'&_id='+n._id+'" data-tip="编辑">'+
                                 '<span class="glyphicon glyphicon-pencil"></span>'+
                             '</a>'+
-                            ' <a href="javascript:;" class="del-item" data-tip="删除">'+
+                            '<a href="javascript:;" class="del-item" data-tip="删除">'+
                                 '<span class="glyphicon glyphicon-remove"></span>'+
-                            '</a>';
+                            '</a>'+
+                            '<a href="javascript:;" class="share-item" data-tip="分享">'+
+                                '<span class="glyphicon glyphicon-share-alt">'+
+                            '</a>'+
+                            '</div>';
                 return $li.html(html).data('doc',n);
             });
         },
@@ -121,9 +129,9 @@
         },
         bindEvent:function(){
             var $tabCons = $('.item-list'),
-                $tabs = $('.nav-tabs li'),
+                $tabs = $('.slide-tabs li'),
                 self = this;
-            $('.nav-tabs').on('click','li',function(){
+            $('.slide-tabs').on('click','li',function(){
                 var i = $(this).index();
                 $tabCons.addClass('hidden')
                     .eq(i).removeClass('hidden');
@@ -132,7 +140,8 @@
             });
             
             //删除文档
-            self.tabCons.$allDocs.on("click",".del-item",function(){
+            self.tabCons.$allDocs
+            .on("click",".del-item",function(){
                 var $li = $(this).closest("li"),
                     doc = $li.data("doc");
                 
@@ -148,6 +157,10 @@
                         });
                     }
                 });
+            })
+            .on('click','.share-item',function(){
+                $('.detail-box').removeClass('hidden');
+                $(this).closest('li').addClass('active');
             });
             
             //添加组织
@@ -168,6 +181,10 @@
             //提交加入组织
             self.tabCons.$joinOrgs.find('.submit-btn').click(function(){
                 self.joinOrg();
+            });
+            
+            $('.close-btn').click(function(){
+                $('.detail-box').addClass('hidden');
             });
         },
         init:function(){

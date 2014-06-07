@@ -57,6 +57,10 @@ Org.queryJoinOrgs = function(query,fn){
     });
 };
 
+Org.prototype.addDocs = function(){
+    
+};
+
 //auto increment
 function insertDocument(doc, targetCollection,fn) {
     targetCollection.find().sort( { _id: -1 }).limit(1).toArray(function(err,list){

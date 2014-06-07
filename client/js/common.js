@@ -163,6 +163,7 @@
                 success && success(d);
             }
         });
+        
         promise.error(function(promise,type,content){
             $.prompt({
                 type:'danger',

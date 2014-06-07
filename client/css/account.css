@@ -1,6 +1,36 @@
+.main{
+    position: relative;
+}
+
+.detail-box{
+    position:absolute;
+    top:0;
+    bottom:70px;
+    right:30px;
+    width:500px;
+    border-left:1px solid #ddd;
+    padding:10px 10px 10px 30px;
+    background-color:#fff;
+    z-index:1;
+}
+
+.detail-box .close-btn{
+    position:absolute;
+    top:10px;
+    right:10px;
+    cursor:pointer
+}
+
+.account-left{
+    border-right:1px solid #ddd;
+}
+
 .account-info{
     padding:5px;
-    text-align:center;
+}
+
+.account-info p{
+    font-size:20px;
 }
 
 .account-info img{
@@ -8,16 +38,80 @@
     width:60px;
     border:1px solid #ddd;
     float:left;
+    margin-right:10px;
+}
+
+.slide-tabs{
+    padding:0 0 10px;
+}
+
+.slide-tabs li{
+    display:block;
+    cursor:pointer;
+    padding:10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.slide-tabs li.active,
+.item-list li.active{
+    position:relative;
+}
+
+.slide-tabs li.active:before,
+.item-list li.active:before{
+    display:block;
+    content:" ";
+    position:absolute;
+    right:-1px;
+    top: 10px;
+    height: 0;
+    width: 0;
+    border-width: 10px 10px 10px 0;
+    border-style:solid;
+    border-color:rgba(255,255,255,0) #ddd rgba(255,255,255,0) rgba(255,255,255,0);
+    z-index:2;
+}
+
+.slide-tabs li.active:after,
+.item-list li.active:after{
+    display:block;
+    content:" ";
+    position:absolute;
+    right:-1px;
+    top: 12px;
+    height: 0;
+    width: 0;
+    border-width: 8px 8px 8px 0;
+    border-style:solid;
+    border-color:rgba(255,255,255,0) #fff rgba(255,255,255,0) rgba(255,255,255,0);
+    z-index:2;
+}
+
+.item-list li.active:before{
+    right:499px;
+}
+
+.item-list li.active:after{
+    right:499px;
 }
 
 .item-list,.item-list ul{
     padding:0;
 }
 
-.item-list li,.item-header{
+.item-list li{
     padding:10px 15px;
     border-bottom:1px solid #ddd;
     display:block;
+}
+
+.item-header{
+    padding:10px 15px;
+}
+
+.item-list .opera-box a{
+    margin-left:10px;
 }
 
 .create-org-box>div,

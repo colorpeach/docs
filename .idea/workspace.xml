@@ -48,7 +48,7 @@
       <file leaf-file-name="org.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/org.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="1" selection-start="1676" selection-end="1676" vertical-scroll-proportion="0.0">
+            <state line="73" column="1" selection-start="1721" selection-end="1721" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -57,7 +57,7 @@
       <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="172" selection-end="172" vertical-scroll-proportion="0.19642857">
+            <state line="2" column="44" selection-start="139" selection-end="139" vertical-scroll-proportion="0.13095239">
               <folding />
             </state>
           </provider>
@@ -565,14 +565,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/org.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="1" selection-start="1676" selection-end="1676" vertical-scroll-proportion="0.0">
+        <state line="73" column="1" selection-start="1721" selection-end="1721" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="172" selection-end="172" vertical-scroll-proportion="0.19642857">
+        <state line="2" column="44" selection-start="139" selection-end="139" vertical-scroll-proportion="0.13095239">
           <folding />
         </state>
       </provider>
