@@ -21,7 +21,7 @@ app.use(session({
 
 app.use(require("serve-static")(path.join(__dirname,"client")));
 
-http.createServer(app).listen(process.env.PORT || 3000,function(){
+app.listen(process.env.PORT || 3000,function(){
     console.log("running");
 });
 

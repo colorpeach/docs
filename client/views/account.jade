@@ -7,7 +7,7 @@ block content
   div.col-lg-3
     div.account-info.clearfix
       img(src='#{user.avatar_url}')
-      p #{user.name}
+      p #{user.login}
   div.col-lg-9
     ul.nav.nav-tabs.nav-justified
       li.active
@@ -15,11 +15,39 @@ block content
       li
         a github仓库
       li
-        a 我的组织
+        a 我创建的组织
       li
         a 我加入的组织
-    ul.item-list.all-doc
-    ul.item-list.all-repos.hidden
+    ul#all-docs.item-list
+    ul#all-repos.item-list.hidden
+    div#my-orgs.item-list.hidden
+      div.item-header
+        button.create-org-btn.btn.btn-default(data-tip='创建组织')
+          span.glyphicon.glyphicon-plus
+        div.create-org-box.form-inline.hidden
+          div.form-group
+            label.sr-only 组织名称
+            input#org-name.form-control(type='text',placeholder='组织名称')
+          div.form-group
+            label.sr-only 组织密码
+            input#org-password.form-control(type='text',placeholder='组织密码')
+          button.submit-btn.btn.btn-primary 提交
+          button.cancel-btn.btn.btn-default 取消
+      ul
+    div#join-orgs.item-list.hidden
+      div.item-header
+        button.join-org-btn.btn.btn-default(data-tip='加入组织')
+          span.glyphicon.glyphicon-arrow-left
+        div.join-org-box.form-inline.hidden
+          div.form-group
+            label.sr-only 组织代码
+            input#join-org-code.form-control(type='text',placeholder='组织代码')
+          div.form-group
+            label.sr-only 组织密码
+            input#join-org-password.form-control(type='text',placeholder='组织密码')
+          button.submit-btn.btn.btn-primary 提交
+          button.cancel-btn.btn.btn-default 取消
+      ul
 
 block script
   script(type='text/javascript').

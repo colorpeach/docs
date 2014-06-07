@@ -1,5 +1,21 @@
+.footer{
+  height:100%;
+}
+
 #view{
     margin-right:210px;
+    position:relative;
+}
+
+#view .edit-btn{
+  display:none;
+  position:absolute;
+  top:70px;
+  right:0;
+}
+
+#view:hover .edit-btn{
+  display:block;
 }
 
 #menu{

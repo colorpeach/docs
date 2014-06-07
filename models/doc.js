@@ -2,12 +2,11 @@ var dbClient = require('../db'),
     ObjectID = require('mongodb').ObjectID;
 
 function Doc(opts){
-    this.data = {
-      title : opts.title,
-      content : opts.content,
-      user : opts.user,
-      _id : opts._id
-    };
+      this.title = opts.title;
+      this.content = opts.content;
+      this.user = opts.user;
+      this.auth = opts.auth || "public";
+      opts._id && (this._id = opts._id);
 }
 
 //get all docs
@@ -22,9 +21,9 @@ Doc.query = function(query,fun){
     });
 };
 
-//save one doc
+//save a doc
 Doc.prototype.save = function(fun){
-    var data = this.data;
+    var data = this;
     
     if(!data.user)
         fun && fun([]);
@@ -41,12 +40,16 @@ Doc.prototype.save = function(fun){
     });
 };
 
-Doc.prototype.query = function(){
+Doc.prototype.del = function(fn){
+    var _id = new ObjectID(this._id);
+    dbClient.connect(function(err,db){
+        if(err) throw err;
     
-};
-
-Doc.prototype.del = function(){
-    
+        db.collection("docs").remove({_id:_id},function(err,data){
+            db.close();
+            fn && fn(data);
+        });
+    });
 };
 
 module.exports =  Doc;

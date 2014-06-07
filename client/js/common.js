@@ -90,6 +90,10 @@
         return prompt;
     })();
     
+    $.msg = function(msg){
+        alert(msg);
+    };
+    
     //tip
     var $tip = $('<div class="cm-tip hidden">');
     $tip.html(
@@ -133,20 +137,39 @@
     *@name docsajax
     */
     $.docsajax = function(opts){
+        var success,error;
+        
         if(opts.success){
-            var success = opts.success;
+            success = opts.success;
             delete opts.success;
         }
+        
+        if(opts.error){
+            error = opts.error;
+            delete opts.error;
+        }
+        
         var promise = $.ajax(opts);
 
         promise.then(function(d){
             var d = JSON.parse(d);
             if(d.error){
-                opts.fail(d);
-                alert(d.errorList.join("\n"));
+                opts.fail && opts.fail(d);
+                $.prompt({
+                    type:'warning',
+                    content:$.map(d.errorMsg,function(n){return '<p>'+n+'</p>';})
+                });
             }else{
-                success(d);
+                success && success(d);
             }
+        });
+        promise.error(function(promise,type,content){
+            $.prompt({
+                type:'danger',
+                title:'错误：',
+                content:content
+            });
+            error && error(arguments);
         });
     };
 })();

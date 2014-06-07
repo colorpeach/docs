@@ -10,12 +10,19 @@
     float:left;
 }
 
-.item-list{
+.item-list,.item-list ul{
     padding:0;
 }
 
-.item-list li{
+.item-list li,.item-header{
     padding:10px 15px;
     border-bottom:1px solid #ddd;
     display:block;
+}
+
+.create-org-box>div,
+.create-org-box>button,
+.join-org-box>div,
+.join-org-box>button{
+    margin-right:10px;
 }

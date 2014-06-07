@@ -4,13 +4,18 @@ var Doc = require('../models/doc'),
 
 //页面路由
 module.exports = function(app){
+
+//  app.all('*',function(req,res,next){
+//    console.log(req.headers);
+//    next();
+//  });
   
   app.get('/api',function(req,res){
     res.render('todo/index');
   });
   
   app.get('/',function(req,res){
-    Doc.query(null,function(list){
+    Doc.query({auth:"public"},function(list){
       res.render('index',{docs:list,user:req.session.user});
     });
   });
@@ -20,7 +25,7 @@ module.exports = function(app){
       res.redirect("/");
       return;
     }
-    res.render('login');
+    res.render('login',{login:true});
   });
   
   app.get('/edit',function(req,res){

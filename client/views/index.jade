@@ -4,15 +4,15 @@ block css
   link(rel='stylesheet', href='/css/index.css')
   
 block content
+  if user
+    div.private-doc
+    div.org-doc
   each doc in docs
     div.col-lg-3
       div.panel.panel-default
         div.panel-heading
             a(href='/'+doc.user+'/'+doc.title) #{doc.title}
         div.panel-body
-          span.star-span(title='赞')
-            span.glyphicon.glyphicon-star
-            |  #{doc.star||0}
           span.user-span.pull-right(title='作者')
             span.glyphicon.glyphicon-user
             |  #{doc.user}

@@ -3,7 +3,7 @@
     var content = $("#content").val();
     var $view = $("#view");
     
-    $view.html(converter.makeHtml(content));
+    $view.append(converter.makeHtml(content));
     
     //滚动效果
     var prev;
@@ -17,6 +17,8 @@
         headings = $("h1,h2,h3,h4").map(function(i,el){
             var name = el.textContent,
                 split = name.split(".");
+                
+            $(el).addClass("anchor");
                 
             if(split[0] in typeMap){
                 typeList[typeMap[split[0]]].push({name:split.slice(1).join("."),id:el.id});
@@ -43,9 +45,9 @@
         for(var i=0,len=typeList.length;i<len;i++){
             for(var j=0,item=typeList[i],jlen=item.length;j<jlen;j++){
                 if(j===0){
-                    html += "<li><a href='#"+item[j].id+"'>"+item[j].name+"</a><ul>";
+                    html += "<li title='"+item[j].name+"'><a href='#"+item[j].id+"'>"+item[j].name+"</a><ul>";
                 }else{
-                    html += "<li><a href='#"+item[j].id+"'>"+item[j].name+"</a></li>"
+                    html += "<li title='"+item[j].name+"'><a href='#"+item[j].id+"'>"+item[j].name+"</a></li>"
                 }
             }
             html += "</ul></li>";

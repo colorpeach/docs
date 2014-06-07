@@ -22,16 +22,26 @@ html,body{
 
 .edit-left{
     left:0;
+    width:100%;
 }
 
 .edit-right{
     right:0;
+    display:none;
+}
+
+.edit-left.view{
+    width:50%;
+}
+
+.edit-right.view{
+    display:block;
 }
 
 .editor{
     height:100%;
-    margin-top:-49px;
-    padding-top:49px;
+    margin-top:-100px;
+    padding-top:100px;
     padding-bottom:50px;
 }
 
@@ -46,4 +56,5 @@ html,body{
 
 #view{
     padding:10px;
+    overflow:auto;
 }

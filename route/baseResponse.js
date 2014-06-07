@@ -3,13 +3,15 @@ module.exports = function(opts){
         error:0,
         errorMsg:[]
     };
+    
+    !opts && (opts = {});
 
     for(var n in opts){
         opt[n] = opts[n];
     }
 
     if(opts.errorMsg){
-        error = opts.errorMsg.length;
+        opt.error = opts.errorMsg.length;
     }
 
     return JSON.stringify(opt);

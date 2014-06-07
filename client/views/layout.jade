@@ -23,11 +23,15 @@ html
             li
               a#logout(href='javascript:;',data-tip='退出登录')
                 span.glyphicon.glyphicon-arrow-right
-          if !user
+          if !user && !login
             li
               a(href='/login') 登录
     div.container.main
       block content
+      
+    div.footer.line
+      div.container
+        a(href='https://github.com/colorpeach') @colorpeach
     
     script(type='text/javascript', src='/lib/jquery/1.11.0/jquery.js')
     script(type='text/javascript', src='/lib/bootstrap/3.0.3/js/bootstrap.js')
