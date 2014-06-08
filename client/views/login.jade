@@ -8,26 +8,26 @@ block content
     div.login-con
       div.form-group
         label(for="username") 用户名
-        input#username.form-control(type="text",placeholder="请输入用户名...")
+        input#username.form-control(type="text",placeholder="请输入用户名...",data-validator="required:请输入用户名")
       div.form-group
         label(for="password") 密码
-        input#password.form-control(type="password",placeholder="请输入密码...")
+        input#password.form-control(type="password",placeholder="请输入密码...",data-validator="required:请输入密码")
       div.form-group
         p 没有账号？
           a.reg-link(href='javascript:;') 注册
-          ， 你还可以通过github登陆
-          a.github-btn(href='https://github.com/login/oauth/authorize?client_id=c89c9272fa8cebcf607b&scope=user,repo')
+          //， 你还可以通过github登陆
+          //a.github-btn(href='https://github.com/login/oauth/authorize?client_id=c89c9272fa8cebcf607b&scope=user,repo')
       button#login-btn.btn.btn-primary(type="submit") 登陆
     div.reg-con.hidden
       div.form-group
         label(for="username") 用户名
-        input#reg-username.form-control(type="text",placeholder="请输入用户名...")
+        input#reg-username.form-control(name='username',type="text",placeholder="请输入用户名...",data-validator="required:请输入用户名")
       div.form-group
         label(for="password") 密码
-        input#reg-password.form-control(type="password",placeholder="请输入密码...")
+        input#reg-password.form-control(name='password',type="password",placeholder="请输入密码...",data-validator="required:请输入密码")
       div.form-group
         label(for="password") 确认密码
-        input#confirm-password.form-control(type="password",placeholder="请输入确认密码...")
+        input#confirm-password.form-control(name='confirmPassword',type="password",placeholder="请输入确认密码...",data-validator="required:请输入确认密码")
       div.form-group
         p 返回 
           a.login-link(href='javascript:;') 登陆

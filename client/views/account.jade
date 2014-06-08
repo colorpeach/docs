@@ -5,11 +5,16 @@ block css
 
 block content
   div.detail-box.hidden
-    span.close-btn.glyphicon.glyphicon-remove
+    a.close-btn(href='javascript:;')
+      span.glyphicon.glyphicon-remove
+    ul
   div.col-lg-3
     div.account-left
       div.account-info.clearfix
-        img(src='#{user.avatar_url}')
+        if user.avatar_url
+          img(src='#{user.avatar_url}')
+        else
+          span.img-item.glyphicon.glyphicon-user
         p #{user.login}
       ul.slide-tabs
         li.active
@@ -30,10 +35,10 @@ block content
         div.create-org-box.form-inline.hidden
           div.form-group
             label.sr-only 组织名称
-            input#org-name.form-control(type='text',placeholder='组织名称')
+            input#org-name.form-control(name='name',type='text',placeholder='组织名称',data-validator='required:请输入组织名称')
           div.form-group
             label.sr-only 组织密码
-            input#org-password.form-control(type='text',placeholder='组织密码')
+            input#org-password.form-control(name='password',type='text',placeholder='组织密码',data-validator='required:请输入组织密码')
           button.submit-btn.btn.btn-primary 提交
           button.cancel-btn.btn.btn-default 取消
       ul
@@ -44,10 +49,10 @@ block content
         div.join-org-box.form-inline.hidden
           div.form-group
             label.sr-only 组织代码
-            input#join-org-code.form-control(type='text',placeholder='组织代码')
+            input#join-org-code.form-control(name='_id',type='text',placeholder='组织代码',data-validator='required:请输入组织代码')
           div.form-group
             label.sr-only 组织密码
-            input#join-org-password.form-control(type='text',placeholder='组织密码')
+            input#join-org-password.form-control(name='password',type='text',placeholder='组织密码',data-validator='required:请输入组织密码')
           button.submit-btn.btn.btn-primary 提交
           button.cancel-btn.btn.btn-default 取消
       ul

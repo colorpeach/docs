@@ -1,10 +1,10 @@
 (function(){
     //登陆
     $('#login-btn').click(function(){
-        var data = {
-            password:$('#password').val(),
-            username:$('#username').val()
-        };
+        var data = $('.login-con').inputBox('data',{valid:true});
+        
+        if(!data)
+            return false;
         
         $.docsajax({
             url:'/login',
@@ -19,15 +19,17 @@
     
     //注册
     $('#reg-btn').click(function(){
-        var data = {
-            password:$('#reg-password').val(),
-            username:$('#reg-username').val()
-        };
+        var data = $('.reg-con').inputBox('data',{valid:true});
         
-        if(data.password !== $("#confirm-password").val()){
+        if(!data)
+            return false;
+        
+        if(data.password !== data.confirmPassword){
             $.msg("两次输入密码不一致");
             return;
         }
+        
+        delete data.confirmPassword;
         
         $.docsajax({
             url:'/register',

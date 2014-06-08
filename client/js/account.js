@@ -1,27 +1,40 @@
 (function(){
     var Account = {
-        tabCons:{
-            $allDocs:$('#all-docs'),
-            $allRepos:$('#all-repos'),
-            $myOrgs:$('#my-orgs'),
-            $joinOrgs:$('#join-orgs'),
-        },
+        $allDocs:$('#all-docs'),
+        $allRepos:$('#all-repos'),
+        $myOrgs:$('#my-orgs'),
+        $joinOrgs:$('#join-orgs'),
         orgList:[],
+        state:{
+            nowTab:$('#all-docs'),
+            showDetail:function(bl,$li){
+                var $detail = $('.detail-box');
+                
+                if(!bl){
+                    $detail.addClass('hidden');
+                    this.nowTab.find('li.active').removeClass('active');
+                }else{
+                    $detail.removeClass('hidden');
+                    $li.addClass('active');
+                }
+            }
+        },
         _init:function(){
             var self = this;
            url.repos && $.ajax({
                 url:url.repos,
                 method:'get',
                 success:function(d){
-                    self.tabCons.$allRepos.html(self.reposHtml(d));
+                    self.$allRepos.html(self.reposHtml(d));
                 }
             });
             
             $.docsajax({
                 url:"/getDoc",
                 method:'post',
+                wrap:self.$allDocs,
                 success:function(d){
-                    self.tabCons.$allDocs.html(self.docHtml(d.docs));
+                    self.$allDocs.html(self.docHtml(d.docs));
                 }
             });
             
@@ -29,8 +42,8 @@
                 url:"/getOrgs",
                 method:'post',
                 success:function(d){
-                    self.tabCons.$myOrgs.find("ul").append(self.myOrgsHtml(d.orgs));
-                    self.orgList.push.call(self.orgList,d.orgs);
+                    self.$myOrgs.find("ul").append(self.myOrgsHtml(d.orgs));
+                    self.myOrgList = d.orgs;
                 }
             });
             
@@ -38,8 +51,8 @@
                 url:"/getJoinOrgs",
                 method:'post',
                 success:function(d){
-                    self.tabCons.$joinOrgs.find("ul").append(self.joinOrgHtml(d.orgs));
-                    self.orgList.push.call(self.orgList,d.orgs);
+                    self.$joinOrgs.find("ul").append(self.joinOrgHtml(d.orgs));
+                    self.joinOrgList = d.orgs;
                 }
             });
         },
@@ -60,6 +73,15 @@
                             '</div>';
                 return $li.html(html).data('doc',n);
             });
+        },
+        shareOrgHtml:function(){
+            return $.map(this.myOrgList,function(n){
+                return '<li>组织代码：'+n._id+'</li>';
+            }).concat(
+                $.map(this.joinOrgList,function(n){
+                    return '<li>组织代码：'+n.org+'</li>';
+                })
+            );
         },
         reposHtml:function(list){
             return $.map(list,function(n){
@@ -88,7 +110,10 @@
         },
         joinOrg:function(){
             var self = this,
-                data = {};
+                data = self.$joinOrgs.find('.join-org-box').inputBox('data',{valid:true});;
+                
+            if(!data)
+                return;
                 
             data._id = +$('#join-org-code').val();
             data.password = $('#join-org-password').val();
@@ -102,16 +127,17 @@
                         type:'success',
                         content:'你已成功加入组织'
                     });
-                    self.tabCons.$joinOrgs.find("ul").append(self.joinOrgHtml([d]));
+                    self.$joinOrgs.find("ul").append(self.joinOrgHtml([d]));
+                    self.$joinOrgs.find('.cancel-btn').click();
                 }
             });
         },
         createOrg:function(){
             var self = this,
-                data = {};
+                data = self.$myOrgs.find('.create-org-box').inputBox('data',{valid:true});
                 
-            data.name = $('#org-name').val();
-            data.password = $('#org-password').val();
+            if(!data)
+                return;
                 
             $.docsajax({
                 url:'/createOrg',
@@ -123,7 +149,8 @@
                         title:'你已成功创建组织：',
                         content:data.name
                     });
-                    self.tabCons.$myOrgs.find("ul").append(self.myOrgsHtml([d]));
+                    self.$myOrgs.find("ul").append(self.myOrgsHtml([d]));
+                    self.$myOrgs.find('.cancel-btn').click();
                 }
             });
         },
@@ -131,16 +158,23 @@
             var $tabCons = $('.item-list'),
                 $tabs = $('.slide-tabs li'),
                 self = this;
+                
             $('.slide-tabs').on('click','li',function(){
                 var i = $(this).index();
-                $tabCons.addClass('hidden')
-                    .eq(i).removeClass('hidden');
-                $tabs.removeClass('active')
-                    .eq(i).addClass('active');
+                
+                if(!$(this).hasClass('active')){
+                    $tabCons.addClass('hidden')
+                        .eq(i).removeClass('hidden');
+                    $tabs.removeClass('active')
+                        .eq(i).addClass('active');
+                        
+                    self.state.nowTab = $tabCons.eq(i);
+                    self.state.showDetail(false);
+                }
             });
             
             //删除文档
-            self.tabCons.$allDocs
+            self.$allDocs
             .on("click",".del-item",function(){
                 var $li = $(this).closest("li"),
                     doc = $li.data("doc");
@@ -159,32 +193,34 @@
                 });
             })
             .on('click','.share-item',function(){
-                $('.detail-box').removeClass('hidden');
-                $(this).closest('li').addClass('active');
+                self.state.showDetail(true,$(this).closest('li'));
+                $('.detail-box ul').html(self.shareOrgHtml());
             });
             
             //添加组织
-            self.tabCons.$myOrgs.find('.create-org-btn,.cancel-btn').click(function(){
-                self.tabCons.$myOrgs.find('.create-org-box,.create-org-btn').toggleClass('hidden');
+            self.$myOrgs.find('.create-org-btn,.cancel-btn').click(function(){
+                self.$myOrgs.find('.create-org-box,.create-org-btn').toggleClass('hidden');
+                self.$myOrgs.find('.create-org-box').inputBox('clear');
             });
             
             //提交组织
-            self.tabCons.$myOrgs.find('.submit-btn').click(function(){
+            self.$myOrgs.find('.submit-btn').click(function(){
                 self.createOrg();
             });
             
             //加入组织
-            self.tabCons.$joinOrgs.find('.join-org-btn,.cancel-btn').click(function(){
-                self.tabCons.$joinOrgs.find('.join-org-box,.join-org-btn').toggleClass('hidden');
+            self.$joinOrgs.find('.join-org-btn,.cancel-btn').click(function(){
+                self.$joinOrgs.find('.join-org-box,.join-org-btn').toggleClass('hidden');
+                self.$joinOrgs.find('.join-org-box').inputBox('clear');
             });
             
             //提交加入组织
-            self.tabCons.$joinOrgs.find('.submit-btn').click(function(){
+            self.$joinOrgs.find('.submit-btn').click(function(){
                 self.joinOrg();
             });
             
             $('.close-btn').click(function(){
-                $('.detail-box').addClass('hidden');
+                self.state.showDetail(false);
             });
         },
         init:function(){

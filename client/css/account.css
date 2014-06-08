@@ -21,6 +21,16 @@
     cursor:pointer
 }
 
+.detail-box ul{
+    padding:0;
+}
+
+.detail-box li{
+    padding:10px;
+    display:block;
+    border-bottom:1px solid #ddd;
+}
+
 .account-left{
     border-right:1px solid #ddd;
 }
@@ -33,12 +43,20 @@
     font-size:20px;
 }
 
-.account-info img{
+.account-info img,
+.account-info .img-item{
     height:60px;
     width:60px;
     border:1px solid #ddd;
     float:left;
     margin-right:10px;
+    display:inline-block;
+}
+
+.account-info .img-item{
+    color: #DDD;
+    font-size: 60px;
+    overflow: hidden;
 }
 
 .slide-tabs{
@@ -50,7 +68,6 @@
     cursor:pointer;
     padding:10px;
     border-bottom: 1px solid #ddd;
-    text-align: center;
 }
 
 .slide-tabs li.active,
@@ -108,6 +125,7 @@
 
 .item-header{
     padding:10px 15px;
+    height: 54px;
 }
 
 .item-list .opera-box a{

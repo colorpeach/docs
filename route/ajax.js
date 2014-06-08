@@ -18,7 +18,7 @@ module.exports = function(app){
   app.post('/register',function(req,res){
     var user = new User(req.body);
 
-    User.query({username:req.body.username},function(list){
+    User.query({login:req.body.username},function(list){
       if(list.length){
         res.end(baseRes({errorMsg:['用户已存在']}));
       }else{
