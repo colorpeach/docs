@@ -41,7 +41,7 @@
       <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="46" selection-start="143" selection-end="143" vertical-scroll-proportion="0.13095239">
+            <state line="1" column="44" selection-start="94" selection-end="94" vertical-scroll-proportion="0.065476194">
               <folding />
             </state>
           </provider>
@@ -544,7 +544,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="46" selection-start="143" selection-end="143" vertical-scroll-proportion="0.13095239">
+        <state line="1" column="44" selection-start="94" selection-end="94" vertical-scroll-proportion="0.065476194">
           <folding />
         </state>
       </provider>
