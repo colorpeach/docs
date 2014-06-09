@@ -31,6 +31,12 @@
     border-bottom:1px solid #ddd;
 }
 
+.detail-box li span{
+    margin-right:10px;
+    color:#428BCA;
+    cursor:pointer;
+}
+
 .account-left{
     border-right:1px solid #ddd;
 }
@@ -81,9 +87,11 @@
     content:" ";
     position:absolute;
     right:-1px;
-    top: 10px;
+    top: 0;
     height: 0;
     width: 0;
+    bottom:0;
+    margin:auto;
     border-width: 10px 10px 10px 0;
     border-style:solid;
     border-color:rgba(255,255,255,0) #ddd rgba(255,255,255,0) rgba(255,255,255,0);
@@ -96,9 +104,11 @@
     content:" ";
     position:absolute;
     right:-1px;
-    top: 12px;
+    top: 0;
     height: 0;
     width: 0;
+    bottom:0;
+    margin:auto;
     border-width: 8px 8px 8px 0;
     border-style:solid;
     border-color:rgba(255,255,255,0) #fff rgba(255,255,255,0) rgba(255,255,255,0);
@@ -137,4 +147,8 @@
 .join-org-box>div,
 .join-org-box>button{
     margin-right:10px;
+}
+
+li:hover{
+    background:#fafafa;
 }

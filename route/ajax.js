@@ -115,4 +115,10 @@ module.exports = function(app){
       res.end(baseRes({orgs:list}));
     });
   });
+
+  app.post('/getMembers',function(req,res){
+    Org.getMembers({org:req.body._id},function(list){
+      res.end(baseRes({members:list}));
+    });
+  });
 };

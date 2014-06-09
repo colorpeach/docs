@@ -199,10 +199,10 @@
         if(opts.wrap || opts.loading || opts.cover){
             $wrap.html(opts.loading ? opts.loading : pendingMsg)
             
-            if(opts.wrap){
+            if(opts.wrap && opts.cover){
                 opts.wrap.append($wrap);
             }else{
-                $('body').append($wrap = $('<div class="cover">').append($wrap));
+                (opts.wrap || $('body')).append($wrap = $('<div class="cover">').append($wrap));
             }
             
             pending[opts.mark = ++uid] = $wrap;

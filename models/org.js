@@ -51,14 +51,34 @@ Org.queryJoinOrgs = function(query,fn){
         if(err) throw err;
         
         db.collection("orgUser").find(query||null).toArray(function(err,list){
-            db.close();
-            fn && fn(list);
+            var codes = list.map(function(n){ return +n.org;});
+
+            if(codes.length){
+                db.collection("org").find({_id:{$in:codes}}).toArray(function(err,list){
+                    db.close();
+                    fn && fn(list);
+                });
+            }else{
+                db.close();
+                fn && fn(list);
+            }
         });
     });
 };
 
 Org.prototype.addDocs = function(){
-    
+
+};
+
+Org.getMembers = function(query,fn){
+    dbClient.connect(function(err,db){
+        if(err) throw err;
+
+        db.collection("orgUser").find(query||null).toArray(function(err,list){
+            db.close();
+            fn && fn(list);
+        });
+    });
 };
 
 //auto increment

@@ -45,6 +45,29 @@
 	}
 }
 /*prompt style END*/
+/*docsajax loading style START*/
+.cover{
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color:rgba(255,255,255,0.8);
+	z-index:2000;
+	padding:10px;
+}
+
+.cover>*{
+	height: 1em;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto 0;
+	text-align: center;
+}
+/*docsajax loading style END*/
 
 body{
     font-size:12px;
