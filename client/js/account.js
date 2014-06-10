@@ -7,13 +7,15 @@
         orgList:[],
         state:{
             nowTab:$('#all-docs'),
-            showDetail:function(bl,$li){
+            showDetail:function(bl,$li,title){
                 var $detail = $('.detail-box');
                 
                 this.nowTab.find('li.active').removeClass('active');
                 if(!bl){
                     $detail.addClass('hidden');
                 }else{
+                    $detail.find("ul").html("");
+                    $detail.find(".detail-header").html(title||"设置");
                     $detail.removeClass('hidden');
                     $li.addClass('active');
                 }
@@ -77,9 +79,9 @@
         shareOrgHtml:function(){
             return $.map(this.myOrgList.concat(this.joinOrgList),function(n){
                 var $li = $('<li>'),
-                    html =  '<span class="glyphicon glyphicon-unchecked"></span>'+
+                    html =  '<span class="glyphicon glyphicon-unchecked glyphicon-check fn-check"></span>'+
                             n.name;
-                return $li.html(html).data('doc',n);
+                return $li.html(html).data('org',n);
             });
         },
         reposHtml:function(list){
@@ -163,6 +165,26 @@
                 }
             });
         },
+        docLinkOrg:function(data,$this,fn){
+            var self = this,
+                data = data;
+            
+            $.docsajax({
+                url:'/docLinkOrg',
+                data:data,
+                method:'post',
+                wrap:$this.closest('li'),
+                cover:false,
+                loading:'...',
+                success:function(d){
+                    $.prompt({
+                        type:'success',
+                        content:data.link ? '你已成功分享文档' : '你已成功取消分享文档'
+                    });
+                    fn && fn(d);
+                }
+            });
+        },
         membersHtml:function(list){
             return $.map(list||[],function(n){
                 return '<li>'+n.user+'</li>';
@@ -221,7 +243,7 @@
                 });
             })
             .on('click','.share-item',function(){
-                self.state.showDetail(true,$(this).closest('li'));
+                self.state.showDetail(true,$(this).closest('li'),"分享给组织：");
                 $('.detail-box ul').html(self.shareOrgHtml());
             });
             
@@ -254,12 +276,23 @@
                 var $li = $(this).closest('li'),
                     data = $li.data('org');
                     
-                self.state.showDetail(true,$li);
+                self.state.showDetail(true,$li,"成员列表");
                 self.getMembers(data);
             });
             
             $('.close-btn').click(function(){
                 self.state.showDetail(false);
+            });
+            
+            $('.detail-box').on('click','.fn-check',function(){
+                var $this = $(this),
+                    org = $this.closest('li').data('org')._id,
+                    doc = self.$allDocs.find('li.active').data('doc')._id,
+                    link = $this.hasClass('glyphicon-unchecked');
+                
+                self.docLinkOrg({org:org,doc:doc,link:link},$this,function(){
+                    $this[link ? 'removeClass' : 'addClass']('glyphicon-unchecked');
+                });
             });
         },
         init:function(){

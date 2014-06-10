@@ -81,6 +81,35 @@ Org.getMembers = function(query,fn){
     });
 };
 
+Org.linkDoc = function(query,fn){
+    dbClient.connect(function(err,db){
+        if(err) throw err;
+
+        db.collection("org.doc").find(query||null).toArray(function(err,list){
+            if(list.length){
+                db.close();
+                fn && fn({errorMsg:['文档已经分享给该组织了']});
+            }else{
+                db.collection("org.doc").save(query,function(err,list){
+                    db.close();
+                    fn && fn({});
+                });
+            }
+        });
+    });
+};
+
+Org.delDoc = function(query,fn){
+    dbClient.connect(function(err,db){
+        if(err) throw err;
+
+        db.collection("org.doc").remove(query,function(err,list){
+            db.close();
+            fn && fn({});
+        });
+    });
+};
+
 //auto increment
 function insertDocument(doc, targetCollection,fn) {
     targetCollection.find().sort( { _id: -1 }).limit(1).toArray(function(err,list){

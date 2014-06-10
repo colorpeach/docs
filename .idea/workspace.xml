@@ -23,7 +23,7 @@
       <file leaf-file-name="ajax.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/route/ajax.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="24" selection-start="3062" selection-end="3062" vertical-scroll-proportion="0.0">
+            <state line="137" column="5" selection-start="3467" selection-end="3467" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -32,7 +32,7 @@
       <file leaf-file-name="org.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/org.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="0" selection-start="1907" selection-end="1907" vertical-scroll-proportion="0.0">
+            <state line="99" column="2" selection-start="2463" selection-end="2463" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -41,7 +41,7 @@
       <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="6" selection-start="273" selection-end="273" vertical-scroll-proportion="0.45833334">
+            <state line="3" column="0" selection-start="172" selection-end="172" vertical-scroll-proportion="0.19642857">
               <folding />
             </state>
           </provider>
@@ -50,7 +50,7 @@
       <file leaf-file-name="edit.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/views/edit.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="32" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0">
+            <state line="20" column="16" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -79,8 +79,8 @@
         <option value="$PROJECT_DIR$/route/index.js" />
         <option value="$PROJECT_DIR$/models/doc.js" />
         <option value="$PROJECT_DIR$/models/org.js" />
-        <option value="$PROJECT_DIR$/route/ajax.js" />
         <option value="$PROJECT_DIR$/client/views/edit.jade" />
+        <option value="$PROJECT_DIR$/route/ajax.js" />
         <option value="$PROJECT_DIR$/db/index.js" />
       </list>
     </option>
@@ -128,6 +128,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -276,14 +277,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="D:/program file/nodejs/node.exe" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="last_opened_file_path" value="D:/program file/nodejs/node.exe" />
   </component>
   <component name="RunManager" selected="Node.js.app.js">
     <configuration default="true" type="NodeJSRemoteDebug" factoryName="Node JS Remote Debug">
@@ -341,7 +341,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -413,7 +413,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="129" />
+      <option name="time" value="131" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -461,16 +461,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/route/check.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="17" selection-start="1204" selection-end="1204" vertical-scroll-proportion="0.065476194">
-          <folding />
-        </state>
+        <state line="39" column="17" selection-start="1204" selection-end="1204" vertical-scroll-proportion="0.065476194" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="4" selection-start="545" selection-end="545" vertical-scroll-proportion="0.065476194">
-          <folding />
-        </state>
+        <state line="19" column="4" selection-start="545" selection-end="545" vertical-scroll-proportion="0.065476194" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/route/index.js">
@@ -487,30 +483,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/route/ajax.js">
+    <entry file="file://$PROJECT_DIR$/client/views/edit.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="24" selection-start="3062" selection-end="3062" vertical-scroll-proportion="0.0">
+        <state line="20" column="16" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/org.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="1907" selection-end="1907" vertical-scroll-proportion="0.0">
+        <state line="99" column="2" selection-start="2463" selection-end="2463" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/edit.jade">
+    <entry file="file://$PROJECT_DIR$/route/ajax.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="32" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0">
+        <state line="137" column="5" selection-start="3467" selection-end="3467" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="273" selection-end="273" vertical-scroll-proportion="0.45833334">
+        <state line="3" column="0" selection-start="172" selection-end="172" vertical-scroll-proportion="0.19642857">
           <folding />
         </state>
       </provider>

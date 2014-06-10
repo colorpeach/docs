@@ -143,7 +143,9 @@ body{
 }
 
 .main{
-    min-height:500px;
+	margin-top:-77px;
+	padding-top:77px;
+    min-height:100%;
 }
 
 .footer{
