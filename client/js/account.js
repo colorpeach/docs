@@ -76,10 +76,12 @@
                 return $li.html(html).data('doc',n);
             });
         },
-        shareOrgHtml:function(){
+        shareOrgHtml:function(orgs){
             return $.map(this.myOrgList.concat(this.joinOrgList),function(n){
                 var $li = $('<li>'),
-                    html =  '<span class="glyphicon glyphicon-unchecked glyphicon-check fn-check"></span>'+
+                    html =  '<span class="glyphicon '+
+                             ($.inArray(""+n._id,orgs) >=0 ? '' : 'glyphicon-unchecked') +
+                            ' glyphicon-check fn-check"></span>'+
                             n.name;
                 return $li.html(html).data('org',n);
             });
@@ -243,8 +245,17 @@
                 });
             })
             .on('click','.share-item',function(){
-                self.state.showDetail(true,$(this).closest('li'),"分享给组织：");
-                $('.detail-box ul').html(self.shareOrgHtml());
+                var $li = $(this).closest('li');
+                self.state.showDetail(true,$li,"分享给组织：");
+                
+                $.docsajax({
+                    url:'/getDocOrg',
+                    data:{_id:$li.data('doc')._id},
+                    method:"post",
+                    success:function(d){
+                        $('.detail-box ul').html(self.shareOrgHtml(d.orgs));
+                    }
+                });
             });
             
             //添加组织

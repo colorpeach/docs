@@ -52,4 +52,16 @@ Doc.prototype.del = function(fn){
     });
 };
 
+Doc.prototype.linkedOrg = function(fn){
+    var _id = this._id;
+    dbClient.connect(function(err,db){
+        if(err) throw err;
+        
+        db.collection("org.doc").find({doc:_id}).toArray(function(err,list){
+            db.close();
+            fn && fn(list);
+        });
+    });
+}
+
 module.exports =  Doc;

@@ -137,4 +137,12 @@ module.exports = function(app){
       });
     }
   });
+  
+  app.post('/getDocOrg',function(req,res){
+    var doc = new Doc(req.body);
+    doc.linkedOrg(function(data){
+      data = (data||[]).map(function(n){return n.org});
+      res.end(baseRes({orgs:data}));
+    });
+  });
 };
