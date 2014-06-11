@@ -48,7 +48,7 @@ module.exports = function(app){
     });
   });
 
-  app.post('/addDoc',function(req,res){
+  app.post('/saveDoc',function(req,res){
     req.body.user = req.session.user.login;
     var doc = new Doc(req.body);
     doc.save(function(data){
@@ -66,6 +66,12 @@ module.exports = function(app){
     var doc = new Doc(req.body);
     doc.del(function(data){
       res.end(baseRes(data));
+    });
+  });
+
+  app.post('/getPrivateDocs',function(req,res){
+    Doc.getPrivateDocs({user:req.session.user.login},function(list){
+        res.end(baseRes({docs:list}));
     });
   });
   

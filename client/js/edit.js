@@ -36,7 +36,7 @@
             }
             
             $.docsajax({
-                url:'/addDoc',
+                url:'/saveDoc',
                 method:'post',
                 data:JSON.stringify(data),
                 contentType:'application/json',

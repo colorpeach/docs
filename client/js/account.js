@@ -69,9 +69,14 @@
                             '<a href="javascript:;" class="del-item" data-tip="删除">'+
                                 '<span class="glyphicon glyphicon-remove"></span>'+
                             '</a>'+
+                            (n.auth === 'public' ? 
+                            '<a href="javascript:;" class="lock-item" data-tip="不公开">'+
+                                '<span class="glyphicon glyphicon-lock">'+
+                            '</a>'
+                            :
                             '<a href="javascript:;" class="share-item" data-tip="分享">'+
                                 '<span class="glyphicon glyphicon-share-alt">'+
-                            '</a>'+
+                            '</a>')+
                             '</div>';
                 return $li.html(html).data('doc',n);
             });
@@ -187,6 +192,28 @@
                 }
             });
         },
+        lockDoc:function($this){
+            var data = $this.closest('li').data("doc");
+            
+            data = {
+                _id:data._id,
+                auth:"private"
+            };
+            
+            $.docsajax({
+                url:'/saveDoc',
+                method:'post',
+                data:data,
+                wrap:$this.closest('li'),
+                cover:false,
+                success:function(d){
+                    $.prompt({
+                        type:'success',
+                        content:'操作成功'
+                    });
+                }
+            });
+        },
         membersHtml:function(list){
             return $.map(list||[],function(n){
                 return '<li>'+n.user+'</li>';
@@ -256,6 +283,9 @@
                         $('.detail-box ul').html(self.shareOrgHtml(d.orgs));
                     }
                 });
+            })
+            .on('click','.lock-item',function(){
+                self.lockDoc($(this));
             });
             
             //添加组织

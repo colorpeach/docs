@@ -39,7 +39,7 @@ Org.prototype.addMember = function(user,fn){
     dbClient.connect(function(err,db){
         if(err) throw err;
 
-        db.collection("orgUser").save(data,function(err,list){
+        db.collection("org.user").save(data,function(err,list){
             db.close();
             fn && fn(list);
         });
@@ -50,7 +50,7 @@ Org.queryJoinOrgs = function(query,fn){
     dbClient.connect(function(err,db){
         if(err) throw err;
         
-        db.collection("orgUser").find(query||null).toArray(function(err,list){
+        db.collection("org.user").find(query||null).toArray(function(err,list){
             var codes = list.map(function(n){ return +n.org;});
 
             if(codes.length){
@@ -74,7 +74,7 @@ Org.getMembers = function(query,fn){
     dbClient.connect(function(err,db){
         if(err) throw err;
 
-        db.collection("orgUser").find(query||null).toArray(function(err,list){
+        db.collection("org.user").find(query||null).toArray(function(err,list){
             db.close();
             fn && fn(list);
         });

@@ -18,3 +18,22 @@ block content
             |  #{doc.user}
   
 block script
+  if user
+    script(type='text/javascript').
+      $.docsajax({
+        url:'/getPrivateDocs',
+        method:'post',
+        success:function(d){
+          $('.org-doc').html($.map(d.docs,function(doc){
+            return '<div class="col-lg-3"><div class="panel panel-default">'+
+                    '<div class="panel-heading"><a href="'+
+                      '/'+doc.user+'/'+doc.title+
+                    '">'+
+                      doc.title+
+                    '</a></div>'+
+                    '<div class="panel-body"><span class="user-span pull-right" data-tip="作者">'+
+                    '<span class="glyphicon glyphicon-user">'+doc.user+
+                    '</span></span></div></div></div>';
+          }).join(""));
+        }
+      });

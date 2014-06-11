@@ -1,6 +1,15 @@
 var dbClient = require('../db'),
     ObjectID = require('mongodb').ObjectID;
 
+function clear(obj){
+    for(var n in obj){
+        if(obj.hasOwnProperty(n) && obj[n] == undefined){
+            delete obj[n];
+        }
+    }
+    return obj;
+};
+
 function Doc(opts){
       this.title = opts.title;
       this.content = opts.content;
@@ -23,7 +32,7 @@ Doc.query = function(query,fun){
 
 //save a doc
 Doc.prototype.save = function(fun){
-    var data = this;
+    var data = clear(this);
     
     if(!data.user)
         fun && fun([]);
@@ -62,6 +71,34 @@ Doc.prototype.linkedOrg = function(fn){
             fn && fn(list);
         });
     });
-}
+};
+
+Doc.getPrivateDocs = function(query,fn){
+    dbClient.connect(function(err,db){
+        if(err) throw err;
+
+        db.collection("org.user").find(query||null).toArray(function(err,list){
+            var codes = list.map(function(n){ return n.org;});
+
+            if(codes.length){
+                db.collection("org.doc").find({$or:[{org:{$in:codes}},{user:query.user}]}).toArray(function(err,list){
+                    var docs = list.map(function(n){return new ObjectID(n.doc);});
+                    if(list.length){
+                        db.collection("docs").find({_id:{$in:docs}}).toArray(function(err,list){
+                            db.close();
+                            fn && fn(list);
+                        });
+                    }else{
+                        db.close();
+                        fn && fn(list);
+                    }
+                });
+            }else{
+                db.close();
+                fn && fn(list);
+            }
+        });
+    });
+};
 
 module.exports =  Doc;
