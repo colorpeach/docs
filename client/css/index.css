@@ -1,3 +1,17 @@
+.doc-item{
+    padding:15px;
+    width:25%;
+}
+
+.doc-item>div{
+    border:1px solid #ddd;
+    padding:10px;
+}
+
+.doc-item>div>div{
+    height:20px;
+}
+
 .user-span,
 .star-span{
     opacity:.3;

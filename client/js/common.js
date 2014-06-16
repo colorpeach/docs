@@ -247,7 +247,7 @@
     
     
     
-    function InputBox(el){
+    function InputBox(el,method){
         this._defaultValidator = {
             required:{
                 msg:'请填写必填项',
@@ -261,6 +261,7 @@
         this.$el = el;
         this._validator = {};
         this._parseValidator();
+        this._matchRegexp = /^(\/[\s\S]+\/)(?::|$)/;
         
         this._init();
     }
@@ -269,7 +270,9 @@
         constructor:InputBox,
         _handler:function(method,arg){
             if($.isPlainObject(method)){
-                
+                for(var n in method){
+                    this[n] && this[n](method[n]);
+                }
             }else if(typeof method === "string" && method[0] !== "_"){
                 if(method in this)
                     return this[method](arg);
@@ -289,12 +292,12 @@
                     code = '';
                     
                 name && $.each(valids,function(_,m){
-                        code += self._generateVlidator(m,name);
+                    code += self._generateVlidator(m,name);
                 });
                 
                 if(code){
                     code += ' return {pass:true};';
-                    self._validator[name] = new Function('_',code);
+                    self._validator[name] = new Function('_','_p',code);
                 }
             });
         },
@@ -305,17 +308,22 @@
                 msg = valid[1],
                 code = '';
             
+            //regexp
+//             if(self._matchRegexp.test()){
+                
+//             }
+            
             //base type
             if(expression in self._defaultValidator){
                 code += 'if(!('+self._defaultValidator[expression].expression+'))';
                 if(!msg)
-                    msg = self._defaultValidator[expression].msg || "";
+                    msg = self._defaultValidator[expression].msg || '';
                 code += '{ return {pass:false,field:"'+name+'",msg:"'+msg+'"};}';
+            }else{
+                //operator
+                code += 'if(!('+expression+'))';
+                code += '{ return {pass:false,field:"'+name+'",msg:"'+(msg||'')+'"};}';
             }
-            
-            //regexp
-            
-            //operator
             
             return code;
         },
@@ -327,10 +335,33 @@
                 content:result.msg
             });
         },
+        _submitBind:function(){
+            var self = this;
+            self.$el.off('keydown.inputBox');
+            self.$el.on('keydown.inputBox','input,textarea',function(e){
+                if(e.keyCode === 13){
+                    var $this = $(this),
+                        $ipt = self.$el.find('input:enabled,textarea:enabled');
+                    
+                    if($this.is($ipt.filter(":last"))){
+                        self._submitButton.click();
+                    }else{
+                        $ipt.eq($ipt.index($this)+1).focus();
+                    }
+                }
+            });
+        },
+        button:function(val){
+            this._submitButton = typeof val === 'string' ? this.$el.find(val) : val;
+            this._submitBind();
+        },
+        focus:function(){
+            this.$el.find('input:enabled,textarea:enabled').eq(0).focus();
+        },
         valid:dataOrValid('valid'),
         data:dataOrValid('data'),
         clear:function(){
-            this.$el.find('input').removeClass('error').val('');
+            this.$el.find('input,textarea').removeClass('error').val('');
         },
         destroy:function(){
             
@@ -365,7 +396,7 @@
                     type !== 'valid' && (data[name] = val);
                     //get the validator
                     if((type === 'valid' || opts.valid) && name in self._validator){
-                        result = self._validator[name](val);
+                        result = self._validator[name](val,data);
                         //error
                         if(!result.pass){
                             results.push(result);

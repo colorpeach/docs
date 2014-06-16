@@ -292,7 +292,7 @@
             self.$myOrgs.find('.create-org-btn,.cancel-btn').click(function(){
                 self.state.showDetail(false);
                 self.$myOrgs.find('.create-org-box,.create-org-btn').toggleClass('hidden');
-                self.$myOrgs.find('.create-org-box').inputBox('clear');
+                self.$myOrgs.find('.create-org-box').inputBox('clear').inputBox('focus');
             });
             
             //提交组织
@@ -304,7 +304,7 @@
             self.$joinOrgs.find('.join-org-btn,.cancel-btn').click(function(){
                 self.state.showDetail(false);
                 self.$joinOrgs.find('.join-org-box,.join-org-btn').toggleClass('hidden');
-                self.$joinOrgs.find('.join-org-box').inputBox('clear');
+                self.$joinOrgs.find('.join-org-box').inputBox('clear').inputBox('focus');
             });
             
             //提交加入组织
@@ -335,6 +335,9 @@
                     $this[link ? 'removeClass' : 'addClass']('glyphicon-unchecked');
                 });
             });
+            
+            self.$myOrgs.find('.create-org-box').inputBox({button:".submit-btn"});
+            self.$joinOrgs.find('.join-org-box').inputBox({button:".submit-btn"});
         },
         init:function(){
             this._init();

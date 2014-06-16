@@ -53,4 +53,7 @@
         $('.reg-con').removeClass('hidden');
         return false;
     });
+    
+    $('.login-con').inputBox({button:$('#login-btn')});
+    $('.reg-con').inputBox({button:$('#reg-btn')});
 })();
