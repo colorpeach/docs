@@ -32,8 +32,7 @@
             });
             
             $.docsajax({
-                url:"/getDoc",
-                method:'post',
+                url:"/get/user/docs",
                 wrap:self.$allDocs,
                 success:function(d){
                     self.$allDocs.html(self.docHtml(d.docs));
@@ -41,8 +40,7 @@
             });
             
             $.docsajax({
-                url:"/getOrgs",
-                method:'post',
+                url:"/get/user/orgs",
                 success:function(d){
                     self.$myOrgs.find("ul").append(self.myOrgsHtml(d.orgs));
                     self.myOrgList = d.orgs;
@@ -50,8 +48,7 @@
             });
             
             $.docsajax({
-                url:"/getJoinOrgs",
-                method:'post',
+                url:"/get/user/join/orgs",
                 success:function(d){
                     self.$joinOrgs.find("ul").append(self.joinOrgHtml(d.orgs));
                     self.joinOrgList = d.orgs;
@@ -69,14 +66,9 @@
                             '<a href="javascript:;" class="del-item" data-tip="删除">'+
                                 '<span class="glyphicon glyphicon-remove"></span>'+
                             '</a>'+
-                            (n.auth === 'public' ? 
-                            '<a href="javascript:;" class="lock-item" data-tip="不公开">'+
-                                '<span class="glyphicon glyphicon-lock">'+
-                            '</a>'
-                            :
                             '<a href="javascript:;" class="share-item" data-tip="分享">'+
                                 '<span class="glyphicon glyphicon-share-alt">'+
-                            '</a>')+
+                            '</a>'+
                             '</div>';
                 return $li.html(html).data('doc',n);
             });
@@ -137,7 +129,7 @@
             data.password = $('#join-org-password').val();
                 
             $.docsajax({
-                url:'/joinOrg',
+                url:'/post/user/join/org',
                 data:data,
                 method:'post',
                 success:function(d){
@@ -158,7 +150,7 @@
                 return;
                 
             $.docsajax({
-                url:'/createOrg',
+                url:'/post/create/org',
                 data:data,
                 method:'post',
                 success:function(d){
@@ -193,26 +185,26 @@
             });
         },
         lockDoc:function($this){
-            var data = $this.closest('li').data("doc");
+//             var data = $this.closest('li').data("doc");
             
-            data = {
-                _id:data._id,
-                auth:"private"
-            };
+//             data = {
+//                 _id:data._id,
+//                 auth:"private"
+//             };
             
-            $.docsajax({
-                url:'/saveDoc',
-                method:'post',
-                data:data,
-                wrap:$this.closest('li'),
-                cover:false,
-                success:function(d){
-                    $.prompt({
-                        type:'success',
-                        content:'操作成功'
-                    });
-                }
-            });
+//             $.docsajax({
+//                 url:'/saveDoc',
+//                 method:'post',
+//                 data:data,
+//                 wrap:$this.closest('li'),
+//                 cover:false,
+//                 success:function(d){
+//                     $.prompt({
+//                         type:'success',
+//                         content:'操作成功'
+//                     });
+//                 }
+//             });
         },
         membersHtml:function(list){
             return $.map(list||[],function(n){
@@ -223,9 +215,8 @@
             var self = this;
             
             $.docsajax({
-                url:'/getMembers',
+                url:'/get/org/users',
                 data:{_id:org._id},
-                method:'post',
                 wrap:$('.detail-box'),
                 success:function(d){
                     d.members.unshift({user:org.owner});
@@ -259,7 +250,7 @@
                     doc = $li.data("doc");
                 
                 $.docsajax({
-                    url:"/delDoc",
+                    url:"/post/del/doc",
                     data:doc,
                     method:"post",
                     success:function(d){

@@ -4,11 +4,6 @@ var Doc = require('../models/doc'),
 
 //页面路由
 module.exports = function(app){
-
-//  app.all('*',function(req,res,next){
-//    console.log(req.headers);
-//    next();
-//  });
   
   app.get('/api',function(req,res){
     res.render('todo/index');

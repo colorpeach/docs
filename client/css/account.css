@@ -153,6 +153,7 @@
     padding:10px 15px;
     border-bottom:1px solid #ddd;
     display:block;
+    position: relative;
 }
 
 .item-header{

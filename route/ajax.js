@@ -56,11 +56,7 @@ module.exports = function(app){
     });
   });
   
-  app.post('/getDoc',function(req,res){
-    Doc.query({user:req.session.user.login},function(list){
-      res.end(baseRes({docs:list}));
-    });
-  });
+
   
   app.post('/delDoc',function(req,res){
     var doc = new Doc(req.body);
