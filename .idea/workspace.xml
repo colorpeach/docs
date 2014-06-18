@@ -38,19 +38,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="29" selection-start="126" selection-end="126" vertical-scroll-proportion="0.14666666">
+            <state line="1" column="40" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="47" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/route/page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="21" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0">
+            <state line="13" column="21" selection-start="367" selection-end="367" vertical-scroll-proportion="-1.7133334">
               <folding />
             </state>
           </provider>
@@ -368,7 +377,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -478,13 +487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="25" selection-start="719" selection-end="719" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/doc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
@@ -513,13 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/route/page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="21" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="24" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
@@ -529,7 +524,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="29" selection-start="126" selection-end="126" vertical-scroll-proportion="0.14666666">
+        <state line="1" column="40" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="47" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/route/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="21" selection-start="367" selection-end="367" vertical-scroll-proportion="-1.7133334">
           <folding />
         </state>
       </provider>
