@@ -17,7 +17,7 @@ module.exports = function(app){
     //登出
     app.get('/logout',function(req,res){
         req.session.destroy(function(){
-            res.redirect(req.headers.referrer||'/');
+            res.redirect(req.headers.referer||'/');
         });
     });
 
