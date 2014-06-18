@@ -177,6 +177,7 @@
         promise.then(function(d){
             var d = JSON.parse(d);
             
+            removeReload(opts);
             removeMark(opts);
             removeBlock(opts);
             
