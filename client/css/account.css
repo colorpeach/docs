@@ -147,6 +147,7 @@
 
 .item-list,.item-list ul{
     padding:0;
+    position: relative;
 }
 
 .item-list li{
