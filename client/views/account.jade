@@ -33,12 +33,12 @@ block content
         button.create-org-btn.btn.btn-default(data-tip='创建组织')
           span.glyphicon.glyphicon-plus
         div.create-org-box.form-inline.hidden
-          div.form-group
+          div.form-group.line-input
             label.sr-only 组织名称
-            input#org-name.line-input(name='name',type='text',placeholder='组织名称',data-validator='required:请输入组织名称,/\d+/')
-          div.form-group
+            input#org-name(name='name',type='text',placeholder='组织名称',data-validator='required:请输入组织名称,/\d+/')
+          div.form-group.line-input
             label.sr-only 组织密码
-            input#org-password.line-input(name='password',type='text',placeholder='组织密码',data-validator='required:请输入组织密码')
+            input#org-password(name='password',type='text',placeholder='组织密码',data-validator='required:请输入组织密码')
           button.submit-btn.btn.btn-primary 提交
           button.cancel-btn.btn.btn-default 取消
       ul
@@ -47,12 +47,12 @@ block content
         button.join-org-btn.btn.btn-default(data-tip='加入组织')
           span.glyphicon.glyphicon-arrow-left
         div.join-org-box.form-inline.hidden
-          div.form-group
+          div.form-group.line-input
             label.sr-only 组织代码
-            input#join-org-code.line-input(name='_id',type='text',placeholder='组织代码',data-validator='required:请输入组织代码')
-          div.form-group
+            input#join-org-code(name='_id',type='text',placeholder='组织代码',data-validator='required:请输入组织代码')
+          div.form-group.line-input
             label.sr-only 组织密码
-            input#join-org-password.line-input(name='password',type='text',placeholder='组织密码',data-validator='required:请输入组织密码')
+            input#join-org-password(name='password',type='text',placeholder='组织密码',data-validator='required:请输入组织密码')
           button.submit-btn.btn.btn-primary 提交
           button.cancel-btn.btn.btn-default 取消
       ul
