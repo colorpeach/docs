@@ -1,5 +1,6 @@
 .doc-item{
-    padding:15px;
+    padding:0 15px;
+    margin-bottom:15px;
     width:25%;
     float:left;
 }

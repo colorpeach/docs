@@ -11,13 +11,13 @@ module.exports = function(app){
 
     //登陆页面
     app.get('/login',function(req,res){
-        res.render('login',{login:true,backurl:req.query.backurl});
+        res.render('login',{login:true,backurl:req.query.backurl||'/'});
     });
 
     //登出
     app.get('/logout',function(req,res){
         req.session.destroy(function(){
-            res.redirect(req.headers.referrer);
+            res.redirect(req.headers.referrer||'/');
         });
     });
 
