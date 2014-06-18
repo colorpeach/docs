@@ -60,7 +60,7 @@
                 var $li = $("<li>"),
                     html = '<a href="'+n.user+'/'+n.title+'">'+n.title+'</a>'+
                             '<div class="pull-right opera-box">'+
-                            '<a href="/edit?user='+n.user+'&_id='+n._id+'" data-tip="编辑">'+
+                            '<a href="/edit?_id='+n._id+'" data-tip="编辑">'+
                                 '<span class="glyphicon glyphicon-pencil"></span>'+
                             '</a>'+
                             '<a href="javascript:;" class="del-item" data-tip="删除">'+
@@ -169,7 +169,7 @@
                 data = data;
             
             $.docsajax({
-                url:'/docLinkOrg',
+                url:'/post/org/add/doc',
                 data:data,
                 method:'post',
                 wrap:$this.closest('li'),
@@ -267,9 +267,8 @@
                 self.state.showDetail(true,$li,"分享给组织：");
                 
                 $.docsajax({
-                    url:'/getDocOrg',
+                    url:'/get/doc/orgs',
                     data:{_id:$li.data('doc')._id},
-                    method:"post",
                     success:function(d){
                         $('.detail-box ul').html(self.shareOrgHtml(d.orgs));
                     }

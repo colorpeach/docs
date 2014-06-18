@@ -120,18 +120,6 @@
         $(n).attr('data-tip',$(n).attr('title'));
         $(n).removeAttr('title');
     });
-    
-    //退出登录
-    $('#logout').click(function(){
-        $.ajax({
-            url:'/logout',
-            method:'post',
-            success:function(d){
-                location.reload();
-            }
-        });
-        return false;
-    });
 })();
 
 (function(){
@@ -150,7 +138,7 @@
     var pendingMsg = '加载中...';
     
     $.ajaxSetup({
-        timeout:10
+        timeout:10000
     });
     
     $.docsajax = function(opts){
@@ -174,20 +162,20 @@
         
         addMark(opts);
 
-        promise.then(function(d){
+        promise.then(function(d,type,promise){
             var d = JSON.parse(d);
             
             removeMark(opts);
             removeBlock(opts);
             
             if(d.error){
-                opts.fail && opts.fail(d);
+                opts.fail && opts.fail(d,promise);
                 $.prompt({
                     type:'warning',
                     content:$.map(d.errorMsg,function(n){return '<p>'+n+'</p>';})
                 });
             }else{
-                success && success(d);
+                success && success(d,promise);
             }
         });
         

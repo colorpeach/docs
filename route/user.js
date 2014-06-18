@@ -27,7 +27,9 @@ module.exports = function(app){
 
     //获取用户所有组织下的所有文档
     app.get('/get/user/orgs/docs',function(req,res){
-
+        Doc.getPrivateDocs({user:req.session.user.login},function(list){
+            res.end(baseRes({docs:list}));
+        });
     });
 
     //用户加入组织或退出组织
@@ -53,6 +55,35 @@ module.exports = function(app){
                 }
             }else{
                 res.end(baseRes({errorMsg:['组织不存在或密码错误']}));
+            }
+        });
+    });
+
+    //用户登录
+    app.post('/login',function(req,res){
+        var user = new User(req.body);
+        User.query(user,function(list){
+            if(list.length){
+                req.session.user = user;
+                res.end(baseRes());
+            }else{
+                res.end(baseRes({errorMsg:['用户名或密码不正确']}));
+            }
+        });
+    });
+
+    //用户注册
+    app.post('/register',function(req,res){
+        var user = new User(req.body);
+
+        User.query({login:req.body.username},function(list){
+            if(list.length){
+                res.end(baseRes({errorMsg:['用户已存在']}));
+            }else{
+                user.save(function(data){
+                    req.session.user = user;
+                    res.end(baseRes({doc:data}));
+                });
             }
         });
     });

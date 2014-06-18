@@ -4,9 +4,6 @@ block css
   link(rel='stylesheet', href='/css/index.css')
   
 block content
-  if user
-    div.private-doc
-    div.org-doc
   each doc in docs
     div.doc-item
       div.panel.panel-default
@@ -16,24 +13,26 @@ block content
           span.user-span.pull-right(title='作者')
             span.glyphicon.glyphicon-user
             |  #{doc.user}
+  if user
+    div.private-doc
+    div.org-doc
   
 block script
   if user
     script(type='text/javascript').
       $.docsajax({
-        url:'/getPrivateDocs',
-        method:'post',
+        url:'/get/user/orgs/docs',
         success:function(d){
           $('.org-doc').html($.map(d.docs,function(doc){
-            return '<div class="col-lg-3"><div class="panel panel-default">'+
+            return '<div class="doc-item"><div class="panel panel-default">'+
                     '<div class="panel-heading"><a href="'+
                       '/'+doc.user+'/'+doc.title+
                     '">'+
                       doc.title+
                     '</a></div>'+
                     '<div class="panel-body"><span class="user-span pull-right" data-tip="作者">'+
-                    '<span class="glyphicon glyphicon-user">'+doc.user+
-                    '</span></span></div></div></div>';
+                    '<span class="glyphicon glyphicon-user"></span>'+doc.user+
+                    '</span></div></div></div>';
           }).join(""));
         }
       });

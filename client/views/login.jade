@@ -4,7 +4,7 @@ block css
   link(rel='stylesheet', href='/css/login.css')
   
 block content
-  div.login-box.border
+  div.login-box.border(data-backurl='#{backurl}')
     div.login-con
       div.form-group.line-input
         label(for="username") 用户名

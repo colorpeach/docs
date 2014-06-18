@@ -3,8 +3,8 @@ var baseRes = require('./baseResponse');
 
 module.exports = function(app){
     //获取与文档有关联的所有组织
-    app.get('/get/doc/orgs',funtion(req,res){
-        var doc = new Doc(req.body);
+    app.get('/get/doc/orgs',function(req,res){
+        var doc = new Doc(req.query);
         doc.linkedOrg(function(data){
             data = (data||[]).map(function(n){return n.org});
             res.end(baseRes({orgs:data}));

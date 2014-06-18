@@ -1,6 +1,7 @@
 .doc-item{
     padding:15px;
     width:25%;
+    float:left;
 }
 
 .doc-item>div{

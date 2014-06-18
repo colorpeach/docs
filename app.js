@@ -25,6 +25,4 @@ app.listen(process.env.PORT || 3000,function(){
     console.log("running");
 });
 
-require("./route")(app);
-require("./route/ajax")(app);
-require("./route/check")(app);
+require("./route/route.js")(app);

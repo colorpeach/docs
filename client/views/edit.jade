@@ -6,8 +6,8 @@ block css
 block content
   div.edit-box
     div.edit-left
-      div.form-group
-        input#title.form-control(type="text",placeholder="请输入文档名...",value='#{doc.title||""}')
+      div.form-group.line-input
+        input#title(type="text",placeholder="请输入文档名...",value='#{doc.title||""}')
       div.form-group.btn-toolbar
         div.btn-group
           if doc.auth == "private"

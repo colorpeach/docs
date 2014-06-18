@@ -9,10 +9,10 @@
         $.docsajax({
             url:'/login',
             method:'post',
-            data:JSON.stringify(data),
-            contentType:'application/json',
-            success:function(d){
-                location.href = "/";
+            data:data,
+            block:'请求仍在进行...',
+            success:function(d,promise){
+                location.href = $('.login-box').data('backurl')||'/';
             }
         });
     });
@@ -34,10 +34,10 @@
         $.docsajax({
             url:'/register',
             method:'post',
-            data:JSON.stringify(data),
-            contentType:'application/json',
+            data:data,
+            block:'请求仍在进行...',
             success:function(d){
-                location.href = "/";
+                location.href = $('.login-box').data('backurl')||'/';
             }
         });
     });

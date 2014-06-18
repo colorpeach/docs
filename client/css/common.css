@@ -1536,6 +1536,10 @@ input{
 	border-color:#ddd;
 }
 
+input:focus{
+	border-color:#428BCA;
+}
+
 .form-group{
 	margin-bottom:10px;
 }
@@ -1570,6 +1574,7 @@ input{
   position:absolute;
   bottom:0;
   background-color: #DDD;
+  z-index:1;
 }
 
 .line-input:after{

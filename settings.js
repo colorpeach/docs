@@ -9,7 +9,8 @@ var settings = {
     },
     url:'mongodb://colorpeach:ll0427##@ds033699.mongolab.com:33699/docs',
     secret:'colorpeach',
-    escapePath:'login|logout|register|edit|account|doc|get|post|put|options|head|delete|fetch'
+    authPath:'register|edit|account|doc|get|post|put|options|head|delete',
+    unauthPath:'|js|lib|css|views|common|utils|login|logout|fetch'
 };
 
 module.exports = settings;
