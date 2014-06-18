@@ -141,10 +141,17 @@
     *@param wrap {Dom}
     *@param cover {boolean}
     *@param fail {function}
+    *@param block {boolean|string}
     */
     var uid = 0;
     var pending = {};
+    var block = {};
+    var queue = {};
     var pendingMsg = '加载中...';
+    
+    $.ajaxSetup({
+        timeout:10000
+    });
     
     $.docsajax = function(opts){
         var success,error;
@@ -159,6 +166,10 @@
             delete opts.error;
         }
         
+        if(opts.block && addBlock(opts) === false){
+            return;
+        }
+        
         var promise = $.ajax(opts);
         
         addMark(opts);
@@ -167,6 +178,7 @@
             var d = JSON.parse(d);
             
             removeMark(opts);
+            removeBlock(opts);
             
             if(d.error){
                 opts.fail && opts.fail(d);
@@ -180,14 +192,20 @@
         });
         
         promise.error(function(promise,type,content){
+            if(type === 'timeout'){
+                addReload(opts);
+            }else{
+                removeReload(opts);
+                removeMark(opts);
+                $.prompt({
+                    type:'danger',
+                    title:'错误：',
+                    content:content
+                });
+            }
             
-            removeMark(opts);
+            removeBlock(opts);
             
-            $.prompt({
-                type:'danger',
-                title:'错误：',
-                content:content
-            });
             error && error(arguments);
         });
     };
@@ -205,17 +223,83 @@
                 (opts.wrap || $('body')).append($wrap = $('<div class="cover">').append($wrap));
             }
             
+            opts.$wrap = $wrap;
             pending[opts.mark = ++uid] = $wrap;
         }
     };
     
     //remove loading
     function removeMark(opts){
-        if(pending[opts.mark]){
+        if(opts.mark in pending){
             pending[opts.mark].remove();
             delete pending[opts.mark];
         }
-    };
+    }
+    
+    //cancel request if last request don't response
+    function addBlock(opts){
+        if(opts.block){
+            var blockMark = opts.url+'|'+opts.method;
+            if(blockMark in block){
+                if(typeof opts.block === 'string'){
+                    $.prompt({
+                        type:"warning",
+                        content:opts.block
+                    });
+                }
+                return false;
+            }else{
+                block[blockMark] = opts.block;
+            }
+        }
+    }
+    
+    //last request has responsed, remove block
+    function removeBlock(opts){
+        if(opts.block){
+            var blockMark = opts.url+'|'+opts.method;
+            if(blockMark in block){
+                delete block[blockMark];
+            }
+        }
+    }
+    
+    //add reload div
+    function addReload(opts){
+        var $wrap = opts.$wrap,
+            $reload = '请求超时，<a href="javascript:;" class="reload">重试</a>';
+        
+        if($wrap){
+            if($wrap.is('.cover')){
+                $wrap.children().html($reload);
+            }else{
+                $wrap.html($reload);
+            }
+
+            //user can reload when request timeout
+            $wrap.find('.reload')
+            .data('opts',opts)
+            .on('click',function(){
+                var opts = $(this).data('opts');
+
+                removeReload(opts);
+                $.docsajax(opts);
+
+                return false;
+            });
+        }
+    }
+    
+    //remove reload div
+    function removeReload(opts){
+        var $wrap = opts.$wrap;
+        
+        if($wrap){
+            opts.$wrap = null;
+            $wrap.find('.reload').off().removeData('opts');
+            $wrap.remove();
+        }
+    }
 })();
 
 (function(){
