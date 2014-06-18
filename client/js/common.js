@@ -425,6 +425,9 @@
         _errorHandler:function handler(result){
             var $ipt = this.$el.find('[name='+result.field+'],[id='+result.field+']').eq(0);
             $ipt.addClass('error');
+            this._errorPrompt(result);
+        },
+        _errorPrompt:function(result){
             $.prompt({
                 type:'warning',
                 content:result.msg
@@ -453,20 +456,20 @@
         focus:function(){
             this.$el.find('input:enabled,textarea:enabled').eq(0).focus();
         },
-        valid:dataOrValid('valid'),
-        data:dataOrValid('data'),
         clear:function(){
             this.$el.find('input,textarea').removeClass('error').val('');
         },
         destroy:function(){
             
         },
-        config:function(opts){
+        errorHandler:function(val){
             //error handler
-            if($.isFunction(opts.handler)){
-                this._errorHandler = opts.handler;
+            if($.isFunction(val)){
+                this._errorPrompt = val;
             }
-        }
+        },
+        valid:dataOrValid('valid'),
+        data:dataOrValid('data')
     };
     
     function dataOrValid(type){
