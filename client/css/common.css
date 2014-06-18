@@ -1552,9 +1552,32 @@ input{
 	padding:10px;
 }
 
-.form-group .line-input{
+.line-input{
+  position:relative;
+}
+
+.line-input input{
 	border-width:0 0 1px;
 	outline:0 none;
+}
+
+.line-input:after,
+.line-input:before{
+  content:' ';
+  display:block;
+  height:5px;
+  width:1px;
+  position:absolute;
+  bottom:0;
+  background-color: #DDD;
+}
+
+.line-input:after{
+  left:0;
+}
+
+.line-input:before{
+  right:0;
 }
 
 .form-inline .form-group{
