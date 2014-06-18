@@ -150,7 +150,7 @@
     var pendingMsg = '加载中...';
     
     $.ajaxSetup({
-        timeout:10000
+        timeout:10
     });
     
     $.docsajax = function(opts){
@@ -177,7 +177,6 @@
         promise.then(function(d){
             var d = JSON.parse(d);
             
-            removeReload(opts);
             removeMark(opts);
             removeBlock(opts);
             
@@ -309,6 +308,8 @@
     *@param {Object}
     *@return {Object}
     */
+    var matchRegexp = /^(\/[\s\S]+\/)(?::|$)/;
+    
     $.fn.inputBox = function(method,arg){
         var $this = $(this);
         $this.each(function(_,n){
@@ -316,7 +317,7 @@
                 obj = $n.data('inputBox');
                 
             if(!obj){
-                obj = new InputBox($n);
+                obj = new InputBox($n,method);
                 $n.data('inputBox',obj);
             }
             
@@ -329,8 +330,6 @@
         
         return result == undefined ? $this : result;
     };
-    
-    
     
     function InputBox(el,method){
         this._defaultValidator = {
@@ -345,10 +344,9 @@
         };
         this.$el = el;
         this._validator = {};
-        this._parseValidator();
-        this._matchRegexp = /^(\/[\s\S]+\/)(?::|$)/;
         
-        this._init();
+        this._init(method||{});
+        this._parseValidator();
     }
     
     InputBox.prototype = {
@@ -363,8 +361,11 @@
                     return this[method](arg);
             }
         },
-        _init:function(){
-            
+        _init:function(opts){
+            //extend default validators
+            if($.isPlainObject(opts.validator)){
+                $.extend(this._defaultValidator,opts.validator);
+            }
         },
         _parseValidator:function(){
             var $ipts = this.$el.find('input[data-validator]'),
@@ -372,7 +373,7 @@
             
             $ipts.each(function(i,n){
                 var $ipt = $(n),
-                    valids = $ipt.data('validator').split(','),
+                    valids = $ipt.data('validator').split(', '),
                     name = $ipt.attr('name') || $ipt.attr('id'),
                     code = '';
                     
@@ -393,22 +394,31 @@
                 msg = valid[1],
                 code = '';
             
-            //regexp
-//             if(self._matchRegexp.test()){
+            if(matchRegexp.test(m)){
+                //regexp
+                expression = matchRegexp.exec(m)[1];
+                msg = m.replace(expression,'').slice(1);
+//                 expression = expression.replace("\\","\\\\");
                 
-//             }
-            
-            //base type
-            if(expression in self._defaultValidator){
-                code += 'if(!('+self._defaultValidator[expression].expression+'))';
+                code += 'if(!('+expression+'.test(_)))';
+                
+            }else if(expression in self._defaultValidator){
                 if(!msg)
                     msg = self._defaultValidator[expression].msg || '';
-                code += '{ return {pass:false,field:"'+name+'",msg:"'+msg+'"};}';
+                    
+                expression = self._defaultValidator[expression].expression;
+                
+                if(matchRegexp.test(expression)){
+                    code += 'if(!('+expression+'.test(_)))';
+                }else{
+                    //base type
+                    code += 'if(!('+expression+'))';
+                }
             }else{
                 //operator
                 code += 'if(!('+expression+'))';
-                code += '{ return {pass:false,field:"'+name+'",msg:"'+(msg||'')+'"};}';
             }
+            code += '{ return {pass:false,field:"'+name+'",msg:"'+(msg||'')+'"};}';
             
             return code;
         },
@@ -452,10 +462,6 @@
             
         },
         config:function(opts){
-            //extend default validators
-            if($.isPlainObject(opts.validator)){
-                $.extend(this._defaultValidator,opts.validator);
-            }
             //error handler
             if($.isFunction(opts.handler)){
                 this._errorHandler = opts.handler;
