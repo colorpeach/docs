@@ -11,7 +11,7 @@ module.exports = function(app){
     //权限
     app.all('*',function(req,res,next){
         var path = req._parsedUrl.pathname.split('/')[1];
-        //TODO
+
         if(escapePath.indexOf(path) >= 0){
             if(authPath.indexOf(path) >= 0 && !req.session.user){
                 res.redirect('/login?backurl='+req.url);
@@ -20,8 +20,8 @@ module.exports = function(app){
                 res.redirect('/');
                 return;
             }
-            next();
         }
+        next();
     });
 
     page(app);
