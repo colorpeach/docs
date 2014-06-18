@@ -4,17 +4,19 @@ var baseRes = require('./baseResponse');
 module.exports = function(app){
     //获取对应组织的所有成员
     app.get('/get/org/users',function(req,res){
-
+        Org.getMembers({org:req.body._id},function(list){
+            res.end(baseRes({members:list}));
+        });
     });
 
     //获取对应组织内所有分享的文档
     app.get('/get/org/docs',function(req,res){
-
+        
     });
 
     //获取对应用户在对应组织内分享的文档
     app.get('/get/org/user/docs',function(req,res){
-
+        
     });
 
     //创建组织
