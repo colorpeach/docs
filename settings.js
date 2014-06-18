@@ -8,7 +8,8 @@ var settings = {
         collection:'sessions'
     },
     url:'mongodb://colorpeach:ll0427##@ds033699.mongolab.com:33699/docs',
-    secret:'colorpeach'
+    secret:'colorpeach',
+    escapePath:'login|logout|register|edit|account|doc|get|post|put|options|head|delete|fetch'
 };
 
 module.exports = settings;
