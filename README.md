@@ -13,4 +13,4 @@ todo
 web
 ====
 
-http://colorpeach-doc.herokuapp.com/
+http://doc.colorpeach.com/
