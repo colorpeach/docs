@@ -96,11 +96,21 @@
         Edit.$preview.find('.preview-con').html(Edit.$view.html());
     });
     
-    $('.submit-btn').click(function(){
-        Edit.save();
+    Edit.$preview.modal({
+        width:900,
+        height:600,
+        title:'预览',
+        button:[
+            {
+                text:'提交',
+                type:'primary',
+                click:function(){
+                    Edit.save();
+                }
+            }
+        ]
     });
     
-    Edit.$preview.modal({width:900,height:600});
     Edit.generateFileLink();
     
     editor.setValue($('#content').val());

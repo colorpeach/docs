@@ -1439,22 +1439,43 @@ fieldset[disabled] .btn-link:focus {
 /**************************************
              modal START
 **************************************/
+.cm-modal-box{
+	position:fixed;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	overflow:auto;
+	background-color:rgba(255,255,255,.9);
+	z-index:1020;
+	display:none;
+}
+
 .cm-modal{
-  position:fixed;
+  position:absolute;
   top:15px;
   left:15px;
   bottom:15px;
   right:15px;
-  z-index:2000;
   background-color:#fff;
   border:1px solid #ddd;
-  margin:auto;
+  margin:20px auto;
 }
 
 .cm-modal-head{
   padding:15px;
-  height:60px;
+  height:45px;
   border-bottom:1px solid #ddd;
+  text-align:right;
+}
+
+.cm-modal-head h3{
+  float:left;
+  margin: 0;
+}
+
+.cm-modal-close{
+  cursor:pointer;
 }
 
 .cm-modal-body{
@@ -1465,20 +1486,8 @@ fieldset[disabled] .btn-link:focus {
 .cm-modal-foot{
   text-align:center;
   padding:15px;
-  height:60px;
+  height:62px;
   border-top:1px solid #ddd;
-}
-
-.cm-modal-cover{
-  position:fixed;
-  top:0;
-  left:0;
-  bottom:0;
-  right:0;
-  z-index:1999;
-  background-color:#fff;
-  opacity:0.8;
-  display:none;
 }
 
 .cm-modal-overflow-hidden{
