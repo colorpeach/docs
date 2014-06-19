@@ -25,21 +25,25 @@
             }
         },
         save:function(){
-            var data = {
-                title:this.$title.val(),
-                content:editor.getValue(),
-                auth:$('.auth-btn').hasClass('active') ? 'private' : 'public'
-            };
+            var data = $('.edit-box').inputBox('data',{valid:true}),
+                url = '/post/add/doc';
+                
+            if(!data){
+                return;
+            }
+                
+            data.content = editor.getValue();
+            data.auth = $('.auth-btn').hasClass('active') ? 'private' : 'public';
             
             if(doc._id){
                 data._id = doc._id;
+                url = '/post/update/doc';
             }
             
             $.docsajax({
-                url:'/saveDoc',
+                url:url,
                 method:'post',
-                data:JSON.stringify(data),
-                contentType:'application/json',
+                data:data,
                 success:function(d){
                     doc.title = d.doc.title;
                     if(!doc._id){
