@@ -558,7 +558,7 @@
         },
         close:function(){
             this.$el.add(this.$cover).addClass('hide').hide();
-            $('html,body').addClass('cm-modal-overflow-hidden');
+            $('html,body').removeClass('cm-modal-overflow-hidden');
         },
         width:function(val){
             this.$el.css('width',val);
