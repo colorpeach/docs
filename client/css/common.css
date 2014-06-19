@@ -1510,9 +1510,6 @@ fieldset[disabled] .btn-link:focus {
 	text-align: center;
 }
 /**************************************
-        docsajax loading END
-**************************************/
-/**************************************
            alert START
 **************************************/
 
@@ -1520,6 +1517,10 @@ fieldset[disabled] .btn-link:focus {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+}
+
+.alert p{
+	margin:0;
 }
 
 .alert h4 {
