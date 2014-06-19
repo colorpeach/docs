@@ -7,7 +7,7 @@ block content
   div.edit-box
     div.edit-left
       div.form-group.line-input
-        input#title(type="text",placeholder="请输入文档名...",value='#{doc.title||""}')
+        input#title(type="text",placeholder="请输入文档名...",value='#{doc.title||""}',data-validator='required:请输入文档名')
       div.form-group.btn-toolbar
         div.btn-group
           if doc.auth == "private"
@@ -23,6 +23,11 @@ block content
         button.btn.btn-primary.col-lg-12.save-btn 保存
         textarea#content.hidden #{doc.content||""}
     div#view.edit-right
+  div#preview.hide
+    div.cm-modal-head 预览
+    div.preview-con.cm-modal-body
+    div.cm-modal-foot
+      button.btn.btn-primary.submit-btn 提交
     
 block script
   script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js')
@@ -33,4 +38,5 @@ block script
       user:'#{user.login}',
       title:'#{doc.title}'
     };
+  script(type='text/javascript', src='/js/html2canvas.js')
   script(type='text/javascript', src='/js/edit.js')

@@ -15,6 +15,7 @@ function Doc(opts){
       this.content = opts.content;
       this.user = opts.user;
       this.auth = opts.auth || "public";
+      this.thumbnail = opts.thumbnail;
       opts._id && (this._id = opts._id);
 }
 

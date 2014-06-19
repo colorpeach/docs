@@ -21,13 +21,14 @@
 #menu{
     position:fixed;
     top:72px;
-    left:50%;
+    left:100%;
     bottom:10px;
     overflow-y:auto;
     text-align:right;
     width:200px;
     opacity:.5;
     transition: all 0.3s;
+    margin-left:-215px;
 }
 
 #menu:hover{
@@ -64,20 +65,9 @@
     color:#259DFF;
 }
 
-@media (min-width: 768px) {
+@media(min-width:1170px){
   #menu{
-      margin-left:175px;
-  }
-}
-
-@media (min-width: 992px) {
-  #menu{
-      margin-left:285px;
-  }
-}
-
-@media (min-width: 1200px) {
-  #menu{
-      margin-left:385px;
+    left:50%;
+    margin-left:370px;
   }
 }

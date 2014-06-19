@@ -15,6 +15,7 @@
     var Edit = {
         $view:$('#view'),
         $title:$('#title'),
+        $preview:$('#preview'),
         converter:new Showdown.converter(),
         toView:function(con){
             this.$view.html(this.converter.makeHtml(con));
@@ -25,32 +26,43 @@
             }
         },
         save:function(){
-            var data = {
-                title:this.$title.val(),
-                content:editor.getValue(),
-                auth:$('.auth-btn').hasClass('active') ? 'private' : 'public'
-            };
+            var data = $('.edit-box').inputBox('data',{valid:true}),
+                url = '/post/add/doc';
+                
+            if(!data){
+                return;
+            }
+                
+            data.content = editor.getValue();
+            data.auth = $('.auth-btn').hasClass('active') ? 'private' : 'public';
             
             if(doc._id){
                 data._id = doc._id;
+                url = '/post/update/doc';
             }
             
-            $.docsajax({
-                url:'/saveDoc',
-                method:'post',
-                data:JSON.stringify(data),
-                contentType:'application/json',
-                success:function(d){
-                    doc.title = d.doc.title;
-                    if(!doc._id){
-                        doc._id = d.doc._id;
-                        Edit.generateFileLink();
+            html2canvas(this.$preview.find('.preview-con'), {
+              onrendered: function(canvas) {
+                data.thumbnail = canvas.toDataURL();
+            
+                $.docsajax({
+                    url:url,
+                    method:'post',
+                    data:data,
+                    success:function(d){
+                        doc.title = d.doc.title;
+                        Edit.$preview.modal('close');
+                        if(!doc._id){
+                            doc._id = d.doc._id;
+                            Edit.generateFileLink();
+                        }
+                        $.prompt({
+                            type:'success',
+                            content:'保存成功'
+                        });
                     }
-                    $.prompt({
-                        type:'success',
-                        content:'保存成功'
-                    });
-                }
+                });
+              }
             });
         }
     };
@@ -80,9 +92,15 @@
     });
     
     $('.save-btn').click(function(){
+        Edit.$preview.modal('open');
+        Edit.$preview.find('.preview-con').html(Edit.$view.html());
+    });
+    
+    $('.submit-btn').click(function(){
         Edit.save();
     });
     
+    Edit.$preview.modal({width:900,height:600});
     Edit.generateFileLink();
     
     editor.setValue($('#content').val());
