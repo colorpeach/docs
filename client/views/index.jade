@@ -6,6 +6,8 @@ block css
 block content
   each doc in docs
     div.doc-item
+      div
+        img(src='#{doc.thumbnail}',width='100%')
       div.panel.panel-default
         div.panel-heading
             a(href='/'+doc.user+'/'+doc.title) #{doc.title}
