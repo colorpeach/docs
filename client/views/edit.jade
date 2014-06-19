@@ -7,7 +7,7 @@ block content
   div.edit-box
     div.edit-left
       div.form-group.line-input
-        input#title(type="text",placeholder="请输入文档名...",value='#{doc.title||""}')
+        input#title(type="text",placeholder="请输入文档名...",value='#{doc.title||""}',data-validator='required:请输入文档名')
       div.form-group.btn-toolbar
         div.btn-group
           if doc.auth == "private"
