@@ -145,12 +145,12 @@
         var success,error;
         
         if(opts.success){
-            success = opts.success;
+            opts._success = opts.success;
             delete opts.success;
         }
         
         if(opts.error){
-            error = opts.error;
+            opts._error = opts.error;
             delete opts.error;
         }
         
@@ -165,6 +165,7 @@
         promise.then(function(d,type,promise){
             var d = JSON.parse(d);
             
+            removeReload(opts);
             removeMark(opts);
             removeBlock(opts);
             
@@ -175,7 +176,7 @@
                     content:$.map(d.errorMsg,function(n){return '<p>'+n+'</p>';})
                 });
             }else{
-                success && success(d,promise);
+                opts._success && opts._success(d,promise);
             }
         });
         
@@ -194,7 +195,7 @@
             
             removeBlock(opts);
             
-            error && error(arguments);
+            opts._error && opts._error(arguments);
         });
     };
     
@@ -494,4 +495,77 @@
             return type ==='valid' ? results : results.length ? false : data;
         };
     }
+})();
+
+(function(){
+    /*
+    *@name modal
+    */
+    
+    $.fn.modal = function(method,arg){
+        var $this = $(this);
+        $this.each(function(_,n){
+            var $n = $(n),
+                obj = $n.data('modal');
+                
+            if(!obj){
+                obj = new Modal($n,method);
+                $n.data('modal',obj);
+            }
+            
+            result = obj._handler(method,arg);
+            
+            if(result != undefined){
+                return false;
+            }
+        });
+        
+        return result == undefined ? $this : result;
+    };
+    
+    function Modal(el,method){
+        this.$el = el;
+        this.$body = el.find('.cm-modal-body').length ? el.find('.cm-modal-body') : el;
+        this._init();
+    }
+    
+    Modal.prototype = {
+        constructor:Modal,
+        _handler:function(method,arg){
+            if($.isPlainObject(method)){
+                for(var n in method){
+                    this[n] && this[n](method[n]);
+                }
+            }else if(typeof method === "string" && method[0] !== "_"){
+                if(method in this)
+                    return this[method](arg);
+            }
+        },
+        _init:function(){
+            var $el = this.$el;
+            
+            $el.addClass('hide cm-modal');
+            
+            if(!$('.cm-modal-cover').length){
+                $('body').append(this.$cover = $('<div class="cm-modal-cover">'));
+            }else{
+                this.$cover = $('.cm-modal-cover');
+            }
+        },
+        open:function(){
+            this.$el.add(this.$cover).removeClass('hide').show();
+            $('html,body').addClass('cm-modal-overflow-hidden');
+        },
+        close:function(){
+            this.$el.add(this.$cover).addClass('hide').hide();
+            $('html,body').addClass('cm-modal-overflow-hidden');
+        },
+        width:function(val){
+            this.$el.css('width',val);
+        },
+        height:function(val){
+            this.$el.css('height',val);
+            this.$body.css('height',val-120);
+        }
+    };
 })();
