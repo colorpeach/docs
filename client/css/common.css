@@ -1387,7 +1387,9 @@ fieldset[disabled] .btn-link:focus {
   content: "\e200";
 }
 
-/*tip*******************************************/
+/**************************************
+             tip START
+**************************************/
 .cm-tip{
     position:fixed;
     background:rgba(0,0,0,.9);
@@ -1409,8 +1411,9 @@ fieldset[disabled] .btn-link:focus {
 .cm-tip-content{
     padding:5px 10px;
 }
-/*tip*******************************************/
-/*prompt style START*/
+/**************************************
+             prompt START
+**************************************/
 .prompt-box{
 	position: fixed;
 	top:30px;
@@ -1433,8 +1436,58 @@ fieldset[disabled] .btn-link:focus {
 		margin: auto;
 	}
 }
-/*prompt style END*/
-/*docsajax loading style START*/
+/**************************************
+             modal START
+**************************************/
+.cm-modal{
+  position:fixed;
+  top:15px;
+  left:15px;
+  bottom:15px;
+  right:15px;
+  z-index:2000;
+  background-color:#fff;
+  border:1px solid #ddd;
+  margin:auto;
+}
+
+.cm-modal-head{
+  padding:15px;
+  height:60px;
+  border-bottom:1px solid #ddd;
+}
+
+.cm-modal-body{
+  padding:15px;
+  overflow:auto;
+}
+
+.cm-modal-foot{
+  text-align:center;
+  padding:15px;
+  height:60px;
+  border-top:1px solid #ddd;
+}
+
+.cm-modal-cover{
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index:1999;
+  background-color:#fff;
+  opacity:0.8;
+  display:none;
+}
+
+.cm-modal-overflow-hidden{
+  overflow:hidden;
+}
+
+/**************************************
+        docsajax loading START
+**************************************/
 .cover{
 	position:absolute;
 	top:0;
@@ -1442,7 +1495,7 @@ fieldset[disabled] .btn-link:focus {
 	right:0;
 	bottom:0;
 	background-color:rgba(255,255,255,0.8);
-	z-index:2000;
+	z-index:999;
 	padding:10px;
 }
 
@@ -1456,11 +1509,12 @@ fieldset[disabled] .btn-link:focus {
 	margin: auto 0;
 	text-align: center;
 }
-/*docsajax loading style END*/
-
-/*****************************
-           alert
-******************************/
+/**************************************
+        docsajax loading END
+**************************************/
+/**************************************
+           alert START
+**************************************/
 
 .alert {
   padding: 15px;
