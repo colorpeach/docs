@@ -669,7 +669,7 @@
                                 }
                             },
                             {
-                                text:'关闭',
+                                text:'取消',
                                 click:function(){
                                     $p.modal('close');
                                 }
