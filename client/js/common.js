@@ -90,10 +90,6 @@
         return prompt;
     })();
     
-    $.msg = function(msg){
-        alert(msg);
-    };
-    
     //tip
     var $tip = $('<div class="cm-tip hidden">');
     $tip.html(
@@ -524,12 +520,15 @@
     };
     
     function Modal(el,method){
-        var opts = {
+        this.opts = {
             title:"",
-            button:[]
+            button:[],
+            onClose:$.noop,
+            onOpen:$.noop,
+            onDestory:$.noop
         };
         this.$el = el;
-        this._init($.extend(opts,method));
+        this._init($.extend(this.opts,method));
     }
     
     Modal.prototype = {
@@ -554,11 +553,9 @@
             .on('click','.cm-modal-close',function(){
                 self.close();
             })
-            .on('mousedown',function(){
-                self.close();
-            })
-            .on('mousedown','.cm-modal',function(){
-                return false;
+            .on('mousedown',function(e){
+                if(this === e.target)
+                    self.close();
             });
             
             $modal.find('.cm-modal-foot').html(
@@ -574,12 +571,26 @@
             
             $('body').append($modal);
         },
+        type:function(val){
+            this.$modal.find('.cm-modal-head').removeClass('bg-success bg-info bg-warning bg-danger').addClass('bg-'+val);
+        },
+        destroy:function(){
+            this.$el.removeData('modal');
+            this.$modal.remove();
+            this.opts.onDestory();
+        },
         open:function(){
-            this.$modal.fadeIn().find('.cm-modal').animate({top:0},'swing');
+            var self = this;
+            this.$modal.fadeIn().find('.cm-modal').animate({top:0},'swing',function(){
+                self.opts.onOpen();
+            });
             $('html,body').addClass('cm-modal-overflow-hidden');
         },
         close:function(){
-            this.$modal.fadeOut().find('.cm-modal').animate({top:'-100%'},'swing');
+            var self = this;
+            this.$modal.fadeOut().find('.cm-modal').animate({top:'-100%'},'swing',function(){
+                self.opts.onClose();
+            });
             $('html,body').removeClass('cm-modal-overflow-hidden');
         },
         width:function(val){
@@ -587,13 +598,13 @@
         },
         height:function(val){
             this.$modal.find('.cm-modal').css('height',val);
-            this.$modal.find('.cm-modal-body').css('height',val-107);
+            this.$modal.find('.cm-modal-body').css('height',val-97);
         }
     };
     
     function modal(opts){
         var html =  '<div class="cm-modal-box">'+
-                        '<div class="cm-modal">'+
+                        '<div class="cm-modal border">'+
                             '<div class="cm-modal-head">'+
                                 '<h3>'+opts.title+'</h3>'+
                                 '<span class="glyphicon glyphicon-remove cm-modal-close"></span>'+
@@ -604,4 +615,90 @@
                     '</div>';
         return $(html);
     }
+})();
+
+(function(){
+    /*
+    *@name msg
+    *@param msg {Object|string}
+    *       msg.ok      a callback when click confirm button
+    *       msg.cancel  a callback when click cancel button
+    *       msg.msg     prompt's msg
+    *       msg.type    prompt's type
+    *       msg.title   prompt's title
+    */
+    
+    $.msg = function(msg){
+        var $p = $('<p>'),
+            settings = {
+                width:450,
+                height:200,
+                type:'info',
+                title:'提示',
+                button:[
+                    {
+                        text:'关闭',
+                        click:function(){
+                            $p.modal('close');
+                        }
+                    }
+                ],
+                onClose:function(){
+                    $p.modal('destroy');
+                }
+            };
+        
+        if($.isPlainObject(msg)){
+            switch(msg.type){
+                case 'warning alert':
+                    $.extend(settings,{
+                        type:'warning'
+                    });
+                    break;
+                case 'danger':
+                case 'confirm':
+                    $.extend(settings,{
+                        button:[
+                            {
+                                text:'确定',
+                                type:msg.type === 'danger'?'danger':'primary',
+                                click:function(){
+                                    msg.ok && msg.ok();
+                                    $p.modal('close');
+                                }
+                            },
+                            {
+                                text:'关闭',
+                                click:function(){
+                                    $p.modal('close');
+                                }
+                            }
+                        ]
+                    },
+                    msg.type === 'danger' ? {
+                        type:'danger',
+                        title:'警告'
+                    } : {
+                        type:'info',
+                        title:'确认'
+                    });
+                    break;
+                case 'success':
+                    $.extend(settings,{
+                        type:'success',
+                        title:'成功'
+                    });
+                    break;
+            }
+            
+            if(msg.title)
+                settings.title = msg.title;
+            
+            $p.html(msg.msg).modal(settings);
+            $p.modal('open');
+        }else if(typeof msg === 'string'){
+            $p.html(msg).modal(settings);
+            $p.modal('open');
+        }
+    };
 })();
