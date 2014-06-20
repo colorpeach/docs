@@ -41,7 +41,7 @@
                 url = '/post/update/doc';
             }
             
-            html2canvas(this.$preview.find('.preview-con'), {
+            html2canvas(this.$preview.parent(), {
               onrendered: function(canvas) {
                 data.thumbnail = canvas.toDataURL();
             
