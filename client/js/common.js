@@ -561,7 +561,7 @@
                 return false;
             });
             
-            $modal.find('.cm-modal-foot').append(
+            $modal.find('.cm-modal-foot').html(
                 $.map(opts.button.length ? opts.button : [{text:'取消',className:'cm-modal-close'}],function(n){
                     var type = n.type ? 'btn-'+n.type : 'btn-default';
                     var className = n.className || '';
@@ -575,11 +575,11 @@
             $('body').append($modal);
         },
         open:function(){
-            this.$modal.fadeIn();
+            this.$modal.fadeIn().find('.cm-modal').animate({top:0},'swing');
             $('html,body').addClass('cm-modal-overflow-hidden');
         },
         close:function(){
-            this.$modal.fadeOut();
+            this.$modal.fadeOut().find('.cm-modal').animate({top:'-100%'},'swing');
             $('html,body').removeClass('cm-modal-overflow-hidden');
         },
         width:function(val){
@@ -593,14 +593,14 @@
     
     function modal(opts){
         var html =  '<div class="cm-modal-box">'+
-                    '<div class="cm-modal">'+
-                    '<div class="cm-modal-head">'+
-                    '<h3>'+opts.title+'</h3>'+
-                    '<span class="glyphicon glyphicon-remove cm-modal-close"></span>'+
-                    '</div>'+
-                    '<div class="cm-modal-body"></div>'+
-                    '<div class="cm-modal-foot"></div>'+
-                    '</div>'+
+                        '<div class="cm-modal">'+
+                            '<div class="cm-modal-head">'+
+                                '<h3>'+opts.title+'</h3>'+
+                                '<span class="glyphicon glyphicon-remove cm-modal-close"></span>'+
+                            '</div>'+
+                            '<div class="cm-modal-body"></div>'+
+                            '<div class="cm-modal-foot"></div>'+
+                        '</div>'+
                     '</div>';
         return $(html);
     }
