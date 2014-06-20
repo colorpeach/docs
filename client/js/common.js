@@ -650,7 +650,8 @@
         
         if($.isPlainObject(msg)){
             switch(msg.type){
-                case 'warning alert':
+                case 'warning':
+                case 'alert':
                     $.extend(settings,{
                         type:'warning'
                     });
@@ -685,8 +686,7 @@
                     break;
                 case 'success':
                     $.extend(settings,{
-                        type:'success',
-                        title:'成功'
+                        type:'success'
                     });
                     break;
             }
