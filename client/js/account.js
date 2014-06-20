@@ -249,15 +249,21 @@
                 var $li = $(this).closest("li"),
                     doc = $li.data("doc");
                 
-                $.docsajax({
-                    url:"/post/del/doc",
-                    data:doc,
-                    method:"post",
-                    success:function(d){
-                        $li.remove();
-                        $.prompt({
-                            type:"success",
-                            content:"删除成功"
+                $.msg({
+                    type:'danger',
+                    msg:'删除的文档将无法恢复，确认删除？',
+                    ok:function(){
+                        $.docsajax({
+                            url:"/post/del/doc",
+                            data:doc,
+                            method:"post",
+                            success:function(d){
+                                $li.remove();
+                                $.prompt({
+                                    type:"success",
+                                    content:"删除成功"
+                                });
+                            }
                         });
                     }
                 });
