@@ -1,5 +1,5 @@
 /************************************************
-                     common
+      common : borrow from bootstrap.css
 *************************************************/
 
 *,
@@ -1459,11 +1459,10 @@ fieldset[disabled] .btn-link:focus {
   background-color:#fff;
   border:1px solid #ddd;
   margin:20px auto;
-  box-shadow: 0 0 5px #DDD;
 }
 
 .cm-modal-head{
-  padding:15px;
+  padding:12px 15px;
   height:45px;
   border-bottom:1px solid #ddd;
   text-align:right;
@@ -1472,6 +1471,26 @@ fieldset[disabled] .btn-link:focus {
 .cm-modal-head h3{
   float:left;
   margin: 0;
+}
+
+.cm-modal-head.bg-success{
+  background-color: #5CB85C;
+  color:#fff;
+}
+
+.cm-modal-head.bg-info{
+  background-color: #5BC0DE;
+  color:#fff;
+}
+
+.cm-modal-head.bg-warning{
+  background-color: #F0AD4E;
+  color:#fff;
+}
+
+.cm-modal-head.bg-danger{
+  background-color: #D9534F;
+  color:#fff;
 }
 
 .cm-modal-close{
@@ -1490,9 +1509,17 @@ fieldset[disabled] .btn-link:focus {
 
 .cm-modal-foot{
   text-align:center;
-  padding:15px;
-  height:62px;
+  padding:10px 15px;
+  height:52px;
   border-top:1px solid #ddd;
+}
+
+.cm-modal-foot>.btn{
+  margin-right:20px;
+}
+
+.cm-modal-foot>.btn:last-child{
+  margin-right:0;
 }
 
 .cm-modal-overflow-hidden{
@@ -1716,10 +1743,6 @@ body{
 	background-position: bottom center;
 	background-repeat: no-repeat;
 	background-size: 100% 1px;
-}
-
-.border{
-	position:relative;
 }
 
 .border:before{
