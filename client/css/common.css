@@ -1453,13 +1453,13 @@ fieldset[disabled] .btn-link:focus {
 
 .cm-modal{
   position:absolute;
-  top:15px;
+  top:-100%;
   left:15px;
-  bottom:15px;
   right:15px;
   background-color:#fff;
   border:1px solid #ddd;
   margin:20px auto;
+  box-shadow: 0 0 5px #DDD;
 }
 
 .cm-modal-head{
@@ -1476,6 +1476,11 @@ fieldset[disabled] .btn-link:focus {
 
 .cm-modal-close{
   cursor:pointer;
+  opacity:.5;
+}
+
+.cm-modal-close:hover{
+  opacity:.8;
 }
 
 .cm-modal-body{
