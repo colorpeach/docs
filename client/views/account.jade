@@ -35,7 +35,7 @@ block content
         div.create-org-box.form-inline.hidden
           div.form-group.line-input
             label.sr-only 组织名称
-            input#org-name(name='name',type='text',placeholder='组织名称',data-validator='required:请输入组织名称, /\d+/')
+            input#org-name(name='name',type='text',placeholder='组织名称',data-validator='required:请输入组织名称')
           div.form-group.line-input
             label.sr-only 组织密码
             input#org-password(name='password',type='text',placeholder='组织密码',data-validator='required:请输入组织密码')
@@ -49,7 +49,7 @@ block content
         div.join-org-box.form-inline.hidden
           div.form-group.line-input
             label.sr-only 组织代码
-            input#join-org-code(name='_id',type='text',placeholder='组织代码',data-validator='required:请输入组织代码')
+            input#join-org-code(name='code',type='text',placeholder='组织代码',data-validator='required:请输入组织代码')
           div.form-group.line-input
             label.sr-only 组织密码
             input#join-org-password(name='password',type='text',placeholder='组织密码',data-validator='required:请输入组织密码')

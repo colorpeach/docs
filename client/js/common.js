@@ -177,7 +177,9 @@
         });
         
         promise.error(function(promise,type,content){
-            if(type === 'timeout'){
+            if(promise.status === 401){
+                location.href = '/login';
+            }else if(type === 'timeout'){
                 addReload(opts);
             }else{
                 removeReload(opts);
@@ -619,6 +621,7 @@
 
 (function(){
     /*
+    *@require $.fn.modal
     *@name msg
     *@param msg {Object|string}
     *       msg.ok      a callback when click confirm button
@@ -632,7 +635,6 @@
         var $p = $('<p>'),
             settings = {
                 width:450,
-                height:200,
                 type:'info',
                 title:'提示',
                 button:[

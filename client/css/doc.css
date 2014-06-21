@@ -5,12 +5,13 @@
 #view{
     margin-right:210px;
     position:relative;
+    border-top: 1px solid #FFF;
 }
 
 #view .edit-btn{
   display:none;
   position:absolute;
-  top:70px;
+  top:0;
   right:0;
 }
 

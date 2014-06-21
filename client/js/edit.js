@@ -26,7 +26,7 @@
             }
         },
         save:function(){
-            var data = $('.edit-box').inputBox('data',{valid:true}),
+            var data = $('.edit-box').inputBox('data'),
                 url = '/post/add/doc';
                 
             if(!data){
@@ -92,6 +92,18 @@
     });
     
     $('.save-btn').click(function(){
+        var err = $('.edit-box').inputBox('valid');
+        
+        if(err.length)
+            return;
+            
+        if(editor.getValue() === ''){
+            $.prompt({
+                type:'warning',
+                content:'请输入文档内容'
+            });
+            return;
+        }
         Edit.$preview.modal('open');
         Edit.$preview.find('.preview-con').html(Edit.$view.html());
     });

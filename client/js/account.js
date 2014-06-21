@@ -74,6 +74,7 @@
             });
         },
         shareOrgHtml:function(orgs){
+            var orgs = $.map(orgs,function(n){return n._id;});
             return $.map(this.myOrgList.concat(this.joinOrgList),function(n){
                 var $li = $('<li>'),
                     html =  '<span class="glyphicon '+
@@ -96,7 +97,7 @@
                            '<span class="glyphicon glyphicon-list-alt"></span>'+
                            '</a>'+
                            '</p>'+
-                           '<p>组织代码：'+n._id+
+                           '<p>组织代码：'+n.code+
                            '</p>'+
                            '<span>组织密码：'+n.password+
                            '</span>';
@@ -111,7 +112,7 @@
                            '<span class="glyphicon glyphicon-list-alt"></span>'+
                            '</a>'+
                            '</p>'+
-                           '<p>组织代码：'+n._id+
+                           '<p>组织代码：'+n.code+
                            '</p>'+
                            '<span>组织密码：'+n.password+
                            '</span>';
@@ -125,11 +126,8 @@
             if(!data)
                 return;
                 
-            data._id = +$('#join-org-code').val();
-            data.password = $('#join-org-password').val();
-                
             $.docsajax({
-                url:'/post/user/join/org',
+                url:'/post/org/add/user',
                 data:data,
                 method:'post',
                 success:function(d){
@@ -166,10 +164,15 @@
         },
         docLinkOrg:function(data,$this,fn){
             var self = this,
+                url = '/post/org/add/doc',
                 data = data;
+                
+            if(!data.link){
+                url = '/post/org/del/doc';
+            }
             
             $.docsajax({
-                url:'/post/org/add/doc',
+                url:url,
                 data:data,
                 method:'post',
                 wrap:$this.closest('li'),
@@ -208,7 +211,7 @@
         },
         membersHtml:function(list){
             return $.map(list||[],function(n){
-                return '<li>'+n.user+'</li>';
+                return '<li>'+n.login+'</li>';
             });
         },
         getMembers:function(org){
@@ -216,10 +219,10 @@
             
             $.docsajax({
                 url:'/get/org/users',
-                data:{_id:org._id},
+                data:{org:org._id},
                 wrap:$('.detail-box'),
                 success:function(d){
-                    d.members.unshift({user:org.owner});
+                    d.members.unshift({login:org.owner});
                     $('.detail-box ul').html(self.membersHtml(d.members));
                 }
             });
@@ -274,7 +277,7 @@
                 
                 $.docsajax({
                     url:'/get/doc/orgs',
-                    data:{_id:$li.data('doc')._id},
+                    data:{doc:$li.data('doc')._id},
                     success:function(d){
                         $('.detail-box ul').html(self.shareOrgHtml(d.orgs));
                     }

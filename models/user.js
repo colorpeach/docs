@@ -1,38 +1,45 @@
-var dbClient = require('../db'),
-    ObjectID = require('mongodb').ObjectID;
-    
-function User(opts){
-    this.login = opts.username;
-    this.email = opts.email;
-    this.password = opts.password;
+var dbClient = require('../db');
+var tidy = dbClient.column({
+    login:'username',
+    email:'email',
+    password:'password'
+});
+var user = {};
+
+//新增用户
+user.add = function(data,fn){
+    var d = tidy(data);
+    dbClient.connect([
+        function(db,callback){
+            db.collection('user').insert(d,function(err,data){
+                callback(err,data);
+            });
+        }
+    ],fn);
 }
 
-User.prototype.save = function(fn){
-    var data = this;
-    
-    dbClient.connect(function(err,db){
-        if(err) throw err;
+//更新用户
+user.update = function(data,fn){
+    var d = dbClient.split(tidy(data));
+    dbClient.connect([
+        function(db,callback){
+            db.collection('user').update(d.search,{$set:d.data},function(err,data){
+                callback(err,data);
+            });
+        }
+    ],fn);
+}
 
-        db.collection("user").save(data,function(err,list){
-            db.close();
-            fn && fn(list);
-        });
-    });
-};
+//查询
+user.query = function(data,fn){
+    var d = tidy(data);
+    dbClient.connect([
+        function(db,callback){
+            db.collection('user').find(d).toArray(function(err,data){
+                callback(err,data);
+            });
+        }
+    ],fn);
+}
 
-User.del = function(){
-    
-};
-
-User.query = function(query,fn){
-    dbClient.connect(function(err,db){
-        if(err) throw err;
-        
-        db.collection("user").find(query||null).toArray(function(err,list){
-            db.close();
-            fn && fn(list);
-        });
-    });
-};
-
-module.exports = User;
+module.exports = user;

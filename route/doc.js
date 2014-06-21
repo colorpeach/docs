@@ -1,12 +1,11 @@
-var Doc = require('../models/doc');
+var doc = require('../models/doc');
+var orgDoc = require('../models/org.doc');
 var baseRes = require('./baseResponse');
 
 module.exports = function(app){
     //获取与文档有关联的所有组织
     app.get('/get/doc/orgs',function(req,res){
-        var doc = new Doc(req.query);
-        doc.linkedOrg(function(data){
-            data = (data||[]).map(function(n){return n.org});
+        orgDoc.queryOrgs(req.query,function(data){
             res.end(baseRes({orgs:data}));
         });
     });
@@ -14,25 +13,21 @@ module.exports = function(app){
     //添加文档
     app.post('/post/add/doc',function(req,res){
         req.body.user = req.session.user.login;
-        var doc = new Doc(req.body);
-        doc.save(function(data){
+        doc.add(req.body,function(data){
             res.end(baseRes({doc:data}));
         });
     });
 
     //删除文档
     app.post('/post/del/doc',function(req,res){
-        var doc = new Doc(req.body);
-        doc.del(function(data){
+        doc.del(req.body,function(data){
             res.end(baseRes(data));
         });
     });
 
     //更新文档
     app.post('/post/update/doc',function(req,res){
-        req.body.user = req.session.user.login;
-        var doc = new Doc(req.body);
-        doc.save(function(data){
+        doc.update(req.body,function(data){
             res.end(baseRes({doc:data}));
         });
     });

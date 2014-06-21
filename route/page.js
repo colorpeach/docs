@@ -1,10 +1,9 @@
-var Doc = require('../models/doc');
-var ObjectID = require('mongodb').ObjectID;
+var doc = require('../models/doc');
 
 module.exports = function(app){
     //首页
     app.get('/',function(req,res){
-        Doc.query({auth:"public"},function(list){
+        doc.query({auth:"public"},function(list){
             res.render('index',{docs:list,user:req.session.user});
         });
     });
@@ -24,7 +23,7 @@ module.exports = function(app){
     //编辑页面
     app.get('/edit',function(req,res){
         if(req.query._id){
-            Doc.query({_id:new ObjectID(req.query._id)},function(list){
+            doc.query({_id:req.query._id},function(list){
                 var doc = list[0];
                 if(doc.user === req.session.user.login){
                     res.render('edit',{user:req.session.user,doc:list[0]||{}});
@@ -39,7 +38,7 @@ module.exports = function(app){
 
     //文档页面
     app.get('/:user/:doc',function(req,res){
-        Doc.query({title:req.params.doc,user:req.params.user},function(list){
+        doc.query({title:req.params.doc,user:req.params.user},function(list){
             res.render('doc',{
                 doc:list ? list[0] : {},
                 user:req.session.user

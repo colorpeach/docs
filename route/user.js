@@ -1,70 +1,43 @@
-var User = require('../models/user');
-var Doc = require('../models/doc');
-var Org = require('../models/org');
+var user = require('../models/user');
+var doc = require('../models/doc');
+var org = require('../models/org');
+var orgUser = require('../models/org.user');
 var baseRes = require('./baseResponse');
 
 module.exports = function(app){
     //获取用户创建的文档
     app.get('/get/user/docs',function(req,res){
-        Doc.query({user:req.session.user.login},function(list){
+        doc.query({user:req.session.user.login},function(list){
             res.end(baseRes({docs:list}));
         });
     });
 
     //获取用户创建的组织
     app.get('/get/user/orgs',function(req,res){
-        Org.query({owner:req.session.user.login},function(list){
+        org.query({owner:req.session.user.login},function(list){
             res.end(baseRes({orgs:list}));
         });
     });
 
     //获取用户加入的组织
     app.get('/get/user/join/orgs',function(req,res){
-        Org.queryJoinOrgs({user:req.session.user.login},function(list){
+        orgUser.queryOrgs({user:req.session.user.login},function(list){
             res.end(baseRes({orgs:list}));
         });
     });
 
     //获取用户所有组织下的所有文档
     app.get('/get/user/orgs/docs',function(req,res){
-        Doc.getPrivateDocs({user:req.session.user.login},function(list){
+        doc.getPrivateDocs({user:req.session.user.login},function(list){
             res.end(baseRes({docs:list}));
-        });
-    });
-
-    //用户加入组织或退出组织
-    app.post('/post/user/join/org',function(req,res){
-        var org = new Org(req.body);
-        var user = req.session.user.login;
-        var data = {_id:+org._id,password:org.password};
-
-        Org.query(data,function(list){
-            if(list.length){
-                if(list[0].owner === user){
-                    res.end(baseRes({errorMsg:['你是该组织创建者']}));
-                }else{
-                    Org.queryJoinOrgs({user:req.session.user.login,org:org._id},function(list){
-                        if(list.length){
-                            res.end(baseRes({errorMsg:['你已经加入了该组织']}));
-                        }else{
-                            org.addMember(user,function(data){
-                                res.end(baseRes(data));
-                            });
-                        }
-                    });
-                }
-            }else{
-                res.end(baseRes({errorMsg:['组织不存在或密码错误']}));
-            }
         });
     });
 
     //用户登录
     app.post('/login',function(req,res){
-        var user = new User(req.body);
-        User.query(user,function(list){
+        user.query(req.body,function(list){
             if(list.length){
-                req.session.user = user;
+                req.session.user = list[0];
                 res.end(baseRes());
             }else{
                 res.end(baseRes({errorMsg:['用户名或密码不正确']}));
@@ -74,15 +47,13 @@ module.exports = function(app){
 
     //用户注册
     app.post('/register',function(req,res){
-        var user = new User(req.body);
-
-        User.query({login:req.body.username},function(list){
+        user.query({username:req.body.username},function(list){
             if(list.length){
                 res.end(baseRes({errorMsg:['用户已存在']}));
             }else{
-                user.save(function(data){
-                    req.session.user = user;
-                    res.end(baseRes({doc:data}));
+                user.add(req.body,function(data){
+                    req.session.user = data[0];
+                    res.end(baseRes());
                 });
             }
         });
