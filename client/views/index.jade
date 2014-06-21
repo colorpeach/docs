@@ -20,7 +20,7 @@ block content
     div.org-doc
   
 block script
-  if user
+  if user.github
     script(type='text/javascript').
       $.docsajax({
         url:'/get/user/orgs/docs',
