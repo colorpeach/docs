@@ -22,9 +22,11 @@ module.exports = function(app){
             }else if(unauthPath.indexOf(path) < 0 && !req.session.user){
                 
                 res.redirect('/login?backurl='+req.url);
+                return;
             }else if(path === 'login' && req.session.user){
                 
                 res.redirect('/');
+                return;
             }
         }
         next();

@@ -11,11 +11,12 @@ block content
     ul
   div.account-left
     div.account-info.clearfix
-      if user.avatar_url
+      if user && user.avatar_url
         img(src='#{user.avatar_url}')
       else
         span.img-item.glyphicon.glyphicon-user
-      p #{user.login}
+      if user
+        p #{user.login}
     ul.slide-tabs
       li.active
         a 我的文档
