@@ -19,7 +19,7 @@ module.exports = function(app){
                 
                 res.statusCode = 401;
                 res.end();
-            }else if(!req.session.user){
+            }else if(unauthPath.indexOf(path) >= 0 && !req.session.user){
                 
                 res.redirect('/login?backurl='+req.url);
             }else if(path === 'login' && req.session.user){
