@@ -61,13 +61,13 @@
                     html = '<a href="'+n.user+'/'+n.title+'">'+n.title+'</a>'+
                             '<div class="pull-right opera-box">'+
                             '<a href="/edit?_id='+n._id+'" data-tip="编辑">'+
-                                '<span class="glyphicon glyphicon-pencil"></span>'+
+                                '<span class="icon-pencil"></span>'+
                             '</a>'+
                             '<a href="javascript:;" class="del-item" data-tip="删除">'+
-                                '<span class="glyphicon glyphicon-remove"></span>'+
+                                '<span class="icon-remove"></span>'+
                             '</a>'+
                             '<a href="javascript:;" class="share-item" data-tip="分享">'+
-                                '<span class="glyphicon glyphicon-share-alt">'+
+                                '<span class="icon-share">'+
                             '</a>'+
                             '</div>';
                 return $li.html(html).data('doc',n);
@@ -77,9 +77,9 @@
             var orgs = $.map(orgs,function(n){return n._id;});
             return $.map(this.myOrgList.concat(this.joinOrgList),function(n){
                 var $li = $('<li>'),
-                    html =  '<span class="glyphicon '+
-                             ($.inArray(""+n._id,orgs) >=0 ? '' : 'glyphicon-unchecked') +
-                            ' glyphicon-check fn-check"></span>'+
+                    html =  '<span class="'+
+                             ($.inArray(""+n._id,orgs) >=0 ? '' : 'icon-checkbox-unchecked') +
+                            ' icon-checkbox-checked fn-check"></span>'+
                             n.name;
                 return $li.html(html).data('org',n);
             });
@@ -94,7 +94,7 @@
                 var $li = $('<li>'),
                     html = '<p>组织名称：'+n.name+
                            ' <a href="javascript:;" class="member-item" data-tip="成员列表">'+
-                           '<span class="glyphicon glyphicon-list-alt"></span>'+
+                           '<span class="icon-users"></span>'+
                            '</a>'+
                            '</p>'+
                            '<p>组织代码：'+n.code+
@@ -109,7 +109,7 @@
                 var $li = $('<li>'),
                     html = '<p>组织名称：'+n.name+
                            ' <a href="javascript:;" class="member-item" data-tip="成员列表">'+
-                           '<span class="glyphicon glyphicon-list-alt"></span>'+
+                           '<span class="icon-users"></span>'+
                            '</a>'+
                            '</p>'+
                            '<p>组织代码：'+n.code+
@@ -328,10 +328,10 @@
                 var $this = $(this),
                     org = $this.closest('li').data('org')._id,
                     doc = self.$allDocs.find('li.active').data('doc')._id,
-                    link = $this.hasClass('glyphicon-unchecked');
+                    link = $this.hasClass('icon-checkbox-unchecked');
                 
                 self.docLinkOrg({org:org,doc:doc,link:link},$this,function(){
-                    $this[link ? 'removeClass' : 'addClass']('glyphicon-unchecked');
+                    $this[link ? 'removeClass' : 'addClass']('icon-checkbox-unchecked');
                 });
             });
             

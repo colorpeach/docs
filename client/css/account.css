@@ -45,11 +45,11 @@
     cursor:pointer;
 }
 
-.detail-box li .glyphicon-check{
+.detail-box li .icon-checkbox-checked{
     color:#428BCA;
 }
 
-.detail-box li .glyphicon-unchecked{
+.detail-box li .icon-checkbox-unchecked{
     color:#ddd;
 }
 

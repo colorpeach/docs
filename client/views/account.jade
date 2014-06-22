@@ -6,7 +6,7 @@ block css
 block content
   div.detail-box.hidden
     a.close-btn(href='javascript:;')
-      span.glyphicon.glyphicon-remove
+      span.icon-close
     div.detail-header
     ul
   div.account-left
@@ -14,7 +14,7 @@ block content
       if user && user.avatar_url
         img(src='#{user.avatar_url}')
       else
-        span.img-item.glyphicon.glyphicon-user
+        span.img-item.icon-user
       if user
         p #{user.login}
     ul.slide-tabs
@@ -32,7 +32,7 @@ block content
     div#my-orgs.item-list.hidden
       div.item-header
         button.create-org-btn.btn.btn-default(data-tip='创建组织')
-          span.glyphicon.glyphicon-plus
+          span.icon-plus
         div.create-org-box.form-inline.hidden
           div.form-group.line-input
             label.sr-only 组织名称
@@ -46,7 +46,7 @@ block content
     div#join-orgs.item-list.hidden
       div.item-header
         button.join-org-btn.btn.btn-default(data-tip='加入组织')
-          span.glyphicon.glyphicon-arrow-left
+          span.icon-arrow-left
         div.join-org-box.form-inline.hidden
           div.form-group.line-input
             label.sr-only 组织代码

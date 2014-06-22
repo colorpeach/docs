@@ -5,6 +5,13 @@ var orgUser = require('../models/org.user');
 var baseRes = require('./baseResponse');
 
 module.exports = function(app){
+    //获取用户公开文档
+    app.get('/fetch/user/docs',function(req,res){
+        doc.query({user:req.query.owner,auth:'public'},function(list){
+            res.end(baseRes({docs:list}));
+        });
+    });
+
     //获取用户创建的文档
     app.get('/get/user/docs',function(req,res){
         doc.query({user:req.session.user.login},function(list){

@@ -12,8 +12,8 @@ block content
         div.panel-heading
             a(href='/'+doc.user+'/'+doc.title) #{doc.title}
         div.panel-body
-          span.user-span.pull-right(title='作者')
-            span.glyphicon.glyphicon-user
+          a.user-span.pull-right(title='作者',href='/account/#{doc.user}')
+            span.icon-user
             |  #{doc.user}
   if user
     div.private-doc
@@ -33,7 +33,7 @@ block script
                       doc.title+
                     '</a></div>'+
                     '<div class="panel-body"><span class="user-span pull-right" data-tip="作者">'+
-                    '<span class="glyphicon glyphicon-user"></span>'+doc.user+
+                    '<span class="icon-user"></span>'+doc.user+
                     '</span></div></div></div>';
           }).join(""));
         }

@@ -7,7 +7,7 @@ block content
   div#view
     if user && user.login === doc.user
       a.edit-btn.btn.btn-default(href='/edit?_id=#{doc._id}',data-tip='编辑当前文档')
-        span.glyphicon.glyphicon-pencil
+        span.icon-pencil
   ul#menu
   textarea#content.hidden #{doc.content}
 

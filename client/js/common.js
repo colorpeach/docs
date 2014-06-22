@@ -609,7 +609,7 @@
                         '<div class="cm-modal border">'+
                             '<div class="cm-modal-head">'+
                                 '<h3>'+opts.title+'</h3>'+
-                                '<span class="glyphicon glyphicon-remove cm-modal-close"></span>'+
+                                '<span class="icon-close cm-modal-close"></span>'+
                             '</div>'+
                             '<div class="cm-modal-body"></div>'+
                             '<div class="cm-modal-foot"></div>'+

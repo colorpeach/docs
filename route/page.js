@@ -1,4 +1,5 @@
 var doc = require('../models/doc');
+var user = require('../models/user');
 
 module.exports = function(app){
     //首页
@@ -36,6 +37,25 @@ module.exports = function(app){
         }
     });
 
+    //个人中心页面
+    app.get('/account/:user',function(req,res){
+        if(req.session.user && req.params.user === req.session.user.login){
+            res.render('account',{user:req.session.user});
+        }else{
+            user.query({username:req.params.user},function(data){
+                if(data.length){
+                    if(req.session.user){
+                        res.render('info',{user:req.session.user,owner:data[0]});
+                    }else{
+                        res.render('info',{owner:data[0]});
+                    }
+                }else{
+                    res.render('notfound');
+                }
+            });
+        }
+    });
+
     //文档页面
     app.get('/:user/:doc',function(req,res){
         doc.query({title:req.params.doc,user:req.params.user},function(list){
@@ -44,10 +64,5 @@ module.exports = function(app){
                 user:req.session.user
             });
         });
-    });
-
-    //个人中心页面
-    app.get('/account',function(req,res){
-        res.render('account',{user:req.session.user});
     });
 };

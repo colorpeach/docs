@@ -6,6 +6,7 @@ html
     //link(rel='stylesheet', href='/lib/bootstrap/3.0.3/css/bootstrap.css')
     link(rel='stylesheet', href='/css/normalize.css')
     link(rel='stylesheet', href='/css/common.css')
+    link(rel='stylesheet', href='/css/icon.css')
     link(rel='stylesheet', href='/css/animate.css')
     block css
   body
@@ -17,13 +18,13 @@ html
         ul.top-nav-list.pull-right
           if user
             li
-              a(href='/account',data-tip='个人中心') #{user.login}
+              a(href='/account/#{user.login}',data-tip='个人中心') #{user.login}
             li
               a(href='/edit',data-tip='添加文档')
-                span.glyphicon.glyphicon-plus
+                span.icon-plus
             li
               a(href='/logout',data-tip='退出登录')
-                span.glyphicon.glyphicon-arrow-right
+                span.icon-exit
           if !user && !login
             li
               a(href='/login') 登录
