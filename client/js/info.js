@@ -16,7 +16,7 @@
         docHtml:function(list){
             return $.map(list,function(n){
                 var $li = $("<li>"),
-                    html = '<a href="'+n.user+'/'+n.title+'">'+n.title+'</a>';
+                    html = '<a href="/'+n.user+'/'+n.title+'">'+n.title+'</a>';
                 return $li.html(html).data('doc',n);
             });
         },
