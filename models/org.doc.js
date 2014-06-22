@@ -7,11 +7,11 @@ var tidy = dbClient.column({
 var orgDoc = {};
 
 //查询
-orgDoc.query = function(data,fn){
+orgDoc.query = function(data,fn,filter){
     var d = tidy(data);
     dbClient.connect([
         function(db,callback){
-            db.collection('org.doc').find(d).toArray(function(err,data){
+            db.collection('org.doc').find(d,{fields:filter}).toArray(function(err,data){
                 callback(err,data);
             });
         }
@@ -43,7 +43,7 @@ orgDoc.del = function(data,fn){
 }
 
 //查询与文档相关的组织
-orgDoc.queryOrgs = function(data,fn){
+orgDoc.queryOrgs = function(data,fn,filter){
     var d = tidy(data);
     dbClient.connect([
         function(db,callback){
@@ -53,7 +53,7 @@ orgDoc.queryOrgs = function(data,fn){
         },
         function(list,db,callback){
             var d = list.map(function(n){return new ObjectID(n.org);});
-            db.collection('org').find({_id:{$in:d}}).toArray(function(err,data){
+            db.collection('org').find({_id:{$in:d}},{fields:filter}).toArray(function(err,data){
                 callback(err,data);
             });
         }
@@ -61,7 +61,7 @@ orgDoc.queryOrgs = function(data,fn){
 }
 
 //查询与组织相关的文档
-orgDoc.queryDocs = function(data){
+orgDoc.queryDocs = function(data,fn){
     var d = tidy(data);
     dbClient.connect([
         function(db,callback){
@@ -71,7 +71,7 @@ orgDoc.queryDocs = function(data){
         },
         function(list,db,callback){
             var d = list.map(function(n){return new ObjectID(n.doc);});
-            db.collection('doc').find({_id:{$in:d}}).toArray(function(err,data){
+            db.collection('doc').find({_id:{$in:d}},{fields:filter}).toArray(function(err,data){
                 callback(err,data);
             });
         }

@@ -58,7 +58,7 @@
         docHtml:function(list){
             return $.map(list,function(n){
                 var $li = $("<li>"),
-                    html = '<a href="'+n.user+'/'+n.title+'">'+n.title+'</a>'+
+                    html = '<a href="/'+n.user+'/'+n.title+'">'+n.title+'</a>'+
                             '<div class="pull-right opera-box">'+
                             '<a href="/edit?_id='+n._id+'" data-tip="编辑">'+
                                 '<span class="icon-pencil"></span>'+
@@ -278,6 +278,7 @@
                 $.docsajax({
                     url:'/get/doc/orgs',
                     data:{doc:$li.data('doc')._id},
+                    wrap:$('.detail-box'),
                     success:function(d){
                         $('.detail-box ul').html(self.shareOrgHtml(d.orgs));
                     }

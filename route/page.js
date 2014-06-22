@@ -6,7 +6,7 @@ module.exports = function(app){
     app.get('/',function(req,res){
         doc.query({auth:"public"},function(list){
             res.render('index',{docs:list,user:req.session.user});
-        });
+        },{content:0});
     });
 
     //登陆页面

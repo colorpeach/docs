@@ -31,11 +31,11 @@ user.update = function(data,fn){
 }
 
 //查询
-user.query = function(data,fn){
+user.query = function(data,fn,filter){
     var d = tidy(data);
     dbClient.connect([
         function(db,callback){
-            db.collection('user').find(d).toArray(function(err,data){
+            db.collection('user').find(d,{fields:filter}).toArray(function(err,data){
                 callback(err,data);
             });
         }

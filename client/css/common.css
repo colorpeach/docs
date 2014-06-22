@@ -835,28 +835,21 @@ input:focus{
 }
 
 .line-input input{
-	border-width:0 0 1px;
+	border-width:0 0 5px;
 	outline:0 none;
+	padding:10px 10px 5px;
 }
 
-.line-input:after,
 .line-input:before{
   content:' ';
   display:block;
-  height:5px;
-  width:1px;
+  height:4px;
   position:absolute;
-  bottom:0;
-  background-color: #DDD;
+  left:1px;
+  right:1px;
+  bottom:1px;
+  background-color: #fff;
   z-index:1;
-}
-
-.line-input:after{
-  left:0;
-}
-
-.line-input:before{
-  right:0;
 }
 
 .form-inline .form-group{

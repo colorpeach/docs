@@ -45,11 +45,11 @@ doc.del = function(data,fn){
 }
 
 //查询文档
-doc.query = function(data,fn){
+doc.query = function(data,fn,filter){
     var d = tidy(data);
     dbClient.connect([
         function(db,callback){
-            db.collection('docs').find(d).toArray(function(err,data){
+            db.collection('docs').find(d,{fields:filter}).toArray(function(err,data){
                 callback(err,data);
             });
         }

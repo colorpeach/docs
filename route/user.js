@@ -16,7 +16,7 @@ module.exports = function(app){
     app.get('/get/user/docs',function(req,res){
         doc.query({user:req.session.user.login},function(list){
             res.end(baseRes({docs:list}));
-        });
+        },{content:0,thumbnail:0});
     });
 
     //获取用户创建的组织

@@ -54,11 +54,11 @@ org.del = function(data,fn){
 }
 
 //查询组织
-org.query = function(data,fn){
+org.query = function(data,fn,filter){
     var d = tidy(data);
     dbClient.connect([
         function(db,callback){
-            db.collection('org').find(d).toArray(function(err,data){
+            db.collection('org').find(d,{fields:filter}).toArray(function(err,data){
                 callback(err,data);
             });
         }

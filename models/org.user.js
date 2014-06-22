@@ -7,11 +7,11 @@ var tidy = dbClient.column({
 var orgUser = {};
 
 //查询
-orgUser.query = function(data,fn){
+orgUser.query = function(data,fn,filter){
     var d = tidy(data);
     dbClient.connect([
         function(db,callback){
-            db.collection('org.user').find(d).toArray(function(err,data){
+            db.collection('org.user').find(d,{fields:filter}).toArray(function(err,data){
                 callback(err,data);
             });
         }
@@ -43,7 +43,7 @@ orgUser.del = function(data,fn){
 }
 
 //获取组织用户
-orgUser.queryUsers = function(data,fn){
+orgUser.queryUsers = function(data,fn,filter){
     var d = tidy(data);
     dbClient.connect([
         function(db,callback){
@@ -53,7 +53,7 @@ orgUser.queryUsers = function(data,fn){
         },
         function(list,db,callback){
             var d = list.map(function(n){return n.user;});
-            db.collection('user').find({login:{$in:d}}).toArray(function(err,data){
+            db.collection('user').find({login:{$in:d}},{fields:filter}).toArray(function(err,data){
                 callback(err,data);
             });
         }
@@ -61,7 +61,7 @@ orgUser.queryUsers = function(data,fn){
 }
 
 //获取用户组织
-orgUser.queryOrgs = function(data,fn){
+orgUser.queryOrgs = function(data,fn,filter){
     var d = tidy(data);
     dbClient.connect([
         function(db,callback){
@@ -71,7 +71,7 @@ orgUser.queryOrgs = function(data,fn){
         },
         function(list,db,callback){
             var d = list.map(function(n){return new ObjectID(n.org);});
-            db.collection('org').find({_id:{$in:d}}).toArray(function(err,data){
+            db.collection('org').find({_id:{$in:d}},{fields:filter}).toArray(function(err,data){
                 callback(err,data);
             });
         }

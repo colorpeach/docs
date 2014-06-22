@@ -176,3 +176,7 @@
 li:hover{
     background:#fafafa;
 }
+
+li.active{
+    border-left:3px solid #ddd;
+}

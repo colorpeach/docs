@@ -592,8 +592,8 @@
             var self = this;
             this.$modal.fadeOut().find('.cm-modal').animate({top:'-100%'},'swing',function(){
                 self.opts.onClose();
+                $('html,body').removeClass('cm-modal-overflow-hidden');
             });
-            $('html,body').removeClass('cm-modal-overflow-hidden');
         },
         width:function(val){
             this.$modal.find('.cm-modal').css('width',val);
