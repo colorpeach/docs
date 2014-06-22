@@ -5,6 +5,10 @@
     
     $view.append(converter.makeHtml(content));
     
+    //从ObjectId中提取时间
+    var objectId = $("#doc-date").data("id");
+    $('#doc-date').text('最后编辑时间：'+new Date(parseInt(objectId.slice(0,8),16)*1000));
+    
     //滚动效果
     var prev;
     var headings = [];
@@ -15,7 +19,7 @@
             typeList = [];
         prev = null
         headings = $("h1,h2,h3,h4").map(function(i,el){
-            var name = el.textContent,
+            var name = $(el).text(),
                 split = name.split(".");
                 
             $(el).addClass("anchor");

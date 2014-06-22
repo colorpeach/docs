@@ -8,6 +8,10 @@ block content
     if user && user.login === doc.user
       a.edit-btn.btn.btn-default(href='/edit?_id=#{doc._id}',data-tip='编辑当前文档')
         span.icon-pencil
+  div.doc-info
+    p 作者：
+      a(href='/account/#{doc.user}') #{doc.user}
+    p#doc-date(data-id='#{doc._id}')
   ul#menu
   textarea#content.hidden #{doc.content}
 

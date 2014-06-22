@@ -19,6 +19,19 @@
   display:block;
 }
 
+.doc-info{
+  border:solid #DDD;
+  padding: 5px 10px;
+  font-weight: 700;
+  border-width: 1px 1px 1px 3px;
+  margin-right: 210px;
+  margin-top:40px;
+}
+
+.doc-info p{
+  margin:5px 0 ;
+}
+
 #menu{
     position:fixed;
     top:72px;

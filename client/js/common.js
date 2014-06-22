@@ -104,7 +104,7 @@
             $tip.removeClass('hidden');
             $tip.find('.cm-tip-content').text(tip)
             .end().css({
-                left:offset.left-$tip.width()/2+offset.width/2,
+                left:offset.left-$tip.width()/2+(offset.right-offset.left)/2,
                 top:offset.bottom+6
             });
         },
