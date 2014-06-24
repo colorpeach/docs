@@ -33,9 +33,9 @@
             
             $.docsajax({
                 url:"/get/user/docs",
-                wrap:self.$allDocs,
+                wrap:self.$allDocs.find('ul'),
                 success:function(d){
-                    self.$allDocs.html(self.docHtml(d.docs));
+                    self.$allDocs.find('ul').html(self.docHtml(d.docs));
                 }
             });
             
@@ -66,9 +66,14 @@
                             '<a href="javascript:;" class="del-item" data-tip="删除">'+
                                 '<span class="icon-remove"></span>'+
                             '</a>'+
+                            (n.auth === 'public' ?
+                            '<a href="javascript:;" class="private-item" data-tip="取消公开">'+
+                                '<span class="icon-lock">'+
+                            '</a>'
+                            :
                             '<a href="javascript:;" class="share-item" data-tip="分享">'+
                                 '<span class="icon-share">'+
-                            '</a>'+
+                            '</a>')+
                             '</div>';
                 return $li.html(html).data('doc',n);
             });
@@ -187,31 +192,39 @@
                 }
             });
         },
-        lockDoc:function($this){
-//             var data = $this.closest('li').data("doc");
+        privateDoc:function($this){
+            var data = $this.closest('li').data("doc");
             
-//             data = {
-//                 _id:data._id,
-//                 auth:"private"
-//             };
+            data = {
+                _id:data._id,
+                auth:"private"
+            };
             
-//             $.docsajax({
-//                 url:'/saveDoc',
-//                 method:'post',
-//                 data:data,
-//                 wrap:$this.closest('li'),
-//                 cover:false,
-//                 success:function(d){
-//                     $.prompt({
-//                         type:'success',
-//                         content:'操作成功'
-//                     });
-//                 }
-//             });
+            $.docsajax({
+                url:'/post/update/doc',
+                method:'post',
+                data:data,
+                wrap:$this.closest('li'),
+                cover:false,
+                success:function(d){
+                    $.prompt({
+                        type:'success',
+                        content:'操作成功'
+                    });
+                    $this.closest('li')
+                    .find('.private-item')
+                    .data('tip','分享')
+                    .removeClass('private-item')
+                    .addClass('share-item')
+                    .find('span')
+                    .removeClass('icon-lock')
+                    .addClass('icon-share')
+                }
+            });
         },
         membersHtml:function(list){
             return $.map(list||[],function(n){
-                return '<li>'+n.login+'</li>';
+                return '<li><a href="/account/'+n.login+'">'+n.login+'</a></li>';
             });
         },
         getMembers:function(org){
@@ -284,8 +297,8 @@
                     }
                 });
             })
-            .on('click','.lock-item',function(){
-                self.lockDoc($(this));
+            .on('click','.private-item',function(){
+                self.privateDoc($(this));
             });
             
             //添加组织
