@@ -4,37 +4,27 @@ block css
   link(rel='stylesheet', href='/css/index.css')
   
 block content
-  each doc in docs
-    div.doc-item
-      div
-        img(src='#{doc.thumbnail}',width='100%')
-      div.panel.panel-default
-        div.panel-heading
-            a(href='/'+doc.user+'/'+doc.title) #{doc.title}
-        div.panel-body
-          a.user-span.pull-right(title='作者',href='/account/#{doc.user}')
-            span.icon-user
-            |  #{doc.user}
+  div.clearfix
+    each doc in docs
+      div.doc-item
+        div
+          a(href='/'+doc.user+'/'+doc.title,title='#{doc.title}')
+            img(src='#{doc.thumbnail}',width='100%')
+        div.panel.panel-default
+          div.panel-heading
+              a(href='/'+doc.user+'/'+doc.title) #{doc.title}
+          div.panel-body
+            a.user-span.pull-right(href='/account/#{doc.user}')
+              span.icon-user
+              |  #{doc.user}
   if user
-    div.private-doc
-    div.org-doc
+    div.clearfix
+      h3.box-header 私有文档
+      div.private-doc
+    div.clearfix
+      h3.box-header 组织文档
+      div.org-doc
   
 block script
-  if user && user.github
-    script(type='text/javascript').
-      $.docsajax({
-        url:'/get/user/orgs/docs',
-        success:function(d){
-          $('.org-doc').html($.map(d.docs,function(doc){
-            return '<div class="doc-item"><div class="panel panel-default">'+
-                    '<div class="panel-heading"><a href="'+
-                      '/'+doc.user+'/'+doc.title+
-                    '">'+
-                      doc.title+
-                    '</a></div>'+
-                    '<div class="panel-body"><span class="user-span pull-right" data-tip="作者">'+
-                    '<span class="icon-user"></span>'+doc.user+
-                    '</span></div></div></div>';
-          }).join(""));
-        }
-      });
+  if user
+    script(type='text/javascript',src='/js/index.js')
