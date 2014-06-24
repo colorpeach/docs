@@ -31,6 +31,8 @@ html
       div.btn-group
         button.btn(data-tip='撤销')
           span.icon-undo
+        button.btn(data-tip='重做')
+          span.icon-redo
         button.btn(data-tip='加粗')
           span.icon-bold
         button.btn(data-tip='斜体')
@@ -44,9 +46,21 @@ html
         button.btn(data-tip='有序列表')
           span.icon-numbered-list
         button.btn(data-tip='标题')
-          span.icon-undo
+          span.icon-embed
         button.btn(data-tip='字体大小')
           span.icon-font
+        button.btn(data-tip='字体颜色')
+          span.icon-droplet
+        button.btn(data-tip='字体背景色')
+          span.icon-droplet
+        button.btn(data-tip='链接')
+          span.icon-link
+        button.btn(data-tip='取消链接')
+          span.icon-link
+        button.btn(data-tip='图片')
+          span.icon-image
+        button.btn(data-tip='清除样式')
+          span.icon-paint-format
     div#rightbar
       div.btn-group
         button.btn(data-tip='删除当前片段')
@@ -74,4 +88,6 @@ html
         
     script(type='text/javascript',src='/lib/reveal/2.6.2/lib/js/head.min.js')
     script(type='text/javascript',src='/lib/reveal/2.6.2/js/reveal.min.js')
+    script(type='text/javascript', src='/lib/jquery/1.11.0/jquery.js')
+    script(type='text/javascript',src='/js/common.js')
     script(type='text/javascript',src='/js/deck.js')

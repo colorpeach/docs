@@ -1,6 +1,6 @@
 .btn{
     cursor:pointer;
-    opacity:.5;
+    opacity:.3;
     font-size:14px;
 }
 
@@ -48,6 +48,7 @@
     width:100%;
     border-bottom: 1px solid #333;
     font-size: 14px;
+    font-weight: bold;
     padding: 1em;
 }
 
