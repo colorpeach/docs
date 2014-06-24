@@ -27,7 +27,11 @@ block content
       li
         a 我加入的组织
   div.account-right
-    ul#all-docs.item-list
+    div#all-docs.item-list
+      div.item-header
+        a.btn.btn-default(href='/edit',data-tip='添加文档')
+          span.icon-plus
+      ul
     ul#all-repos.item-list.hidden
     div#my-orgs.item-list.hidden
       div.item-header
@@ -63,4 +67,5 @@ block script
     var url = {
       repos: '#{user.repos_url}'
     };
+    var user = '#{user.login}';
   script(type='text/javascript',src='/js/account.js')

@@ -1,0 +1,77 @@
+doctype html
+html
+  head
+    title #{title}
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/css/common.css')
+    link(rel='stylesheet', href='/css/icon.css')
+    link(rel='stylesheet', href='/css/deck.css')
+    link(rel='stylesheet', href='/lib/reveal/2.6.2/css/reveal.min.css')
+    link(rel='stylesheet', href='/lib/reveal/2.6.2/css/theme/default.css')
+    link(rel='stylesheet', href='/lib/reveal/2.6.2/lib/css/zenburn.css')
+    block css
+  body
+    div#slidebar
+      div.btn-group.slide-head
+        button.btn.btn-success
+          span.icon-disk
+        button.btn.btn-success
+          span.icon-eye
+      div.btn-group.slide-con
+        button.btn 设置
+          span.icon-cog
+        button.btn 样式
+          span.icon-quill
+        button.btn 导出
+          span.icon-download
+        button.btn 导入
+          span.icon-upload
+    div#topbar
+      div.btn-group
+        button.btn(data-tip='撤销')
+          span.icon-undo
+        button.btn(data-tip='加粗')
+          span.icon-bold
+        button.btn(data-tip='斜体')
+          span.icon-italic
+        button.btn(data-tip='下划线')
+          span.icon-underline
+        button.btn(data-tip='对齐')
+          span.icon-paragraph-center2
+        button.btn(data-tip='无序列表')
+          span.icon-list
+        button.btn(data-tip='有序列表')
+          span.icon-numbered-list
+        button.btn(data-tip='标题')
+          span.icon-undo
+        button.btn(data-tip='字体大小')
+          span.icon-font
+    div#rightbar
+      div.btn-group
+        button.btn(data-tip='删除当前片段')
+          span.icon-remove2
+        button.btn(data-tip='背景颜色')
+          span.icon-droplet
+        button.btn(data-tip='背景图')
+          span.icon-image2
+        button.btn(data-tip='添加slide')
+          span.icon-plus
+        button.btn(data-tip='定位')
+          span.icon-pushpin
+        button.btn(data-tip='编辑html')
+          span.icon-code
+    div#deck
+      div.reveal
+        div.slides
+          section
+            h1 dddd
+          section
+            section
+              h1 ffff
+            section
+              h1 ggggg
+        
+    script(type='text/javascript',src='/lib/reveal/2.6.2/lib/js/head.min.js')
+    script(type='text/javascript',src='/lib/reveal/2.6.2/js/reveal.min.js')
+    script(type='text/javascript',src='/js/deck.js')

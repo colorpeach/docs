@@ -20,19 +20,22 @@ module.exports = function(app){
         },{content:0});
     });
 
-    //获取用户创建的组织
+    //获取用户创建和加入的组织
     app.get('/get/user/orgs',function(req,res){
-        org.query({owner:req.session.user.login},function(list){
+//         org.query({owner:req.session.user.login},function(list){
+//             res.end(baseRes({orgs:list}));
+//         });
+        orgUser.queryOrgs({user:req.session.user.login},function(list){
             res.end(baseRes({orgs:list}));
         });
     });
 
     //获取用户加入的组织
-    app.get('/get/user/join/orgs',function(req,res){
-        orgUser.queryOrgs({user:req.session.user.login},function(list){
-            res.end(baseRes({orgs:list}));
-        });
-    });
+//     app.get('/get/user/_join/orgs',function(req,res){
+//         orgUser.queryOrgs({user:req.session.user.login},function(list){
+//             res.end(baseRes({orgs:list}));
+//         });
+//     });
 
     //获取用户所有组织下的所有文档
     app.get('/get/user/orgs/docs',function(req,res){

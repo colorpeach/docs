@@ -42,23 +42,27 @@
             $.docsajax({
                 url:"/get/user/orgs",
                 success:function(d){
-                    self.$myOrgs.find("ul").append(self.myOrgsHtml(d.orgs));
-                    self.myOrgList = d.orgs;
-                }
-            });
-            
-            $.docsajax({
-                url:"/get/user/join/orgs",
-                success:function(d){
-                    self.$joinOrgs.find("ul").append(self.joinOrgHtml(d.orgs));
-                    self.joinOrgList = d.orgs;
+                    var createOrgs = [],joinOrgs;
+                    
+                    joinOrgs = $.map(d.orgs,function(n){
+                        if(n.owner !== user){
+                            return n;
+                        }else{
+                            createOrgs.push(n);
+                        }
+                    });
+                    
+                    self.$myOrgs.find("ul").append(self.myOrgsHtml(createOrgs));
+                    self.myOrgList = createOrgs;
+                    self.$joinOrgs.find("ul").append(self.joinOrgHtml(joinOrgs));
+                    self.joinOrgList = joinOrgs;
                 }
             });
         },
         docHtml:function(list){
             return $.map(list,function(n){
                 var $li = $("<li>"),
-                    html = '<a href="/'+n.user+'/'+n.title+'">'+n.title+'</a>'+
+                    html = '<a href="/doc/'+n.user+'/'+n.title+'">'+n.title+'</a>'+
                             '<div class="pull-right opera-box">'+
                             '<a href="/edit?_id='+n._id+'" data-tip="编辑">'+
                                 '<span class="icon-pencil"></span>'+
@@ -235,7 +239,6 @@
                 data:{org:org._id},
                 wrap:$('.detail-box'),
                 success:function(d){
-                    d.members.unshift({login:org.owner});
                     $('.detail-box ul').html(self.membersHtml(d.members));
                 }
             });

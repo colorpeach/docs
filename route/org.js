@@ -25,9 +25,13 @@ module.exports = function(app){
 
     //创建组织
     app.post('/post/create/org',function(req,res){
-        req.body.owner = req.session.user.login;
+        var user;
+        user = req.body.owner = req.session.user.login;
         org.add(req.body,function(data){
-            res.end(baseRes(data[0]));
+            var orgData = data[0];
+            orgUser.add({user:user,org:''+orgData._id},function(){
+                res.end(baseRes(orgData));
+            })
         });
     });
     

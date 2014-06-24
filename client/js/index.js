@@ -15,7 +15,7 @@ $.docsajax({
 function docHtml(l){
     return $.map(l,function(doc){
         return ['<div class="doc-item">',
-                '<div><a href="/'+doc.user+'/'+doc.title+'" title="'+doc.title+'">',
+                '<div><a href="/doc/'+doc.user+'/'+doc.title+'" title="'+doc.title+'">',
                 '<img src="'+doc.thumbnail+'" width="100%">',
                 '</a></div>',
                 '<div class="panel panel-default">',

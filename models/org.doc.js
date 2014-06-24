@@ -61,7 +61,7 @@ orgDoc.queryOrgs = function(data,fn,filter){
 }
 
 //查询与组织相关的文档
-orgDoc.queryDocs = function(data,fn){
+orgDoc.queryDocs = function(data,fn,filter){
     var d = tidy(data);
     dbClient.connect([
         function(db,callback){

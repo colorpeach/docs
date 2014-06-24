@@ -36,6 +36,16 @@ module.exports = function(app){
             res.render('edit',{user:req.session.user,doc:{}});
         }
     });
+    
+    //deck页面
+    app.get('/deck',function(req,res){
+        res.render('deck',{});
+    });
+    
+    //slide页面
+    app.get('/slide/:user/:deck',function(req,res){
+        res.render('slide',{});
+    });
 
     //个人中心页面
     app.get('/account/:user',function(req,res){
@@ -57,7 +67,7 @@ module.exports = function(app){
     });
 
     //文档页面
-    app.get('/:user/:doc',function(req,res){
+    app.get('/doc/:user/:doc',function(req,res){
         doc.query({title:req.params.doc,user:req.params.user},function(list){
             res.render('doc',{
                 doc:list ? list[0] : {},

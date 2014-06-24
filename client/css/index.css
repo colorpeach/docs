@@ -8,6 +8,7 @@
 .doc-item>div{
     border:1px solid #ddd;
     padding:10px;
+    margin-top:-1px;
 }
 
 .doc-item>div>div{
