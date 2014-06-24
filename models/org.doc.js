@@ -71,7 +71,7 @@ orgDoc.queryDocs = function(data,fn){
         },
         function(list,db,callback){
             var d = list.map(function(n){return new ObjectID(n.doc);});
-            db.collection('doc').find({_id:{$in:d}},{fields:filter}).toArray(function(err,data){
+            db.collection('docs').find({_id:{$in:d}},{fields:filter}).toArray(function(err,data){
                 callback(err,data);
             });
         }
