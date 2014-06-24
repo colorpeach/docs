@@ -13,3 +13,8 @@
 .doc-item>div>div{
     height:20px;
 }
+
+.box-header{
+    margin: 15px;
+    padding: 5px 0;
+}

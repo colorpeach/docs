@@ -34,7 +34,7 @@
     left:100%;
     bottom:10px;
     overflow-y:auto;
-    text-align:right;
+    text-align:left;
     width:200px;
     opacity:.5;
     transition: all 0.3s;

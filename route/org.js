@@ -8,12 +8,14 @@ module.exports = function(app){
     app.get('/get/org/users',function(req,res){
         orgUser.queryUsers(req.query,function(list){
             res.end(baseRes({members:list}));
-        });
+        },{password:0});
     });
 
     //获取对应组织内所有分享的文档
     app.get('/get/org/docs',function(req,res){
-//         orgDoc.queryDocs();
+        orgDoc.queryDocs(req.body,function(data){
+            res.end(baseRes({docs:data}));
+        });
     });
 
     //获取对应用户在对应组织内分享的文档
