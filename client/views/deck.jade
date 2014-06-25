@@ -14,19 +14,24 @@ html
   body
     div#slidebar
       div.btn-group.slide-head
-        button.btn.btn-success
+        button.btn.btn-success.save-btn
           span.icon-disk
         button.btn.btn-success
           span.icon-eye
-      div.btn-group.slide-con
-        button.btn 设置
-          span.icon-cog
-        button.btn 样式
-          span.icon-quill
-        button.btn 导出
-          span.icon-download
-        button.btn 导入
-          span.icon-upload
+      div.slide-body
+        div.btn-group.slide-con
+          button.btn 设置
+            span.icon-cog
+          button.btn 样式
+            span.icon-quill
+          button.btn 导出
+            span.icon-download
+          button.btn 导入
+            span.icon-upload
+    div.slide-detail
+    div.slide-detail
+    div.slide-detail
+    div.slide-detail
     div#topbar
       div.btn-group
         button.btn(data-tip='撤销')
@@ -39,8 +44,18 @@ html
           span.icon-italic
         button.btn(data-tip='下划线')
           span.icon-underline
-        button.btn(data-tip='对齐')
-          span.icon-paragraph-center2
+        span.btn-wrap
+          button.btn
+            span.icon-paragraph-center2
+          div.btn-wrap-box
+            button.btn(data-tip='左对齐')
+              span.icon-paragraph-left2
+            button.btn(data-tip='居中')
+              span.icon-paragraph-center2
+            button.btn(data-tip='右对齐')
+              span.icon-paragraph-right2
+            button.btn(data-tip='分散对齐')
+              span.icon-paragraph-justify2
         button.btn(data-tip='无序列表')
           span.icon-list
         button.btn(data-tip='有序列表')
@@ -63,7 +78,7 @@ html
           span.icon-paint-format
     div#rightbar
       div.btn-group
-        button.btn(data-tip='删除当前片段')
+        button.btn(data-tip='删除当前片段',data-action='delete')
           span.icon-remove2
         button.btn(data-tip='背景颜色')
           span.icon-droplet
@@ -75,16 +90,15 @@ html
           span.icon-pushpin
         button.btn(data-tip='编辑html')
           span.icon-code
+    div.add-slide
+      span.icon-plus
+    div.add-fragment
+      span.icon-plus
     div#deck
       div.reveal
         div.slides
           section
-            h1 dddd
-          section
-            section
-              h1 ffff
-            section
-              h1 ggggg
+            h2 title
         
     script(type='text/javascript',src='/lib/reveal/2.6.2/lib/js/head.min.js')
     script(type='text/javascript',src='/lib/reveal/2.6.2/js/reveal.min.js')
