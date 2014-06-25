@@ -22,7 +22,7 @@
         },
         generateFileLink:function(){
             if(doc._id){
-                $('.file-btn').removeClass('hidden').attr('href','/'+doc.user+'/'+doc.title);
+                $('.file-btn').removeClass('hidden').attr('href','/doc/'+doc.user+'/'+doc.title);
             }
         },
         save:function(){

@@ -23,8 +23,240 @@ Reveal.initialize({
 });
 
 (function(){
-    var topbarAction = {
+    var topBtns = [
+            {
+                "icon": "icon-undo",
+                "action": "",
+                "value": "undo",
+                "tip": "撤销"
+            },
+            {
+                "icon": "icon-redo",
+                "action": "",
+                "value": "redo",
+                "tip": "重做"
+            },
+            {
+                "icon": "icon-bold",
+                "action": "",
+                "value": "bold",
+                "tip": "加粗"
+            },
+            {
+                "icon": "icon-italic",
+                "action": "",
+                "value": "italic",
+                "tip": "斜体"
+            },
+            {
+                "icon": "icon-underline",
+                "action": "",
+                "value": "underline",
+                "tip": "下划线"
+            },
+            {
+                "icon": "icon-paragraph-center2",
+                "action": "",
+                "value": "",
+                "buttons":[
+                    {
+                        "icon": "icon-paragraph-left2",
+                        "action": "",
+                        "value": "",
+                        "tip": "左对齐"
+                    },
+                    {
+                        "icon": "icon-paragraph-center2",
+                        "action": "",
+                        "value": "",
+                        "tip": "居中"
+                    },
+                    {
+                        "icon": "icon-paragraph-right2",
+                        "action": "",
+                        "value": "",
+                        "tip": "右对齐"
+                    },
+                    {
+                        "icon": "icon-paragraph-justify2",
+                        "action": "",
+                        "value": "",
+                        "tip": "分散对齐"
+                    }
+                ]
+            },
+            {
+                "icon": "icon-list",
+                "action": "",
+                "value": "",
+                "tip": "无序列表"
+            },
+            {
+                "icon": "icon-numbered-list",
+                "action": "",
+                "value": "",
+                "tip": "有序列表"
+            },
+            {
+                "icon": "icon-embed",
+                "action": "",
+                "value": "formatBlock",
+                "buttons":[
+                    {
+                        "text": "Paragraph",
+                        "action": "",
+                        "value": "p"
+                    },
+                    {
+                        "text": "pre",
+                        "action": "",
+                        "value": "pre"
+                    },
+                    {
+                        "text": "code",
+                        "action": "",
+                        "value": "code"
+                    },
+                    {
+                        "text": "heading1",
+                        "action": "",
+                        "value": "h1"
+                    },
+                    {
+                        "text": "heading2",
+                        "action": "",
+                        "value": "h2"
+                    },
+                    {
+                        "text": "heading3",
+                        "action": "",
+                        "value": "h3"
+                    }
+                ]
+            },
+            {
+                "icon": "icon-font",
+                "action": "",
+                "value": "fontSize",
+                "buttons":[
+                    {
+                        "text": "18px",
+                        "action": "",
+                        "value": "1"
+                    },
+                    {
+                        "text": "24px",
+                        "action": "",
+                        "value": "2"
+                    },
+                    {
+                        "text": "32px",
+                        "action": "",
+                        "value": "3"
+                    },
+                    {
+                        "text": "42px",
+                        "action": "",
+                        "value": "4"
+                    },
+                    {
+                        "text": "54px",
+                        "action": "",
+                        "value": "5"
+                    },
+                    {
+                        "text": "72px",
+                        "action": "",
+                        "value": "6"
+                    },
+                    {
+                        "text": "112px",
+                        "action": "",
+                        "value": "7"
+                    }
+                ]
+            },
+            {
+                "icon": "icon-droplet",
+                "action": "",
+                "value": "",
+                "tip": "字体颜色"
+            },
+            {
+                "icon": "icon-droplet",
+                "action": "",
+                "value": "",
+                "tip": "字体背景色"
+            },
+            {
+                "icon": "icon-link",
+                "action": "createLink",
+                "value": "createLink",
+                "tip": "链接"
+            },
+            {
+                "icon": "icon-link",
+                "action": "",
+                "value": "unlink",
+                "tip": "取消链接"
+            },
+            {
+                "icon": "icon-image",
+                "action": "",
+                "value": "",
+                "tip": "图片"
+            },
+            {
+                "icon": "icon-paint-format",
+                "action": "",
+                "value": "removeFormat",
+                "tip": "清除样式"
+            }
+        ];
         
+    var rightBtns = [
+            {
+                "icon": "icon-remove2",
+                "action": "delete",
+                "value": "",
+                "tip": "删除当前片段"
+            },
+            {
+                "icon": "icon-droplet",
+                "action": "",
+                "value": "",
+                "tip": "背景颜色"
+            },
+            {
+                "icon": "icon-image2",
+                "action": "",
+                "value": "",
+                "tip": "背景图"
+            },
+            {
+                "icon": "icon-plus",
+                "action": "",
+                "value": "",
+                "tip": "添加slide"
+            },
+            {
+                "icon": "icon-pushpin",
+                "action": "",
+                "value": "",
+                "tip": "定位"
+            },
+            {
+                "icon": "icon-code",
+                "action": "",
+                "value": "",
+                "tip": "编辑html"
+            }
+        ];
+    
+    var topbarAction = {
+        createLink:function(){
+            
+        }
     };
     
     var rightbarAction = {
@@ -65,6 +297,7 @@ Reveal.initialize({
                 Reveal.down();
             });
             
+            //保存
             $('.save-btn').click(function(){
                 var data = {};
                 
@@ -76,9 +309,17 @@ Reveal.initialize({
                     method:'post',
                     data:data,
                     success:function(){
-                        $.msg('新增成功');
+                        $.prompt({
+                            type:'success',
+                            content:'新增成功'
+                        });
                     }
                 });
+            });
+            
+            //预览
+            $('.preview-btn').click(function(){
+                
             });
         },
         initSlideDetail:function(){
@@ -104,11 +345,45 @@ Reveal.initialize({
             var self = this;
             
             self.$topbar.on('click','.btn',function(){
-                var action = $(this).data('action');
+                var $this = $(this);
+                var action = $this.data('action');
+                var val = $this.data('value');
                 
                 if(action in topbarAction)
-                    topbarAction[action]($(this));
+                    topbarAction[action]($this);
+                else if(val)
+                    if($this.parent().hasClass('btn-wrap-box'))
+                        document.execCommand($this.parent().prev().data('value'),false,val);
+                    else
+                        document.execCommand(val);
+                    
+                return false;
             });
+            
+            self.$topbar.find('.btn-group').html(
+                $.map(topBtns,function(n){
+                    var $btn = $('<button>',{class:'btn'});
+                    
+                    $btn.attr('data-tip',n.tip).data(n).append($('<span>').addClass(n.icon));
+                    
+                    if(n.buttons){
+                        $btn = $('<span class="btn-wrap">').append($btn)
+                        .append($('<div class="btn-wrap-box">').append(
+                                $.map(n.buttons,function(m){
+                                    var $btn = $('<button>',{class:'btn'});
+                                    $btn.attr('data-tip',m.tip).data(m);
+                                    if(m.icon)
+                                        $btn.append($('<span>').addClass(m.icon));
+                                    else
+                                        $btn.text(m.text);
+                                    return $btn;
+                                })
+                            )
+                        );
+                    }
+                    return $btn;
+                })
+            );
         },
         initRightbar:function(){
             var self = this;
@@ -119,6 +394,15 @@ Reveal.initialize({
                 if(action in rightbarAction)
                     rightbarAction[action]($(this));
             });
+            
+            self.$rightbar.find('.btn-group').html(
+                $.map(rightBtns,function(n){
+                    var $btn = $('<button>',{class:'btn'});
+                    n.alignment = 'l';
+                    $btn.attr('data-tip',n.tip).data(n).append($('<span>').addClass(n.icon));
+                    return $btn;
+                })
+            );
         },
         init:function(){
             this.initSlideDetail();

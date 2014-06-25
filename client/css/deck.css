@@ -29,8 +29,8 @@
 
 .slide-body{
     height:100%;
-    margin-top:-64px;
-    padding:64px 0 0;
+    margin-top:-94px;
+    padding:94px 0 0;
     background-color:#2B2B2B;
 }
 
@@ -136,6 +136,13 @@
     }
 }
 
+@media (max-height:800px){
+    #rightbar{
+        top:50px;
+        margin-top:0;
+    }
+}
+
 #rightbar .btn{
     display:block;
     width: 100%;
@@ -152,8 +159,8 @@
 
 #deck{
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 50px;
+    bottom: 50px;
     left: 200px;
     right: 50px;
     z-index:1;

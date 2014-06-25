@@ -1,5 +1,6 @@
 var org = require('./org.js');
 var doc = require('./doc.js');
+var deck = require('./deck.js');
 var user = require('./user.js');
 var page = require('./page.js');
 var settings = require('../settings');
@@ -35,5 +36,6 @@ module.exports = function(app){
     page(app);
     user(app);
     doc(app);
+    deck(app);
     org(app);
 };
