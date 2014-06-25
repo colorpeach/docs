@@ -107,7 +107,7 @@
             if(data.alignment === 'l'){
                 $tip.css({
                     left:offset.left-$tip.width()-6,
-                    top:offset.top+$tip.height()/2-(offset.bottom-offset.top)/2
+                    top:offset.top-$tip.height()/2+(offset.bottom-offset.top)/2
                 }).find('.cm-tip-arrow').addClass('cm-tip-arrow-left');
             }else{
                 $tip.css({
