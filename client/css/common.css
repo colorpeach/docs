@@ -586,6 +586,15 @@ fieldset[disabled] .btn-link:focus {
 	margin-left: -6px;
 }
 
+.cm-tip-arrow-left{
+	border-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) rgba(0, 0, 0, 0.9);
+	top:50%;
+	left:auto;
+	right:-6px;
+	margin-top:-6px;
+	border-width: 6px 0 6px 6px;
+}
+
 .cm-tip-content{
     padding:5px 10px;
 }
