@@ -1,4 +1,5 @@
 var doc = require('../models/doc');
+var deck = require('../models/deck');
 var user = require('../models/user');
 
 module.exports = function(app){
@@ -44,7 +45,12 @@ module.exports = function(app){
     
     //slide页面
     app.get('/slide/:user/:deck',function(req,res){
-        res.render('slide',{});
+        deck.query({title:req.params.deck,user:req.params.user},function(list){
+            res.render('slide',{
+                deck:list ? list[0] : {},
+                user:req.session.user
+            });
+        });
     });
 
     //个人中心页面
