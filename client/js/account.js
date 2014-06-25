@@ -1,6 +1,7 @@
 (function(){
     var Account = {
         $allDocs:$('#all-docs'),
+        $allDecks:$('#all-decks'),
         $allRepos:$('#all-repos'),
         $myOrgs:$('#my-orgs'),
         $joinOrgs:$('#join-orgs'),
@@ -40,6 +41,14 @@
             });
             
             $.docsajax({
+                url:"/get/user/decks",
+                wrap:self.$allDocs.find('ul'),
+                success:function(d){
+                    self.$allDecks.find('ul').html(self.docHtml(d.decks,'slide'));
+                }
+            });
+            
+            $.docsajax({
                 url:"/get/user/orgs",
                 success:function(d){
                     var createOrgs = [],joinOrgs;
@@ -59,10 +68,11 @@
                 }
             });
         },
-        docHtml:function(list){
+        docHtml:function(list,type){
+            var type = type || 'doc';
             return $.map(list,function(n){
                 var $li = $("<li>"),
-                    html = '<a href="/doc/'+n.user+'/'+n.title+'">'+n.title+'</a>'+
+                    html = '<a href="/'+type+'/'+n.user+'/'+n.title+'">'+n.title+'</a>'+
                             '<div class="pull-right opera-box">'+
                             '<a href="/edit?_id='+n._id+'" data-tip="编辑">'+
                                 '<span class="icon-pencil"></span>'+
@@ -79,7 +89,7 @@
                                 '<span class="icon-share">'+
                             '</a>')+
                             '</div>';
-                return $li.html(html).data('doc',n);
+                return $li.html(html).data(type,n);
             });
         },
         shareOrgHtml:function(orgs){
