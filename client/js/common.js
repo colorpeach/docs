@@ -99,14 +99,22 @@
     $('body').append($tip).on({
         mouseenter:function(){
             var $this = $(this),
-                tip = $this.data('tip'),
+                data = $this.data(),
                 offset = $this[0].getBoundingClientRect();
             $tip.removeClass('hidden');
-            $tip.find('.cm-tip-content').text(tip)
-            .end().css({
-                left:offset.left-$tip.width()/2+(offset.right-offset.left)/2,
-                top:offset.bottom+6
-            });
+            $tip.find('.cm-tip-content').text(data.tip)
+            
+            if(data.alignment === 'l'){
+                $tip.css({
+                    left:offset.left-$tip.width()-6,
+                    top:offset.top+$tip.height()/2-(offset.bottom-offset.top)/2
+                }).find('.cm-tip-arrow').addClass('cm-tip-arrow-left');
+            }else{
+                $tip.css({
+                    left:offset.left-$tip.width()/2+(offset.right-offset.left)/2,
+                    top:offset.bottom+6
+                }).find('.cm-tip-arrow').removeClass('cm-tip-arrow-left');
+            }
         },
         mouseleave:function(){
             $tip.addClass('hidden');
