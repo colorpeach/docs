@@ -21,6 +21,8 @@ block content
       li.active
         a 我的文档
       li
+        a 我的幻灯片
+      li
         a github仓库
       li
         a 我创建的组织
@@ -30,6 +32,11 @@ block content
     div#all-docs.item-list
       div.item-header
         a.btn.btn-default(href='/edit',data-tip='添加文档')
+          span.icon-plus
+      ul
+    div#all-decks.item-list.hidden
+      div.item-header
+        a.btn.btn-default(href='/deck',data-tip='添加幻灯片')
           span.icon-plus
       ul
     ul#all-repos.item-list.hidden
