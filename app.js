@@ -8,6 +8,9 @@ var settings = require('./settings');
 app.set("views",__dirname+"/client/views");
 app.set("view engine","jade");
 
+app.use(require('compression')({
+    threshold:512
+}));
 app.use(require('body-parser')());
 // app.use(express.favicon());
 // app.use(express.logger("dev"));

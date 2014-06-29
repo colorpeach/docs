@@ -119,11 +119,7 @@
         mouseleave:function(){
             $tip.addClass('hidden');
         }
-    },'[data-tip]')
-    .find('[title]').each(function(i,n){
-        $(n).attr('data-tip',$(n).attr('title'));
-        $(n).removeAttr('title');
-    });
+    },'[data-tip]');
 })();
 
 (function(){

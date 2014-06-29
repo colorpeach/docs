@@ -2,6 +2,17 @@
     font-size: 14px;
 }
 
+.cm-modal-box{
+    background-color:rgba(0,0,0,.9);
+}
+
+.edit-btn-box{
+    position:absolute;
+    top:10px;
+    left:10px;
+    z-index:3;
+}
+
 #slidebar{
     position:absolute;
     top:0;
@@ -9,12 +20,17 @@
     bottom:0;
     width:150px;
     z-index:4;
+    -webkit-transition : all 0.3s ease;
+    -moz-transition    : all 0.3s ease;
+    transition         : all 0.3s ease;
+    overflow:hidden;
 }
 
 .slide-head{
     padding:10px;
-    background-color:rgba(0,0,0,.5);
-    text-align:center;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
 .slide-head .btn{
@@ -32,6 +48,8 @@
     margin-top:-94px;
     padding:94px 0 0;
     background-color:#2B2B2B;
+    position:relative;
+    z-index:-1;
 }
 
 .slide-con{
@@ -83,6 +101,9 @@
     margin-left:150px;
     text-align:center;
     z-index:2;
+    -webkit-transition : all 0.3s ease;
+    -moz-transition    : all 0.3s ease;
+    transition         : all 0.3s ease;
 }
 
 #topbar .btn{
@@ -120,6 +141,24 @@
     display:block;
 }
 
+.btn-wrap-box.v-box{
+    width:100px;
+    margin-left: -50px;
+}
+
+.btn-wrap-box.v-box .btn{
+    border-width:0;
+    border-top:1px solid #333;
+    width:100%;
+}
+
+#rightbar .btn-wrap-box{
+    width:50px;
+    left: -50px;
+    top: -5px;
+    margin-left:0;
+}
+
 #rightbar{
     position:absolute;
     left: 50%;
@@ -127,6 +166,9 @@
     margin: -350px 0 0 555px;
     font-size: 14px;
     z-index:2;
+    -webkit-transition : all 0.3s ease;
+    -moz-transition    : all 0.3s ease;
+    transition         : all 0.3s ease;
 }
 
 @media (max-width:1220px){
@@ -164,6 +206,9 @@
     left: 200px;
     right: 50px;
     z-index:1;
+    -webkit-transition : all 0.3s ease;
+    -moz-transition    : all 0.3s ease;
+    transition         : all 0.3s ease;
 }
 
 .add-slide,
@@ -176,9 +221,9 @@
     cursor: pointer;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 50%;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    -webkit-transition : all 0.3s ease;
+    -moz-transition    : all 0.3s ease;
+    transition         : all 0.3s ease;
     color: #FFF;
     text-align: center;
     line-height: 50px;
@@ -241,4 +286,42 @@
 .reveal section[contenteditable]:focus{
     background-color:rgba(0,0,0,0.1);
     border-color:rgba(150, 150, 150, 0.5);
+}
+
+.overlay{
+    position:fixed;
+    display:none;
+    padding:10px;
+    border:10px solid #111;
+    background-color:#333;
+    z-index:5;
+    font-size:12px;
+}
+
+#link-box{
+    
+}
+
+/*预览*/
+#deck.preview{
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+}
+
+#slidebar.preview{
+    left:-100%;
+}
+
+#topbar.preview,#rightbar.preview{
+    top:-100%;
+}
+
+.add-fragment.preview{
+    bottom:-100%;
+}
+
+.add-slide.preview{
+    right:-100%;
 }

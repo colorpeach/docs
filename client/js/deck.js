@@ -23,6 +23,50 @@ Reveal.initialize({
 });
 
 (function(){
+    var colorBtns = [
+        {
+            "value": "none",
+            "style": "background:none;width:40px;height:34px;",
+            "icon" : "icon-blocked"
+        },
+        {
+            "value": "rgb( 200, 50, 30)",
+            "style": "background:rgb( 200, 50, 30);width:40px;height:34px;"
+        },
+        {
+            "value": "rgb( 50, 200, 90)",
+            "style": "background:rgb( 50, 200, 90);width:40px;height:34px;"
+        },
+        {
+            "value": "rgb( 0, 0, 0)",
+            "style": "background:rgb( 0, 0, 0);width:40px;height:34px;"
+        },
+        {
+            "value": "rgb( 255, 255, 255)",
+            "style": "background:rgb( 255, 255, 255);width:40px;height:34px;"
+        },
+        {
+            "value": "rgb( 22, 152, 213)",
+            "style": "background:rgb( 22, 152, 213);width:40px;height:34px;"
+        },
+        {
+            "value": "rgb( 22, 213, 75)",
+            "style": "background:rgb( 22, 213, 75);width:40px;height:34px;"
+        },
+        {
+            "value": "rgb( 12, 25, 77)",
+            "style": "background:rgb( 12, 25, 77);width:40px;height:34px;"
+        },
+        {
+            "value": "rgb( 180, 50, 140)",
+            "style": "background:rgb( 180, 50, 140);width:40px;height:34px;"
+        },
+        {
+            "value": "rgb( 255, 122, 0)",
+            "style": "background:rgb( 255, 122, 0);width:40px;height:34px;"
+        }
+    ];
+    
     var topBtns = [
             {
                 "icon": "icon-undo",
@@ -62,25 +106,25 @@ Reveal.initialize({
                     {
                         "icon": "icon-paragraph-left2",
                         "action": "",
-                        "value": "",
+                        "value": "justifyleft",
                         "tip": "左对齐"
                     },
                     {
                         "icon": "icon-paragraph-center2",
                         "action": "",
-                        "value": "",
+                        "value": "justifycenter",
                         "tip": "居中"
                     },
                     {
                         "icon": "icon-paragraph-right2",
                         "action": "",
-                        "value": "",
+                        "value": "justifyright",
                         "tip": "右对齐"
                     },
                     {
                         "icon": "icon-paragraph-justify2",
                         "action": "",
-                        "value": "",
+                        "value": "justifyfull",
                         "tip": "分散对齐"
                     }
                 ]
@@ -88,19 +132,20 @@ Reveal.initialize({
             {
                 "icon": "icon-list",
                 "action": "",
-                "value": "",
+                "value": "insertunorderedlist",
                 "tip": "无序列表"
             },
             {
                 "icon": "icon-numbered-list",
                 "action": "",
-                "value": "",
+                "value": "insertorderedlist",
                 "tip": "有序列表"
             },
             {
                 "icon": "icon-embed",
                 "action": "",
                 "value": "formatBlock",
+                "buttons-dir" : "v-box",
                 "buttons":[
                     {
                         "text": "Paragraph",
@@ -138,6 +183,7 @@ Reveal.initialize({
                 "icon": "icon-font",
                 "action": "",
                 "value": "fontSize",
+                "buttons-dir" : "v-box",
                 "buttons":[
                     {
                         "text": "18px",
@@ -179,19 +225,23 @@ Reveal.initialize({
             {
                 "icon": "icon-droplet",
                 "action": "",
-                "value": "",
-                "tip": "字体颜色"
+                "value": "forecolor",
+                "tip": "字体颜色",
+                "buttons-dir" : "v-box",
+                "buttons" : colorBtns
             },
             {
                 "icon": "icon-droplet",
                 "action": "",
-                "value": "",
-                "tip": "字体背景色"
+                "value": "backcolor",
+                "tip": "字体背景色",
+                "buttons-dir" : "v-box",
+                "buttons" : colorBtns
             },
             {
                 "icon": "icon-link",
                 "action": "createLink",
-                "value": "createLink",
+                "value": "",
                 "tip": "链接"
             },
             {
@@ -202,7 +252,7 @@ Reveal.initialize({
             },
             {
                 "icon": "icon-image",
-                "action": "",
+                "action": "insertImage",
                 "value": "",
                 "tip": "图片"
             },
@@ -225,7 +275,8 @@ Reveal.initialize({
                 "icon": "icon-droplet",
                 "action": "",
                 "value": "",
-                "tip": "背景颜色"
+                "tip": "背景颜色",
+                "buttons" : colorBtns
             },
             {
                 "icon": "icon-image2",
@@ -247,15 +298,54 @@ Reveal.initialize({
             },
             {
                 "icon": "icon-code",
-                "action": "",
+                "action": "editHtml",
                 "value": "",
                 "tip": "编辑html"
             }
         ];
     
     var topbarAction = {
-        createLink:function(){
+        createLink:function($this){
+            var offset = $this[0].getBoundingClientRect(),
+                $box = $('#link-box');
+                
+            if(document.getSelection().type !== 'Range'){
+                $.prompt({
+                    type:'warning',
+                    content:'请选中需要添加链接的文字'
+                });
+                return;
+            }
             
+            $box.css({
+                top:offset.bottom+10,
+                left:offset.left-$box.width()/2-10+(offset.right-offset.left)/2
+            })
+            .fadeIn();
+            
+            $(document).on('mousedown.link-box',function(e){
+                if(!$.contains($box[0],e.target)){
+                    $(document).off('mousedown.link-box');
+                    $box.fadeOut();
+                }
+            });
+        },
+        insertImage:function($this){
+            var offset = $this[0].getBoundingClientRect(),
+                $box = $('#img-box');
+            
+            $box.css({
+                top:offset.bottom+10,
+                left:offset.left-$box.width()/2-10+(offset.right-offset.left)/2
+            })
+            .fadeIn();
+            
+            $(document).on('mousedown.img-box',function(e){
+                if(!$.contains($box[0],e.target)){
+                    $(document).off('mousedown.img-box');
+                    $box.fadeOut();
+                }
+            });
         }
     };
     
@@ -263,8 +353,15 @@ Reveal.initialize({
         'delete':function(){
             $.msg({
                 type:'danger',
-                msg:'确认删除当前片段？'
+                msg:'确认删除当前片段？',
+                ok:function(){
+                    
+                }
             });
+        },
+        editHtml:function(){
+            var html = $('section.present:not(.stack)').html();
+            $('#html-box').modal('open').find('textarea').val(html);
         }
     };
     
@@ -319,7 +416,42 @@ Reveal.initialize({
             
             //预览
             $('.preview-btn').click(function(){
+                $('#deck,#slidebar,#topbar,#rightbar,.add-fragment,.add-slide').addClass('preview');
+                $('#deck').find('section').removeAttr('contenteditable');
+                $(window).resize();
+            });
+            
+            //编辑
+            $('.edit-btn').click(function(){
+                $('#deck,#slidebar,#topbar,#rightbar,.add-fragment,.add-slide').removeClass('preview');
+                $('#deck').find('section').prop('contenteditable',true);
+                $(window).resize();
+            });
+            
+            //添加链接
+            $('#link-box').inputBox({button:$('.add-link-btn')});
+            $('.add-link-btn').mousedown(function(e){
+                e.preventDefault();
+            }).click(function(){
+                var data = $('#link-box').inputBox('data',{valid:true});
                 
+                if(!data) return;
+                
+                document.execCommand('createLink',null,data.link);
+                $(document).trigger('mousedown.link-box');
+            });
+            
+            //添加图片
+            $('#img-box').inputBox({button:$('.add-img-btn')});
+            $('.add-img-btn').mousedown(function(e){
+                e.preventDefault();
+            }).click(function(){
+                var data = $('#img-box').inputBox('data',{valid:true});
+                
+                if(!data) return;
+                
+                document.execCommand('insertimage',null,data.img);
+                $(document).trigger('mousedown.img-box');
             });
         },
         initSlideDetail:function(){
@@ -344,7 +476,11 @@ Reveal.initialize({
         initTopbar:function(){
             var self = this;
             
-            self.$topbar.on('click','.btn',function(){
+            self.$topbar.on('mousedown','.btn',function(e){
+                e.preventDefault();
+            });
+            
+            self.$topbar.on('click','.btn',function(e){
                 var $this = $(this);
                 var action = $this.data('action');
                 var val = $this.data('value');
@@ -352,7 +488,9 @@ Reveal.initialize({
                 if(action in topbarAction)
                     topbarAction[action]($this);
                 else if(val)
-                    if($this.parent().hasClass('btn-wrap-box'))
+                    if(val === 'none')
+                        val = none;
+                    if($this.parent().hasClass('btn-wrap-box') && $this.parent().prev().data('value'))
                         document.execCommand($this.parent().prev().data('value'),false,val);
                     else
                         document.execCommand(val);
@@ -360,6 +498,7 @@ Reveal.initialize({
                 return false;
             });
             
+            //生成顶部工具栏按钮
             self.$topbar.find('.btn-group').html(
                 $.map(topBtns,function(n){
                     var $btn = $('<button>',{class:'btn'});
@@ -367,11 +506,13 @@ Reveal.initialize({
                     $btn.attr('data-tip',n.tip).data(n).append($('<span>').addClass(n.icon));
                     
                     if(n.buttons){
+                        $btn.attr('data-alignment','l');
                         $btn = $('<span class="btn-wrap">').append($btn)
                         .append($('<div class="btn-wrap-box">').append(
                                 $.map(n.buttons,function(m){
                                     var $btn = $('<button>',{class:'btn'});
                                     $btn.attr('data-tip',m.tip).data(m);
+                                    m.style && $btn.attr('style',m.style);
                                     if(m.icon)
                                         $btn.append($('<span>').addClass(m.icon));
                                     else
@@ -380,6 +521,10 @@ Reveal.initialize({
                                 })
                             )
                         );
+                        
+                        if(n['buttons-dir']){
+                            $btn.find('.btn-wrap-box').addClass(n['buttons-dir']);
+                        }
                     }
                     return $btn;
                 })
@@ -387,6 +532,10 @@ Reveal.initialize({
         },
         initRightbar:function(){
             var self = this;
+            
+            self.$rightbar.on('mousedown','.btn',function(e){
+                e.preventDefault();
+            });
             
             self.$rightbar.on('click','.btn',function(){
                 var action = $(this).data('action');
@@ -398,11 +547,53 @@ Reveal.initialize({
             self.$rightbar.find('.btn-group').html(
                 $.map(rightBtns,function(n){
                     var $btn = $('<button>',{class:'btn'});
-                    n.alignment = 'l';
+                    
                     $btn.attr('data-tip',n.tip).data(n).append($('<span>').addClass(n.icon));
+                    n.buttons || $btn.attr('data-alignment','l');
+                    
+                    if(n.buttons){
+                        $btn = $('<span class="btn-wrap">').append($btn)
+                        .append($('<div class="btn-wrap-box">').append(
+                                $.map(n.buttons,function(m){
+                                    var $btn = $('<button>',{class:'btn'});
+                                    $btn.attr('data-tip',m.tip).data(m);
+                                    m.style && $btn.attr('style',m.style);
+                                    if(m.icon)
+                                        $btn.append($('<span>').addClass(m.icon));
+                                    else
+                                        $btn.text(m.text);
+                                    return $btn;
+                                })
+                            )
+                        );
+                        
+                        if(n['buttons-dir']){
+                            $btn.find('.btn-wrap-box').addClass(n['buttons-dir']);
+                        }
+                    }
                     return $btn;
                 })
             );
+            
+            //编辑html初始化
+            self.$rightbar.find('.btn-group >.btn:last-child').one('click',function(){
+                $('#html-box').modal({
+                    width:600,
+                    height:400,
+                    title:'编辑html',
+                    button:[
+                        {
+                            text:'确定',
+                            type:'primary',
+                            click:function(){
+                                var html = $('#html-box textarea').val();
+                                $('section.present:not(.stack)').html(html);
+                                $('#html-box').modal('close');
+                            }
+                        }
+                    ]
+                })
+            });
         },
         init:function(){
             this.initSlideDetail();

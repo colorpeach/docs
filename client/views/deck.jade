@@ -5,13 +5,13 @@ html
     meta(charset='utf-8')
     link(rel='stylesheet', href='/css/normalize.css')
     link(rel='stylesheet', href='/css/common.css')
+    link(rel='stylesheet', href='/css/animate.css')
     link(rel='stylesheet', href='/css/icon.css')
     link(rel='stylesheet', href='/css/deck.css')
-    link(rel='stylesheet', href='/lib/reveal/2.6.2/css/reveal.min.css')
-    link(rel='stylesheet', href='/lib/reveal/2.6.2/css/theme/default.css')
-    link(rel='stylesheet', href='/lib/reveal/2.6.2/lib/css/zenburn.css')
-    block css
   body
+    div.edit-btn-box
+      button.edit-btn
+        span.icon-arrow-left
     div#slidebar
       div.btn-group.slide-head
         button.btn.btn-success.save-btn
@@ -35,6 +35,8 @@ html
     div.slide-detail
     div.slide-detail
     div#topbar
+      input.bg-color.hidden(type='color')
+      input.fg-color.hidden(type='color')
       div.btn-group
     div#rightbar
       div.btn-group
@@ -47,7 +49,20 @@ html
         div.slides
           section
             h2 title
-        
+    div#link-box.overlay
+      div.form-group
+        input(name='link',type='url',placeholder='请输入链接',data-validator='required:请填写链接')
+      button.btn.btn-primary.add-link-btn 确定
+    div#img-box.overlay
+      div.form-group
+        input(name='img',type='url',placeholder='请输入链接图片链接',data-validator='required:请填写图片链接')
+      button.btn.btn-primary.add-img-btn 确定
+    div#html-box
+      textarea
+    
+    link(rel='stylesheet', href='/lib/reveal/2.6.2/css/reveal.min.css')
+    link(rel='stylesheet', href='/lib/reveal/2.6.2/css/theme/default.css')
+    link(rel='stylesheet', href='/lib/reveal/2.6.2/lib/css/zenburn.css')
     script(type='text/javascript',src='/lib/reveal/2.6.2/lib/js/head.min.js')
     script(type='text/javascript',src='/lib/reveal/2.6.2/js/reveal.min.js')
     script(type='text/javascript', src='/lib/jquery/1.11.0/jquery.js')
