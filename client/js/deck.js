@@ -317,6 +317,8 @@ Reveal.initialize({
                 return;
             }
             
+            document.execCommand('createlink',false,'createLink');
+            
             $box.css({
                 top:offset.bottom+10,
                 left:offset.left-$box.width()/2-10+(offset.right-offset.left)/2
@@ -325,6 +327,10 @@ Reveal.initialize({
             
             $(document).on('mousedown.link-box',function(e){
                 if(!$.contains($box[0],e.target)){
+                    var $a = $('a[href=createLink]');
+                    $a.each(function(i,n){
+                        $(n.childNodes).unwrap();
+                    });
                     $(document).off('mousedown.link-box');
                     $box.fadeOut();
                 }
@@ -361,7 +367,7 @@ Reveal.initialize({
         },
         editHtml:function(){
             var html = $('section.present:not(.stack)').html();
-            $('#html-box').modal('open').find('textarea').val(html);
+            hljs.highlightBlock($('#html-box').modal('open').find('textarea').val(html)[0]);
         }
     };
     
@@ -437,7 +443,7 @@ Reveal.initialize({
                 
                 if(!data) return;
                 
-                document.execCommand('createLink',null,data.link);
+                $('a[href=createLink]').attr('href',data.link);
                 $(document).trigger('mousedown.link-box');
             });
             
@@ -577,6 +583,7 @@ Reveal.initialize({
             
             //编辑html初始化
             self.$rightbar.find('.btn-group >.btn:last-child').one('click',function(){
+//                 hljs.highlight();
                 $('#html-box').modal({
                     width:600,
                     height:400,

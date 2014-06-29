@@ -302,6 +302,17 @@
     
 }
 
+#html-box{
+    display:none;
+    height:100%;
+}
+
+#html-box textarea{
+    height:100%;
+    width:100%;
+    resize:none;
+}
+
 /*预览*/
 #deck.preview{
     top:0;
