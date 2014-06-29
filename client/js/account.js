@@ -69,12 +69,13 @@
             });
         },
         docHtml:function(list,type){
-            var type = type || 'doc';
+            var type = type || 'doc',
+                edit = type === 'doc' ? 'edit' : 'deck';
             return $.map(list,function(n){
                 var $li = $("<li>"),
                     html = '<a href="/'+type+'/'+n.user+'/'+n.title+'">'+n.title+'</a>'+
                             '<div class="pull-right opera-box">'+
-                            '<a href="/edit?_id='+n._id+'" data-tip="编辑">'+
+                            '<a href="/'+edit+'?_id='+n._id+'" data-tip="编辑">'+
                                 '<span class="icon-pencil"></span>'+
                             '</a>'+
                             '<a href="javascript:;" class="del-item" data-tip="删除">'+

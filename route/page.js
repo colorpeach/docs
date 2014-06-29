@@ -40,7 +40,18 @@ module.exports = function(app){
     
     //deck页面
     app.get('/deck',function(req,res){
-        res.render('deck',{});
+        if(req.query._id){
+            deck.query({_id:req.query._id},function(list){
+                var deck = list[0];
+                if(deck.user === req.session.user.login){
+                    res.render('deck',{user:req.session.user,deck:list[0]||{}});
+                }else{
+                    res.redirect('/');
+                }
+            });
+        }else{
+            res.render('deck',{user:req.session.user,deck:{}});
+        }
     });
     
     //slide页面

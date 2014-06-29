@@ -9,6 +9,8 @@ html
     link(rel='stylesheet', href='/css/icon.css')
     link(rel='stylesheet', href='/css/deck.css')
   body
+    if deck
+      textarea#deck-content.hidden #{deck.content}
     div.edit-btn-box
       button.edit-btn
         span.icon-arrow-left
@@ -59,6 +61,14 @@ html
       button.btn.btn-primary.add-img-btn 确定
     div#html-box
       textarea.highlight
+    div#save-box
+      if deck
+        input(name='_id',type='hidden',value='#{deck._id}')
+        div.form-group
+          input(name='title',type='text',placeholder='请输入标题',data-validator='required:请输入标题',value='#{deck.title}')
+      if !deck
+        div.form-group
+          input(name='title',type='text',placeholder='请输入标题',data-validator='required:请输入标题')
     
     link(rel='stylesheet', href='/lib/reveal/2.6.2/css/reveal.min.css')
     link(rel='stylesheet', href='/lib/reveal/2.6.2/css/theme/default.css')

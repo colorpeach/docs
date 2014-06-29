@@ -313,6 +313,10 @@
     resize:none;
 }
 
+#save-box{
+    display:none;
+}
+
 /*预览*/
 #deck.preview{
     top:0;

@@ -1,3 +1,5 @@
+document.querySelector('#deck').innerHTML = document.querySelector('textarea').value;
+
 Reveal.initialize({
     controls: true,
     progress: true,
@@ -402,22 +404,40 @@ Reveal.initialize({
             
             //保存
             $('.save-btn').click(function(){
-                var data = {};
+                $('#save-box').modal('open');
+            });
+            
+            $('#save-box').modal({
+                width:300,
+                title:'保存',
+                button:[
+                    {
+                        text:'提交',
+                        type:'primary',
+                        click:function(){
+                            var data = $('#save-box').inputBox('data',{valid:true}),
+                                url = '/post/add/deck';
+                            
+                            if(!data) return;
                 
-                data.content = $('#deck').find('section').prop('contenteditable',false).end().html();
-                data.title = "标题";
-                
-                $.docsajax({
-                    url:'/post/add/deck',
-                    method:'post',
-                    data:data,
-                    success:function(){
-                        $.prompt({
-                            type:'success',
-                            content:'新增成功'
-                        });
+                            data.content = $('#deck').find('section').prop('contenteditable',false).end().html();
+                            data._id && (url = 'post/update/deck');
+                            
+                            $.docsajax({
+                                url:url,
+                                method:'post',
+                                data:data,
+                                success:function(){
+                                    $.prompt({
+                                        type:'success',
+                                        content:'保存成功'
+                                    });
+                                    $('#save-box').modal('close');
+                                }
+                            });
+                        }
                     }
-                });
+                ]
             });
             
             //预览
