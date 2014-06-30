@@ -45,8 +45,8 @@
 
 .slide-body{
     height:100%;
-    margin-top:-94px;
-    padding:94px 0 0;
+    margin-top:-125px;
+    padding:125px 0 0;
     background-color:#2B2B2B;
     position:relative;
     z-index:-1;
@@ -72,6 +72,21 @@
 
 .slide-con .btn:hover{
     background-color:#111;
+}
+
+.slide-foot{
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    font-size:40px;
+}
+
+.slide-foot span{
+    cursor:pointer;
+}
+
+.slide-foot span:hover{
+    color:#aaa;
 }
 
 #slidebar span{

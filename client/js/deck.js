@@ -1,4 +1,5 @@
-document.querySelector('#deck').innerHTML = document.querySelector('textarea').value;
+var content = document.querySelector('textarea').value;
+content && (document.querySelector('#deck').innerHTML = content);
 
 Reveal.initialize({
     controls: true,
@@ -282,7 +283,7 @@ Reveal.initialize({
             },
             {
                 "icon": "icon-image2",
-                "action": "",
+                "action": "setBackground",
                 "value": "",
                 "tip": "背景图"
             },
@@ -308,8 +309,7 @@ Reveal.initialize({
     
     var topbarAction = {
         createLink:function($this){
-            var offset = $this[0].getBoundingClientRect(),
-                $box = $('#link-box');
+            var $box = $('#link-box');
                 
             if(document.getSelection().type !== 'Range'){
                 $.prompt({
@@ -321,11 +321,9 @@ Reveal.initialize({
             
             document.execCommand('createlink',false,'createLink');
             
-            $box.css({
-                top:offset.bottom+10,
-                left:offset.left-$box.width()/2-10+(offset.right-offset.left)/2
-            })
-            .fadeIn();
+            $.fixed($this,$box);
+            $box.fadeIn();
+            $box.inputBox('focus');
             
             $(document).on('mousedown.link-box',function(e){
                 if(!$.contains($box[0],e.target)){
@@ -339,17 +337,26 @@ Reveal.initialize({
             });
         },
         insertImage:function($this){
-            var offset = $this[0].getBoundingClientRect(),
-                $box = $('#img-box');
+            var $box = $('#img-box');
+                
+            if(document.getSelection().type === 'None'){
+                $.prompt({
+                    type:'warning',
+                    content:'请指定插入图片的地方'
+                });
+                return;
+            }
             
-            $box.css({
-                top:offset.bottom+10,
-                left:offset.left-$box.width()/2-10+(offset.right-offset.left)/2
-            })
-            .fadeIn();
+            document.execCommand('insertimage',false,'insertimage');
+            
+            $.fixed($this,$box);
+            $box.fadeIn();
+            $box.inputBox('focus');
             
             $(document).on('mousedown.img-box',function(e){
                 if(!$.contains($box[0],e.target)){
+                    var $img = $('img[src=insertimage]');
+                    $img.remove();
                     $(document).off('mousedown.img-box');
                     $box.fadeOut();
                 }
@@ -370,6 +377,20 @@ Reveal.initialize({
         editHtml:function(){
             var html = $('section.present:not(.stack)').html();
             hljs.highlightBlock($('#html-box').modal('open').find('textarea').val(html)[0]);
+        },
+        setBackground:function($this){
+            var $box = $('#background-box');
+            
+            $.fixed($this,$box,{dir:'l',x:-50});
+            $box.fadeIn();
+            $box.inputBox('focus');
+            
+            $(document).on('mousedown.background-box',function(e){
+                if(!$.contains($box[0],e.target)){
+                    $(document).off('mousedown.background-box');
+                    $box.fadeOut();
+                }
+            });
         }
     };
     
@@ -404,7 +425,22 @@ Reveal.initialize({
             
             //保存
             $('.save-btn').click(function(){
-                $('#save-box').modal('open');
+                $('#save-box').modal('open').inputBox('focus');
+            });
+            
+            //个人中心
+            $('.account-btn').click(function(){
+                var $box = $('#account-box');
+                
+                $.fixed($(this),$box,{dir:'t',x:84});
+                $box.fadeIn();
+            
+                $(document).on('mousedown.account-box',function(e){
+                    if(!$.contains($box[0],e.target)){
+                        $(document).off('mousedown.account-box');
+                        $box.fadeOut();
+                    }
+                });
             });
             
             $('#save-box').modal({
@@ -420,7 +456,7 @@ Reveal.initialize({
                             
                             if(!data) return;
                 
-                            data.content = $('#deck').find('section').prop('contenteditable',false).end().html();
+                            data.content = $('#deck').clone().find('section').removeAttr('contenteditable').end().html();
                             data._id && (url = 'post/update/deck');
                             
                             $.docsajax({
@@ -476,7 +512,7 @@ Reveal.initialize({
                 
                 if(!data) return;
                 
-                document.execCommand('insertimage',null,data.img);
+                $('img[src=insertimage]').attr('src',data.img);
                 $(document).trigger('mousedown.img-box');
             });
         },

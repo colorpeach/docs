@@ -99,27 +99,78 @@
     $('body').append($tip).on({
         mouseenter:function(){
             var $this = $(this),
-                data = $this.data(),
-                offset = $this[0].getBoundingClientRect();
+                data = $this.data();
+                
             $tip.removeClass('hidden');
             $tip.find('.cm-tip-content').text(data.tip)
             
             if(data.alignment === 'l'){
-                $tip.css({
-                    left:offset.left-$tip.width()-6,
-                    top:offset.top-$tip.height()/2+(offset.bottom-offset.top)/2
-                }).find('.cm-tip-arrow').addClass('cm-tip-arrow-left');
+                $.fixed($this,$tip,{dir:'l'});
+                $tip.find('.cm-tip-arrow').addClass('cm-tip-arrow-left');
             }else{
-                $tip.css({
-                    left:offset.left-$tip.width()/2+(offset.right-offset.left)/2,
-                    top:offset.bottom+6
-                }).find('.cm-tip-arrow').removeClass('cm-tip-arrow-left');
+                $.fixed($this,$tip);
+                $tip.find('.cm-tip-arrow').removeClass('cm-tip-arrow-left');
             }
         },
         mouseleave:function(){
             $tip.addClass('hidden');
         }
     },'[data-tip]');
+})();
+
+(function(){
+    /**
+    *@name fixed
+    *@param target
+    *@param attachment
+    *@param dir
+    */
+    $.fixed = function(target,attachment,options){
+        var $this = $(target),
+            offset = $this[0].getBoundingClientRect(),
+            $tip = $(attachment),
+            arrowGap = 6;
+            css = {},
+            opts = {
+                dir:'b',
+                x:0,
+                y:0
+            };
+            
+        $.extend(opts,options);
+            
+        switch(opts.dir){
+            case 'l':
+                css = {
+                    left:offset.left-$tip.width()-arrowGap,
+                    top:offset.top-$tip.height()/2+(offset.bottom-offset.top)/2
+                };
+                break;
+            case 'r':
+                css = {
+                    left:offset.right+$tip.width()+arrowGap,
+                    top:offset.top-$tip.height()/2+(offset.bottom-offset.top)/2
+                };
+                break;
+            case 't':
+                css = {
+                    left:offset.left-$tip.width()/2+(offset.right-offset.left)/2,
+                    top:offset.top-arrowGap
+                };
+                break;
+            default:
+                css = {
+                    left:offset.left-$tip.width()/2+(offset.right-offset.left)/2,
+                    top:offset.bottom+arrowGap
+                };
+                break;
+        }
+        
+        css.left += +opts.x||0;
+        css.top += +opts.y||0;
+        
+        $tip.css(css);
+    };
 })();
 
 (function(){
@@ -445,7 +496,7 @@
             this._submitBind();
         },
         focus:function(){
-            this.$el.find('input:enabled,textarea:enabled').eq(0).focus();
+            this.$el.find('input:enabled:visible,textarea:enabled:visible').eq(0).focus();
         },
         clear:function(){
             this.$el.find('input,textarea').removeClass('error').val('');
