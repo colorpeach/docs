@@ -33,40 +33,40 @@ Reveal.initialize({
             "icon" : "icon-blocked"
         },
         {
-            "value": "rgb( 200, 50, 30)",
-            "style": "background:rgb( 200, 50, 30);width:40px;height:34px;"
+            "value": "rgba( 200, 50, 30, .6)",
+            "style": "background:rgba( 200, 50, 30 ,.6);width:40px;height:34px;"
         },
         {
-            "value": "rgb( 50, 200, 90)",
-            "style": "background:rgb( 50, 200, 90);width:40px;height:34px;"
+            "value": "rgba( 50, 200, 90, .4)",
+            "style": "background:rgba( 50, 200, 90, .4);width:40px;height:34px;"
         },
         {
-            "value": "rgb( 0, 0, 0)",
-            "style": "background:rgb( 0, 0, 0);width:40px;height:34px;"
+            "value": "rgba( 0, 0, 0, .6)",
+            "style": "background:rgba( 0, 0, 0, .6);width:40px;height:34px;"
         },
         {
-            "value": "rgb( 255, 255, 255)",
-            "style": "background:rgb( 255, 255, 255);width:40px;height:34px;"
+            "value": "rgba( 255, 255, 255, .6)",
+            "style": "background:rgba( 255, 255, 255, .6);width:40px;height:34px;"
         },
         {
-            "value": "rgb( 22, 152, 213)",
-            "style": "background:rgb( 22, 152, 213);width:40px;height:34px;"
+            "value": "rgba( 22, 152, 213, .6)",
+            "style": "background:rgba( 22, 152, 213, .6);width:40px;height:34px;"
         },
         {
-            "value": "rgb( 22, 213, 75)",
-            "style": "background:rgb( 22, 213, 75);width:40px;height:34px;"
+            "value": "rgba( 22, 213, 75, .6)",
+            "style": "background:rgba( 22, 213, 75, .6);width:40px;height:34px;"
         },
         {
-            "value": "rgb( 12, 25, 77)",
-            "style": "background:rgb( 12, 25, 77);width:40px;height:34px;"
+            "value": "rgba( 12, 25, 77, .6)",
+            "style": "background:rgba( 12, 25, 77, .6);width:40px;height:34px;"
         },
         {
-            "value": "rgb( 180, 50, 140)",
-            "style": "background:rgb( 180, 50, 140);width:40px;height:34px;"
+            "value": "rgba( 180, 50, 140, .6)",
+            "style": "background:rgba( 180, 50, 140, .6);width:40px;height:34px;"
         },
         {
-            "value": "rgb( 255, 122, 0)",
-            "style": "background:rgb( 255, 122, 0);width:40px;height:34px;"
+            "value": "rgba( 255, 122, 0, .6)",
+            "style": "background:rgba( 255, 122, 0, .6);width:40px;height:34px;"
         }
     ];
     
@@ -276,7 +276,7 @@ Reveal.initialize({
             },
             {
                 "icon": "icon-droplet",
-                "action": "",
+                "action": "setBackgroundColor",
                 "value": "",
                 "tip": "背景颜色",
                 "buttons" : colorBtns
@@ -291,11 +291,11 @@ Reveal.initialize({
                 "icon": "icon-plus",
                 "action": "",
                 "value": "",
-                "tip": "添加slide"
+                "tip": "设置fragment"
             },
             {
                 "icon": "icon-pushpin",
-                "action": "",
+                "action": "position",
                 "value": "",
                 "tip": "定位"
             },
@@ -391,6 +391,18 @@ Reveal.initialize({
                     $box.fadeOut();
                 }
             });
+        },
+        setBackgroundColor:function($this){
+            var val = $this.data('value');
+            
+            if(val){
+                $('section.present:not(.stack)').attr('data-background-color',val);
+                Reveal.sync();
+            }
+        },
+        position:function(){
+            $('#deck,#topbar,#rightbar,.add-slide,.add-fragment').addClass('preview');
+            $('#prompt-box').addClass('editing');
         }
     };
     
@@ -405,6 +417,7 @@ Reveal.initialize({
                 
             $('.add-slide').click(function(){
                 $slides.find('>section.present').after(template(true));
+                Reveal.sync();
                 Reveal.right();
             });
             
@@ -420,6 +433,7 @@ Reveal.initialize({
                     $section.append(template(true));
                     $section.addClass('present');
                 }
+                Reveal.sync();
                 Reveal.down();
             });
             
@@ -480,14 +494,14 @@ Reveal.initialize({
             $('.preview-btn').click(function(){
                 $('#deck,#slidebar,#topbar,#rightbar,.add-fragment,.add-slide').addClass('preview');
                 $('#deck').find('section').removeAttr('contenteditable');
-                $(window).resize();
+                setTimeout('Reveal.layout()',300);
             });
             
             //编辑
             $('.edit-btn').click(function(){
                 $('#deck,#slidebar,#topbar,#rightbar,.add-fragment,.add-slide').removeClass('preview');
                 $('#deck').find('section').prop('contenteditable',true);
-                $(window).resize();
+                setTimeout('Reveal.layout()',300);
             });
             
             //添加链接
@@ -514,6 +528,12 @@ Reveal.initialize({
                 
                 $('img[src=insertimage]').attr('src',data.img);
                 $(document).trigger('mousedown.img-box');
+            });
+            
+            //(定位，设置fragment)操作完毕
+            $('.opera-btn').click(function(){
+                $('#deck,#topbar,#rightbar,.add-slide,.add-fragment').removeClass('preview');
+            $('#prompt-box').removeClass('editing');
             });
         },
         initSlideDetail:function(){
@@ -599,11 +619,16 @@ Reveal.initialize({
                 e.preventDefault();
             });
             
-            self.$rightbar.on('click','.btn',function(){
-                var action = $(this).data('action');
+            self.$rightbar.on('click','.btn',function(e){
+                var $this = $(this),
+                    value = $this.data('value'),
+                    action = $this.data('action');
+                    
+                if(value && $this.parent().hasClass('btn-wrap-box'))
+                    action = $this.parent().prev().data('action');
                 
                 if(action in rightbarAction)
-                    rightbarAction[action]($(this));
+                    rightbarAction[action]($this);
             });
             
             self.$rightbar.find('.btn-group').html(

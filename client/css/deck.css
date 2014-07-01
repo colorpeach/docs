@@ -76,7 +76,7 @@
 
 .slide-foot{
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(20, 20, 20, 1);
     box-shadow: 0 0 10px rgb(0, 0, 0);
     font-size:40px;
 }
@@ -110,22 +110,21 @@
 
 #topbar{
     position:absolute;
-    top:10px;
+    top:0;
     left:0;
     right:0;
     margin-left:150px;
     text-align:center;
     z-index:2;
     -webkit-transition : all 0.3s ease;
-    -moz-transition    : all 0.3s ease;
-    transition         : all 0.3s ease;
+       -moz-transition : all 0.3s ease;
+            transition : all 0.3s ease;
 }
 
 #topbar .btn{
     opacity:1;
     background-color: #000;
     color:#fff;
-    border-left:1px solid #333;
     font-size: 14px;
     
 }
@@ -163,7 +162,6 @@
 
 .btn-wrap-box.v-box .btn{
     border-width:0;
-    border-top:1px solid #333;
     width:100%;
 }
 
@@ -174,6 +172,10 @@
     margin-left:0;
 }
 
+#rightbar .btn-wrap-box .btn{
+    height:40px;
+}
+
 #rightbar{
     position:absolute;
     left: 50%;
@@ -182,8 +184,8 @@
     font-size: 14px;
     z-index:2;
     -webkit-transition : all 0.3s ease;
-    -moz-transition    : all 0.3s ease;
-    transition         : all 0.3s ease;
+       -moz-transition : all 0.3s ease;
+            transition : all 0.3s ease;
 }
 
 @media (max-width:1220px){
@@ -200,13 +202,14 @@
     }
 }
 
-#rightbar .btn{
+#rightbar .btn-group > .btn,
+#rightbar .btn-wrap > .btn{
     display:block;
     width: 100%;
     text-align: left;
     background-color: #000;
     color:#fff;
-    border-top: 1px solid #333;
+    height:40px;
     opacity:.3;
 }
 
@@ -216,14 +219,14 @@
 
 #deck{
     position: absolute;
-    top: 50px;
-    bottom: 50px;
-    left: 200px;
-    right: 50px;
+    top: 0px;
+    bottom: 0px;
+    left: 150px;
+    right: 0px;
     z-index:1;
     -webkit-transition : all 0.3s ease;
-    -moz-transition    : all 0.3s ease;
-    transition         : all 0.3s ease;
+       -moz-transition : all 0.3s ease;
+            transition : all 0.3s ease;
 }
 
 .add-slide,
@@ -237,8 +240,8 @@
     background: rgba(0, 0, 0, 0.4);
     border-radius: 50%;
     -webkit-transition : all 0.3s ease;
-    -moz-transition    : all 0.3s ease;
-    transition         : all 0.3s ease;
+       -moz-transition : all 0.3s ease;
+            transition : all 0.3s ease;
     color: #FFF;
     text-align: center;
     line-height: 50px;
@@ -301,6 +304,26 @@
 .reveal section[contenteditable]:focus{
     background-color:rgba(0,0,0,0.1);
     border-color:rgba(150, 150, 150, 0.5);
+}
+
+#prompt-box{
+    position:fixed;
+    top:-100%;
+    left:0;
+    right:0;
+    padding:10px;
+    background-color:rgba(20,20,20,1);
+    margin:auto;
+    width:200px;
+    z-index: 5;
+    border-radius:4px;
+    -webkit-transition : all 0.3s ease;
+       -moz-transition : all 0.3s ease;
+            transition : all 0.3s ease;
+}
+
+#prompt-box.editing{
+    top:0;
 }
 
 .overlay{
