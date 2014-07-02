@@ -1,0 +1,23 @@
+extends layout
+
+block css
+  link(rel='stylesheet', href='/css/boxshadoweditor.css')
+
+block content
+  div#slidebar
+    div.slidebar-top
+      button.btn.btn-success#generate-btn 生成css代码
+      button.btn.btn-success#icon-btn 生成icon视图
+    div.slidebar-code
+      textarea#code
+  div#edit-con
+    div#edit-box
+  div#view
+  div#topbar 选择精度
+    select#cell-select
+      option(value='5') 5×5
+      option(value='10') 10×10
+      option(value='20') 20×20
+      
+block script
+    script(type='text/javascript',src='/js/boxshadoweditor.js')

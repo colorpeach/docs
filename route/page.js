@@ -92,4 +92,9 @@ module.exports = function(app){
             });
         });
     });
+    
+    //box-shadow编辑器
+    app.get('/boxshadoweditor',function(req,res){
+        res.render('boxshadoweditor');
+    });
 };
