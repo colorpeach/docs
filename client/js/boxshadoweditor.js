@@ -5,6 +5,7 @@
     var $iconbtn = $('#icon-btn');
     var $code = $('#code');
     var $view = $('#view');
+    var $color = $('#color');
     var index = 0;
     
     var Boxshadoweditor = {
@@ -24,7 +25,6 @@
             'position:absolute;',
             'top:0;',
             'left:0;',
-            'background-color:#ddd;',
             'width:%sem;',
             'height:%sem;',
             'box-shadow:'
@@ -33,17 +33,24 @@
             var $span = $box.find('span.active'),
                 code = [],
                 base = this.base,
+                color = $color.val(),
+                background = '',
                 cell = this.cell;
             
             $span.each(function(i,n){
                 var coord = $(n).data('coord').split(','),
                     x = +(coord[0]*cell).toFixed(2),
                     y = +(coord[1]*cell).toFixed(2);
-                    
-                code.push((x ? (x +'em ') : (x + ' ')) + (y ? (y +'em ') : (y + ' ')) + '#ddd,');
+                
+                if(!(i === 0 && !x && !y)){
+                    code.push((x ? (x +'em ') : (x + ' ')) + (y ? (y +'em ') : (y + ' ')) + color + ',');
+                }else{
+                    background = color;
+                }
             });
             
             code[code.length-1] = code[code.length-1].slice(0,-1)+';';
+            background && code.push('background-color:'+color+';');
             code.push('}');
             
             return (base.join('\n\t')+code.join('\n\t'))
