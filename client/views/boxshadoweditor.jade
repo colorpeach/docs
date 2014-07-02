@@ -13,13 +13,20 @@ block content
   div#edit-con
     div#edit-box
   div#view
-  div#topbar 选择精度
-    select#cell-select
-      option(value='5') 5×5
-      option(value='10') 10×10
-      option(value='20') 20×20
-    | 颜色
-    input#color(type='color')
+  div#topbar 
+    span 精度：
+    span
+      select#cell-select
+        option(value='5') 5×5
+        option(value='10') 10×10
+        option(value='20') 20×20
+    span 类名：
+    span
+      input#classipt(type='text')
+    span 颜色：
+    span
+      input#color(type='text')
+  div#select-area
       
 block script
     script(type='text/javascript',src='/js/boxshadoweditor.js')

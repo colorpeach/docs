@@ -366,11 +366,27 @@ Reveal.initialize({
     
     var rightbarAction = {
         'delete':function(){
+            if($('section').length === 1)
+                return;
+                
             $.msg({
                 type:'danger',
                 msg:'确认删除当前片段？',
                 ok:function(){
+                    var $present = $('section.present'),
+                        slideType = 'prev';
                     
+                    if(Reveal.isFirstSlide()){
+                        slideType = 'next';
+                    }
+                    
+                    if($present.length > 2 && $present.filter('.stack').children().length === 1){
+                        $present.remove();
+                    }else{
+                        $present.not('.stack').remove();
+                    }
+                    Reveal.sync();
+                    Reveal[slideType]();
                 }
             });
         },
