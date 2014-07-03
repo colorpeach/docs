@@ -108,7 +108,7 @@
                     
                 timer = setTimeout(function(){
                     startDrag = true;
-                },300);
+                },100);
                 
                 startP.x = x;
                 startP.y = y;
