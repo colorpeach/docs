@@ -50,7 +50,7 @@
                     y = +(coord.y*cell).toFixed(2);
                 
                 if(!(i === 0 && !x && !y)){
-                    code.push((x ? (x +'em ') : (x + ' ')) + (y ? (y +'em ') : (y + ' ')) + ',');
+                    code.push((x ? (x +'em ') : (x + ' ')) + (y ? (y +'em') : (y + '')) + ',');
                 }else{
                     background = color;
                 }
@@ -61,16 +61,17 @@
                 
             code[code.length-1] = code[code.length-1].slice(0,-1)+';';
             background && code.push('background-color:'+background+';');
-            code.push('}');
+            code.push('\n}');
             
-            code = (base.join('\n\t')+code.join('\n\t'))
+            code = (base.join('\n\t')+code.join(''))
                     .replace(/\t\}/g,'}')
                     .replace('\t%d','%d')
                     .replace(/%s/g,cell)
-                    .replace('%c',color);
+                    .replace('%c',color)
+                    .replace(/0\./g,'.');
                     
             if(selector)
-                return code.replace(/%d/g,'.' + selector);
+                return code.replace(/%d/g,selector);
             else
                 return code.replace(/%d/g,'.icon' + ++index);
         },
@@ -111,6 +112,7 @@
                 
                 startP.x = x;
                 startP.y = y;
+                return false;
             });
             
             $con.add($selectArea).mousemove(function(e){
@@ -128,9 +130,11 @@
                     css.left = startP.x;
                     
                     if((x-startP.x) < 0 )
+                        //移动点在起点左边
                         css.left = x;
                         
                     if(y-startP.y < 0)
+                        //移动点在起点上边
                         css.top = y;
                         
                     css.width = Math.abs(x-startP.x);
@@ -143,11 +147,12 @@
             $con.add($selectArea).mouseup(function(e){
                 var endP = {};
                 
+                if(timer){
+                    clearTimeout(timer);
+                }
+                
                 endP.x = e.clientX;
                 endP.y = e.clientY;
-                
-                if(timer)
-                    clearTimeout(timer);
                     
                 draging = false;
                 startDrag = false;
@@ -165,7 +170,6 @@
                 cellSize = this.cellSize,
                 start = {x:0,y:0},
                 end = {x:cellSize-1,y:cellSize-1},
-                selector = 'span',
                 opera = remove ? 'removeClass' : 'addClass';
                 
             if(area.left > box.right
