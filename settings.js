@@ -1,17 +1,41 @@
-var settings = {
-    db:{
-        db:'docs',
-        username:'colorpeach',
-        password:'ll0427##',
-        host:'ds033699.mongolab.com',
-        port:'33699',
-        collection:'sessions'
-    },
-    url:'mongodb://colorpeach:ll0427##@ds033699.mongolab.com:33699/docs',
+module.exports = {
     secret:'colorpeach',
-    authPath:'edit|org|user|deck',
-    authAjaxPath:'get|post|put|options|head|delete',
-    unauthPath:'|js|lib|css|views|common|utils|login|logout|register|fetch|account|slide|boxshadoweditor'
+    //需要权限访问
+    authPath:[
+        "edit",
+        "org",
+        "user",
+        "deck"
+    ],
+    //需要权限ajax访问
+    authAjaxPath:[
+        "get",
+        "post",
+        "put",
+        "options",
+        "head",
+        "delete"
+    ],
+    //不需要权限ajax访问
+    unauthAjaxPath:[
+        'fetch'
+    ],
+    //不需要权限访问
+    unauthPath:[
+        "",
+        "login",
+        "logout",
+        "register",
+        "account",
+        "slide",
+        "boxshadoweditor"
+    ],
+    //静态文件路径
+    staticPath:[
+        "js",
+        "lib",
+        "css",
+        "common",
+        "utils"
+    ]
 };
-
-module.exports = settings;

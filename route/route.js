@@ -1,41 +1,136 @@
-var org = require('./org.js');
-var doc = require('./doc.js');
-var deck = require('./deck.js');
-var user = require('./user.js');
-var page = require('./page.js');
+var org = require('../controller/org.js');
+var doc = require('../controller/doc.js');
+var deck = require('../controller/deck.js');
+var user = require('../controller/user.js');
+var page = require('../controller/page.js');
+
 var settings = require('../settings');
-var authPath = settings.authPath.split('|');
-var authAjaxPath = settings.authAjaxPath.split('|');
-var unauthPath = settings.unauthPath.split('|');
-var escapePath = authPath.concat(unauthPath,authAjaxPath);
+var authPath = settings.authPath;
+var authAjaxPath = settings.authAjaxPath;
+var unauthAjaxPath = settings.unauthAjaxPath;
+var unauthPath = settings.unauthPath;
+var staticPath = settings.staticPath;
+var validPath = authPath.concat(unauthPath,authAjaxPath,unauthAjaxPath,staticPath);
 
 module.exports = function(app){
     //权限
     app.all('*',function(req,res,next){
         var path = req._parsedUrl.pathname.split('/')[1];
 
-        if(escapePath.indexOf(path) >= 0){
+        if(validPath.indexOf(path) >= 0){
             
-            if(authAjaxPath.indexOf(path) >= 0 && !req.session.user){
-                
-                res.statusCode = 401;
-                res.end();
-            }else if(unauthPath.indexOf(path) < 0 && !req.session.user){
-                
-                res.redirect('/login?backurl='+req.url);
-                return;
-            }else if(path === 'login' && req.session.user){
-                
-                res.redirect('/');
-                return;
+            if(!req.session.user){
+                if(authAjaxPath.indexOf(path) >= 0){
+                    //访问未授权信息
+                    res.statusCode = 401;
+                    res.end();
+                }else if(authPath.indexOf(path) >= 0){
+                    //访问未授权页面
+                    res.redirect('/login?backurl='+req.url);
+                    return;
+                }
             }
+            
+            next();
+        }else{
+            res.render('notfound');
         }
-        next();
     });
+    
+    //首页
+    app.get('/',page.index);
 
-    page(app);
-    user(app);
-    doc(app);
-    deck(app);
-    org(app);
+    //登陆页面
+    app.get('/login',page.login);
+
+    //登出
+    app.get('/logout',page.logout);
+
+    //编辑页面
+    app.get('/edit',page.edit);
+    
+    //deck页面
+    app.get('/deck',page.deck);
+    
+    //slide页面
+    app.get('/slide/:user/:deck',page.slide_User_Deck);
+
+    //个人中心页面
+    app.get('/account/:user',page.account_User);
+
+    //文档页面
+    app.get('/doc/:user/:doc',page.doc_User_Doc);
+    
+    //box-shadow编辑器
+    app.get('/boxshadoweditor',page.boxshadoweditor);
+    
+    
+     //获取用户公开文档
+    app.get('/fetch/user/docs',user.fetch_user_docs);
+
+    //获取用户创建的文档
+    app.get('/get/user/docs',user.get_user_docs);
+
+    //获取用户创建的幻灯片
+    app.get('/get/user/decks',user.get_user_decks);
+
+    //获取用户创建和加入的组织
+    app.get('/get/user/orgs',user.get_user_orgs);
+
+    //获取用户所有组织下的所有文档
+    app.get('/get/user/orgs/docs',user.get_user_orgs_docs);
+
+    //用户登录
+    app.post('/login',user.login);
+
+    //用户注册
+    app.post('/register',user.register);
+    
+    
+    //获取与文档有关联的所有组织
+    app.get('/get/doc/orgs',doc.get_doc_orgs);
+
+    //添加文档
+    app.post('/post/add/doc',doc.post_add_doc);
+
+    //删除文档
+    app.post('/post/del/doc',doc.post_del_doc);
+
+    //更新文档
+    app.post('/post/update/doc',doc.post_update_doc);
+    
+    
+    //获取与幻灯片有关联的所有组织
+    app.get('/get/deck/orgs',deck.get_deck_orgs);
+    
+    //添加幻灯片
+    app.post('/post/add/deck',deck.post_add_deck);
+
+    //删除幻灯片
+    app.post('/post/del/deck',deck.post_del_deck);
+
+    //更新幻灯片
+    app.post('/post/update/deck',deck.post_update_deck);
+    
+    
+    //获取对应组织的所有成员
+    app.get('/get/org/users',org.get_org_users);
+
+    //获取对应组织内所有分享的文档
+    app.get('/get/org/docs',org.get_org_docs);
+
+    //创建组织
+    app.post('/post/create/org',org.post_create_org);
+    
+    //向组织分享文档
+    app.post('/post/org/add/doc',org.post_org_add_doc);
+    
+    //取消向组织分享文档
+    app.post('/post/org/del/doc',org.post_org_del_user);
+    
+    //用户加入组织
+    app.post('/post/org/add/user',org.post_org_add_user);
+    
+    //用户退出组织
+    app.post('/post/org/del/user',org.post_org_del_user);
 };

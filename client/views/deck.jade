@@ -75,7 +75,7 @@ html
     div#html-box
       textarea.highlight
     div#save-box
-      input(name='_id',type='hidden',value='#{deck._id}')
+      input(name='_id',type='hidden',value='#{deck._id||""}')
       div.form-group
         input(name='title',type='text',placeholder='请输入标题',data-validator='required:请输入标题',value='#{deck.title||""}')
     
