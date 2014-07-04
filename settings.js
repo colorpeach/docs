@@ -28,6 +28,7 @@ module.exports = {
         "register",
         "account",
         "slide",
+        "doc",
         "boxshadoweditor"
     ],
     //静态文件路径
