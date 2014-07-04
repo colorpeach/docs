@@ -10,7 +10,7 @@ var authAjaxPath = settings.authAjaxPath;
 var unauthAjaxPath = settings.unauthAjaxPath;
 var unauthPath = settings.unauthPath;
 var staticPath = settings.staticPath;
-var validPath = authPath.concat(unauthPath,authAjaxPath,unauthAjaxPath,staticPath);
+var validPath = authPath.concat(unauthPath,authAjaxPath,unauthAjaxPath,staticPath,'favicon.ico');
 
 module.exports = function(app){
     //权限
