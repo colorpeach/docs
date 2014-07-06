@@ -126,7 +126,7 @@ module.exports = function(app){
     app.post('/post/org/add/doc',org.post_org_add_doc);
     
     //取消向组织分享文档
-    app.post('/post/org/del/doc',org.post_org_del_user);
+    app.post('/post/org/del/doc',org.post_org_del_doc);
     
     //用户加入组织
     app.post('/post/org/add/user',org.post_org_add_user);
