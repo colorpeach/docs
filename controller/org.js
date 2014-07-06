@@ -78,7 +78,7 @@ Org.post_org_add_user = function(req,res){
 
 //用户退出组织
 Org.post_org_del_user = function(req,res){
-    orgUser.del(req,data,function(data){
+    orgUser.del(req.body,function(data){
         res.end(baseRes(data));
     });
 }

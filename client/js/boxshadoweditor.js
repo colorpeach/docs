@@ -28,8 +28,8 @@
             'content:" ";',
             'display:block;',
             'position:absolute;',
-            'top:0;',
-            'left:0;',
+            'top:-%sem;',
+            'left:-%sem;',
             'width:%sem;',
             'height:%sem;',
             'box-shadow:'
@@ -49,18 +49,13 @@
                     x = +(coord.x*cell).toFixed(2),
                     y = +(coord.y*cell).toFixed(2);
                 
-                if(!(i === 0 && !x && !y)){
-                    code.push((x ? (x +'em ') : (x + ' ')) + (y ? (y +'em') : (y + '')) + ',');
-                }else{
-                    background = color;
-                }
+                code.push((x ? (x +'em ') : (x + ' ')) + (y ? (y +'em') : (y + '')) + ',');
             });
             
             if(!code.length)
                 return '';
                 
             code[code.length-1] = code[code.length-1].slice(0,-1)+';';
-            background && code.push('background-color:'+background+';');
             code.push('\n}');
             
             code = (base.join('\n\t')+code.join(''))
@@ -82,8 +77,8 @@
                 x,y;
                 
             for(var i=0,len=cellSize;i<len;i++){
-                x = i%cell;
-                y = Math.floor(i/cell);
+                x = i%cell+1;
+                y = Math.floor(i/cell)+1;
                 html += '<span data-x="'+x+'" data-y="'+y+'"></span>';
             }
             
