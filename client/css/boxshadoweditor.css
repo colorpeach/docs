@@ -136,7 +136,7 @@
 
 #select-area{
     position:fixed;
-    border:1px dashed #ddd;
+    border:1px dashed #999;
     background-color:rgba(20,20,20,.1);
     display:none;
 }

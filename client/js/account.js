@@ -5,6 +5,7 @@
         $allRepos:$('#all-repos'),
         $myOrgs:$('#my-orgs'),
         $joinOrgs:$('#join-orgs'),
+        $info:$('#info'),
         orgList:[],
         state:{
             nowTab:$('#all-docs'),
@@ -207,8 +208,8 @@
                 }
             });
         },
-        privateDoc:function($this){
-            var data = $this.closest('li').data("doc");
+        privateDoc:function($this,type){
+            var data = $this.closest('li').data(type === 'deck' ? 'slide' : "doc");
             
             data = {
                 _id:data._id,
@@ -216,7 +217,7 @@
             };
             
             $.docsajax({
-                url:'/post/update/doc',
+                url:type === 'deck' ? '/post/update/deck' : '/post/update/doc',
                 method:'post',
                 data:data,
                 wrap:$this.closest('li'),
@@ -259,9 +260,44 @@
                 $tabs = $('.slide-tabs li'),
                 self = this;
                 
+            $('.info-edit').on('click','a',function(){
+                var $tabCons = $('.item-list');
+                for(var i=0;i<$(this).parents('.account-left').find('.slide-tabs').children().length;i++){
+                        $(this).parents('.account-left').find('.slide-tabs').children().eq(i).removeClass('active');
+                    }
+                $tabCons.addClass('hidden');
+                $(".edit-box").removeClass('hidden');
+                
+            }),
+            $('#edit-btn').click(function(){
+                var data = $('.edit-con').inputBox('data',{valid:true});
+                if(!data)
+                    return false;
+                
+                 if(data.password != data.password2){
+                    $.msg('两次输入的密码不一致');
+                    return false;
+                }
+                delete data.password2;
+                var data2 = data;
+                delete data2.password;
+                
+                $.docsajax({
+                    url:'/login',
+                    method:'post',
+                    data:{'password':data.old-password,'username':data.username},
+                    block:'请求仍在进行...',
+                    success:function(d,promise){
+                        $.msg('success');
+                    }
+                 });
+                
+            }),
             $('.slide-tabs').on('click','li',function(){
                 var i = $(this).index();
-                
+                if(!$(".edit-box").hasClass('hidden')){
+                    $(".edit-box").addClass('hidden');
+                }
                 if(!$(this).hasClass('active')){
                     $tabCons.addClass('hidden')
                         .eq(i).removeClass('hidden');
@@ -313,6 +349,48 @@
             })
             .on('click','.private-item',function(){
                 self.privateDoc($(this));
+            });
+            
+            //删除幻灯片
+            self.$allDecks
+            .on("click",".del-item",function(){
+                var $li = $(this).closest("li"),
+                    doc = $li.data("doc");
+                
+                $.msg({
+                    type:'danger',
+                    msg:'删除的幻灯片将无法恢复，确认删除？',
+                    ok:function(){
+                        $.docsajax({
+                            url:"/post/del/deck",
+                            data:doc,
+                            method:"post",
+                            success:function(d){
+                                $li.remove();
+                                $.prompt({
+                                    type:"success",
+                                    content:"删除成功"
+                                });
+                            }
+                        });
+                    }
+                });
+            })
+            .on('click','.share-item',function(){
+                var $li = $(this).closest('li');
+                self.state.showDetail(true,$li,"分享给组织：");
+                
+                $.docsajax({
+                    url:'/get/deck/orgs',
+                    data:{doc:$li.data('slide')._id},
+                    wrap:$('.detail-box'),
+                    success:function(d){
+                        $('.detail-box ul').html(self.shareOrgHtml(d.orgs));
+                    }
+                });
+            })
+            .on('click','.private-item',function(){
+                self.privateDoc($(this),'deck');
             });
             
             //添加组织

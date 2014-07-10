@@ -485,19 +485,27 @@ Reveal.initialize({
                                 url = '/post/add/deck';
                             
                             if(!data) return;
+                            
+                            if(data._id)
+                                url = 'post/update/deck';
+                            else
+                                delete data._id;
                 
                             data.content = $('#deck').clone().find('section').removeAttr('contenteditable').end().html();
-                            data._id && (url = 'post/update/deck');
                             
                             $.docsajax({
                                 url:url,
                                 method:'post',
                                 data:data,
-                                success:function(){
+                                success:function(d){
                                     $.prompt({
                                         type:'success',
                                         content:'保存成功'
                                     });
+                                    
+                                    if(!data._id)
+                                        $('#save-box').find('[name=_id]').val(d.deck._id);
+                                        
                                     $('#save-box').modal('close');
                                 }
                             });

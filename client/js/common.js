@@ -236,7 +236,7 @@
                 location.href = '/login';
             }else if(type === 'timeout'){
                 addReload(opts);
-            }else{
+            }else if(promise.status !== 0 || type !== 'error'){
                 removeReload(opts);
                 removeMark(opts);
                 $.prompt({

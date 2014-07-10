@@ -17,6 +17,8 @@ block content
         span.img-item.icon-user
       if user
         p #{user.login}
+          li.info-edit
+            a 修改资料
     ul.slide-tabs
       li.active
         a 我的文档
@@ -28,6 +30,22 @@ block content
         a 我创建的组织
       li
         a 我加入的组织
+  div.edit-box.border.hidden      
+    div.edit-con
+        div.form-group.line-input
+          label(for="username") 用户名
+          input#username(type="text",value='#{user.login}',readonly)
+        div.form-group.line-input
+          label(for="old-password") 旧密码
+          input#old-password(type="password",placeholder="请输入旧密码...",data-validator="required:请输入旧密码")
+        div.form-group.line-input
+          label(for="new-password") 新密码
+          input#password(type="password",placeholder="请输入新密码...",data-validator="required:请输入新密码")
+        div.form-group.line-input
+          label 密码确认
+          input#password2(type="password",placeholder="请再次输入新密码...",data-validator="required:请再次输入新密码")
+        div.form-group
+        button#edit-btn.btn.btn-primary(type="submit") 提交
   div.account-right
     div#all-docs.item-list
       div.item-header
