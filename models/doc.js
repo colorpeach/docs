@@ -3,8 +3,7 @@ var tidy = dbClient.column({
     title:'title',
     content:'content',
     user:'user',
-    auth:'auth',
-    thumbnail:'thumbnail'
+    auth:'auth'
 });
 var doc = {};
 

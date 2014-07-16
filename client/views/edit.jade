@@ -23,8 +23,6 @@ block content
         button.btn.btn-primary.col-lg-12.save-btn 保存
         textarea#content.hidden #{doc.content||""}
     div#view.edit-right
-  div#preview
-    div.preview-con
     
 block script
   script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js')
@@ -35,5 +33,4 @@ block script
       user:'#{user.login}',
       title:'#{doc.title}'
     };
-  script(type='text/javascript', src='/js/html2canvas.js')
   script(type='text/javascript', src='/js/edit.js')

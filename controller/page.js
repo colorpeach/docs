@@ -9,7 +9,7 @@ var page = {};
 page.index = function(req,res){
     doc.query({auth:"public"},function(list){
         res.render('index',{docs:list,user:req.session.user});
-    },{content:0});
+    },{content:0,thumbnail:0});
 }
 
 //登陆页面

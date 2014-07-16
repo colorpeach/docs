@@ -7,9 +7,6 @@ block content
   div.clearfix
     each doc in docs
       div.doc-item
-        div
-          a(href='/doc/'+doc.user+'/'+doc.title,title='#{doc.title}')
-            img(src='#{doc.thumbnail}',width='100%')
         div.panel.panel-default
           div.panel-heading
               a(href='/doc/'+doc.user+'/'+doc.title) #{doc.title}

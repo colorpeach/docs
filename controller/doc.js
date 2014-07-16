@@ -14,7 +14,7 @@ Doc.get_doc_orgs = function(req,res){
 Doc.post_add_doc = function(req,res){
     req.body.user = req.session.user.login;
     doc.add(req.body,function(data){
-        res.end(baseRes({doc:data}));
+        res.end(baseRes({doc:data[0]}));
     });
 }
 
@@ -28,7 +28,7 @@ Doc.post_del_doc = function(req,res){
 //更新文档
 Doc.post_update_doc = function(req,res){
     doc.update(req.body,function(data){
-        res.end(baseRes({doc:data}));
+        res.end(baseRes({doc:data[0]}));
     });
 }
 

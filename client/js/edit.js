@@ -15,7 +15,6 @@
     var Edit = {
         $view:$('#view'),
         $title:$('#title'),
-        $preview:$('#preview'),
         converter:new Showdown.converter(),
         toView:function(con){
             this.$view.html(this.converter.makeHtml(con));
@@ -41,28 +40,24 @@
                 url = '/post/update/doc';
             }
             
-            html2canvas(this.$preview.parent(), {
-              onrendered: function(canvas) {
-                data.thumbnail = canvas.toDataURL();
-            
-                $.docsajax({
-                    url:url,
-                    method:'post',
-                    data:data,
-                    success:function(d){
-                        doc.title = d.doc.title;
-                        Edit.$preview.modal('close');
-                        if(!doc._id){
-                            doc._id = d.doc._id;
-                            Edit.generateFileLink();
+            $.docsajax({
+                url:url,
+                method:'post',
+                data:data,
+                success:function(d){
+                    doc.title = d.doc.title;
+                    if(!doc._id){
+                        doc._id = d.doc._id;
+                        Edit.generateFileLink();
+                        if(history.replaceState){
+                            history.replaceState(null,null,'?_id='+doc._id);
                         }
-                        $.prompt({
-                            type:'success',
-                            content:'保存成功'
-                        });
                     }
-                });
-              }
+                    $.prompt({
+                        type:'success',
+                        content:'保存成功'
+                    });
+                }
             });
         }
     };
@@ -104,23 +99,8 @@
             });
             return;
         }
-        Edit.$preview.modal('open');
-        Edit.$preview.find('.preview-con').html(Edit.$view.html());
-    });
-    
-    Edit.$preview.modal({
-        width:900,
-        height:600,
-        title:'预览',
-        button:[
-            {
-                text:'提交',
-                type:'primary',
-                click:function(){
-                    Edit.save();
-                }
-            }
-        ]
+        
+        Edit.save();
     });
     
     Edit.generateFileLink();

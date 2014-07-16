@@ -11,11 +11,13 @@
     "serve-static": "~1.1.0",
     "express-session": "~1.1.0",
     "less": "~1.7.0",
-    "jade": "~1.3.1",
-    "mysql": "~2.2.0",
-    "connect-mysql": "~2.0.5"
+    "jade": "~1.3.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,7 +26,7 @@
     "web"
   ],
   "author": "colorpeach@live.cn",
-  "license": "ISC",
+  "license": "MIT",
   "engines": {
     "node": "0.10.x"
   }

@@ -1,0 +1,2719 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\program file\\nodejs\\\\node.exe',
+1 verbose cli   'D:\\program file\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'grunt-contrib-yuidoc',
+1 verbose cli   '--save-dev' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 verbose node symlink D:\program file\nodejs\\node.exe
+5 warn package.json doc@0.0.1 No repository field.
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'grunt-contrib-yuidoc', null ]
+8 verbose cache add name=undefined spec="grunt-contrib-yuidoc" args=["grunt-contrib-yuidoc",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'grunt-contrib-yuidoc',
+9 verbose parsed url   path: 'grunt-contrib-yuidoc',
+9 verbose parsed url   href: 'grunt-contrib-yuidoc' }
+10 silly lockFile d2ec8697-grunt-contrib-yuidoc grunt-contrib-yuidoc
+11 verbose lock grunt-contrib-yuidoc C:\Users\toshiba\AppData\Roaming\npm-cache\d2ec8697-grunt-contrib-yuidoc.lock
+12 silly lockFile d2ec8697-grunt-contrib-yuidoc grunt-contrib-yuidoc
+13 silly lockFile d2ec8697-grunt-contrib-yuidoc grunt-contrib-yuidoc
+14 verbose addNamed [ 'grunt-contrib-yuidoc', '' ]
+15 verbose addNamed [ null, '*' ]
+16 silly lockFile da10e0b4-grunt-contrib-yuidoc grunt-contrib-yuidoc@
+17 verbose lock grunt-contrib-yuidoc@ C:\Users\toshiba\AppData\Roaming\npm-cache\da10e0b4-grunt-contrib-yuidoc.lock
+18 silly addNameRange { name: 'grunt-contrib-yuidoc', range: '*', hasData: false }
+19 verbose url raw grunt-contrib-yuidoc
+20 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-yuidoc' ]
+21 verbose url resolved https://registry.npmjs.org/grunt-contrib-yuidoc
+22 info trying registry request attempt 1 at 22:28:00
+23 http GET https://registry.npmjs.org/grunt-contrib-yuidoc
+24 http 200 https://registry.npmjs.org/grunt-contrib-yuidoc
+25 silly registry.get cb [ 200,
+25 silly registry.get   { date: 'Wed, 09 Jul 2014 14:28:05 GMT',
+25 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+25 silly registry.get     etag: '"77OQXE9S0XPCEUISEJ6WIR7MN"',
+25 silly registry.get     'content-type': 'application/json',
+25 silly registry.get     'cache-control': 'max-age=30',
+25 silly registry.get     'content-length': '18368',
+25 silly registry.get     'accept-ranges': 'bytes',
+25 silly registry.get     via: '1.1 varnish',
+25 silly registry.get     age: '2179',
+25 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+25 silly registry.get     'x-cache': 'HIT',
+25 silly registry.get     'x-cache-hits': '1',
+25 silly registry.get     'x-timer': 'S1404916085.397638,VS0,VE120',
+25 silly registry.get     vary: 'Accept',
+25 silly registry.get     'keep-alive': 'timeout=10, max=50',
+25 silly registry.get     connection: 'Keep-Alive' } ]
+26 silly addNameRange number 2 { name: 'grunt-contrib-yuidoc', range: '*', hasData: true }
+27 silly addNameRange versions [ 'grunt-contrib-yuidoc',
+27 silly addNameRange   [ '0.1.0',
+27 silly addNameRange     '0.2.0',
+27 silly addNameRange     '0.3.0',
+27 silly addNameRange     '0.3.1',
+27 silly addNameRange     '0.3.2',
+27 silly addNameRange     '0.4.0',
+27 silly addNameRange     '0.5.0',
+27 silly addNameRange     '0.5.1',
+27 silly addNameRange     '0.5.2',
+27 silly addNameRange     '0.4.0-rc7' ] ]
+28 verbose addNamed [ 'grunt-contrib-yuidoc', '0.5.2' ]
+29 verbose addNamed [ '0.5.2', '0.5.2' ]
+30 silly lockFile 5c330c3a-grunt-contrib-yuidoc-0-5-2 grunt-contrib-yuidoc@0.5.2
+31 verbose lock grunt-contrib-yuidoc@0.5.2 C:\Users\toshiba\AppData\Roaming\npm-cache\5c330c3a-grunt-contrib-yuidoc-0-5-2.lock
+32 silly lockFile 35c2b49f-c-grunt-contrib-yuidoc-0-5-2-tgz https://registry.npmjs.org/grunt-contrib-yuidoc/-/grunt-contrib-yuidoc-0.5.2.tgz
+33 verbose lock https://registry.npmjs.org/grunt-contrib-yuidoc/-/grunt-contrib-yuidoc-0.5.2.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\35c2b49f-c-grunt-contrib-yuidoc-0-5-2-tgz.lock
+34 verbose addRemoteTarball [ 'https://registry.npmjs.org/grunt-contrib-yuidoc/-/grunt-contrib-yuidoc-0.5.2.tgz',
+34 verbose addRemoteTarball   '35027247ef2907aa1b3e1106e1942f2bfc54286f' ]
+35 info retry fetch attempt 1 at 22:28:13
+36 verbose fetch to= C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\tmp.tgz
+37 http GET https://registry.npmjs.org/grunt-contrib-yuidoc/-/grunt-contrib-yuidoc-0.5.2.tgz
+38 http 200 https://registry.npmjs.org/grunt-contrib-yuidoc/-/grunt-contrib-yuidoc-0.5.2.tgz
+39 verbose tar unpack C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\tmp.tgz
+40 silly lockFile 08ef97e5-93542-0-9785857812967151-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\package
+41 verbose lock tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\package C:\Users\toshiba\AppData\Roaming\npm-cache\08ef97e5-93542-0-9785857812967151-package.lock
+42 silly lockFile b33fd5e6-93542-0-9785857812967151-tmp-tgz tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\tmp.tgz
+43 verbose lock tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\tmp.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\b33fd5e6-93542-0-9785857812967151-tmp-tgz.lock
+44 silly gunzTarPerm modes [ '755', '644' ]
+45 silly gunzTarPerm extractEntry package.json
+46 silly gunzTarPerm extractEntry README.md
+47 silly gunzTarPerm extractEntry LICENSE-MIT
+48 silly gunzTarPerm extractEntry tasks/yuidoc.js
+49 silly lockFile 08ef97e5-93542-0-9785857812967151-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\package
+50 silly lockFile 08ef97e5-93542-0-9785857812967151-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\package
+51 silly lockFile b33fd5e6-93542-0-9785857812967151-tmp-tgz tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\tmp.tgz
+52 silly lockFile b33fd5e6-93542-0-9785857812967151-tmp-tgz tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\tmp.tgz
+53 verbose tar pack [ 'C:\\Users\\toshiba\\AppData\\Roaming\\npm-cache\\grunt-contrib-yuidoc\\0.5.2\\package.tgz',
+53 verbose tar pack   'C:\\Users\\toshiba\\AppData\\Local\\Temp\\npm-5916-8zmZmFUo\\1404916093542-0.9785857812967151\\package' ]
+54 verbose tarball C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz
+55 verbose folder C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\package
+56 silly lockFile 08ef97e5-93542-0-9785857812967151-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\package
+57 verbose lock tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\package C:\Users\toshiba\AppData\Roaming\npm-cache\08ef97e5-93542-0-9785857812967151-package.lock
+58 silly lockFile 43aaada9-contrib-yuidoc-0-5-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz
+59 verbose lock tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\43aaada9-contrib-yuidoc-0-5-2-package-tgz.lock
+60 silly lockFile 08ef97e5-93542-0-9785857812967151-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\package
+61 silly lockFile 08ef97e5-93542-0-9785857812967151-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916093542-0.9785857812967151\package
+62 silly lockFile 43aaada9-contrib-yuidoc-0-5-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz
+63 silly lockFile 43aaada9-contrib-yuidoc-0-5-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz
+64 silly lockFile 80f01949-unt-contrib-yuidoc-0-5-2-package C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package
+65 verbose lock C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package C:\Users\toshiba\AppData\Roaming\npm-cache\80f01949-unt-contrib-yuidoc-0-5-2-package.lock
+66 silly lockFile 80f01949-unt-contrib-yuidoc-0-5-2-package C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package
+67 silly lockFile 80f01949-unt-contrib-yuidoc-0-5-2-package C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package
+68 verbose tar unpack C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz
+69 silly lockFile e10e0a8f-unt-contrib-yuidoc-0-5-2-package tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package
+70 verbose lock tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package C:\Users\toshiba\AppData\Roaming\npm-cache\e10e0a8f-unt-contrib-yuidoc-0-5-2-package.lock
+71 silly lockFile 43aaada9-contrib-yuidoc-0-5-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz
+72 verbose lock tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\43aaada9-contrib-yuidoc-0-5-2-package-tgz.lock
+73 silly gunzTarPerm modes [ '755', '644' ]
+74 silly gunzTarPerm extractEntry package.json
+75 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+76 silly gunzTarPerm extractEntry README.md
+77 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+78 silly gunzTarPerm extractEntry LICENSE-MIT
+79 silly gunzTarPerm modified mode [ 'LICENSE-MIT', 438, 420 ]
+80 silly gunzTarPerm extractEntry tasks/yuidoc.js
+81 silly gunzTarPerm modified mode [ 'tasks/yuidoc.js', 438, 420 ]
+82 silly lockFile e10e0a8f-unt-contrib-yuidoc-0-5-2-package tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package
+83 silly lockFile e10e0a8f-unt-contrib-yuidoc-0-5-2-package tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package
+84 silly lockFile 43aaada9-contrib-yuidoc-0-5-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz
+85 silly lockFile 43aaada9-contrib-yuidoc-0-5-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz
+86 verbose chmod C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz 644
+87 silly chown skipping for windows C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz
+88 silly lockFile 35c2b49f-c-grunt-contrib-yuidoc-0-5-2-tgz https://registry.npmjs.org/grunt-contrib-yuidoc/-/grunt-contrib-yuidoc-0.5.2.tgz
+89 silly lockFile 35c2b49f-c-grunt-contrib-yuidoc-0-5-2-tgz https://registry.npmjs.org/grunt-contrib-yuidoc/-/grunt-contrib-yuidoc-0.5.2.tgz
+90 silly lockFile 5c330c3a-grunt-contrib-yuidoc-0-5-2 grunt-contrib-yuidoc@0.5.2
+91 silly lockFile 5c330c3a-grunt-contrib-yuidoc-0-5-2 grunt-contrib-yuidoc@0.5.2
+92 silly lockFile da10e0b4-grunt-contrib-yuidoc grunt-contrib-yuidoc@
+93 silly lockFile da10e0b4-grunt-contrib-yuidoc grunt-contrib-yuidoc@
+94 silly resolved [ { name: 'grunt-contrib-yuidoc',
+94 silly resolved     description: 'Compile YUIDoc Documentation.',
+94 silly resolved     version: '0.5.2',
+94 silly resolved     homepage: 'https://github.com/gruntjs/grunt-contrib-yuidoc',
+94 silly resolved     author: { name: 'Grunt Team', url: 'http://gruntjs.com/' },
+94 silly resolved     repository:
+94 silly resolved      { type: 'git',
+94 silly resolved        url: 'git://github.com/gruntjs/grunt-contrib-yuidoc.git' },
+94 silly resolved     bugs: { url: 'https://github.com/gruntjs/grunt-contrib-yuidoc/issues' },
+94 silly resolved     licenses: [ [Object] ],
+94 silly resolved     engines: { node: '>= 0.8.0' },
+94 silly resolved     scripts: { test: 'grunt test' },
+94 silly resolved     dependencies: { yuidocjs: '~0.3.45' },
+94 silly resolved     devDependencies:
+94 silly resolved      { 'grunt-contrib-jshint': '~0.6.2',
+94 silly resolved        'grunt-contrib-nodeunit': '~0.2.0',
+94 silly resolved        'grunt-contrib-clean': '~0.5.0',
+94 silly resolved        'grunt-contrib-internal': '~0.4.6',
+94 silly resolved        grunt: '~0.4.0',
+94 silly resolved        'grunt-cli': '~0.1.13' },
+94 silly resolved     peerDependencies: { grunt: '~0.4.0' },
+94 silly resolved     keywords: [ 'gruntplugin' ],
+94 silly resolved     files: [ 'tasks', 'LICENSE-MIT' ],
+94 silly resolved     readme: '# grunt-contrib-yuidoc v0.5.2 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-yuidoc.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-yuidoc)\n\n> Compile YUIDoc Documentation.\n\n\n\n## Getting Started\nThis plugin requires Grunt `~0.4.0`\n\nIf you haven\'t used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you\'re familiar with that process, you may install this plugin with this command:\n\n```shell\nnpm install grunt-contrib-yuidoc --save-dev\n```\n\nOnce the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:\n\n```js\ngrunt.loadNpmTasks(\'grunt-contrib-yuidoc\');\n```\n\n*This plugin was designed to work with Grunt 0.4.x. If you\'re still using grunt v0.3.x it\'s strongly recommended that [you upgrade](http://gruntjs.com/upgrading-from-0.3-to-0.4), but in case you can\'t please use [v0.3.2](https://github.com/gruntjs/grunt-contrib-yuidoc/tree/grunt-0.3-stable).*\n\n\n\n## Yuidoc task\n_Run this task with the `grunt yuidoc` command._\n\n[Visit the YUIDoc project home](http://yui.github.io/yuidoc/) for more information on YUIDocs and commenting syntax.\n### Options\n\nSettings mirror [YUIDoc config](http://yui.github.io/yuidoc/args/index.html).\n### Usage Examples\n\n```js\ngrunt.initConfig({\n  pkg: grunt.file.readJSON(\'package.json\'),\n  yuidoc: {\n    compile: {\n      name: \'<%= pkg.name %>\',\n      description: \'<%= pkg.description %>\',\n      version: \'<%= pkg.version %>\',\n      url: \'<%= pkg.homepage %>\',\n      options: {\n        paths: \'path/to/source/code/\',\n        themedir: \'path/to/custom/theme/\',\n        outdir: \'where/to/save/docs/\'\n      }\n    }\n  }\n});\n```\n\n\n## Release History\n\n * 2014-03-12   v0.5.2   Make sure to write JSON data with \'parseOnly\'\n * 2014-02-24   v0.5.1   Fixes \'parseOnly\' callback\n * 2013-09-01   v0.5.0   Catches and reports errors thrown by YUIDoc with grunt.warn.\n * 2013-02-15   v0.4.0   First official release for Grunt 0.4.0.\n * 2013-01-23   v0.4.0rc7   Updating grunt/gruntplugin dependencies to rc7. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.\n * 2013-01-09   v0.4.0rc5   Updating to work with grunt v0.4.0rc5.\n * 2012-10-12   v0.3.2   Rename grunt-contrib-lib dep to grunt-lib-contrib.\n * 2012-10-01   v0.3.1   Project options are parsed as templates.\n * 2012-09-23   v0.3.0   Options no longer accepted from global config key.\n * 2012-09-10   v0.2.0   Refactored from grunt-contrib into individual repo.\n\n---\n\nTask submitted by [George Pantazis](http://georgepantazis.com/)\n\n*This file was generated on Wed Mar 12 2014 12:33:04.*\n',
+94 silly resolved     readmeFilename: 'README.md',
+94 silly resolved     _id: 'grunt-contrib-yuidoc@0.5.2',
+94 silly resolved     dist: { shasum: 'bacb1c7713eb4f465817eeb691cf5045a0b4e7bd' },
+94 silly resolved     _from: 'grunt-contrib-yuidoc@',
+94 silly resolved     _resolved: 'https://registry.npmjs.org/grunt-contrib-yuidoc/-/grunt-contrib-yuidoc-0.5.2.tgz' } ]
+95 info install grunt-contrib-yuidoc@0.5.2 into E:\doc
+96 info installOne grunt-contrib-yuidoc@0.5.2
+97 info E:\doc\node_modules\grunt-contrib-yuidoc unbuild
+98 verbose tar unpack C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz
+99 silly lockFile 9e0f3906-ode-modules-grunt-contrib-yuidoc tar://E:\doc\node_modules\grunt-contrib-yuidoc
+100 verbose lock tar://E:\doc\node_modules\grunt-contrib-yuidoc C:\Users\toshiba\AppData\Roaming\npm-cache\9e0f3906-ode-modules-grunt-contrib-yuidoc.lock
+101 silly lockFile 43aaada9-contrib-yuidoc-0-5-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz
+102 verbose lock tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\43aaada9-contrib-yuidoc-0-5-2-package-tgz.lock
+103 silly gunzTarPerm modes [ '755', '644' ]
+104 silly gunzTarPerm extractEntry package.json
+105 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+106 silly gunzTarPerm extractEntry README.md
+107 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+108 silly gunzTarPerm extractEntry LICENSE-MIT
+109 silly gunzTarPerm modified mode [ 'LICENSE-MIT', 438, 420 ]
+110 silly gunzTarPerm extractEntry tasks/yuidoc.js
+111 silly gunzTarPerm modified mode [ 'tasks/yuidoc.js', 438, 420 ]
+112 silly lockFile 9e0f3906-ode-modules-grunt-contrib-yuidoc tar://E:\doc\node_modules\grunt-contrib-yuidoc
+113 silly lockFile 9e0f3906-ode-modules-grunt-contrib-yuidoc tar://E:\doc\node_modules\grunt-contrib-yuidoc
+114 silly lockFile 43aaada9-contrib-yuidoc-0-5-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz
+115 silly lockFile 43aaada9-contrib-yuidoc-0-5-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\grunt-contrib-yuidoc\0.5.2\package.tgz
+116 info preinstall grunt-contrib-yuidoc@0.5.2
+117 verbose readDependencies using package.json deps
+118 verbose readDependencies using package.json deps
+119 verbose cache add [ 'yuidocjs@~0.3.45', null ]
+120 verbose cache add name=undefined spec="yuidocjs@~0.3.45" args=["yuidocjs@~0.3.45",null]
+121 verbose parsed url { protocol: null,
+121 verbose parsed url   slashes: null,
+121 verbose parsed url   auth: null,
+121 verbose parsed url   host: null,
+121 verbose parsed url   port: null,
+121 verbose parsed url   hostname: null,
+121 verbose parsed url   hash: null,
+121 verbose parsed url   search: null,
+121 verbose parsed url   query: null,
+121 verbose parsed url   pathname: 'yuidocjs@~0.3.45',
+121 verbose parsed url   path: 'yuidocjs@~0.3.45',
+121 verbose parsed url   href: 'yuidocjs@~0.3.45' }
+122 verbose cache add name="yuidocjs" spec="~0.3.45" args=["yuidocjs","~0.3.45"]
+123 verbose parsed url { protocol: null,
+123 verbose parsed url   slashes: null,
+123 verbose parsed url   auth: null,
+123 verbose parsed url   host: null,
+123 verbose parsed url   port: null,
+123 verbose parsed url   hostname: null,
+123 verbose parsed url   hash: null,
+123 verbose parsed url   search: null,
+123 verbose parsed url   query: null,
+123 verbose parsed url   pathname: '~0.3.45',
+123 verbose parsed url   path: '~0.3.45',
+123 verbose parsed url   href: '~0.3.45' }
+124 verbose addNamed [ 'yuidocjs', '~0.3.45' ]
+125 verbose addNamed [ null, '>=0.3.45-0 <0.4.0-0' ]
+126 silly lockFile ae03e3b8-yuidocjs-0-3-45 yuidocjs@~0.3.45
+127 verbose lock yuidocjs@~0.3.45 C:\Users\toshiba\AppData\Roaming\npm-cache\ae03e3b8-yuidocjs-0-3-45.lock
+128 silly addNameRange { name: 'yuidocjs',
+128 silly addNameRange   range: '>=0.3.45-0 <0.4.0-0',
+128 silly addNameRange   hasData: false }
+129 verbose url raw yuidocjs
+130 verbose url resolving [ 'https://registry.npmjs.org/', './yuidocjs' ]
+131 verbose url resolved https://registry.npmjs.org/yuidocjs
+132 info trying registry request attempt 1 at 22:28:14
+133 http GET https://registry.npmjs.org/yuidocjs
+134 http 200 https://registry.npmjs.org/yuidocjs
+135 silly registry.get cb [ 200,
+135 silly registry.get   { date: 'Wed, 09 Jul 2014 14:28:21 GMT',
+135 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+135 silly registry.get     etag: '"9R1D1I6KP1Z11VUSISCR7Z72A"',
+135 silly registry.get     'content-type': 'application/json',
+135 silly registry.get     'cache-control': 'max-age=1',
+135 silly registry.get     via: '1.1 varnish',
+135 silly registry.get     'content-length': '151330',
+135 silly registry.get     'accept-ranges': 'bytes',
+135 silly registry.get     age: '2105388',
+135 silly registry.get     'x-served-by': 'cache-v36-ASH, cache-ty68-TYO',
+135 silly registry.get     'x-cache': 'HIT, HIT',
+135 silly registry.get     'x-cache-hits': '1, 1',
+135 silly registry.get     'x-timer': 'S1404916101.607933,VS0,VE0',
+135 silly registry.get     vary: 'Accept',
+135 silly registry.get     'keep-alive': 'timeout=10, max=50',
+135 silly registry.get     connection: 'Keep-Alive' } ]
+136 silly addNameRange number 2 { name: 'yuidocjs', range: '>=0.3.45-0 <0.4.0-0', hasData: true }
+137 silly addNameRange versions [ 'yuidocjs',
+137 silly addNameRange   [ '0.2.6',
+137 silly addNameRange     '0.2.7',
+137 silly addNameRange     '0.2.8',
+137 silly addNameRange     '0.2.9',
+137 silly addNameRange     '0.2.10',
+137 silly addNameRange     '0.2.11',
+137 silly addNameRange     '0.2.12',
+137 silly addNameRange     '0.2.13',
+137 silly addNameRange     '0.2.14',
+137 silly addNameRange     '0.2.15',
+137 silly addNameRange     '0.2.16',
+137 silly addNameRange     '0.2.17',
+137 silly addNameRange     '0.2.18',
+137 silly addNameRange     '0.2.19',
+137 silly addNameRange     '0.2.20',
+137 silly addNameRange     '0.2.21',
+137 silly addNameRange     '0.2.22',
+137 silly addNameRange     '0.2.23',
+137 silly addNameRange     '0.2.24',
+137 silly addNameRange     '0.2.25',
+137 silly addNameRange     '0.2.26',
+137 silly addNameRange     '0.2.27',
+137 silly addNameRange     '0.2.28',
+137 silly addNameRange     '0.2.29',
+137 silly addNameRange     '0.2.30',
+137 silly addNameRange     '0.2.31',
+137 silly addNameRange     '0.2.32',
+137 silly addNameRange     '0.2.33',
+137 silly addNameRange     '0.2.34',
+137 silly addNameRange     '0.2.35',
+137 silly addNameRange     '0.2.36',
+137 silly addNameRange     '0.2.37',
+137 silly addNameRange     '0.2.38',
+137 silly addNameRange     '0.2.39',
+137 silly addNameRange     '0.2.40',
+137 silly addNameRange     '0.2.41',
+137 silly addNameRange     '0.2.42',
+137 silly addNameRange     '0.2.43',
+137 silly addNameRange     '0.2.44',
+137 silly addNameRange     '0.3.0',
+137 silly addNameRange     '0.3.1',
+137 silly addNameRange     '0.3.2',
+137 silly addNameRange     '0.3.3',
+137 silly addNameRange     '0.3.4',
+137 silly addNameRange     '0.3.5',
+137 silly addNameRange     '0.3.6',
+137 silly addNameRange     '0.3.7',
+137 silly addNameRange     '0.3.8',
+137 silly addNameRange     '0.3.9',
+137 silly addNameRange     '0.3.10',
+137 silly addNameRange     '0.3.11',
+137 silly addNameRange     '0.3.12',
+137 silly addNameRange     '0.3.13',
+137 silly addNameRange     '0.3.14',
+137 silly addNameRange     '0.3.15',
+137 silly addNameRange     '0.3.16',
+137 silly addNameRange     '0.3.17',
+137 silly addNameRange     '0.3.18',
+137 silly addNameRange     '0.3.19',
+137 silly addNameRange     '0.3.20',
+137 silly addNameRange     '0.3.21',
+137 silly addNameRange     '0.3.22',
+137 silly addNameRange     '0.3.23',
+137 silly addNameRange     '0.3.24',
+137 silly addNameRange     '0.3.25',
+137 silly addNameRange     '0.3.26',
+137 silly addNameRange     '0.3.27',
+137 silly addNameRange     '0.3.28',
+137 silly addNameRange     '0.3.29',
+137 silly addNameRange     '0.3.30',
+137 silly addNameRange     '0.3.31',
+137 silly addNameRange     '0.3.32',
+137 silly addNameRange     '0.3.33',
+137 silly addNameRange     '0.3.34',
+137 silly addNameRange     '0.3.35',
+137 silly addNameRange     '0.3.36',
+137 silly addNameRange     '0.3.37',
+137 silly addNameRange     '0.3.38',
+137 silly addNameRange     '0.3.39',
+137 silly addNameRange     '0.3.40',
+137 silly addNameRange     '0.3.41',
+137 silly addNameRange     '0.3.42',
+137 silly addNameRange     '0.3.43',
+137 silly addNameRange     '0.3.44',
+137 silly addNameRange     '0.3.45',
+137 silly addNameRange     '0.3.46',
+137 silly addNameRange     '0.3.47',
+137 silly addNameRange     '0.3.48',
+137 silly addNameRange     '0.3.49',
+137 silly addNameRange     '0.3.50' ] ]
+138 verbose addNamed [ 'yuidocjs', '0.3.50' ]
+139 verbose addNamed [ '0.3.50', '0.3.50' ]
+140 silly lockFile 0739e5a6-yuidocjs-0-3-50 yuidocjs@0.3.50
+141 verbose lock yuidocjs@0.3.50 C:\Users\toshiba\AppData\Roaming\npm-cache\0739e5a6-yuidocjs-0-3-50.lock
+142 silly lockFile 69e651fa-org-yuidocjs-yuidocjs-0-3-50-tgz https://registry.npmjs.org/yuidocjs/-/yuidocjs-0.3.50.tgz
+143 verbose lock https://registry.npmjs.org/yuidocjs/-/yuidocjs-0.3.50.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\69e651fa-org-yuidocjs-yuidocjs-0-3-50-tgz.lock
+144 verbose addRemoteTarball [ 'https://registry.npmjs.org/yuidocjs/-/yuidocjs-0.3.50.tgz',
+144 verbose addRemoteTarball   '9060a5f765a883b100b563ec6ad105c5d53369c1' ]
+145 info retry fetch attempt 1 at 22:28:25
+146 verbose fetch to= C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\tmp.tgz
+147 http GET https://registry.npmjs.org/yuidocjs/-/yuidocjs-0.3.50.tgz
+148 http 200 https://registry.npmjs.org/yuidocjs/-/yuidocjs-0.3.50.tgz
+149 verbose tar unpack C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\tmp.tgz
+150 silly lockFile 35111e19-05047-0-9010007192846388-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\package
+151 verbose lock tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\package C:\Users\toshiba\AppData\Roaming\npm-cache\35111e19-05047-0-9010007192846388-package.lock
+152 silly lockFile 0c16a46b-05047-0-9010007192846388-tmp-tgz tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\tmp.tgz
+153 verbose lock tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\tmp.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\0c16a46b-05047-0-9010007192846388-tmp-tgz.lock
+154 silly gunzTarPerm modes [ '755', '644' ]
+155 silly gunzTarPerm extractEntry package.json
+156 silly gunzTarPerm extractEntry .npmignore
+157 silly gunzTarPerm extractEntry README.md
+158 silly gunzTarPerm extractEntry LICENSE
+159 silly gunzTarPerm extractEntry Makefile
+160 silly gunzTarPerm extractEntry DEVELOPMENT.md
+161 silly gunzTarPerm extractEntry conf/docs/assets/css/main.css
+162 silly gunzTarPerm extractEntry conf/docs/assets/favicon.png
+163 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/prettify-min.js
+164 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/prettify.js
+165 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/CHANGES.html
+166 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/COPYING
+167 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/README.html
+168 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/prettify-min.css
+169 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/prettify.css
+170 silly gunzTarPerm extractEntry conf/docs/index.mustache
+171 silly gunzTarPerm extractEntry conf/docs/layouts/main.mustache
+172 silly gunzTarPerm extractEntry conf/docs/project.json
+173 silly gunzTarPerm extractEntry .travis.yml
+174 silly gunzTarPerm extractEntry docs/args/component.json
+175 silly gunzTarPerm extractEntry docs/args/index.mustache
+176 silly gunzTarPerm extractEntry docs/args/partials/help.mustache
+177 silly gunzTarPerm extractEntry docs/syntax/component.json
+178 silly gunzTarPerm extractEntry docs/syntax/index.mustache
+179 silly gunzTarPerm extractEntry docs/themes/component.json
+180 silly gunzTarPerm extractEntry docs/themes/index.mustache
+181 silly gunzTarPerm extractEntry lib/builder.js
+182 silly gunzTarPerm extractEntry lib/docparser.js
+183 silly gunzTarPerm extractEntry lib/docview.js
+184 silly gunzTarPerm extractEntry lib/files.js
+185 silly gunzTarPerm extractEntry lib/help.js
+186 silly gunzTarPerm extractEntry lib/cli.js
+187 silly gunzTarPerm extractEntry lib/options.js
+188 silly gunzTarPerm extractEntry lib/project.js
+189 silly gunzTarPerm extractEntry lib/server.js
+190 silly gunzTarPerm extractEntry lib/utils.js
+191 silly gunzTarPerm extractEntry lib/yuidoc.js
+192 silly gunzTarPerm extractEntry lib/index.js
+193 silly gunzTarPerm extractEntry output/api/api.js
+194 silly gunzTarPerm extractEntry output/api/assets/css/external-small.png
+195 silly gunzTarPerm extractEntry output/api/assets/css/logo.png
+196 silly gunzTarPerm extractEntry output/api/assets/css/main.css
+197 silly gunzTarPerm extractEntry output/api/assets/favicon.png
+198 silly gunzTarPerm extractEntry output/api/assets/img/spinner.gif
+199 silly gunzTarPerm extractEntry output/api/assets/index.html
+200 silly gunzTarPerm extractEntry output/api/assets/js/api-filter.js
+201 silly gunzTarPerm extractEntry output/api/assets/js/api-list.js
+202 silly gunzTarPerm extractEntry output/api/assets/js/api-search.js
+203 silly gunzTarPerm extractEntry output/api/assets/js/apidocs.js
+204 silly gunzTarPerm extractEntry output/api/assets/js/yui-prettify.js
+205 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/prettify-min.js
+206 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/CHANGES.html
+207 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/COPYING
+208 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/README.html
+209 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/prettify-min.css
+210 silly gunzTarPerm extractEntry output/api/classes/Main.html
+211 silly gunzTarPerm extractEntry output/api/classes/CLI.html
+212 silly gunzTarPerm extractEntry output/api/classes/DocParser.html
+213 silly gunzTarPerm extractEntry output/api/classes/DocView.html
+214 silly gunzTarPerm extractEntry output/api/classes/Files.html
+215 silly gunzTarPerm extractEntry output/api/classes/Help.html
+216 silly gunzTarPerm extractEntry output/api/classes/DocBuilder.html
+217 silly gunzTarPerm extractEntry output/api/classes/Options.html
+218 silly gunzTarPerm extractEntry output/api/classes/Server.html
+219 silly gunzTarPerm extractEntry output/api/classes/Utils.html
+220 silly gunzTarPerm extractEntry output/api/classes/YUIDoc.html
+221 silly gunzTarPerm extractEntry output/api/classes/index.html
+222 silly gunzTarPerm extractEntry output/api/data.json
+223 silly gunzTarPerm extractEntry output/api/files/lib_help.js.html
+224 silly gunzTarPerm extractEntry output/api/files/index.html
+225 silly gunzTarPerm extractEntry output/api/files/lib_cli.js.html
+226 silly gunzTarPerm extractEntry output/api/files/lib_docparser.js.html
+227 silly gunzTarPerm extractEntry output/api/files/lib_docview.js.html
+228 silly gunzTarPerm extractEntry output/api/files/lib_files.js.html
+229 silly gunzTarPerm extractEntry output/api/files/lib_builder.js.html
+230 silly gunzTarPerm extractEntry output/api/files/lib_index.js.html
+231 silly gunzTarPerm extractEntry output/api/files/lib_options.js.html
+232 silly gunzTarPerm extractEntry output/api/files/lib_server.js.html
+233 silly gunzTarPerm extractEntry output/api/files/lib_utils.js.html
+234 silly gunzTarPerm extractEntry output/api/files/lib_yuidoc.js.html
+235 silly gunzTarPerm extractEntry output/api/index.html
+236 silly gunzTarPerm extractEntry output/api/modules/index.html
+237 silly gunzTarPerm extractEntry output/api/modules/yuidoc.html
+238 silly gunzTarPerm extractEntry output/args/index.html
+239 silly gunzTarPerm extractEntry output/assets/css/main.css
+240 silly gunzTarPerm extractEntry output/assets/favicon.png
+241 silly gunzTarPerm extractEntry output/assets/vendor/prettify/prettify-min.js
+242 silly gunzTarPerm extractEntry output/assets/vendor/prettify/prettify.js
+243 silly gunzTarPerm extractEntry output/assets/vendor/prettify/CHANGES.html
+244 silly gunzTarPerm extractEntry output/assets/vendor/prettify/COPYING
+245 silly gunzTarPerm extractEntry output/assets/vendor/prettify/README.html
+246 silly gunzTarPerm extractEntry output/assets/vendor/prettify/prettify-min.css
+247 silly gunzTarPerm extractEntry output/assets/vendor/prettify/prettify.css
+248 silly gunzTarPerm extractEntry output/index.html
+249 silly gunzTarPerm extractEntry output/syntax/index.html
+250 silly gunzTarPerm extractEntry output/themes/index.html
+251 silly gunzTarPerm extractEntry themes/default/assets/css/external-small.png
+252 silly gunzTarPerm extractEntry themes/default/assets/css/logo.png
+253 silly gunzTarPerm extractEntry themes/default/assets/css/main.css
+254 silly gunzTarPerm extractEntry themes/default/assets/favicon.png
+255 silly gunzTarPerm extractEntry themes/default/assets/img/spinner.gif
+256 silly gunzTarPerm extractEntry themes/default/assets/index.html
+257 silly gunzTarPerm extractEntry themes/default/assets/js/api-filter.js
+258 silly gunzTarPerm extractEntry themes/default/assets/js/api-list.js
+259 silly gunzTarPerm extractEntry themes/default/assets/js/api-search.js
+260 silly gunzTarPerm extractEntry themes/default/assets/js/apidocs.js
+261 silly gunzTarPerm extractEntry themes/default/assets/js/yui-prettify.js
+262 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/prettify-min.js
+263 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/CHANGES.html
+264 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/COPYING
+265 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/README.html
+266 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/prettify-min.css
+267 silly gunzTarPerm extractEntry themes/default/layouts/main.handlebars
+268 silly gunzTarPerm extractEntry themes/default/layouts/xhr.handlebars
+269 silly gunzTarPerm extractEntry themes/default/partials/attrs.handlebars
+270 silly gunzTarPerm extractEntry themes/default/partials/classes.handlebars
+271 silly gunzTarPerm extractEntry themes/default/partials/events.handlebars
+272 silly gunzTarPerm extractEntry themes/default/partials/files.handlebars
+273 silly gunzTarPerm extractEntry themes/default/partials/index.handlebars
+274 silly gunzTarPerm extractEntry themes/default/partials/method.handlebars
+275 silly gunzTarPerm extractEntry themes/default/partials/module.handlebars
+276 silly gunzTarPerm extractEntry themes/default/partials/options.handlebars
+277 silly gunzTarPerm extractEntry themes/default/partials/props.handlebars
+278 silly gunzTarPerm extractEntry themes/default/partials/sidebar.handlebars
+279 silly gunzTarPerm extractEntry themes/default/theme.json
+280 silly gunzTarPerm extractEntry themes/simple/assets/css/external-small.png
+281 silly gunzTarPerm extractEntry themes/simple/assets/css/logo.png
+282 silly gunzTarPerm extractEntry themes/simple/assets/css/main.css
+283 silly gunzTarPerm extractEntry themes/simple/assets/js/tabs.js
+284 silly gunzTarPerm extractEntry themes/simple/assets/js/yui-prettify.js
+285 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/prettify-min.js
+286 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/CHANGES.html
+287 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/COPYING
+288 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/README.html
+289 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/prettify-min.css
+290 silly gunzTarPerm extractEntry themes/simple/layouts/main.handlebars
+291 silly gunzTarPerm extractEntry themes/simple/partials/attrs.handlebars
+292 silly gunzTarPerm extractEntry themes/simple/partials/classes.handlebars
+293 silly gunzTarPerm extractEntry themes/simple/partials/events.handlebars
+294 silly gunzTarPerm extractEntry themes/simple/partials/files.handlebars
+295 silly gunzTarPerm extractEntry themes/simple/partials/index.handlebars
+296 silly gunzTarPerm extractEntry themes/simple/partials/method.handlebars
+297 silly gunzTarPerm extractEntry themes/simple/partials/module.handlebars
+298 silly gunzTarPerm extractEntry themes/simple/partials/props.handlebars
+299 silly gunzTarPerm extractEntry themes/simple/partials/sidebar.handlebars
+300 silly gunzTarPerm extractEntry themes/simple/theme.json
+301 silly gunzTarPerm extractEntry scripts/report.js
+302 silly gunzTarPerm extractEntry scripts/versions.js
+303 silly gunzTarPerm extractEntry scripts/docs.sh
+304 silly gunzTarPerm extractEntry scripts/help.sh
+305 silly gunzTarPerm extractEntry scripts/prep.sh
+306 silly gunzTarPerm extractEntry scripts/test.sh
+307 silly gunzTarPerm extractEntry tests/builder.js
+308 silly gunzTarPerm extractEntry tests/files.js
+309 silly gunzTarPerm extractEntry tests/options.js
+310 silly gunzTarPerm extractEntry tests/parser.js
+311 silly gunzTarPerm extractEntry tests/parser_coffee.js
+312 silly gunzTarPerm extractEntry tests/preprocessor.js
+313 silly gunzTarPerm extractEntry tests/utils.js
+314 silly gunzTarPerm extractEntry tests/input/globbing/deep/deep/sub/yui/src/example/example.js
+315 silly gunzTarPerm extractEntry tests/input/globbing/deep/shallow/yui/src/example/example.js
+316 silly gunzTarPerm extractEntry tests/input/globbing/shallow/yui/src/example/example.js
+317 silly gunzTarPerm extractEntry tests/input/charts/AreaSeries.js
+318 silly gunzTarPerm extractEntry tests/input/charts/Gridlines.js
+319 silly gunzTarPerm extractEntry tests/input/charts/Histogram.js
+320 silly gunzTarPerm extractEntry tests/input/charts/LeftAxisLayout.js
+321 silly gunzTarPerm extractEntry tests/input/charts/Graph.js
+322 silly gunzTarPerm extractEntry tests/input/charts/Lines.js
+323 silly gunzTarPerm extractEntry tests/input/charts/MarkerSeries.js
+324 silly gunzTarPerm extractEntry tests/input/charts/NumericAxis.js
+325 silly gunzTarPerm extractEntry tests/input/charts/PieChart.js
+326 silly gunzTarPerm extractEntry tests/input/charts/PieChartLegend.js
+327 silly gunzTarPerm extractEntry tests/input/charts/Fills.js
+328 silly gunzTarPerm extractEntry tests/input/charts/PieSeries.js
+329 silly gunzTarPerm extractEntry tests/input/charts/EllipseGroup.js
+330 silly gunzTarPerm extractEntry tests/input/charts/Plots.js
+331 silly gunzTarPerm extractEntry tests/input/charts/DiamondGroup.js
+332 silly gunzTarPerm extractEntry tests/input/charts/RectGroup.js
+333 silly gunzTarPerm extractEntry tests/input/charts/CurveUtil.js
+334 silly gunzTarPerm extractEntry tests/input/charts/Renderer.js
+335 silly gunzTarPerm extractEntry tests/input/charts/ComboSplineSeries.js
+336 silly gunzTarPerm extractEntry tests/input/charts/RightAxisLayout.js
+337 silly gunzTarPerm extractEntry tests/input/charts/ComboSeries.js
+338 silly gunzTarPerm extractEntry tests/input/charts/ShapeGroup.js
+339 silly gunzTarPerm extractEntry tests/input/charts/ColumnSeries.js
+340 silly gunzTarPerm extractEntry tests/input/charts/SplineSeries.js
+341 silly gunzTarPerm extractEntry tests/input/charts/CircleGroup.js
+342 silly gunzTarPerm extractEntry tests/input/charts/StackedAreaSeries.js
+343 silly gunzTarPerm extractEntry tests/input/charts/ChartLegend.js
+344 silly gunzTarPerm extractEntry tests/input/charts/StackedAreaSplineSeries.js
+345 silly gunzTarPerm extractEntry tests/input/charts/ChartBase.js
+346 silly gunzTarPerm extractEntry tests/input/charts/StackedAxis.js
+347 silly gunzTarPerm extractEntry tests/input/charts/Chart.js
+348 silly gunzTarPerm extractEntry tests/input/charts/StackedBarSeries.js
+349 silly gunzTarPerm extractEntry tests/input/charts/CategoryAxis.js
+350 silly gunzTarPerm extractEntry tests/input/charts/StackedColumnSeries.js
+351 silly gunzTarPerm extractEntry tests/input/charts/CartesianSeries.js
+352 silly gunzTarPerm extractEntry tests/input/charts/StackedComboSeries.js
+353 silly gunzTarPerm extractEntry tests/input/charts/CartesianChartLegend.js
+354 silly gunzTarPerm extractEntry tests/input/charts/StackedComboSplineSeries.js
+355 silly gunzTarPerm extractEntry tests/input/charts/CartesianChart.js
+356 silly gunzTarPerm extractEntry tests/input/charts/StackedLineSeries.js
+357 silly gunzTarPerm extractEntry tests/input/charts/BottomAxisLayout.js
+358 silly gunzTarPerm extractEntry tests/input/charts/StackedMarkerSeries.js
+359 silly gunzTarPerm extractEntry tests/input/charts/BarSeries.js
+360 silly gunzTarPerm extractEntry tests/input/charts/StackedSplineSeries.js
+361 silly gunzTarPerm extractEntry tests/input/charts/AxisType.js
+362 silly gunzTarPerm extractEntry tests/input/charts/StackingUtil.js
+363 silly gunzTarPerm extractEntry tests/input/charts/Axis.js
+364 silly gunzTarPerm extractEntry tests/input/charts/TimeAxis.js
+365 silly gunzTarPerm extractEntry tests/input/charts/AreaSplineSeries.js
+366 silly gunzTarPerm extractEntry tests/input/charts/TopAxisLayout.js
+367 silly gunzTarPerm extractEntry tests/input/charts/LineSeries.js
+368 silly gunzTarPerm extractEntry tests/input/folders1/one/two/yuidoc.json
+369 silly gunzTarPerm extractEntry tests/input/folders1/yuidoc.json
+370 silly gunzTarPerm extractEntry tests/input/folders2/package.json
+371 silly gunzTarPerm extractEntry tests/input/folders2/one/two/yuidoc.json
+372 silly gunzTarPerm extractEntry tests/input/folders3/package.json
+373 silly gunzTarPerm extractEntry tests/input/folders3/one/package.json
+374 silly gunzTarPerm extractEntry tests/input/folders3/one/two/yuidoc.json
+375 silly gunzTarPerm extractEntry tests/input/folders3/yuidoc.json
+376 silly gunzTarPerm extractEntry tests/input/folders4/one/two/package.json
+377 silly gunzTarPerm extractEntry tests/input/folders4/one/two/yuidoc.json
+378 silly gunzTarPerm extractEntry tests/input/folders4/one/yuidoc.json
+379 silly gunzTarPerm extractEntry tests/input/folders5/one/three/yuidoc.json
+380 silly gunzTarPerm extractEntry tests/input/folders5/two/package.json
+381 silly gunzTarPerm extractEntry tests/input/folders5/two/yuidoc.json
+382 silly gunzTarPerm extractEntry tests/input/coffee/test.coffee
+383 silly gunzTarPerm extractEntry tests/input/inherit/examplemodule.js
+384 silly gunzTarPerm extractEntry tests/input/json/parse.js
+385 silly gunzTarPerm extractEntry tests/input/json/stringify.js
+386 silly gunzTarPerm extractEntry tests/input/namespace/ns.js
+387 silly gunzTarPerm extractEntry tests/input/preprocessor/preprocessortest.js
+388 silly gunzTarPerm extractEntry tests/input/test/anim.js
+389 silly gunzTarPerm extractEntry tests/input/test/test.js
+390 silly gunzTarPerm extractEntry tests/input/test2/namespace.js
+391 silly gunzTarPerm extractEntry tests/input/test2/slashes.js
+392 silly gunzTarPerm extractEntry tests/input/test2/dump/dump.js
+393 silly gunzTarPerm extractEntry tests/input/test2/oop/oop.js
+394 silly gunzTarPerm extractEntry tests/lib/davglass.js
+395 silly gunzTarPerm extractEntry tests/lib/testpreprocessor.js
+396 silly gunzTarPerm extractEntry tests/lib/testpreprocessormodule/package.json
+397 silly gunzTarPerm extractEntry tests/lib/testpreprocessormodule/testpreprocessormodule.js
+398 silly gunzTarPerm extractEntry tests/out/data.json
+399 silly gunzTarPerm extractEntry coverage/coverage.json
+400 silly gunzTarPerm extractEntry coverage/lcov-report/prettify.js
+401 silly gunzTarPerm extractEntry coverage/lcov-report/index.html
+402 silly gunzTarPerm extractEntry coverage/lcov-report/lib/index.js.html
+403 silly gunzTarPerm extractEntry coverage/lcov-report/lib/builder.js.html
+404 silly gunzTarPerm extractEntry coverage/lcov-report/lib/docview.js.html
+405 silly gunzTarPerm extractEntry coverage/lcov-report/lib/files.js.html
+406 silly gunzTarPerm extractEntry coverage/lcov-report/lib/help.js.html
+407 silly gunzTarPerm extractEntry coverage/lcov-report/lib/index.html
+408 silly gunzTarPerm extractEntry coverage/lcov-report/lib/docparser.js.html
+409 silly gunzTarPerm extractEntry coverage/lcov-report/lib/options.js.html
+410 silly gunzTarPerm extractEntry coverage/lcov-report/lib/project.js.html
+411 silly gunzTarPerm extractEntry coverage/lcov-report/lib/server.js.html
+412 silly gunzTarPerm extractEntry coverage/lcov-report/lib/utils.js.html
+413 silly gunzTarPerm extractEntry coverage/lcov-report/lib/yuidoc.js.html
+414 silly gunzTarPerm extractEntry coverage/lcov-report/prettify.css
+415 silly gunzTarPerm extractEntry coverage/lcov.info
+416 silly lockFile 35111e19-05047-0-9010007192846388-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\package
+417 silly lockFile 35111e19-05047-0-9010007192846388-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\package
+418 silly lockFile 0c16a46b-05047-0-9010007192846388-tmp-tgz tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\tmp.tgz
+419 silly lockFile 0c16a46b-05047-0-9010007192846388-tmp-tgz tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\tmp.tgz
+420 verbose tar pack [ 'C:\\Users\\toshiba\\AppData\\Roaming\\npm-cache\\yuidocjs\\0.3.50\\package.tgz',
+420 verbose tar pack   'C:\\Users\\toshiba\\AppData\\Local\\Temp\\npm-5916-8zmZmFUo\\1404916105047-0.9010007192846388\\package' ]
+421 verbose tarball C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz
+422 verbose folder C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\package
+423 silly lockFile 35111e19-05047-0-9010007192846388-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\package
+424 verbose lock tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\package C:\Users\toshiba\AppData\Roaming\npm-cache\35111e19-05047-0-9010007192846388-package.lock
+425 silly lockFile 5d92d421-ache-yuidocjs-0-3-50-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz
+426 verbose lock tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\5d92d421-ache-yuidocjs-0-3-50-package-tgz.lock
+427 silly lockFile 35111e19-05047-0-9010007192846388-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\package
+428 silly lockFile 35111e19-05047-0-9010007192846388-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916105047-0.9010007192846388\package
+429 silly lockFile 5d92d421-ache-yuidocjs-0-3-50-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz
+430 silly lockFile 5d92d421-ache-yuidocjs-0-3-50-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz
+431 silly lockFile aeba1d4d-pm-cache-yuidocjs-0-3-50-package C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package
+432 verbose lock C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package C:\Users\toshiba\AppData\Roaming\npm-cache\aeba1d4d-pm-cache-yuidocjs-0-3-50-package.lock
+433 silly lockFile aeba1d4d-pm-cache-yuidocjs-0-3-50-package C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package
+434 silly lockFile aeba1d4d-pm-cache-yuidocjs-0-3-50-package C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package
+435 verbose tar unpack C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz
+436 silly lockFile 2c5626ae-pm-cache-yuidocjs-0-3-50-package tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package
+437 verbose lock tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package C:\Users\toshiba\AppData\Roaming\npm-cache\2c5626ae-pm-cache-yuidocjs-0-3-50-package.lock
+438 silly lockFile 5d92d421-ache-yuidocjs-0-3-50-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz
+439 verbose lock tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\5d92d421-ache-yuidocjs-0-3-50-package-tgz.lock
+440 silly gunzTarPerm modes [ '755', '644' ]
+441 silly gunzTarPerm extractEntry package.json
+442 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+443 silly gunzTarPerm extractEntry .npmignore
+444 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+445 silly gunzTarPerm extractEntry README.md
+446 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+447 silly gunzTarPerm extractEntry LICENSE
+448 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+449 silly gunzTarPerm extractEntry Makefile
+450 silly gunzTarPerm modified mode [ 'Makefile', 438, 420 ]
+451 silly gunzTarPerm extractEntry DEVELOPMENT.md
+452 silly gunzTarPerm modified mode [ 'DEVELOPMENT.md', 438, 420 ]
+453 silly gunzTarPerm extractEntry conf/docs/assets/css/main.css
+454 silly gunzTarPerm modified mode [ 'conf/docs/assets/css/main.css', 438, 420 ]
+455 silly gunzTarPerm extractEntry conf/docs/assets/favicon.png
+456 silly gunzTarPerm modified mode [ 'conf/docs/assets/favicon.png', 438, 420 ]
+457 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/prettify-min.js
+458 silly gunzTarPerm modified mode [ 'conf/docs/assets/vendor/prettify/prettify-min.js', 438, 420 ]
+459 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/prettify.js
+460 silly gunzTarPerm modified mode [ 'conf/docs/assets/vendor/prettify/prettify.js', 438, 420 ]
+461 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/CHANGES.html
+462 silly gunzTarPerm modified mode [ 'conf/docs/assets/vendor/prettify/CHANGES.html', 438, 420 ]
+463 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/COPYING
+464 silly gunzTarPerm modified mode [ 'conf/docs/assets/vendor/prettify/COPYING', 438, 420 ]
+465 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/README.html
+466 silly gunzTarPerm modified mode [ 'conf/docs/assets/vendor/prettify/README.html', 438, 420 ]
+467 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/prettify-min.css
+468 silly gunzTarPerm modified mode [ 'conf/docs/assets/vendor/prettify/prettify-min.css', 438, 420 ]
+469 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/prettify.css
+470 silly gunzTarPerm modified mode [ 'conf/docs/assets/vendor/prettify/prettify.css', 438, 420 ]
+471 silly gunzTarPerm extractEntry conf/docs/index.mustache
+472 silly gunzTarPerm modified mode [ 'conf/docs/index.mustache', 438, 420 ]
+473 silly gunzTarPerm extractEntry conf/docs/layouts/main.mustache
+474 silly gunzTarPerm modified mode [ 'conf/docs/layouts/main.mustache', 438, 420 ]
+475 silly gunzTarPerm extractEntry conf/docs/project.json
+476 silly gunzTarPerm modified mode [ 'conf/docs/project.json', 438, 420 ]
+477 silly gunzTarPerm extractEntry .travis.yml
+478 silly gunzTarPerm modified mode [ '.travis.yml', 438, 420 ]
+479 silly gunzTarPerm extractEntry docs/args/component.json
+480 silly gunzTarPerm modified mode [ 'docs/args/component.json', 438, 420 ]
+481 silly gunzTarPerm extractEntry docs/args/index.mustache
+482 silly gunzTarPerm modified mode [ 'docs/args/index.mustache', 438, 420 ]
+483 silly gunzTarPerm extractEntry docs/args/partials/help.mustache
+484 silly gunzTarPerm modified mode [ 'docs/args/partials/help.mustache', 438, 420 ]
+485 silly gunzTarPerm extractEntry docs/syntax/component.json
+486 silly gunzTarPerm modified mode [ 'docs/syntax/component.json', 438, 420 ]
+487 silly gunzTarPerm extractEntry docs/syntax/index.mustache
+488 silly gunzTarPerm modified mode [ 'docs/syntax/index.mustache', 438, 420 ]
+489 silly gunzTarPerm extractEntry docs/themes/component.json
+490 silly gunzTarPerm modified mode [ 'docs/themes/component.json', 438, 420 ]
+491 silly gunzTarPerm extractEntry docs/themes/index.mustache
+492 silly gunzTarPerm modified mode [ 'docs/themes/index.mustache', 438, 420 ]
+493 silly gunzTarPerm extractEntry lib/builder.js
+494 silly gunzTarPerm modified mode [ 'lib/builder.js', 438, 420 ]
+495 silly gunzTarPerm extractEntry lib/docparser.js
+496 silly gunzTarPerm modified mode [ 'lib/docparser.js', 438, 420 ]
+497 silly gunzTarPerm extractEntry lib/docview.js
+498 silly gunzTarPerm modified mode [ 'lib/docview.js', 438, 420 ]
+499 silly gunzTarPerm extractEntry lib/files.js
+500 silly gunzTarPerm modified mode [ 'lib/files.js', 438, 420 ]
+501 silly gunzTarPerm extractEntry lib/help.js
+502 silly gunzTarPerm modified mode [ 'lib/help.js', 438, 420 ]
+503 silly gunzTarPerm extractEntry lib/cli.js
+504 silly gunzTarPerm modified mode [ 'lib/cli.js', 438, 420 ]
+505 silly gunzTarPerm extractEntry lib/options.js
+506 silly gunzTarPerm modified mode [ 'lib/options.js', 438, 420 ]
+507 silly gunzTarPerm extractEntry lib/project.js
+508 silly gunzTarPerm modified mode [ 'lib/project.js', 438, 420 ]
+509 silly gunzTarPerm extractEntry lib/server.js
+510 silly gunzTarPerm modified mode [ 'lib/server.js', 438, 420 ]
+511 silly gunzTarPerm extractEntry lib/utils.js
+512 silly gunzTarPerm modified mode [ 'lib/utils.js', 438, 420 ]
+513 silly gunzTarPerm extractEntry lib/yuidoc.js
+514 silly gunzTarPerm modified mode [ 'lib/yuidoc.js', 438, 420 ]
+515 silly gunzTarPerm extractEntry lib/index.js
+516 silly gunzTarPerm modified mode [ 'lib/index.js', 438, 420 ]
+517 silly gunzTarPerm extractEntry output/api/api.js
+518 silly gunzTarPerm modified mode [ 'output/api/api.js', 438, 420 ]
+519 silly gunzTarPerm extractEntry output/api/assets/css/external-small.png
+520 silly gunzTarPerm modified mode [ 'output/api/assets/css/external-small.png', 438, 420 ]
+521 silly gunzTarPerm extractEntry output/api/assets/css/logo.png
+522 silly gunzTarPerm modified mode [ 'output/api/assets/css/logo.png', 438, 420 ]
+523 silly gunzTarPerm extractEntry output/api/assets/css/main.css
+524 silly gunzTarPerm modified mode [ 'output/api/assets/css/main.css', 438, 420 ]
+525 silly gunzTarPerm extractEntry output/api/assets/favicon.png
+526 silly gunzTarPerm modified mode [ 'output/api/assets/favicon.png', 438, 420 ]
+527 silly gunzTarPerm extractEntry output/api/assets/img/spinner.gif
+528 silly gunzTarPerm modified mode [ 'output/api/assets/img/spinner.gif', 438, 420 ]
+529 silly gunzTarPerm extractEntry output/api/assets/index.html
+530 silly gunzTarPerm modified mode [ 'output/api/assets/index.html', 438, 420 ]
+531 silly gunzTarPerm extractEntry output/api/assets/js/api-filter.js
+532 silly gunzTarPerm modified mode [ 'output/api/assets/js/api-filter.js', 438, 420 ]
+533 silly gunzTarPerm extractEntry output/api/assets/js/api-list.js
+534 silly gunzTarPerm modified mode [ 'output/api/assets/js/api-list.js', 438, 420 ]
+535 silly gunzTarPerm extractEntry output/api/assets/js/api-search.js
+536 silly gunzTarPerm modified mode [ 'output/api/assets/js/api-search.js', 438, 420 ]
+537 silly gunzTarPerm extractEntry output/api/assets/js/apidocs.js
+538 silly gunzTarPerm modified mode [ 'output/api/assets/js/apidocs.js', 438, 420 ]
+539 silly gunzTarPerm extractEntry output/api/assets/js/yui-prettify.js
+540 silly gunzTarPerm modified mode [ 'output/api/assets/js/yui-prettify.js', 438, 420 ]
+541 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/prettify-min.js
+542 silly gunzTarPerm modified mode [ 'output/api/assets/vendor/prettify/prettify-min.js', 438, 420 ]
+543 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/CHANGES.html
+544 silly gunzTarPerm modified mode [ 'output/api/assets/vendor/prettify/CHANGES.html', 438, 420 ]
+545 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/COPYING
+546 silly gunzTarPerm modified mode [ 'output/api/assets/vendor/prettify/COPYING', 438, 420 ]
+547 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/README.html
+548 silly gunzTarPerm modified mode [ 'output/api/assets/vendor/prettify/README.html', 438, 420 ]
+549 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/prettify-min.css
+550 silly gunzTarPerm modified mode [ 'output/api/assets/vendor/prettify/prettify-min.css',
+550 silly gunzTarPerm   438,
+550 silly gunzTarPerm   420 ]
+551 silly gunzTarPerm extractEntry output/api/classes/Main.html
+552 silly gunzTarPerm modified mode [ 'output/api/classes/Main.html', 438, 420 ]
+553 silly gunzTarPerm extractEntry output/api/classes/CLI.html
+554 silly gunzTarPerm modified mode [ 'output/api/classes/CLI.html', 438, 420 ]
+555 silly gunzTarPerm extractEntry output/api/classes/DocParser.html
+556 silly gunzTarPerm modified mode [ 'output/api/classes/DocParser.html', 438, 420 ]
+557 silly gunzTarPerm extractEntry output/api/classes/DocView.html
+558 silly gunzTarPerm modified mode [ 'output/api/classes/DocView.html', 438, 420 ]
+559 silly gunzTarPerm extractEntry output/api/classes/Files.html
+560 silly gunzTarPerm modified mode [ 'output/api/classes/Files.html', 438, 420 ]
+561 silly gunzTarPerm extractEntry output/api/classes/Help.html
+562 silly gunzTarPerm modified mode [ 'output/api/classes/Help.html', 438, 420 ]
+563 silly gunzTarPerm extractEntry output/api/classes/DocBuilder.html
+564 silly gunzTarPerm modified mode [ 'output/api/classes/DocBuilder.html', 438, 420 ]
+565 silly gunzTarPerm extractEntry output/api/classes/Options.html
+566 silly gunzTarPerm modified mode [ 'output/api/classes/Options.html', 438, 420 ]
+567 silly gunzTarPerm extractEntry output/api/classes/Server.html
+568 silly gunzTarPerm modified mode [ 'output/api/classes/Server.html', 438, 420 ]
+569 silly gunzTarPerm extractEntry output/api/classes/Utils.html
+570 silly gunzTarPerm modified mode [ 'output/api/classes/Utils.html', 438, 420 ]
+571 silly gunzTarPerm extractEntry output/api/classes/YUIDoc.html
+572 silly gunzTarPerm modified mode [ 'output/api/classes/YUIDoc.html', 438, 420 ]
+573 silly gunzTarPerm extractEntry output/api/classes/index.html
+574 silly gunzTarPerm modified mode [ 'output/api/classes/index.html', 438, 420 ]
+575 silly gunzTarPerm extractEntry output/api/data.json
+576 silly gunzTarPerm modified mode [ 'output/api/data.json', 438, 420 ]
+577 silly gunzTarPerm extractEntry output/api/files/lib_help.js.html
+578 silly gunzTarPerm modified mode [ 'output/api/files/lib_help.js.html', 438, 420 ]
+579 silly gunzTarPerm extractEntry output/api/files/index.html
+580 silly gunzTarPerm modified mode [ 'output/api/files/index.html', 438, 420 ]
+581 silly gunzTarPerm extractEntry output/api/files/lib_cli.js.html
+582 silly gunzTarPerm modified mode [ 'output/api/files/lib_cli.js.html', 438, 420 ]
+583 silly gunzTarPerm extractEntry output/api/files/lib_docparser.js.html
+584 silly gunzTarPerm modified mode [ 'output/api/files/lib_docparser.js.html', 438, 420 ]
+585 silly gunzTarPerm extractEntry output/api/files/lib_docview.js.html
+586 silly gunzTarPerm modified mode [ 'output/api/files/lib_docview.js.html', 438, 420 ]
+587 silly gunzTarPerm extractEntry output/api/files/lib_files.js.html
+588 silly gunzTarPerm modified mode [ 'output/api/files/lib_files.js.html', 438, 420 ]
+589 silly gunzTarPerm extractEntry output/api/files/lib_builder.js.html
+590 silly gunzTarPerm modified mode [ 'output/api/files/lib_builder.js.html', 438, 420 ]
+591 silly gunzTarPerm extractEntry output/api/files/lib_index.js.html
+592 silly gunzTarPerm modified mode [ 'output/api/files/lib_index.js.html', 438, 420 ]
+593 silly gunzTarPerm extractEntry output/api/files/lib_options.js.html
+594 silly gunzTarPerm modified mode [ 'output/api/files/lib_options.js.html', 438, 420 ]
+595 silly gunzTarPerm extractEntry output/api/files/lib_server.js.html
+596 silly gunzTarPerm modified mode [ 'output/api/files/lib_server.js.html', 438, 420 ]
+597 silly gunzTarPerm extractEntry output/api/files/lib_utils.js.html
+598 silly gunzTarPerm modified mode [ 'output/api/files/lib_utils.js.html', 438, 420 ]
+599 silly gunzTarPerm extractEntry output/api/files/lib_yuidoc.js.html
+600 silly gunzTarPerm modified mode [ 'output/api/files/lib_yuidoc.js.html', 438, 420 ]
+601 silly gunzTarPerm extractEntry output/api/index.html
+602 silly gunzTarPerm modified mode [ 'output/api/index.html', 438, 420 ]
+603 silly gunzTarPerm extractEntry output/api/modules/index.html
+604 silly gunzTarPerm modified mode [ 'output/api/modules/index.html', 438, 420 ]
+605 silly gunzTarPerm extractEntry output/api/modules/yuidoc.html
+606 silly gunzTarPerm modified mode [ 'output/api/modules/yuidoc.html', 438, 420 ]
+607 silly gunzTarPerm extractEntry output/args/index.html
+608 silly gunzTarPerm modified mode [ 'output/args/index.html', 438, 420 ]
+609 silly gunzTarPerm extractEntry output/assets/css/main.css
+610 silly gunzTarPerm modified mode [ 'output/assets/css/main.css', 438, 420 ]
+611 silly gunzTarPerm extractEntry output/assets/favicon.png
+612 silly gunzTarPerm modified mode [ 'output/assets/favicon.png', 438, 420 ]
+613 silly gunzTarPerm extractEntry output/assets/vendor/prettify/prettify-min.js
+614 silly gunzTarPerm modified mode [ 'output/assets/vendor/prettify/prettify-min.js', 438, 420 ]
+615 silly gunzTarPerm extractEntry output/assets/vendor/prettify/prettify.js
+616 silly gunzTarPerm modified mode [ 'output/assets/vendor/prettify/prettify.js', 438, 420 ]
+617 silly gunzTarPerm extractEntry output/assets/vendor/prettify/CHANGES.html
+618 silly gunzTarPerm modified mode [ 'output/assets/vendor/prettify/CHANGES.html', 438, 420 ]
+619 silly gunzTarPerm extractEntry output/assets/vendor/prettify/COPYING
+620 silly gunzTarPerm modified mode [ 'output/assets/vendor/prettify/COPYING', 438, 420 ]
+621 silly gunzTarPerm extractEntry output/assets/vendor/prettify/README.html
+622 silly gunzTarPerm modified mode [ 'output/assets/vendor/prettify/README.html', 438, 420 ]
+623 silly gunzTarPerm extractEntry output/assets/vendor/prettify/prettify-min.css
+624 silly gunzTarPerm modified mode [ 'output/assets/vendor/prettify/prettify-min.css', 438, 420 ]
+625 silly gunzTarPerm extractEntry output/assets/vendor/prettify/prettify.css
+626 silly gunzTarPerm modified mode [ 'output/assets/vendor/prettify/prettify.css', 438, 420 ]
+627 silly gunzTarPerm extractEntry output/index.html
+628 silly gunzTarPerm modified mode [ 'output/index.html', 438, 420 ]
+629 silly gunzTarPerm extractEntry output/syntax/index.html
+630 silly gunzTarPerm modified mode [ 'output/syntax/index.html', 438, 420 ]
+631 silly gunzTarPerm extractEntry output/themes/index.html
+632 silly gunzTarPerm modified mode [ 'output/themes/index.html', 438, 420 ]
+633 silly gunzTarPerm extractEntry themes/default/assets/css/external-small.png
+634 silly gunzTarPerm modified mode [ 'themes/default/assets/css/external-small.png', 438, 420 ]
+635 silly gunzTarPerm extractEntry themes/default/assets/css/logo.png
+636 silly gunzTarPerm modified mode [ 'themes/default/assets/css/logo.png', 438, 420 ]
+637 silly gunzTarPerm extractEntry themes/default/assets/css/main.css
+638 silly gunzTarPerm modified mode [ 'themes/default/assets/css/main.css', 438, 420 ]
+639 silly gunzTarPerm extractEntry themes/default/assets/favicon.png
+640 silly gunzTarPerm modified mode [ 'themes/default/assets/favicon.png', 438, 420 ]
+641 silly gunzTarPerm extractEntry themes/default/assets/img/spinner.gif
+642 silly gunzTarPerm modified mode [ 'themes/default/assets/img/spinner.gif', 438, 420 ]
+643 silly gunzTarPerm extractEntry themes/default/assets/index.html
+644 silly gunzTarPerm modified mode [ 'themes/default/assets/index.html', 438, 420 ]
+645 silly gunzTarPerm extractEntry themes/default/assets/js/api-filter.js
+646 silly gunzTarPerm modified mode [ 'themes/default/assets/js/api-filter.js', 438, 420 ]
+647 silly gunzTarPerm extractEntry themes/default/assets/js/api-list.js
+648 silly gunzTarPerm modified mode [ 'themes/default/assets/js/api-list.js', 438, 420 ]
+649 silly gunzTarPerm extractEntry themes/default/assets/js/api-search.js
+650 silly gunzTarPerm modified mode [ 'themes/default/assets/js/api-search.js', 438, 420 ]
+651 silly gunzTarPerm extractEntry themes/default/assets/js/apidocs.js
+652 silly gunzTarPerm modified mode [ 'themes/default/assets/js/apidocs.js', 438, 420 ]
+653 silly gunzTarPerm extractEntry themes/default/assets/js/yui-prettify.js
+654 silly gunzTarPerm modified mode [ 'themes/default/assets/js/yui-prettify.js', 438, 420 ]
+655 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/prettify-min.js
+656 silly gunzTarPerm modified mode [ 'themes/default/assets/vendor/prettify/prettify-min.js',
+656 silly gunzTarPerm   438,
+656 silly gunzTarPerm   420 ]
+657 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/CHANGES.html
+658 silly gunzTarPerm modified mode [ 'themes/default/assets/vendor/prettify/CHANGES.html',
+658 silly gunzTarPerm   438,
+658 silly gunzTarPerm   420 ]
+659 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/COPYING
+660 silly gunzTarPerm modified mode [ 'themes/default/assets/vendor/prettify/COPYING', 438, 420 ]
+661 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/README.html
+662 silly gunzTarPerm modified mode [ 'themes/default/assets/vendor/prettify/README.html', 438, 420 ]
+663 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/prettify-min.css
+664 silly gunzTarPerm modified mode [ 'themes/default/assets/vendor/prettify/prettify-min.css',
+664 silly gunzTarPerm   438,
+664 silly gunzTarPerm   420 ]
+665 silly gunzTarPerm extractEntry themes/default/layouts/main.handlebars
+666 silly gunzTarPerm modified mode [ 'themes/default/layouts/main.handlebars', 438, 420 ]
+667 silly gunzTarPerm extractEntry themes/default/layouts/xhr.handlebars
+668 silly gunzTarPerm modified mode [ 'themes/default/layouts/xhr.handlebars', 438, 420 ]
+669 silly gunzTarPerm extractEntry themes/default/partials/attrs.handlebars
+670 silly gunzTarPerm modified mode [ 'themes/default/partials/attrs.handlebars', 438, 420 ]
+671 silly gunzTarPerm extractEntry themes/default/partials/classes.handlebars
+672 silly gunzTarPerm modified mode [ 'themes/default/partials/classes.handlebars', 438, 420 ]
+673 silly gunzTarPerm extractEntry themes/default/partials/events.handlebars
+674 silly gunzTarPerm modified mode [ 'themes/default/partials/events.handlebars', 438, 420 ]
+675 silly gunzTarPerm extractEntry themes/default/partials/files.handlebars
+676 silly gunzTarPerm modified mode [ 'themes/default/partials/files.handlebars', 438, 420 ]
+677 silly gunzTarPerm extractEntry themes/default/partials/index.handlebars
+678 silly gunzTarPerm modified mode [ 'themes/default/partials/index.handlebars', 438, 420 ]
+679 silly gunzTarPerm extractEntry themes/default/partials/method.handlebars
+680 silly gunzTarPerm modified mode [ 'themes/default/partials/method.handlebars', 438, 420 ]
+681 silly gunzTarPerm extractEntry themes/default/partials/module.handlebars
+682 silly gunzTarPerm modified mode [ 'themes/default/partials/module.handlebars', 438, 420 ]
+683 silly gunzTarPerm extractEntry themes/default/partials/options.handlebars
+684 silly gunzTarPerm modified mode [ 'themes/default/partials/options.handlebars', 438, 420 ]
+685 silly gunzTarPerm extractEntry themes/default/partials/props.handlebars
+686 silly gunzTarPerm modified mode [ 'themes/default/partials/props.handlebars', 438, 420 ]
+687 silly gunzTarPerm extractEntry themes/default/partials/sidebar.handlebars
+688 silly gunzTarPerm modified mode [ 'themes/default/partials/sidebar.handlebars', 438, 420 ]
+689 silly gunzTarPerm extractEntry themes/default/theme.json
+690 silly gunzTarPerm modified mode [ 'themes/default/theme.json', 438, 420 ]
+691 silly gunzTarPerm extractEntry themes/simple/assets/css/external-small.png
+692 silly gunzTarPerm modified mode [ 'themes/simple/assets/css/external-small.png', 438, 420 ]
+693 silly gunzTarPerm extractEntry themes/simple/assets/css/logo.png
+694 silly gunzTarPerm modified mode [ 'themes/simple/assets/css/logo.png', 438, 420 ]
+695 silly gunzTarPerm extractEntry themes/simple/assets/css/main.css
+696 silly gunzTarPerm modified mode [ 'themes/simple/assets/css/main.css', 438, 420 ]
+697 silly gunzTarPerm extractEntry themes/simple/assets/js/tabs.js
+698 silly gunzTarPerm modified mode [ 'themes/simple/assets/js/tabs.js', 438, 420 ]
+699 silly gunzTarPerm extractEntry themes/simple/assets/js/yui-prettify.js
+700 silly gunzTarPerm modified mode [ 'themes/simple/assets/js/yui-prettify.js', 438, 420 ]
+701 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/prettify-min.js
+702 silly gunzTarPerm modified mode [ 'themes/simple/assets/vendor/prettify/prettify-min.js',
+702 silly gunzTarPerm   438,
+702 silly gunzTarPerm   420 ]
+703 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/CHANGES.html
+704 silly gunzTarPerm modified mode [ 'themes/simple/assets/vendor/prettify/CHANGES.html', 438, 420 ]
+705 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/COPYING
+706 silly gunzTarPerm modified mode [ 'themes/simple/assets/vendor/prettify/COPYING', 438, 420 ]
+707 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/README.html
+708 silly gunzTarPerm modified mode [ 'themes/simple/assets/vendor/prettify/README.html', 438, 420 ]
+709 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/prettify-min.css
+710 silly gunzTarPerm modified mode [ 'themes/simple/assets/vendor/prettify/prettify-min.css',
+710 silly gunzTarPerm   438,
+710 silly gunzTarPerm   420 ]
+711 silly gunzTarPerm extractEntry themes/simple/layouts/main.handlebars
+712 silly gunzTarPerm modified mode [ 'themes/simple/layouts/main.handlebars', 438, 420 ]
+713 silly gunzTarPerm extractEntry themes/simple/partials/attrs.handlebars
+714 silly gunzTarPerm modified mode [ 'themes/simple/partials/attrs.handlebars', 438, 420 ]
+715 silly gunzTarPerm extractEntry themes/simple/partials/classes.handlebars
+716 silly gunzTarPerm modified mode [ 'themes/simple/partials/classes.handlebars', 438, 420 ]
+717 silly gunzTarPerm extractEntry themes/simple/partials/events.handlebars
+718 silly gunzTarPerm modified mode [ 'themes/simple/partials/events.handlebars', 438, 420 ]
+719 silly gunzTarPerm extractEntry themes/simple/partials/files.handlebars
+720 silly gunzTarPerm modified mode [ 'themes/simple/partials/files.handlebars', 438, 420 ]
+721 silly gunzTarPerm extractEntry themes/simple/partials/index.handlebars
+722 silly gunzTarPerm modified mode [ 'themes/simple/partials/index.handlebars', 438, 420 ]
+723 silly gunzTarPerm extractEntry themes/simple/partials/method.handlebars
+724 silly gunzTarPerm modified mode [ 'themes/simple/partials/method.handlebars', 438, 420 ]
+725 silly gunzTarPerm extractEntry themes/simple/partials/module.handlebars
+726 silly gunzTarPerm modified mode [ 'themes/simple/partials/module.handlebars', 438, 420 ]
+727 silly gunzTarPerm extractEntry themes/simple/partials/props.handlebars
+728 silly gunzTarPerm modified mode [ 'themes/simple/partials/props.handlebars', 438, 420 ]
+729 silly gunzTarPerm extractEntry themes/simple/partials/sidebar.handlebars
+730 silly gunzTarPerm modified mode [ 'themes/simple/partials/sidebar.handlebars', 438, 420 ]
+731 silly gunzTarPerm extractEntry themes/simple/theme.json
+732 silly gunzTarPerm modified mode [ 'themes/simple/theme.json', 438, 420 ]
+733 silly gunzTarPerm extractEntry scripts/report.js
+734 silly gunzTarPerm modified mode [ 'scripts/report.js', 438, 420 ]
+735 silly gunzTarPerm extractEntry scripts/versions.js
+736 silly gunzTarPerm modified mode [ 'scripts/versions.js', 438, 420 ]
+737 silly gunzTarPerm extractEntry scripts/docs.sh
+738 silly gunzTarPerm modified mode [ 'scripts/docs.sh', 438, 420 ]
+739 silly gunzTarPerm extractEntry scripts/help.sh
+740 silly gunzTarPerm modified mode [ 'scripts/help.sh', 438, 420 ]
+741 silly gunzTarPerm extractEntry scripts/prep.sh
+742 silly gunzTarPerm modified mode [ 'scripts/prep.sh', 438, 420 ]
+743 silly gunzTarPerm extractEntry scripts/test.sh
+744 silly gunzTarPerm modified mode [ 'scripts/test.sh', 438, 420 ]
+745 silly gunzTarPerm extractEntry tests/builder.js
+746 silly gunzTarPerm modified mode [ 'tests/builder.js', 438, 420 ]
+747 silly gunzTarPerm extractEntry tests/files.js
+748 silly gunzTarPerm modified mode [ 'tests/files.js', 438, 420 ]
+749 silly gunzTarPerm extractEntry tests/options.js
+750 silly gunzTarPerm modified mode [ 'tests/options.js', 438, 420 ]
+751 silly gunzTarPerm extractEntry tests/parser.js
+752 silly gunzTarPerm modified mode [ 'tests/parser.js', 438, 420 ]
+753 silly gunzTarPerm extractEntry tests/parser_coffee.js
+754 silly gunzTarPerm modified mode [ 'tests/parser_coffee.js', 438, 420 ]
+755 silly gunzTarPerm extractEntry tests/preprocessor.js
+756 silly gunzTarPerm modified mode [ 'tests/preprocessor.js', 438, 420 ]
+757 silly gunzTarPerm extractEntry tests/utils.js
+758 silly gunzTarPerm modified mode [ 'tests/utils.js', 438, 420 ]
+759 silly gunzTarPerm extractEntry tests/input/globbing/deep/deep/sub/yui/src/example/example.js
+760 silly gunzTarPerm modified mode [ 'tests/input/globbing/deep/deep/sub/yui/src/example/example.js',
+760 silly gunzTarPerm   438,
+760 silly gunzTarPerm   420 ]
+761 silly gunzTarPerm extractEntry tests/input/globbing/deep/shallow/yui/src/example/example.js
+762 silly gunzTarPerm modified mode [ 'tests/input/globbing/deep/shallow/yui/src/example/example.js',
+762 silly gunzTarPerm   438,
+762 silly gunzTarPerm   420 ]
+763 silly gunzTarPerm extractEntry tests/input/globbing/shallow/yui/src/example/example.js
+764 silly gunzTarPerm modified mode [ 'tests/input/globbing/shallow/yui/src/example/example.js',
+764 silly gunzTarPerm   438,
+764 silly gunzTarPerm   420 ]
+765 silly gunzTarPerm extractEntry tests/input/charts/AreaSeries.js
+766 silly gunzTarPerm modified mode [ 'tests/input/charts/AreaSeries.js', 438, 420 ]
+767 silly gunzTarPerm extractEntry tests/input/charts/Gridlines.js
+768 silly gunzTarPerm modified mode [ 'tests/input/charts/Gridlines.js', 438, 420 ]
+769 silly gunzTarPerm extractEntry tests/input/charts/Histogram.js
+770 silly gunzTarPerm modified mode [ 'tests/input/charts/Histogram.js', 438, 420 ]
+771 silly gunzTarPerm extractEntry tests/input/charts/LeftAxisLayout.js
+772 silly gunzTarPerm modified mode [ 'tests/input/charts/LeftAxisLayout.js', 438, 420 ]
+773 silly gunzTarPerm extractEntry tests/input/charts/Graph.js
+774 silly gunzTarPerm modified mode [ 'tests/input/charts/Graph.js', 438, 420 ]
+775 silly gunzTarPerm extractEntry tests/input/charts/Lines.js
+776 silly gunzTarPerm modified mode [ 'tests/input/charts/Lines.js', 438, 420 ]
+777 silly gunzTarPerm extractEntry tests/input/charts/MarkerSeries.js
+778 silly gunzTarPerm modified mode [ 'tests/input/charts/MarkerSeries.js', 438, 420 ]
+779 silly gunzTarPerm extractEntry tests/input/charts/NumericAxis.js
+780 silly gunzTarPerm modified mode [ 'tests/input/charts/NumericAxis.js', 438, 420 ]
+781 silly gunzTarPerm extractEntry tests/input/charts/PieChart.js
+782 silly gunzTarPerm modified mode [ 'tests/input/charts/PieChart.js', 438, 420 ]
+783 silly gunzTarPerm extractEntry tests/input/charts/PieChartLegend.js
+784 silly gunzTarPerm modified mode [ 'tests/input/charts/PieChartLegend.js', 438, 420 ]
+785 silly gunzTarPerm extractEntry tests/input/charts/Fills.js
+786 silly gunzTarPerm modified mode [ 'tests/input/charts/Fills.js', 438, 420 ]
+787 silly gunzTarPerm extractEntry tests/input/charts/PieSeries.js
+788 silly gunzTarPerm modified mode [ 'tests/input/charts/PieSeries.js', 438, 420 ]
+789 silly gunzTarPerm extractEntry tests/input/charts/EllipseGroup.js
+790 silly gunzTarPerm modified mode [ 'tests/input/charts/EllipseGroup.js', 438, 420 ]
+791 silly gunzTarPerm extractEntry tests/input/charts/Plots.js
+792 silly gunzTarPerm modified mode [ 'tests/input/charts/Plots.js', 438, 420 ]
+793 silly gunzTarPerm extractEntry tests/input/charts/DiamondGroup.js
+794 silly gunzTarPerm modified mode [ 'tests/input/charts/DiamondGroup.js', 438, 420 ]
+795 silly gunzTarPerm extractEntry tests/input/charts/RectGroup.js
+796 silly gunzTarPerm modified mode [ 'tests/input/charts/RectGroup.js', 438, 420 ]
+797 silly gunzTarPerm extractEntry tests/input/charts/CurveUtil.js
+798 silly gunzTarPerm modified mode [ 'tests/input/charts/CurveUtil.js', 438, 420 ]
+799 silly gunzTarPerm extractEntry tests/input/charts/Renderer.js
+800 silly gunzTarPerm modified mode [ 'tests/input/charts/Renderer.js', 438, 420 ]
+801 silly gunzTarPerm extractEntry tests/input/charts/ComboSplineSeries.js
+802 silly gunzTarPerm modified mode [ 'tests/input/charts/ComboSplineSeries.js', 438, 420 ]
+803 silly gunzTarPerm extractEntry tests/input/charts/RightAxisLayout.js
+804 silly gunzTarPerm modified mode [ 'tests/input/charts/RightAxisLayout.js', 438, 420 ]
+805 silly gunzTarPerm extractEntry tests/input/charts/ComboSeries.js
+806 silly gunzTarPerm modified mode [ 'tests/input/charts/ComboSeries.js', 438, 420 ]
+807 silly gunzTarPerm extractEntry tests/input/charts/ShapeGroup.js
+808 silly gunzTarPerm modified mode [ 'tests/input/charts/ShapeGroup.js', 438, 420 ]
+809 silly gunzTarPerm extractEntry tests/input/charts/ColumnSeries.js
+810 silly gunzTarPerm modified mode [ 'tests/input/charts/ColumnSeries.js', 438, 420 ]
+811 silly gunzTarPerm extractEntry tests/input/charts/SplineSeries.js
+812 silly gunzTarPerm modified mode [ 'tests/input/charts/SplineSeries.js', 438, 420 ]
+813 silly gunzTarPerm extractEntry tests/input/charts/CircleGroup.js
+814 silly gunzTarPerm modified mode [ 'tests/input/charts/CircleGroup.js', 438, 420 ]
+815 silly gunzTarPerm extractEntry tests/input/charts/StackedAreaSeries.js
+816 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedAreaSeries.js', 438, 420 ]
+817 silly gunzTarPerm extractEntry tests/input/charts/ChartLegend.js
+818 silly gunzTarPerm modified mode [ 'tests/input/charts/ChartLegend.js', 438, 420 ]
+819 silly gunzTarPerm extractEntry tests/input/charts/StackedAreaSplineSeries.js
+820 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedAreaSplineSeries.js', 438, 420 ]
+821 silly gunzTarPerm extractEntry tests/input/charts/ChartBase.js
+822 silly gunzTarPerm modified mode [ 'tests/input/charts/ChartBase.js', 438, 420 ]
+823 silly gunzTarPerm extractEntry tests/input/charts/StackedAxis.js
+824 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedAxis.js', 438, 420 ]
+825 silly gunzTarPerm extractEntry tests/input/charts/Chart.js
+826 silly gunzTarPerm modified mode [ 'tests/input/charts/Chart.js', 438, 420 ]
+827 silly gunzTarPerm extractEntry tests/input/charts/StackedBarSeries.js
+828 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedBarSeries.js', 438, 420 ]
+829 silly gunzTarPerm extractEntry tests/input/charts/CategoryAxis.js
+830 silly gunzTarPerm modified mode [ 'tests/input/charts/CategoryAxis.js', 438, 420 ]
+831 silly gunzTarPerm extractEntry tests/input/charts/StackedColumnSeries.js
+832 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedColumnSeries.js', 438, 420 ]
+833 silly gunzTarPerm extractEntry tests/input/charts/CartesianSeries.js
+834 silly gunzTarPerm modified mode [ 'tests/input/charts/CartesianSeries.js', 438, 420 ]
+835 silly gunzTarPerm extractEntry tests/input/charts/StackedComboSeries.js
+836 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedComboSeries.js', 438, 420 ]
+837 silly gunzTarPerm extractEntry tests/input/charts/CartesianChartLegend.js
+838 silly gunzTarPerm modified mode [ 'tests/input/charts/CartesianChartLegend.js', 438, 420 ]
+839 silly gunzTarPerm extractEntry tests/input/charts/StackedComboSplineSeries.js
+840 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedComboSplineSeries.js', 438, 420 ]
+841 silly gunzTarPerm extractEntry tests/input/charts/CartesianChart.js
+842 silly gunzTarPerm modified mode [ 'tests/input/charts/CartesianChart.js', 438, 420 ]
+843 silly gunzTarPerm extractEntry tests/input/charts/StackedLineSeries.js
+844 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedLineSeries.js', 438, 420 ]
+845 silly gunzTarPerm extractEntry tests/input/charts/BottomAxisLayout.js
+846 silly gunzTarPerm modified mode [ 'tests/input/charts/BottomAxisLayout.js', 438, 420 ]
+847 silly gunzTarPerm extractEntry tests/input/charts/StackedMarkerSeries.js
+848 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedMarkerSeries.js', 438, 420 ]
+849 silly gunzTarPerm extractEntry tests/input/charts/BarSeries.js
+850 silly gunzTarPerm modified mode [ 'tests/input/charts/BarSeries.js', 438, 420 ]
+851 silly gunzTarPerm extractEntry tests/input/charts/StackedSplineSeries.js
+852 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedSplineSeries.js', 438, 420 ]
+853 silly gunzTarPerm extractEntry tests/input/charts/AxisType.js
+854 silly gunzTarPerm modified mode [ 'tests/input/charts/AxisType.js', 438, 420 ]
+855 silly gunzTarPerm extractEntry tests/input/charts/StackingUtil.js
+856 silly gunzTarPerm modified mode [ 'tests/input/charts/StackingUtil.js', 438, 420 ]
+857 silly gunzTarPerm extractEntry tests/input/charts/Axis.js
+858 silly gunzTarPerm modified mode [ 'tests/input/charts/Axis.js', 438, 420 ]
+859 silly gunzTarPerm extractEntry tests/input/charts/TimeAxis.js
+860 silly gunzTarPerm modified mode [ 'tests/input/charts/TimeAxis.js', 438, 420 ]
+861 silly gunzTarPerm extractEntry tests/input/charts/AreaSplineSeries.js
+862 silly gunzTarPerm modified mode [ 'tests/input/charts/AreaSplineSeries.js', 438, 420 ]
+863 silly gunzTarPerm extractEntry tests/input/charts/TopAxisLayout.js
+864 silly gunzTarPerm modified mode [ 'tests/input/charts/TopAxisLayout.js', 438, 420 ]
+865 silly gunzTarPerm extractEntry tests/input/charts/LineSeries.js
+866 silly gunzTarPerm modified mode [ 'tests/input/charts/LineSeries.js', 438, 420 ]
+867 silly gunzTarPerm extractEntry tests/input/folders1/one/two/yuidoc.json
+868 silly gunzTarPerm modified mode [ 'tests/input/folders1/one/two/yuidoc.json', 438, 420 ]
+869 silly gunzTarPerm extractEntry tests/input/folders1/yuidoc.json
+870 silly gunzTarPerm modified mode [ 'tests/input/folders1/yuidoc.json', 438, 420 ]
+871 silly gunzTarPerm extractEntry tests/input/folders2/package.json
+872 silly gunzTarPerm modified mode [ 'tests/input/folders2/package.json', 438, 420 ]
+873 silly gunzTarPerm extractEntry tests/input/folders2/one/two/yuidoc.json
+874 silly gunzTarPerm modified mode [ 'tests/input/folders2/one/two/yuidoc.json', 438, 420 ]
+875 silly gunzTarPerm extractEntry tests/input/folders3/package.json
+876 silly gunzTarPerm modified mode [ 'tests/input/folders3/package.json', 438, 420 ]
+877 silly gunzTarPerm extractEntry tests/input/folders3/one/package.json
+878 silly gunzTarPerm modified mode [ 'tests/input/folders3/one/package.json', 438, 420 ]
+879 silly gunzTarPerm extractEntry tests/input/folders3/one/two/yuidoc.json
+880 silly gunzTarPerm modified mode [ 'tests/input/folders3/one/two/yuidoc.json', 438, 420 ]
+881 silly gunzTarPerm extractEntry tests/input/folders3/yuidoc.json
+882 silly gunzTarPerm modified mode [ 'tests/input/folders3/yuidoc.json', 438, 420 ]
+883 silly gunzTarPerm extractEntry tests/input/folders4/one/two/package.json
+884 silly gunzTarPerm modified mode [ 'tests/input/folders4/one/two/package.json', 438, 420 ]
+885 silly gunzTarPerm extractEntry tests/input/folders4/one/two/yuidoc.json
+886 silly gunzTarPerm modified mode [ 'tests/input/folders4/one/two/yuidoc.json', 438, 420 ]
+887 silly gunzTarPerm extractEntry tests/input/folders4/one/yuidoc.json
+888 silly gunzTarPerm modified mode [ 'tests/input/folders4/one/yuidoc.json', 438, 420 ]
+889 silly gunzTarPerm extractEntry tests/input/folders5/one/three/yuidoc.json
+890 silly gunzTarPerm modified mode [ 'tests/input/folders5/one/three/yuidoc.json', 438, 420 ]
+891 silly gunzTarPerm extractEntry tests/input/folders5/two/package.json
+892 silly gunzTarPerm modified mode [ 'tests/input/folders5/two/package.json', 438, 420 ]
+893 silly gunzTarPerm extractEntry tests/input/folders5/two/yuidoc.json
+894 silly gunzTarPerm modified mode [ 'tests/input/folders5/two/yuidoc.json', 438, 420 ]
+895 silly gunzTarPerm extractEntry tests/input/coffee/test.coffee
+896 silly gunzTarPerm modified mode [ 'tests/input/coffee/test.coffee', 438, 420 ]
+897 silly gunzTarPerm extractEntry tests/input/inherit/examplemodule.js
+898 silly gunzTarPerm modified mode [ 'tests/input/inherit/examplemodule.js', 438, 420 ]
+899 silly gunzTarPerm extractEntry tests/input/json/parse.js
+900 silly gunzTarPerm modified mode [ 'tests/input/json/parse.js', 438, 420 ]
+901 silly gunzTarPerm extractEntry tests/input/json/stringify.js
+902 silly gunzTarPerm modified mode [ 'tests/input/json/stringify.js', 438, 420 ]
+903 silly gunzTarPerm extractEntry tests/input/namespace/ns.js
+904 silly gunzTarPerm modified mode [ 'tests/input/namespace/ns.js', 438, 420 ]
+905 silly gunzTarPerm extractEntry tests/input/preprocessor/preprocessortest.js
+906 silly gunzTarPerm modified mode [ 'tests/input/preprocessor/preprocessortest.js', 438, 420 ]
+907 silly gunzTarPerm extractEntry tests/input/test/anim.js
+908 silly gunzTarPerm modified mode [ 'tests/input/test/anim.js', 438, 420 ]
+909 silly gunzTarPerm extractEntry tests/input/test/test.js
+910 silly gunzTarPerm modified mode [ 'tests/input/test/test.js', 438, 420 ]
+911 silly gunzTarPerm extractEntry tests/input/test2/namespace.js
+912 silly gunzTarPerm modified mode [ 'tests/input/test2/namespace.js', 438, 420 ]
+913 silly gunzTarPerm extractEntry tests/input/test2/slashes.js
+914 silly gunzTarPerm modified mode [ 'tests/input/test2/slashes.js', 438, 420 ]
+915 silly gunzTarPerm extractEntry tests/input/test2/dump/dump.js
+916 silly gunzTarPerm modified mode [ 'tests/input/test2/dump/dump.js', 438, 420 ]
+917 silly gunzTarPerm extractEntry tests/input/test2/oop/oop.js
+918 silly gunzTarPerm modified mode [ 'tests/input/test2/oop/oop.js', 438, 420 ]
+919 silly gunzTarPerm extractEntry tests/lib/davglass.js
+920 silly gunzTarPerm modified mode [ 'tests/lib/davglass.js', 438, 420 ]
+921 silly gunzTarPerm extractEntry tests/lib/testpreprocessor.js
+922 silly gunzTarPerm modified mode [ 'tests/lib/testpreprocessor.js', 438, 420 ]
+923 silly gunzTarPerm extractEntry tests/lib/testpreprocessormodule/package.json
+924 silly gunzTarPerm modified mode [ 'tests/lib/testpreprocessormodule/package.json', 438, 420 ]
+925 silly gunzTarPerm extractEntry tests/lib/testpreprocessormodule/testpreprocessormodule.js
+926 silly gunzTarPerm modified mode [ 'tests/lib/testpreprocessormodule/testpreprocessormodule.js',
+926 silly gunzTarPerm   438,
+926 silly gunzTarPerm   420 ]
+927 silly gunzTarPerm extractEntry tests/out/data.json
+928 silly gunzTarPerm modified mode [ 'tests/out/data.json', 438, 420 ]
+929 silly gunzTarPerm extractEntry coverage/coverage.json
+930 silly gunzTarPerm modified mode [ 'coverage/coverage.json', 438, 420 ]
+931 silly gunzTarPerm extractEntry coverage/lcov-report/prettify.js
+932 silly gunzTarPerm modified mode [ 'coverage/lcov-report/prettify.js', 438, 420 ]
+933 silly gunzTarPerm extractEntry coverage/lcov-report/index.html
+934 silly gunzTarPerm modified mode [ 'coverage/lcov-report/index.html', 438, 420 ]
+935 silly gunzTarPerm extractEntry coverage/lcov-report/lib/index.js.html
+936 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/index.js.html', 438, 420 ]
+937 silly gunzTarPerm extractEntry coverage/lcov-report/lib/builder.js.html
+938 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/builder.js.html', 438, 420 ]
+939 silly gunzTarPerm extractEntry coverage/lcov-report/lib/docview.js.html
+940 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/docview.js.html', 438, 420 ]
+941 silly gunzTarPerm extractEntry coverage/lcov-report/lib/files.js.html
+942 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/files.js.html', 438, 420 ]
+943 silly gunzTarPerm extractEntry coverage/lcov-report/lib/help.js.html
+944 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/help.js.html', 438, 420 ]
+945 silly gunzTarPerm extractEntry coverage/lcov-report/lib/index.html
+946 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/index.html', 438, 420 ]
+947 silly gunzTarPerm extractEntry coverage/lcov-report/lib/docparser.js.html
+948 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/docparser.js.html', 438, 420 ]
+949 silly gunzTarPerm extractEntry coverage/lcov-report/lib/options.js.html
+950 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/options.js.html', 438, 420 ]
+951 silly gunzTarPerm extractEntry coverage/lcov-report/lib/project.js.html
+952 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/project.js.html', 438, 420 ]
+953 silly gunzTarPerm extractEntry coverage/lcov-report/lib/server.js.html
+954 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/server.js.html', 438, 420 ]
+955 silly gunzTarPerm extractEntry coverage/lcov-report/lib/utils.js.html
+956 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/utils.js.html', 438, 420 ]
+957 silly gunzTarPerm extractEntry coverage/lcov-report/lib/yuidoc.js.html
+958 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/yuidoc.js.html', 438, 420 ]
+959 silly gunzTarPerm extractEntry coverage/lcov-report/prettify.css
+960 silly gunzTarPerm modified mode [ 'coverage/lcov-report/prettify.css', 438, 420 ]
+961 silly gunzTarPerm extractEntry coverage/lcov.info
+962 silly gunzTarPerm modified mode [ 'coverage/lcov.info', 438, 420 ]
+963 silly lockFile 2c5626ae-pm-cache-yuidocjs-0-3-50-package tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package
+964 silly lockFile 2c5626ae-pm-cache-yuidocjs-0-3-50-package tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package
+965 silly lockFile 5d92d421-ache-yuidocjs-0-3-50-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz
+966 silly lockFile 5d92d421-ache-yuidocjs-0-3-50-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz
+967 verbose chmod C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz 644
+968 silly chown skipping for windows C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz
+969 silly lockFile 69e651fa-org-yuidocjs-yuidocjs-0-3-50-tgz https://registry.npmjs.org/yuidocjs/-/yuidocjs-0.3.50.tgz
+970 silly lockFile 69e651fa-org-yuidocjs-yuidocjs-0-3-50-tgz https://registry.npmjs.org/yuidocjs/-/yuidocjs-0.3.50.tgz
+971 silly lockFile 0739e5a6-yuidocjs-0-3-50 yuidocjs@0.3.50
+972 silly lockFile 0739e5a6-yuidocjs-0-3-50 yuidocjs@0.3.50
+973 silly lockFile ae03e3b8-yuidocjs-0-3-45 yuidocjs@~0.3.45
+974 silly lockFile ae03e3b8-yuidocjs-0-3-45 yuidocjs@~0.3.45
+975 silly resolved [ { name: 'yuidocjs',
+975 silly resolved     version: '0.3.50',
+975 silly resolved     description: 'YUIDoc, YUI\'s JavaScript Documentation engine.',
+975 silly resolved     author: { name: 'Dav Glass', email: 'davglass@gmail.com' },
+975 silly resolved     bugs: { url: 'http://github.com/yui/yuidoc/issues' },
+975 silly resolved     contributors:
+975 silly resolved      [ [Object],
+975 silly resolved        [Object],
+975 silly resolved        [Object],
+975 silly resolved        [Object],
+975 silly resolved        [Object],
+975 silly resolved        [Object],
+975 silly resolved        [Object],
+975 silly resolved        [Object],
+975 silly resolved        [Object],
+975 silly resolved        [Object],
+975 silly resolved        [Object] ],
+975 silly resolved     engines: { node: '>=0.4.0' },
+975 silly resolved     keywords:
+975 silly resolved      [ 'yui',
+975 silly resolved        'jsdoc',
+975 silly resolved        'coffeescript',
+975 silly resolved        'api',
+975 silly resolved        'documentation',
+975 silly resolved        'javadoc',
+975 silly resolved        'docs',
+975 silly resolved        'apidocs' ],
+975 silly resolved     main: './lib/index',
+975 silly resolved     bin: { yuidoc: './lib/cli.js' },
+975 silly resolved     dependencies:
+975 silly resolved      { yui: '3.14.1',
+975 silly resolved        rimraf: '2.x',
+975 silly resolved        marked: '~0.2.8',
+975 silly resolved        minimatch: '~0.2.11',
+975 silly resolved        'graceful-fs': '2.x',
+975 silly resolved        express: '~3.1.2' },
+975 silly resolved     devDependencies:
+975 silly resolved      { jshint: '2.4.x',
+975 silly resolved        ytestrunner: '~0.3.3',
+975 silly resolved        yuitest: '>=0.7.3',
+975 silly resolved        selleck: '~0.1',
+975 silly resolved        istanbul: '0.2.x' },
+975 silly resolved     scripts:
+975 silly resolved      { pretest: 'jshint ./lib/*.js ./tests/*.js',
+975 silly resolved        test: 'istanbul cover --print=both --yui ytestrunner -- --include ./tests/options.js --include ./tests/builder.js --include ./tests/parser.js --include ./tests/parser_coffee.js --include ./tests/files.js --include ./tests/utils.js --include ./tests/preprocessor.js' },
+975 silly resolved     preferGlobal: 'true',
+975 silly resolved     licenses: [ [Object] ],
+975 silly resolved     repository: { type: 'git', url: 'http://github.com/yui/yuidoc.git' },
+975 silly resolved     jshintConfig:
+975 silly resolved      { bitwise: true,
+975 silly resolved        browser: true,
+975 silly resolved        curly: true,
+975 silly resolved        eqeqeq: true,
+975 silly resolved        forin: true,
+975 silly resolved        immed: true,
+975 silly resolved        latedef: 'nofunc',
+975 silly resolved        laxbreak: true,
+975 silly resolved        maxerr: 500,
+975 silly resolved        maxlen: 150,
+975 silly resolved        newcap: true,
+975 silly resolved        noarg: true,
+975 silly resolved        node: true,
+975 silly resolved        noempty: true,
+975 silly resolved        onevar: true,
+975 silly resolved        trailing: true,
+975 silly resolved        undef: true,
+975 silly resolved        unused: 'vars',
+975 silly resolved        yui: true },
+975 silly resolved     yuidoc:
+975 silly resolved      { name: 'YUIDoc',
+975 silly resolved        logo: 'http://yuilibrary.com/img/yui-logo.png',
+975 silly resolved        options: [Object] },
+975 silly resolved     readme: 'YUIDoc Doc parser\n=================\n\nYUIDoc is a [Node.js](http://nodejs.org/) application used at build time to \ngenerate API documentation for JavaScript code. YUIDoc is comment-driven and supports a wide \nrange of JavaScript coding styles. The output of YUI Doc is API documentation formatted as a \nset of HTML pages including information about methods, properties, custom events and \ninheritance for JavaScript objects. YUIDoc was orignally written for the YUI Project;\nit uses YUI JavaScript and CSS in the generated files and it supports common YUI \nconventions like Custom Events. That said, it can be used easily and productively on non-YUI code.\n\nCurrent Build Status\n--------------------\n\n[![Build Status](https://secure.travis-ci.org/yui/yuidoc.png?branch=master)](http://travis-ci.org/yui/yuidoc)\n\nInstallation\n------------\n\n    npm -g i yuidocjs\n\n\nDocumentation\n-------------\n\n   * [User Guides](http://yui.github.com/yuidoc/)\n   * [API Docs](http://yui.github.com/yuidoc/api/)\n   * [Support Mailing List](https://groups.google.com/forum/#!forum/yuidoc)\n   \nReleased under the YUI BSD License\n----------------------------------\n\n    Copyright 2012 Yahoo! Inc.\n    All rights reserved.\n\n    Redistribution and use in source and binary forms, with or without\n    modification, are permitted provided that the following conditions are met:\n\n       * Redistributions of source code must retain the above copyright\n          notice, this list of conditions and the following disclaimer.\n       * Redistributions in binary form must reproduce the above copyright\n          notice, this list of conditions and the following disclaimer in the\n          documentation and/or other materials provided with the distribution.\n       * Neither the name of the Yahoo! Inc. nor the\n          names of its contributors may be used to endorse or promote products\n          derived from this software without specific prior written permission.\n\n    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND\n    ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\n    DISCLAIMED. IN NO EVENT SHALL YAHOO! INC. BE LIABLE FOR ANY\n    DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n    (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n    LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\n    ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n',
+975 silly resolved     readmeFilename: 'README.md',
+975 silly resolved     homepage: 'https://github.com/yui/yuidoc',
+975 silly resolved     _id: 'yuidocjs@0.3.50',
+975 silly resolved     dist: { shasum: '6504a0fc2d84eef42fe09394d66dfa3d25c3088d' },
+975 silly resolved     _from: 'yuidocjs@~0.3.45',
+975 silly resolved     _resolved: 'https://registry.npmjs.org/yuidocjs/-/yuidocjs-0.3.50.tgz' } ]
+976 info install yuidocjs@0.3.50 into E:\doc\node_modules\grunt-contrib-yuidoc
+977 info installOne yuidocjs@0.3.50
+978 info E:\doc\node_modules\grunt-contrib-yuidoc\node_modules\yuidocjs unbuild
+979 verbose tar unpack C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz
+980 silly lockFile b9797485-rib-yuidoc-node-modules-yuidocjs tar://E:\doc\node_modules\grunt-contrib-yuidoc\node_modules\yuidocjs
+981 verbose lock tar://E:\doc\node_modules\grunt-contrib-yuidoc\node_modules\yuidocjs C:\Users\toshiba\AppData\Roaming\npm-cache\b9797485-rib-yuidoc-node-modules-yuidocjs.lock
+982 silly lockFile 5d92d421-ache-yuidocjs-0-3-50-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz
+983 verbose lock tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\5d92d421-ache-yuidocjs-0-3-50-package-tgz.lock
+984 silly gunzTarPerm modes [ '755', '644' ]
+985 silly gunzTarPerm extractEntry package.json
+986 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+987 silly gunzTarPerm extractEntry .npmignore
+988 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+989 silly gunzTarPerm extractEntry README.md
+990 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+991 silly gunzTarPerm extractEntry LICENSE
+992 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+993 silly gunzTarPerm extractEntry Makefile
+994 silly gunzTarPerm modified mode [ 'Makefile', 438, 420 ]
+995 silly gunzTarPerm extractEntry DEVELOPMENT.md
+996 silly gunzTarPerm modified mode [ 'DEVELOPMENT.md', 438, 420 ]
+997 silly gunzTarPerm extractEntry conf/docs/assets/css/main.css
+998 silly gunzTarPerm modified mode [ 'conf/docs/assets/css/main.css', 438, 420 ]
+999 silly gunzTarPerm extractEntry conf/docs/assets/favicon.png
+1000 silly gunzTarPerm modified mode [ 'conf/docs/assets/favicon.png', 438, 420 ]
+1001 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/prettify-min.js
+1002 silly gunzTarPerm modified mode [ 'conf/docs/assets/vendor/prettify/prettify-min.js', 438, 420 ]
+1003 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/prettify.js
+1004 silly gunzTarPerm modified mode [ 'conf/docs/assets/vendor/prettify/prettify.js', 438, 420 ]
+1005 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/CHANGES.html
+1006 silly gunzTarPerm modified mode [ 'conf/docs/assets/vendor/prettify/CHANGES.html', 438, 420 ]
+1007 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/COPYING
+1008 silly gunzTarPerm modified mode [ 'conf/docs/assets/vendor/prettify/COPYING', 438, 420 ]
+1009 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/README.html
+1010 silly gunzTarPerm modified mode [ 'conf/docs/assets/vendor/prettify/README.html', 438, 420 ]
+1011 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/prettify-min.css
+1012 silly gunzTarPerm modified mode [ 'conf/docs/assets/vendor/prettify/prettify-min.css', 438, 420 ]
+1013 silly gunzTarPerm extractEntry conf/docs/assets/vendor/prettify/prettify.css
+1014 silly gunzTarPerm modified mode [ 'conf/docs/assets/vendor/prettify/prettify.css', 438, 420 ]
+1015 silly gunzTarPerm extractEntry conf/docs/index.mustache
+1016 silly gunzTarPerm modified mode [ 'conf/docs/index.mustache', 438, 420 ]
+1017 silly gunzTarPerm extractEntry conf/docs/layouts/main.mustache
+1018 silly gunzTarPerm modified mode [ 'conf/docs/layouts/main.mustache', 438, 420 ]
+1019 silly gunzTarPerm extractEntry conf/docs/project.json
+1020 silly gunzTarPerm modified mode [ 'conf/docs/project.json', 438, 420 ]
+1021 silly gunzTarPerm extractEntry .travis.yml
+1022 silly gunzTarPerm modified mode [ '.travis.yml', 438, 420 ]
+1023 silly gunzTarPerm extractEntry docs/args/component.json
+1024 silly gunzTarPerm modified mode [ 'docs/args/component.json', 438, 420 ]
+1025 silly gunzTarPerm extractEntry docs/args/index.mustache
+1026 silly gunzTarPerm modified mode [ 'docs/args/index.mustache', 438, 420 ]
+1027 silly gunzTarPerm extractEntry docs/args/partials/help.mustache
+1028 silly gunzTarPerm modified mode [ 'docs/args/partials/help.mustache', 438, 420 ]
+1029 silly gunzTarPerm extractEntry docs/syntax/component.json
+1030 silly gunzTarPerm modified mode [ 'docs/syntax/component.json', 438, 420 ]
+1031 silly gunzTarPerm extractEntry docs/syntax/index.mustache
+1032 silly gunzTarPerm modified mode [ 'docs/syntax/index.mustache', 438, 420 ]
+1033 silly gunzTarPerm extractEntry docs/themes/component.json
+1034 silly gunzTarPerm modified mode [ 'docs/themes/component.json', 438, 420 ]
+1035 silly gunzTarPerm extractEntry docs/themes/index.mustache
+1036 silly gunzTarPerm modified mode [ 'docs/themes/index.mustache', 438, 420 ]
+1037 silly gunzTarPerm extractEntry lib/builder.js
+1038 silly gunzTarPerm modified mode [ 'lib/builder.js', 438, 420 ]
+1039 silly gunzTarPerm extractEntry lib/docparser.js
+1040 silly gunzTarPerm modified mode [ 'lib/docparser.js', 438, 420 ]
+1041 silly gunzTarPerm extractEntry lib/docview.js
+1042 silly gunzTarPerm modified mode [ 'lib/docview.js', 438, 420 ]
+1043 silly gunzTarPerm extractEntry lib/files.js
+1044 silly gunzTarPerm modified mode [ 'lib/files.js', 438, 420 ]
+1045 silly gunzTarPerm extractEntry lib/help.js
+1046 silly gunzTarPerm modified mode [ 'lib/help.js', 438, 420 ]
+1047 silly gunzTarPerm extractEntry lib/cli.js
+1048 silly gunzTarPerm modified mode [ 'lib/cli.js', 438, 420 ]
+1049 silly gunzTarPerm extractEntry lib/options.js
+1050 silly gunzTarPerm modified mode [ 'lib/options.js', 438, 420 ]
+1051 silly gunzTarPerm extractEntry lib/project.js
+1052 silly gunzTarPerm modified mode [ 'lib/project.js', 438, 420 ]
+1053 silly gunzTarPerm extractEntry lib/server.js
+1054 silly gunzTarPerm modified mode [ 'lib/server.js', 438, 420 ]
+1055 silly gunzTarPerm extractEntry lib/utils.js
+1056 silly gunzTarPerm modified mode [ 'lib/utils.js', 438, 420 ]
+1057 silly gunzTarPerm extractEntry lib/yuidoc.js
+1058 silly gunzTarPerm modified mode [ 'lib/yuidoc.js', 438, 420 ]
+1059 silly gunzTarPerm extractEntry lib/index.js
+1060 silly gunzTarPerm modified mode [ 'lib/index.js', 438, 420 ]
+1061 silly gunzTarPerm extractEntry output/api/api.js
+1062 silly gunzTarPerm modified mode [ 'output/api/api.js', 438, 420 ]
+1063 silly gunzTarPerm extractEntry output/api/assets/css/external-small.png
+1064 silly gunzTarPerm modified mode [ 'output/api/assets/css/external-small.png', 438, 420 ]
+1065 silly gunzTarPerm extractEntry output/api/assets/css/logo.png
+1066 silly gunzTarPerm modified mode [ 'output/api/assets/css/logo.png', 438, 420 ]
+1067 silly gunzTarPerm extractEntry output/api/assets/css/main.css
+1068 silly gunzTarPerm modified mode [ 'output/api/assets/css/main.css', 438, 420 ]
+1069 silly gunzTarPerm extractEntry output/api/assets/favicon.png
+1070 silly gunzTarPerm modified mode [ 'output/api/assets/favicon.png', 438, 420 ]
+1071 silly gunzTarPerm extractEntry output/api/assets/img/spinner.gif
+1072 silly gunzTarPerm modified mode [ 'output/api/assets/img/spinner.gif', 438, 420 ]
+1073 silly gunzTarPerm extractEntry output/api/assets/index.html
+1074 silly gunzTarPerm modified mode [ 'output/api/assets/index.html', 438, 420 ]
+1075 silly gunzTarPerm extractEntry output/api/assets/js/api-filter.js
+1076 silly gunzTarPerm modified mode [ 'output/api/assets/js/api-filter.js', 438, 420 ]
+1077 silly gunzTarPerm extractEntry output/api/assets/js/api-list.js
+1078 silly gunzTarPerm modified mode [ 'output/api/assets/js/api-list.js', 438, 420 ]
+1079 silly gunzTarPerm extractEntry output/api/assets/js/api-search.js
+1080 silly gunzTarPerm modified mode [ 'output/api/assets/js/api-search.js', 438, 420 ]
+1081 silly gunzTarPerm extractEntry output/api/assets/js/apidocs.js
+1082 silly gunzTarPerm modified mode [ 'output/api/assets/js/apidocs.js', 438, 420 ]
+1083 silly gunzTarPerm extractEntry output/api/assets/js/yui-prettify.js
+1084 silly gunzTarPerm modified mode [ 'output/api/assets/js/yui-prettify.js', 438, 420 ]
+1085 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/prettify-min.js
+1086 silly gunzTarPerm modified mode [ 'output/api/assets/vendor/prettify/prettify-min.js', 438, 420 ]
+1087 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/CHANGES.html
+1088 silly gunzTarPerm modified mode [ 'output/api/assets/vendor/prettify/CHANGES.html', 438, 420 ]
+1089 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/COPYING
+1090 silly gunzTarPerm modified mode [ 'output/api/assets/vendor/prettify/COPYING', 438, 420 ]
+1091 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/README.html
+1092 silly gunzTarPerm modified mode [ 'output/api/assets/vendor/prettify/README.html', 438, 420 ]
+1093 silly gunzTarPerm extractEntry output/api/assets/vendor/prettify/prettify-min.css
+1094 silly gunzTarPerm modified mode [ 'output/api/assets/vendor/prettify/prettify-min.css',
+1094 silly gunzTarPerm   438,
+1094 silly gunzTarPerm   420 ]
+1095 silly gunzTarPerm extractEntry output/api/classes/Main.html
+1096 silly gunzTarPerm modified mode [ 'output/api/classes/Main.html', 438, 420 ]
+1097 silly gunzTarPerm extractEntry output/api/classes/CLI.html
+1098 silly gunzTarPerm modified mode [ 'output/api/classes/CLI.html', 438, 420 ]
+1099 silly gunzTarPerm extractEntry output/api/classes/DocParser.html
+1100 silly gunzTarPerm modified mode [ 'output/api/classes/DocParser.html', 438, 420 ]
+1101 silly gunzTarPerm extractEntry output/api/classes/DocView.html
+1102 silly gunzTarPerm modified mode [ 'output/api/classes/DocView.html', 438, 420 ]
+1103 silly gunzTarPerm extractEntry output/api/classes/Files.html
+1104 silly gunzTarPerm modified mode [ 'output/api/classes/Files.html', 438, 420 ]
+1105 silly gunzTarPerm extractEntry output/api/classes/Help.html
+1106 silly gunzTarPerm modified mode [ 'output/api/classes/Help.html', 438, 420 ]
+1107 silly gunzTarPerm extractEntry output/api/classes/DocBuilder.html
+1108 silly gunzTarPerm modified mode [ 'output/api/classes/DocBuilder.html', 438, 420 ]
+1109 silly gunzTarPerm extractEntry output/api/classes/Options.html
+1110 silly gunzTarPerm modified mode [ 'output/api/classes/Options.html', 438, 420 ]
+1111 silly gunzTarPerm extractEntry output/api/classes/Server.html
+1112 silly gunzTarPerm modified mode [ 'output/api/classes/Server.html', 438, 420 ]
+1113 silly gunzTarPerm extractEntry output/api/classes/Utils.html
+1114 silly gunzTarPerm modified mode [ 'output/api/classes/Utils.html', 438, 420 ]
+1115 silly gunzTarPerm extractEntry output/api/classes/YUIDoc.html
+1116 silly gunzTarPerm modified mode [ 'output/api/classes/YUIDoc.html', 438, 420 ]
+1117 silly gunzTarPerm extractEntry output/api/classes/index.html
+1118 silly gunzTarPerm modified mode [ 'output/api/classes/index.html', 438, 420 ]
+1119 silly gunzTarPerm extractEntry output/api/data.json
+1120 silly gunzTarPerm modified mode [ 'output/api/data.json', 438, 420 ]
+1121 silly gunzTarPerm extractEntry output/api/files/lib_help.js.html
+1122 silly gunzTarPerm modified mode [ 'output/api/files/lib_help.js.html', 438, 420 ]
+1123 silly gunzTarPerm extractEntry output/api/files/index.html
+1124 silly gunzTarPerm modified mode [ 'output/api/files/index.html', 438, 420 ]
+1125 silly gunzTarPerm extractEntry output/api/files/lib_cli.js.html
+1126 silly gunzTarPerm modified mode [ 'output/api/files/lib_cli.js.html', 438, 420 ]
+1127 silly gunzTarPerm extractEntry output/api/files/lib_docparser.js.html
+1128 silly gunzTarPerm modified mode [ 'output/api/files/lib_docparser.js.html', 438, 420 ]
+1129 silly gunzTarPerm extractEntry output/api/files/lib_docview.js.html
+1130 silly gunzTarPerm modified mode [ 'output/api/files/lib_docview.js.html', 438, 420 ]
+1131 silly gunzTarPerm extractEntry output/api/files/lib_files.js.html
+1132 silly gunzTarPerm modified mode [ 'output/api/files/lib_files.js.html', 438, 420 ]
+1133 silly gunzTarPerm extractEntry output/api/files/lib_builder.js.html
+1134 silly gunzTarPerm modified mode [ 'output/api/files/lib_builder.js.html', 438, 420 ]
+1135 silly gunzTarPerm extractEntry output/api/files/lib_index.js.html
+1136 silly gunzTarPerm modified mode [ 'output/api/files/lib_index.js.html', 438, 420 ]
+1137 silly gunzTarPerm extractEntry output/api/files/lib_options.js.html
+1138 silly gunzTarPerm modified mode [ 'output/api/files/lib_options.js.html', 438, 420 ]
+1139 silly gunzTarPerm extractEntry output/api/files/lib_server.js.html
+1140 silly gunzTarPerm modified mode [ 'output/api/files/lib_server.js.html', 438, 420 ]
+1141 silly gunzTarPerm extractEntry output/api/files/lib_utils.js.html
+1142 silly gunzTarPerm modified mode [ 'output/api/files/lib_utils.js.html', 438, 420 ]
+1143 silly gunzTarPerm extractEntry output/api/files/lib_yuidoc.js.html
+1144 silly gunzTarPerm modified mode [ 'output/api/files/lib_yuidoc.js.html', 438, 420 ]
+1145 silly gunzTarPerm extractEntry output/api/index.html
+1146 silly gunzTarPerm modified mode [ 'output/api/index.html', 438, 420 ]
+1147 silly gunzTarPerm extractEntry output/api/modules/index.html
+1148 silly gunzTarPerm modified mode [ 'output/api/modules/index.html', 438, 420 ]
+1149 silly gunzTarPerm extractEntry output/api/modules/yuidoc.html
+1150 silly gunzTarPerm modified mode [ 'output/api/modules/yuidoc.html', 438, 420 ]
+1151 silly gunzTarPerm extractEntry output/args/index.html
+1152 silly gunzTarPerm modified mode [ 'output/args/index.html', 438, 420 ]
+1153 silly gunzTarPerm extractEntry output/assets/css/main.css
+1154 silly gunzTarPerm modified mode [ 'output/assets/css/main.css', 438, 420 ]
+1155 silly gunzTarPerm extractEntry output/assets/favicon.png
+1156 silly gunzTarPerm modified mode [ 'output/assets/favicon.png', 438, 420 ]
+1157 silly gunzTarPerm extractEntry output/assets/vendor/prettify/prettify-min.js
+1158 silly gunzTarPerm modified mode [ 'output/assets/vendor/prettify/prettify-min.js', 438, 420 ]
+1159 silly gunzTarPerm extractEntry output/assets/vendor/prettify/prettify.js
+1160 silly gunzTarPerm modified mode [ 'output/assets/vendor/prettify/prettify.js', 438, 420 ]
+1161 silly gunzTarPerm extractEntry output/assets/vendor/prettify/CHANGES.html
+1162 silly gunzTarPerm modified mode [ 'output/assets/vendor/prettify/CHANGES.html', 438, 420 ]
+1163 silly gunzTarPerm extractEntry output/assets/vendor/prettify/COPYING
+1164 silly gunzTarPerm modified mode [ 'output/assets/vendor/prettify/COPYING', 438, 420 ]
+1165 silly gunzTarPerm extractEntry output/assets/vendor/prettify/README.html
+1166 silly gunzTarPerm modified mode [ 'output/assets/vendor/prettify/README.html', 438, 420 ]
+1167 silly gunzTarPerm extractEntry output/assets/vendor/prettify/prettify-min.css
+1168 silly gunzTarPerm modified mode [ 'output/assets/vendor/prettify/prettify-min.css', 438, 420 ]
+1169 silly gunzTarPerm extractEntry output/assets/vendor/prettify/prettify.css
+1170 silly gunzTarPerm modified mode [ 'output/assets/vendor/prettify/prettify.css', 438, 420 ]
+1171 silly gunzTarPerm extractEntry output/index.html
+1172 silly gunzTarPerm modified mode [ 'output/index.html', 438, 420 ]
+1173 silly gunzTarPerm extractEntry output/syntax/index.html
+1174 silly gunzTarPerm modified mode [ 'output/syntax/index.html', 438, 420 ]
+1175 silly gunzTarPerm extractEntry output/themes/index.html
+1176 silly gunzTarPerm modified mode [ 'output/themes/index.html', 438, 420 ]
+1177 silly gunzTarPerm extractEntry themes/default/assets/css/external-small.png
+1178 silly gunzTarPerm modified mode [ 'themes/default/assets/css/external-small.png', 438, 420 ]
+1179 silly gunzTarPerm extractEntry themes/default/assets/css/logo.png
+1180 silly gunzTarPerm modified mode [ 'themes/default/assets/css/logo.png', 438, 420 ]
+1181 silly gunzTarPerm extractEntry themes/default/assets/css/main.css
+1182 silly gunzTarPerm modified mode [ 'themes/default/assets/css/main.css', 438, 420 ]
+1183 silly gunzTarPerm extractEntry themes/default/assets/favicon.png
+1184 silly gunzTarPerm modified mode [ 'themes/default/assets/favicon.png', 438, 420 ]
+1185 silly gunzTarPerm extractEntry themes/default/assets/img/spinner.gif
+1186 silly gunzTarPerm modified mode [ 'themes/default/assets/img/spinner.gif', 438, 420 ]
+1187 silly gunzTarPerm extractEntry themes/default/assets/index.html
+1188 silly gunzTarPerm modified mode [ 'themes/default/assets/index.html', 438, 420 ]
+1189 silly gunzTarPerm extractEntry themes/default/assets/js/api-filter.js
+1190 silly gunzTarPerm modified mode [ 'themes/default/assets/js/api-filter.js', 438, 420 ]
+1191 silly gunzTarPerm extractEntry themes/default/assets/js/api-list.js
+1192 silly gunzTarPerm modified mode [ 'themes/default/assets/js/api-list.js', 438, 420 ]
+1193 silly gunzTarPerm extractEntry themes/default/assets/js/api-search.js
+1194 silly gunzTarPerm modified mode [ 'themes/default/assets/js/api-search.js', 438, 420 ]
+1195 silly gunzTarPerm extractEntry themes/default/assets/js/apidocs.js
+1196 silly gunzTarPerm modified mode [ 'themes/default/assets/js/apidocs.js', 438, 420 ]
+1197 silly gunzTarPerm extractEntry themes/default/assets/js/yui-prettify.js
+1198 silly gunzTarPerm modified mode [ 'themes/default/assets/js/yui-prettify.js', 438, 420 ]
+1199 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/prettify-min.js
+1200 silly gunzTarPerm modified mode [ 'themes/default/assets/vendor/prettify/prettify-min.js',
+1200 silly gunzTarPerm   438,
+1200 silly gunzTarPerm   420 ]
+1201 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/CHANGES.html
+1202 silly gunzTarPerm modified mode [ 'themes/default/assets/vendor/prettify/CHANGES.html',
+1202 silly gunzTarPerm   438,
+1202 silly gunzTarPerm   420 ]
+1203 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/COPYING
+1204 silly gunzTarPerm modified mode [ 'themes/default/assets/vendor/prettify/COPYING', 438, 420 ]
+1205 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/README.html
+1206 silly gunzTarPerm modified mode [ 'themes/default/assets/vendor/prettify/README.html', 438, 420 ]
+1207 silly gunzTarPerm extractEntry themes/default/assets/vendor/prettify/prettify-min.css
+1208 silly gunzTarPerm modified mode [ 'themes/default/assets/vendor/prettify/prettify-min.css',
+1208 silly gunzTarPerm   438,
+1208 silly gunzTarPerm   420 ]
+1209 silly gunzTarPerm extractEntry themes/default/layouts/main.handlebars
+1210 silly gunzTarPerm modified mode [ 'themes/default/layouts/main.handlebars', 438, 420 ]
+1211 silly gunzTarPerm extractEntry themes/default/layouts/xhr.handlebars
+1212 silly gunzTarPerm modified mode [ 'themes/default/layouts/xhr.handlebars', 438, 420 ]
+1213 silly gunzTarPerm extractEntry themes/default/partials/attrs.handlebars
+1214 silly gunzTarPerm modified mode [ 'themes/default/partials/attrs.handlebars', 438, 420 ]
+1215 silly gunzTarPerm extractEntry themes/default/partials/classes.handlebars
+1216 silly gunzTarPerm modified mode [ 'themes/default/partials/classes.handlebars', 438, 420 ]
+1217 silly gunzTarPerm extractEntry themes/default/partials/events.handlebars
+1218 silly gunzTarPerm modified mode [ 'themes/default/partials/events.handlebars', 438, 420 ]
+1219 silly gunzTarPerm extractEntry themes/default/partials/files.handlebars
+1220 silly gunzTarPerm modified mode [ 'themes/default/partials/files.handlebars', 438, 420 ]
+1221 silly gunzTarPerm extractEntry themes/default/partials/index.handlebars
+1222 silly gunzTarPerm modified mode [ 'themes/default/partials/index.handlebars', 438, 420 ]
+1223 silly gunzTarPerm extractEntry themes/default/partials/method.handlebars
+1224 silly gunzTarPerm modified mode [ 'themes/default/partials/method.handlebars', 438, 420 ]
+1225 silly gunzTarPerm extractEntry themes/default/partials/module.handlebars
+1226 silly gunzTarPerm modified mode [ 'themes/default/partials/module.handlebars', 438, 420 ]
+1227 silly gunzTarPerm extractEntry themes/default/partials/options.handlebars
+1228 silly gunzTarPerm modified mode [ 'themes/default/partials/options.handlebars', 438, 420 ]
+1229 silly gunzTarPerm extractEntry themes/default/partials/props.handlebars
+1230 silly gunzTarPerm modified mode [ 'themes/default/partials/props.handlebars', 438, 420 ]
+1231 silly gunzTarPerm extractEntry themes/default/partials/sidebar.handlebars
+1232 silly gunzTarPerm modified mode [ 'themes/default/partials/sidebar.handlebars', 438, 420 ]
+1233 silly gunzTarPerm extractEntry themes/default/theme.json
+1234 silly gunzTarPerm modified mode [ 'themes/default/theme.json', 438, 420 ]
+1235 silly gunzTarPerm extractEntry themes/simple/assets/css/external-small.png
+1236 silly gunzTarPerm modified mode [ 'themes/simple/assets/css/external-small.png', 438, 420 ]
+1237 silly gunzTarPerm extractEntry themes/simple/assets/css/logo.png
+1238 silly gunzTarPerm modified mode [ 'themes/simple/assets/css/logo.png', 438, 420 ]
+1239 silly gunzTarPerm extractEntry themes/simple/assets/css/main.css
+1240 silly gunzTarPerm modified mode [ 'themes/simple/assets/css/main.css', 438, 420 ]
+1241 silly gunzTarPerm extractEntry themes/simple/assets/js/tabs.js
+1242 silly gunzTarPerm modified mode [ 'themes/simple/assets/js/tabs.js', 438, 420 ]
+1243 silly gunzTarPerm extractEntry themes/simple/assets/js/yui-prettify.js
+1244 silly gunzTarPerm modified mode [ 'themes/simple/assets/js/yui-prettify.js', 438, 420 ]
+1245 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/prettify-min.js
+1246 silly gunzTarPerm modified mode [ 'themes/simple/assets/vendor/prettify/prettify-min.js',
+1246 silly gunzTarPerm   438,
+1246 silly gunzTarPerm   420 ]
+1247 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/CHANGES.html
+1248 silly gunzTarPerm modified mode [ 'themes/simple/assets/vendor/prettify/CHANGES.html', 438, 420 ]
+1249 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/COPYING
+1250 silly gunzTarPerm modified mode [ 'themes/simple/assets/vendor/prettify/COPYING', 438, 420 ]
+1251 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/README.html
+1252 silly gunzTarPerm modified mode [ 'themes/simple/assets/vendor/prettify/README.html', 438, 420 ]
+1253 silly gunzTarPerm extractEntry themes/simple/assets/vendor/prettify/prettify-min.css
+1254 silly gunzTarPerm modified mode [ 'themes/simple/assets/vendor/prettify/prettify-min.css',
+1254 silly gunzTarPerm   438,
+1254 silly gunzTarPerm   420 ]
+1255 silly gunzTarPerm extractEntry themes/simple/layouts/main.handlebars
+1256 silly gunzTarPerm modified mode [ 'themes/simple/layouts/main.handlebars', 438, 420 ]
+1257 silly gunzTarPerm extractEntry themes/simple/partials/attrs.handlebars
+1258 silly gunzTarPerm modified mode [ 'themes/simple/partials/attrs.handlebars', 438, 420 ]
+1259 silly gunzTarPerm extractEntry themes/simple/partials/classes.handlebars
+1260 silly gunzTarPerm modified mode [ 'themes/simple/partials/classes.handlebars', 438, 420 ]
+1261 silly gunzTarPerm extractEntry themes/simple/partials/events.handlebars
+1262 silly gunzTarPerm modified mode [ 'themes/simple/partials/events.handlebars', 438, 420 ]
+1263 silly gunzTarPerm extractEntry themes/simple/partials/files.handlebars
+1264 silly gunzTarPerm modified mode [ 'themes/simple/partials/files.handlebars', 438, 420 ]
+1265 silly gunzTarPerm extractEntry themes/simple/partials/index.handlebars
+1266 silly gunzTarPerm modified mode [ 'themes/simple/partials/index.handlebars', 438, 420 ]
+1267 silly gunzTarPerm extractEntry themes/simple/partials/method.handlebars
+1268 silly gunzTarPerm modified mode [ 'themes/simple/partials/method.handlebars', 438, 420 ]
+1269 silly gunzTarPerm extractEntry themes/simple/partials/module.handlebars
+1270 silly gunzTarPerm modified mode [ 'themes/simple/partials/module.handlebars', 438, 420 ]
+1271 silly gunzTarPerm extractEntry themes/simple/partials/props.handlebars
+1272 silly gunzTarPerm modified mode [ 'themes/simple/partials/props.handlebars', 438, 420 ]
+1273 silly gunzTarPerm extractEntry themes/simple/partials/sidebar.handlebars
+1274 silly gunzTarPerm modified mode [ 'themes/simple/partials/sidebar.handlebars', 438, 420 ]
+1275 silly gunzTarPerm extractEntry themes/simple/theme.json
+1276 silly gunzTarPerm modified mode [ 'themes/simple/theme.json', 438, 420 ]
+1277 silly gunzTarPerm extractEntry scripts/report.js
+1278 silly gunzTarPerm modified mode [ 'scripts/report.js', 438, 420 ]
+1279 silly gunzTarPerm extractEntry scripts/versions.js
+1280 silly gunzTarPerm modified mode [ 'scripts/versions.js', 438, 420 ]
+1281 silly gunzTarPerm extractEntry scripts/docs.sh
+1282 silly gunzTarPerm modified mode [ 'scripts/docs.sh', 438, 420 ]
+1283 silly gunzTarPerm extractEntry scripts/help.sh
+1284 silly gunzTarPerm modified mode [ 'scripts/help.sh', 438, 420 ]
+1285 silly gunzTarPerm extractEntry scripts/prep.sh
+1286 silly gunzTarPerm modified mode [ 'scripts/prep.sh', 438, 420 ]
+1287 silly gunzTarPerm extractEntry scripts/test.sh
+1288 silly gunzTarPerm modified mode [ 'scripts/test.sh', 438, 420 ]
+1289 silly gunzTarPerm extractEntry tests/builder.js
+1290 silly gunzTarPerm modified mode [ 'tests/builder.js', 438, 420 ]
+1291 silly gunzTarPerm extractEntry tests/files.js
+1292 silly gunzTarPerm modified mode [ 'tests/files.js', 438, 420 ]
+1293 silly gunzTarPerm extractEntry tests/options.js
+1294 silly gunzTarPerm modified mode [ 'tests/options.js', 438, 420 ]
+1295 silly gunzTarPerm extractEntry tests/parser.js
+1296 silly gunzTarPerm modified mode [ 'tests/parser.js', 438, 420 ]
+1297 silly gunzTarPerm extractEntry tests/parser_coffee.js
+1298 silly gunzTarPerm modified mode [ 'tests/parser_coffee.js', 438, 420 ]
+1299 silly gunzTarPerm extractEntry tests/preprocessor.js
+1300 silly gunzTarPerm modified mode [ 'tests/preprocessor.js', 438, 420 ]
+1301 silly gunzTarPerm extractEntry tests/utils.js
+1302 silly gunzTarPerm modified mode [ 'tests/utils.js', 438, 420 ]
+1303 silly gunzTarPerm extractEntry tests/input/globbing/deep/deep/sub/yui/src/example/example.js
+1304 silly gunzTarPerm modified mode [ 'tests/input/globbing/deep/deep/sub/yui/src/example/example.js',
+1304 silly gunzTarPerm   438,
+1304 silly gunzTarPerm   420 ]
+1305 silly gunzTarPerm extractEntry tests/input/globbing/deep/shallow/yui/src/example/example.js
+1306 silly gunzTarPerm modified mode [ 'tests/input/globbing/deep/shallow/yui/src/example/example.js',
+1306 silly gunzTarPerm   438,
+1306 silly gunzTarPerm   420 ]
+1307 silly gunzTarPerm extractEntry tests/input/globbing/shallow/yui/src/example/example.js
+1308 silly gunzTarPerm modified mode [ 'tests/input/globbing/shallow/yui/src/example/example.js',
+1308 silly gunzTarPerm   438,
+1308 silly gunzTarPerm   420 ]
+1309 silly gunzTarPerm extractEntry tests/input/charts/AreaSeries.js
+1310 silly gunzTarPerm modified mode [ 'tests/input/charts/AreaSeries.js', 438, 420 ]
+1311 silly gunzTarPerm extractEntry tests/input/charts/Gridlines.js
+1312 silly gunzTarPerm modified mode [ 'tests/input/charts/Gridlines.js', 438, 420 ]
+1313 silly gunzTarPerm extractEntry tests/input/charts/Histogram.js
+1314 silly gunzTarPerm modified mode [ 'tests/input/charts/Histogram.js', 438, 420 ]
+1315 silly gunzTarPerm extractEntry tests/input/charts/LeftAxisLayout.js
+1316 silly gunzTarPerm modified mode [ 'tests/input/charts/LeftAxisLayout.js', 438, 420 ]
+1317 silly gunzTarPerm extractEntry tests/input/charts/Graph.js
+1318 silly gunzTarPerm modified mode [ 'tests/input/charts/Graph.js', 438, 420 ]
+1319 silly gunzTarPerm extractEntry tests/input/charts/Lines.js
+1320 silly gunzTarPerm modified mode [ 'tests/input/charts/Lines.js', 438, 420 ]
+1321 silly gunzTarPerm extractEntry tests/input/charts/MarkerSeries.js
+1322 silly gunzTarPerm modified mode [ 'tests/input/charts/MarkerSeries.js', 438, 420 ]
+1323 silly gunzTarPerm extractEntry tests/input/charts/NumericAxis.js
+1324 silly gunzTarPerm modified mode [ 'tests/input/charts/NumericAxis.js', 438, 420 ]
+1325 silly gunzTarPerm extractEntry tests/input/charts/PieChart.js
+1326 silly gunzTarPerm modified mode [ 'tests/input/charts/PieChart.js', 438, 420 ]
+1327 silly gunzTarPerm extractEntry tests/input/charts/PieChartLegend.js
+1328 silly gunzTarPerm modified mode [ 'tests/input/charts/PieChartLegend.js', 438, 420 ]
+1329 silly gunzTarPerm extractEntry tests/input/charts/Fills.js
+1330 silly gunzTarPerm modified mode [ 'tests/input/charts/Fills.js', 438, 420 ]
+1331 silly gunzTarPerm extractEntry tests/input/charts/PieSeries.js
+1332 silly gunzTarPerm modified mode [ 'tests/input/charts/PieSeries.js', 438, 420 ]
+1333 silly gunzTarPerm extractEntry tests/input/charts/EllipseGroup.js
+1334 silly gunzTarPerm modified mode [ 'tests/input/charts/EllipseGroup.js', 438, 420 ]
+1335 silly gunzTarPerm extractEntry tests/input/charts/Plots.js
+1336 silly gunzTarPerm modified mode [ 'tests/input/charts/Plots.js', 438, 420 ]
+1337 silly gunzTarPerm extractEntry tests/input/charts/DiamondGroup.js
+1338 silly gunzTarPerm modified mode [ 'tests/input/charts/DiamondGroup.js', 438, 420 ]
+1339 silly gunzTarPerm extractEntry tests/input/charts/RectGroup.js
+1340 silly gunzTarPerm modified mode [ 'tests/input/charts/RectGroup.js', 438, 420 ]
+1341 silly gunzTarPerm extractEntry tests/input/charts/CurveUtil.js
+1342 silly gunzTarPerm modified mode [ 'tests/input/charts/CurveUtil.js', 438, 420 ]
+1343 silly gunzTarPerm extractEntry tests/input/charts/Renderer.js
+1344 silly gunzTarPerm modified mode [ 'tests/input/charts/Renderer.js', 438, 420 ]
+1345 silly gunzTarPerm extractEntry tests/input/charts/ComboSplineSeries.js
+1346 silly gunzTarPerm modified mode [ 'tests/input/charts/ComboSplineSeries.js', 438, 420 ]
+1347 silly gunzTarPerm extractEntry tests/input/charts/RightAxisLayout.js
+1348 silly gunzTarPerm modified mode [ 'tests/input/charts/RightAxisLayout.js', 438, 420 ]
+1349 silly gunzTarPerm extractEntry tests/input/charts/ComboSeries.js
+1350 silly gunzTarPerm modified mode [ 'tests/input/charts/ComboSeries.js', 438, 420 ]
+1351 silly gunzTarPerm extractEntry tests/input/charts/ShapeGroup.js
+1352 silly gunzTarPerm modified mode [ 'tests/input/charts/ShapeGroup.js', 438, 420 ]
+1353 silly gunzTarPerm extractEntry tests/input/charts/ColumnSeries.js
+1354 silly gunzTarPerm modified mode [ 'tests/input/charts/ColumnSeries.js', 438, 420 ]
+1355 silly gunzTarPerm extractEntry tests/input/charts/SplineSeries.js
+1356 silly gunzTarPerm modified mode [ 'tests/input/charts/SplineSeries.js', 438, 420 ]
+1357 silly gunzTarPerm extractEntry tests/input/charts/CircleGroup.js
+1358 silly gunzTarPerm modified mode [ 'tests/input/charts/CircleGroup.js', 438, 420 ]
+1359 silly gunzTarPerm extractEntry tests/input/charts/StackedAreaSeries.js
+1360 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedAreaSeries.js', 438, 420 ]
+1361 silly gunzTarPerm extractEntry tests/input/charts/ChartLegend.js
+1362 silly gunzTarPerm modified mode [ 'tests/input/charts/ChartLegend.js', 438, 420 ]
+1363 silly gunzTarPerm extractEntry tests/input/charts/StackedAreaSplineSeries.js
+1364 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedAreaSplineSeries.js', 438, 420 ]
+1365 silly gunzTarPerm extractEntry tests/input/charts/ChartBase.js
+1366 silly gunzTarPerm modified mode [ 'tests/input/charts/ChartBase.js', 438, 420 ]
+1367 silly gunzTarPerm extractEntry tests/input/charts/StackedAxis.js
+1368 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedAxis.js', 438, 420 ]
+1369 silly gunzTarPerm extractEntry tests/input/charts/Chart.js
+1370 silly gunzTarPerm modified mode [ 'tests/input/charts/Chart.js', 438, 420 ]
+1371 silly gunzTarPerm extractEntry tests/input/charts/StackedBarSeries.js
+1372 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedBarSeries.js', 438, 420 ]
+1373 silly gunzTarPerm extractEntry tests/input/charts/CategoryAxis.js
+1374 silly gunzTarPerm modified mode [ 'tests/input/charts/CategoryAxis.js', 438, 420 ]
+1375 silly gunzTarPerm extractEntry tests/input/charts/StackedColumnSeries.js
+1376 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedColumnSeries.js', 438, 420 ]
+1377 silly gunzTarPerm extractEntry tests/input/charts/CartesianSeries.js
+1378 silly gunzTarPerm modified mode [ 'tests/input/charts/CartesianSeries.js', 438, 420 ]
+1379 silly gunzTarPerm extractEntry tests/input/charts/StackedComboSeries.js
+1380 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedComboSeries.js', 438, 420 ]
+1381 silly gunzTarPerm extractEntry tests/input/charts/CartesianChartLegend.js
+1382 silly gunzTarPerm modified mode [ 'tests/input/charts/CartesianChartLegend.js', 438, 420 ]
+1383 silly gunzTarPerm extractEntry tests/input/charts/StackedComboSplineSeries.js
+1384 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedComboSplineSeries.js', 438, 420 ]
+1385 silly gunzTarPerm extractEntry tests/input/charts/CartesianChart.js
+1386 silly gunzTarPerm modified mode [ 'tests/input/charts/CartesianChart.js', 438, 420 ]
+1387 silly gunzTarPerm extractEntry tests/input/charts/StackedLineSeries.js
+1388 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedLineSeries.js', 438, 420 ]
+1389 silly gunzTarPerm extractEntry tests/input/charts/BottomAxisLayout.js
+1390 silly gunzTarPerm modified mode [ 'tests/input/charts/BottomAxisLayout.js', 438, 420 ]
+1391 silly gunzTarPerm extractEntry tests/input/charts/StackedMarkerSeries.js
+1392 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedMarkerSeries.js', 438, 420 ]
+1393 silly gunzTarPerm extractEntry tests/input/charts/BarSeries.js
+1394 silly gunzTarPerm modified mode [ 'tests/input/charts/BarSeries.js', 438, 420 ]
+1395 silly gunzTarPerm extractEntry tests/input/charts/StackedSplineSeries.js
+1396 silly gunzTarPerm modified mode [ 'tests/input/charts/StackedSplineSeries.js', 438, 420 ]
+1397 silly gunzTarPerm extractEntry tests/input/charts/AxisType.js
+1398 silly gunzTarPerm modified mode [ 'tests/input/charts/AxisType.js', 438, 420 ]
+1399 silly gunzTarPerm extractEntry tests/input/charts/StackingUtil.js
+1400 silly gunzTarPerm modified mode [ 'tests/input/charts/StackingUtil.js', 438, 420 ]
+1401 silly gunzTarPerm extractEntry tests/input/charts/Axis.js
+1402 silly gunzTarPerm modified mode [ 'tests/input/charts/Axis.js', 438, 420 ]
+1403 silly gunzTarPerm extractEntry tests/input/charts/TimeAxis.js
+1404 silly gunzTarPerm modified mode [ 'tests/input/charts/TimeAxis.js', 438, 420 ]
+1405 silly gunzTarPerm extractEntry tests/input/charts/AreaSplineSeries.js
+1406 silly gunzTarPerm modified mode [ 'tests/input/charts/AreaSplineSeries.js', 438, 420 ]
+1407 silly gunzTarPerm extractEntry tests/input/charts/TopAxisLayout.js
+1408 silly gunzTarPerm modified mode [ 'tests/input/charts/TopAxisLayout.js', 438, 420 ]
+1409 silly gunzTarPerm extractEntry tests/input/charts/LineSeries.js
+1410 silly gunzTarPerm modified mode [ 'tests/input/charts/LineSeries.js', 438, 420 ]
+1411 silly gunzTarPerm extractEntry tests/input/folders1/one/two/yuidoc.json
+1412 silly gunzTarPerm modified mode [ 'tests/input/folders1/one/two/yuidoc.json', 438, 420 ]
+1413 silly gunzTarPerm extractEntry tests/input/folders1/yuidoc.json
+1414 silly gunzTarPerm modified mode [ 'tests/input/folders1/yuidoc.json', 438, 420 ]
+1415 silly gunzTarPerm extractEntry tests/input/folders2/package.json
+1416 silly gunzTarPerm modified mode [ 'tests/input/folders2/package.json', 438, 420 ]
+1417 silly gunzTarPerm extractEntry tests/input/folders2/one/two/yuidoc.json
+1418 silly gunzTarPerm modified mode [ 'tests/input/folders2/one/two/yuidoc.json', 438, 420 ]
+1419 silly gunzTarPerm extractEntry tests/input/folders3/package.json
+1420 silly gunzTarPerm modified mode [ 'tests/input/folders3/package.json', 438, 420 ]
+1421 silly gunzTarPerm extractEntry tests/input/folders3/one/package.json
+1422 silly gunzTarPerm modified mode [ 'tests/input/folders3/one/package.json', 438, 420 ]
+1423 silly gunzTarPerm extractEntry tests/input/folders3/one/two/yuidoc.json
+1424 silly gunzTarPerm modified mode [ 'tests/input/folders3/one/two/yuidoc.json', 438, 420 ]
+1425 silly gunzTarPerm extractEntry tests/input/folders3/yuidoc.json
+1426 silly gunzTarPerm modified mode [ 'tests/input/folders3/yuidoc.json', 438, 420 ]
+1427 silly gunzTarPerm extractEntry tests/input/folders4/one/two/package.json
+1428 silly gunzTarPerm modified mode [ 'tests/input/folders4/one/two/package.json', 438, 420 ]
+1429 silly gunzTarPerm extractEntry tests/input/folders4/one/two/yuidoc.json
+1430 silly gunzTarPerm modified mode [ 'tests/input/folders4/one/two/yuidoc.json', 438, 420 ]
+1431 silly gunzTarPerm extractEntry tests/input/folders4/one/yuidoc.json
+1432 silly gunzTarPerm modified mode [ 'tests/input/folders4/one/yuidoc.json', 438, 420 ]
+1433 silly gunzTarPerm extractEntry tests/input/folders5/one/three/yuidoc.json
+1434 silly gunzTarPerm modified mode [ 'tests/input/folders5/one/three/yuidoc.json', 438, 420 ]
+1435 silly gunzTarPerm extractEntry tests/input/folders5/two/package.json
+1436 silly gunzTarPerm modified mode [ 'tests/input/folders5/two/package.json', 438, 420 ]
+1437 silly gunzTarPerm extractEntry tests/input/folders5/two/yuidoc.json
+1438 silly gunzTarPerm modified mode [ 'tests/input/folders5/two/yuidoc.json', 438, 420 ]
+1439 silly gunzTarPerm extractEntry tests/input/coffee/test.coffee
+1440 silly gunzTarPerm modified mode [ 'tests/input/coffee/test.coffee', 438, 420 ]
+1441 silly gunzTarPerm extractEntry tests/input/inherit/examplemodule.js
+1442 silly gunzTarPerm modified mode [ 'tests/input/inherit/examplemodule.js', 438, 420 ]
+1443 silly gunzTarPerm extractEntry tests/input/json/parse.js
+1444 silly gunzTarPerm modified mode [ 'tests/input/json/parse.js', 438, 420 ]
+1445 silly gunzTarPerm extractEntry tests/input/json/stringify.js
+1446 silly gunzTarPerm modified mode [ 'tests/input/json/stringify.js', 438, 420 ]
+1447 silly gunzTarPerm extractEntry tests/input/namespace/ns.js
+1448 silly gunzTarPerm modified mode [ 'tests/input/namespace/ns.js', 438, 420 ]
+1449 silly gunzTarPerm extractEntry tests/input/preprocessor/preprocessortest.js
+1450 silly gunzTarPerm modified mode [ 'tests/input/preprocessor/preprocessortest.js', 438, 420 ]
+1451 silly gunzTarPerm extractEntry tests/input/test/anim.js
+1452 silly gunzTarPerm modified mode [ 'tests/input/test/anim.js', 438, 420 ]
+1453 silly gunzTarPerm extractEntry tests/input/test/test.js
+1454 silly gunzTarPerm modified mode [ 'tests/input/test/test.js', 438, 420 ]
+1455 silly gunzTarPerm extractEntry tests/input/test2/namespace.js
+1456 silly gunzTarPerm modified mode [ 'tests/input/test2/namespace.js', 438, 420 ]
+1457 silly gunzTarPerm extractEntry tests/input/test2/slashes.js
+1458 silly gunzTarPerm modified mode [ 'tests/input/test2/slashes.js', 438, 420 ]
+1459 silly gunzTarPerm extractEntry tests/input/test2/dump/dump.js
+1460 silly gunzTarPerm modified mode [ 'tests/input/test2/dump/dump.js', 438, 420 ]
+1461 silly gunzTarPerm extractEntry tests/input/test2/oop/oop.js
+1462 silly gunzTarPerm modified mode [ 'tests/input/test2/oop/oop.js', 438, 420 ]
+1463 silly gunzTarPerm extractEntry tests/lib/davglass.js
+1464 silly gunzTarPerm modified mode [ 'tests/lib/davglass.js', 438, 420 ]
+1465 silly gunzTarPerm extractEntry tests/lib/testpreprocessor.js
+1466 silly gunzTarPerm modified mode [ 'tests/lib/testpreprocessor.js', 438, 420 ]
+1467 silly gunzTarPerm extractEntry tests/lib/testpreprocessormodule/package.json
+1468 silly gunzTarPerm modified mode [ 'tests/lib/testpreprocessormodule/package.json', 438, 420 ]
+1469 silly gunzTarPerm extractEntry tests/lib/testpreprocessormodule/testpreprocessormodule.js
+1470 silly gunzTarPerm modified mode [ 'tests/lib/testpreprocessormodule/testpreprocessormodule.js',
+1470 silly gunzTarPerm   438,
+1470 silly gunzTarPerm   420 ]
+1471 silly gunzTarPerm extractEntry tests/out/data.json
+1472 silly gunzTarPerm modified mode [ 'tests/out/data.json', 438, 420 ]
+1473 silly gunzTarPerm extractEntry coverage/coverage.json
+1474 silly gunzTarPerm modified mode [ 'coverage/coverage.json', 438, 420 ]
+1475 silly gunzTarPerm extractEntry coverage/lcov-report/prettify.js
+1476 silly gunzTarPerm modified mode [ 'coverage/lcov-report/prettify.js', 438, 420 ]
+1477 silly gunzTarPerm extractEntry coverage/lcov-report/index.html
+1478 silly gunzTarPerm modified mode [ 'coverage/lcov-report/index.html', 438, 420 ]
+1479 silly gunzTarPerm extractEntry coverage/lcov-report/lib/index.js.html
+1480 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/index.js.html', 438, 420 ]
+1481 silly gunzTarPerm extractEntry coverage/lcov-report/lib/builder.js.html
+1482 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/builder.js.html', 438, 420 ]
+1483 silly gunzTarPerm extractEntry coverage/lcov-report/lib/docview.js.html
+1484 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/docview.js.html', 438, 420 ]
+1485 silly gunzTarPerm extractEntry coverage/lcov-report/lib/files.js.html
+1486 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/files.js.html', 438, 420 ]
+1487 silly gunzTarPerm extractEntry coverage/lcov-report/lib/help.js.html
+1488 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/help.js.html', 438, 420 ]
+1489 silly gunzTarPerm extractEntry coverage/lcov-report/lib/index.html
+1490 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/index.html', 438, 420 ]
+1491 silly gunzTarPerm extractEntry coverage/lcov-report/lib/docparser.js.html
+1492 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/docparser.js.html', 438, 420 ]
+1493 silly gunzTarPerm extractEntry coverage/lcov-report/lib/options.js.html
+1494 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/options.js.html', 438, 420 ]
+1495 silly gunzTarPerm extractEntry coverage/lcov-report/lib/project.js.html
+1496 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/project.js.html', 438, 420 ]
+1497 silly gunzTarPerm extractEntry coverage/lcov-report/lib/server.js.html
+1498 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/server.js.html', 438, 420 ]
+1499 silly gunzTarPerm extractEntry coverage/lcov-report/lib/utils.js.html
+1500 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/utils.js.html', 438, 420 ]
+1501 silly gunzTarPerm extractEntry coverage/lcov-report/lib/yuidoc.js.html
+1502 silly gunzTarPerm modified mode [ 'coverage/lcov-report/lib/yuidoc.js.html', 438, 420 ]
+1503 silly gunzTarPerm extractEntry coverage/lcov-report/prettify.css
+1504 silly gunzTarPerm modified mode [ 'coverage/lcov-report/prettify.css', 438, 420 ]
+1505 silly gunzTarPerm extractEntry coverage/lcov.info
+1506 silly gunzTarPerm modified mode [ 'coverage/lcov.info', 438, 420 ]
+1507 silly lockFile b9797485-rib-yuidoc-node-modules-yuidocjs tar://E:\doc\node_modules\grunt-contrib-yuidoc\node_modules\yuidocjs
+1508 silly lockFile b9797485-rib-yuidoc-node-modules-yuidocjs tar://E:\doc\node_modules\grunt-contrib-yuidoc\node_modules\yuidocjs
+1509 silly lockFile 5d92d421-ache-yuidocjs-0-3-50-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz
+1510 silly lockFile 5d92d421-ache-yuidocjs-0-3-50-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\yuidocjs\0.3.50\package.tgz
+1511 info preinstall yuidocjs@0.3.50
+1512 verbose readDependencies using package.json deps
+1513 verbose readDependencies using package.json deps
+1514 verbose cache add [ 'yui@3.14.1', null ]
+1515 verbose cache add name=undefined spec="yui@3.14.1" args=["yui@3.14.1",null]
+1516 verbose parsed url { protocol: null,
+1516 verbose parsed url   slashes: null,
+1516 verbose parsed url   auth: null,
+1516 verbose parsed url   host: null,
+1516 verbose parsed url   port: null,
+1516 verbose parsed url   hostname: null,
+1516 verbose parsed url   hash: null,
+1516 verbose parsed url   search: null,
+1516 verbose parsed url   query: null,
+1516 verbose parsed url   pathname: 'yui@3.14.1',
+1516 verbose parsed url   path: 'yui@3.14.1',
+1516 verbose parsed url   href: 'yui@3.14.1' }
+1517 verbose cache add name="yui" spec="3.14.1" args=["yui","3.14.1"]
+1518 verbose parsed url { protocol: null,
+1518 verbose parsed url   slashes: null,
+1518 verbose parsed url   auth: null,
+1518 verbose parsed url   host: null,
+1518 verbose parsed url   port: null,
+1518 verbose parsed url   hostname: null,
+1518 verbose parsed url   hash: null,
+1518 verbose parsed url   search: null,
+1518 verbose parsed url   query: null,
+1518 verbose parsed url   pathname: '3.14.1',
+1518 verbose parsed url   path: '3.14.1',
+1518 verbose parsed url   href: '3.14.1' }
+1519 verbose addNamed [ 'yui', '3.14.1' ]
+1520 verbose addNamed [ '3.14.1', '3.14.1' ]
+1521 silly lockFile 3eac3aad-yui-3-14-1 yui@3.14.1
+1522 verbose lock yui@3.14.1 C:\Users\toshiba\AppData\Roaming\npm-cache\3eac3aad-yui-3-14-1.lock
+1523 verbose cache add [ 'rimraf@2.x', null ]
+1524 verbose cache add name=undefined spec="rimraf@2.x" args=["rimraf@2.x",null]
+1525 verbose parsed url { protocol: null,
+1525 verbose parsed url   slashes: null,
+1525 verbose parsed url   auth: null,
+1525 verbose parsed url   host: null,
+1525 verbose parsed url   port: null,
+1525 verbose parsed url   hostname: null,
+1525 verbose parsed url   hash: null,
+1525 verbose parsed url   search: null,
+1525 verbose parsed url   query: null,
+1525 verbose parsed url   pathname: 'rimraf@2.x',
+1525 verbose parsed url   path: 'rimraf@2.x',
+1525 verbose parsed url   href: 'rimraf@2.x' }
+1526 verbose cache add name="rimraf" spec="2.x" args=["rimraf","2.x"]
+1527 verbose parsed url { protocol: null,
+1527 verbose parsed url   slashes: null,
+1527 verbose parsed url   auth: null,
+1527 verbose parsed url   host: null,
+1527 verbose parsed url   port: null,
+1527 verbose parsed url   hostname: null,
+1527 verbose parsed url   hash: null,
+1527 verbose parsed url   search: null,
+1527 verbose parsed url   query: null,
+1527 verbose parsed url   pathname: '2.x',
+1527 verbose parsed url   path: '2.x',
+1527 verbose parsed url   href: '2.x' }
+1528 verbose addNamed [ 'rimraf', '2.x' ]
+1529 verbose addNamed [ null, '>=2.0.0-0 <3.0.0-0' ]
+1530 silly lockFile 4ad82ad8-rimraf-2-x rimraf@2.x
+1531 verbose lock rimraf@2.x C:\Users\toshiba\AppData\Roaming\npm-cache\4ad82ad8-rimraf-2-x.lock
+1532 verbose cache add [ 'marked@~0.2.8', null ]
+1533 verbose cache add name=undefined spec="marked@~0.2.8" args=["marked@~0.2.8",null]
+1534 verbose parsed url { protocol: null,
+1534 verbose parsed url   slashes: null,
+1534 verbose parsed url   auth: null,
+1534 verbose parsed url   host: null,
+1534 verbose parsed url   port: null,
+1534 verbose parsed url   hostname: null,
+1534 verbose parsed url   hash: null,
+1534 verbose parsed url   search: null,
+1534 verbose parsed url   query: null,
+1534 verbose parsed url   pathname: 'marked@~0.2.8',
+1534 verbose parsed url   path: 'marked@~0.2.8',
+1534 verbose parsed url   href: 'marked@~0.2.8' }
+1535 verbose cache add name="marked" spec="~0.2.8" args=["marked","~0.2.8"]
+1536 verbose parsed url { protocol: null,
+1536 verbose parsed url   slashes: null,
+1536 verbose parsed url   auth: null,
+1536 verbose parsed url   host: null,
+1536 verbose parsed url   port: null,
+1536 verbose parsed url   hostname: null,
+1536 verbose parsed url   hash: null,
+1536 verbose parsed url   search: null,
+1536 verbose parsed url   query: null,
+1536 verbose parsed url   pathname: '~0.2.8',
+1536 verbose parsed url   path: '~0.2.8',
+1536 verbose parsed url   href: '~0.2.8' }
+1537 verbose addNamed [ 'marked', '~0.2.8' ]
+1538 verbose addNamed [ null, '>=0.2.8-0 <0.3.0-0' ]
+1539 silly lockFile 42f986f3-marked-0-2-8 marked@~0.2.8
+1540 verbose lock marked@~0.2.8 C:\Users\toshiba\AppData\Roaming\npm-cache\42f986f3-marked-0-2-8.lock
+1541 verbose cache add [ 'minimatch@~0.2.11', null ]
+1542 verbose cache add name=undefined spec="minimatch@~0.2.11" args=["minimatch@~0.2.11",null]
+1543 verbose parsed url { protocol: null,
+1543 verbose parsed url   slashes: null,
+1543 verbose parsed url   auth: null,
+1543 verbose parsed url   host: null,
+1543 verbose parsed url   port: null,
+1543 verbose parsed url   hostname: null,
+1543 verbose parsed url   hash: null,
+1543 verbose parsed url   search: null,
+1543 verbose parsed url   query: null,
+1543 verbose parsed url   pathname: 'minimatch@~0.2.11',
+1543 verbose parsed url   path: 'minimatch@~0.2.11',
+1543 verbose parsed url   href: 'minimatch@~0.2.11' }
+1544 verbose cache add name="minimatch" spec="~0.2.11" args=["minimatch","~0.2.11"]
+1545 verbose parsed url { protocol: null,
+1545 verbose parsed url   slashes: null,
+1545 verbose parsed url   auth: null,
+1545 verbose parsed url   host: null,
+1545 verbose parsed url   port: null,
+1545 verbose parsed url   hostname: null,
+1545 verbose parsed url   hash: null,
+1545 verbose parsed url   search: null,
+1545 verbose parsed url   query: null,
+1545 verbose parsed url   pathname: '~0.2.11',
+1545 verbose parsed url   path: '~0.2.11',
+1545 verbose parsed url   href: '~0.2.11' }
+1546 verbose addNamed [ 'minimatch', '~0.2.11' ]
+1547 verbose addNamed [ null, '>=0.2.11-0 <0.3.0-0' ]
+1548 silly lockFile 94473efb-minimatch-0-2-11 minimatch@~0.2.11
+1549 verbose lock minimatch@~0.2.11 C:\Users\toshiba\AppData\Roaming\npm-cache\94473efb-minimatch-0-2-11.lock
+1550 verbose cache add [ 'graceful-fs@2.x', null ]
+1551 verbose cache add name=undefined spec="graceful-fs@2.x" args=["graceful-fs@2.x",null]
+1552 verbose parsed url { protocol: null,
+1552 verbose parsed url   slashes: null,
+1552 verbose parsed url   auth: null,
+1552 verbose parsed url   host: null,
+1552 verbose parsed url   port: null,
+1552 verbose parsed url   hostname: null,
+1552 verbose parsed url   hash: null,
+1552 verbose parsed url   search: null,
+1552 verbose parsed url   query: null,
+1552 verbose parsed url   pathname: 'graceful-fs@2.x',
+1552 verbose parsed url   path: 'graceful-fs@2.x',
+1552 verbose parsed url   href: 'graceful-fs@2.x' }
+1553 verbose cache add name="graceful-fs" spec="2.x" args=["graceful-fs","2.x"]
+1554 verbose parsed url { protocol: null,
+1554 verbose parsed url   slashes: null,
+1554 verbose parsed url   auth: null,
+1554 verbose parsed url   host: null,
+1554 verbose parsed url   port: null,
+1554 verbose parsed url   hostname: null,
+1554 verbose parsed url   hash: null,
+1554 verbose parsed url   search: null,
+1554 verbose parsed url   query: null,
+1554 verbose parsed url   pathname: '2.x',
+1554 verbose parsed url   path: '2.x',
+1554 verbose parsed url   href: '2.x' }
+1555 verbose addNamed [ 'graceful-fs', '2.x' ]
+1556 verbose addNamed [ null, '>=2.0.0-0 <3.0.0-0' ]
+1557 silly lockFile 32313432-graceful-fs-2-x graceful-fs@2.x
+1558 verbose lock graceful-fs@2.x C:\Users\toshiba\AppData\Roaming\npm-cache\32313432-graceful-fs-2-x.lock
+1559 verbose cache add [ 'express@~3.1.2', null ]
+1560 verbose cache add name=undefined spec="express@~3.1.2" args=["express@~3.1.2",null]
+1561 verbose parsed url { protocol: null,
+1561 verbose parsed url   slashes: null,
+1561 verbose parsed url   auth: null,
+1561 verbose parsed url   host: null,
+1561 verbose parsed url   port: null,
+1561 verbose parsed url   hostname: null,
+1561 verbose parsed url   hash: null,
+1561 verbose parsed url   search: null,
+1561 verbose parsed url   query: null,
+1561 verbose parsed url   pathname: 'express@~3.1.2',
+1561 verbose parsed url   path: 'express@~3.1.2',
+1561 verbose parsed url   href: 'express@~3.1.2' }
+1562 verbose cache add name="express" spec="~3.1.2" args=["express","~3.1.2"]
+1563 verbose parsed url { protocol: null,
+1563 verbose parsed url   slashes: null,
+1563 verbose parsed url   auth: null,
+1563 verbose parsed url   host: null,
+1563 verbose parsed url   port: null,
+1563 verbose parsed url   hostname: null,
+1563 verbose parsed url   hash: null,
+1563 verbose parsed url   search: null,
+1563 verbose parsed url   query: null,
+1563 verbose parsed url   pathname: '~3.1.2',
+1563 verbose parsed url   path: '~3.1.2',
+1563 verbose parsed url   href: '~3.1.2' }
+1564 verbose addNamed [ 'express', '~3.1.2' ]
+1565 verbose addNamed [ null, '>=3.1.2-0 <3.2.0-0' ]
+1566 silly lockFile bc2fe255-express-3-1-2 express@~3.1.2
+1567 verbose lock express@~3.1.2 C:\Users\toshiba\AppData\Roaming\npm-cache\bc2fe255-express-3-1-2.lock
+1568 silly addNameRange { name: 'rimraf', range: '>=2.0.0-0 <3.0.0-0', hasData: false }
+1569 silly addNameRange { name: 'marked', range: '>=0.2.8-0 <0.3.0-0', hasData: false }
+1570 silly addNameRange { name: 'minimatch',
+1570 silly addNameRange   range: '>=0.2.11-0 <0.3.0-0',
+1570 silly addNameRange   hasData: false }
+1571 silly addNameRange { name: 'graceful-fs',
+1571 silly addNameRange   range: '>=2.0.0-0 <3.0.0-0',
+1571 silly addNameRange   hasData: false }
+1572 silly addNameRange { name: 'express', range: '>=3.1.2-0 <3.2.0-0', hasData: false }
+1573 verbose url raw yui/3.14.1
+1574 verbose url resolving [ 'https://registry.npmjs.org/', './yui/3.14.1' ]
+1575 verbose url resolved https://registry.npmjs.org/yui/3.14.1
+1576 info trying registry request attempt 1 at 22:29:26
+1577 http GET https://registry.npmjs.org/yui/3.14.1
+1578 verbose url raw minimatch
+1579 verbose url resolving [ 'https://registry.npmjs.org/', './minimatch' ]
+1580 verbose url resolved https://registry.npmjs.org/minimatch
+1581 info trying registry request attempt 1 at 22:29:26
+1582 verbose etag "AL5I7TIHQVK950SP7HUXMZU49"
+1583 http GET https://registry.npmjs.org/minimatch
+1584 verbose url raw marked
+1585 verbose url resolving [ 'https://registry.npmjs.org/', './marked' ]
+1586 verbose url resolved https://registry.npmjs.org/marked
+1587 info trying registry request attempt 1 at 22:29:26
+1588 verbose etag "601VEUWL20F81MBE3MS0IQI8I"
+1589 http GET https://registry.npmjs.org/marked
+1590 verbose url raw express
+1591 verbose url resolving [ 'https://registry.npmjs.org/', './express' ]
+1592 verbose url resolved https://registry.npmjs.org/express
+1593 info trying registry request attempt 1 at 22:29:26
+1594 verbose etag "72FP04ODFO5KD9P8CM5A3ZHLG"
+1595 http GET https://registry.npmjs.org/express
+1596 verbose url raw rimraf
+1597 verbose url resolving [ 'https://registry.npmjs.org/', './rimraf' ]
+1598 verbose url resolved https://registry.npmjs.org/rimraf
+1599 info trying registry request attempt 1 at 22:29:26
+1600 verbose etag "B71MQGPUIHT0VNWECLBE6RNUI"
+1601 http GET https://registry.npmjs.org/rimraf
+1602 verbose url raw graceful-fs
+1603 verbose url resolving [ 'https://registry.npmjs.org/', './graceful-fs' ]
+1604 verbose url resolved https://registry.npmjs.org/graceful-fs
+1605 info trying registry request attempt 1 at 22:29:26
+1606 verbose etag "145MGZ0PS989HAZJ4FIPCV93V"
+1607 http GET https://registry.npmjs.org/graceful-fs
+1608 http 304 https://registry.npmjs.org/minimatch
+1609 silly registry.get cb [ 304,
+1609 silly registry.get   { date: 'Wed, 09 Jul 2014 14:29:27 GMT',
+1609 silly registry.get     server: 'Apache',
+1609 silly registry.get     via: '1.1 varnish',
+1609 silly registry.get     'last-modified': 'Wed, 09 Jul 2014 14:24:59 GMT',
+1609 silly registry.get     'cache-control': 'max-age=30',
+1609 silly registry.get     etag: '"AL5I7TIHQVK950SP7HUXMZU49"',
+1609 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+1609 silly registry.get     'x-cache': 'HIT',
+1609 silly registry.get     'x-cache-hits': '17',
+1609 silly registry.get     'x-timer': 'S1404916167.909733,VS0,VE0',
+1609 silly registry.get     vary: 'Accept',
+1609 silly registry.get     'content-length': '0',
+1609 silly registry.get     'keep-alive': 'timeout=10, max=50',
+1609 silly registry.get     connection: 'Keep-Alive' } ]
+1610 verbose etag minimatch from cache
+1611 silly addNameRange number 2 { name: 'minimatch',
+1611 silly addNameRange   range: '>=0.2.11-0 <0.3.0-0',
+1611 silly addNameRange   hasData: true }
+1612 silly addNameRange versions [ 'minimatch',
+1612 silly addNameRange   [ '0.0.1',
+1612 silly addNameRange     '0.0.2',
+1612 silly addNameRange     '0.0.4',
+1612 silly addNameRange     '0.0.5',
+1612 silly addNameRange     '0.1.1',
+1612 silly addNameRange     '0.1.2',
+1612 silly addNameRange     '0.1.3',
+1612 silly addNameRange     '0.1.4',
+1612 silly addNameRange     '0.1.5',
+1612 silly addNameRange     '0.2.0',
+1612 silly addNameRange     '0.2.2',
+1612 silly addNameRange     '0.2.3',
+1612 silly addNameRange     '0.2.4',
+1612 silly addNameRange     '0.2.5',
+1612 silly addNameRange     '0.2.6',
+1612 silly addNameRange     '0.2.7',
+1612 silly addNameRange     '0.2.8',
+1612 silly addNameRange     '0.2.9',
+1612 silly addNameRange     '0.2.10',
+1612 silly addNameRange     '0.2.11',
+1612 silly addNameRange     '0.2.12',
+1612 silly addNameRange     '0.2.13',
+1612 silly addNameRange     '0.2.14',
+1612 silly addNameRange     '0.3.0' ] ]
+1613 verbose addNamed [ 'minimatch', '0.2.14' ]
+1614 verbose addNamed [ '0.2.14', '0.2.14' ]
+1615 silly lockFile a72880d0-minimatch-0-2-14 minimatch@0.2.14
+1616 verbose lock minimatch@0.2.14 C:\Users\toshiba\AppData\Roaming\npm-cache\a72880d0-minimatch-0-2-14.lock
+1617 silly lockFile a72880d0-minimatch-0-2-14 minimatch@0.2.14
+1618 silly lockFile a72880d0-minimatch-0-2-14 minimatch@0.2.14
+1619 silly lockFile 94473efb-minimatch-0-2-11 minimatch@~0.2.11
+1620 silly lockFile 94473efb-minimatch-0-2-11 minimatch@~0.2.11
+1621 http 200 https://registry.npmjs.org/yui/3.14.1
+1622 silly registry.get cb [ 200,
+1622 silly registry.get   { date: 'Wed, 09 Jul 2014 14:29:28 GMT',
+1622 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+1622 silly registry.get     etag: '"864FDLGQ3DTGZ0VKORXDJV7P8"',
+1622 silly registry.get     'content-type': 'application/json',
+1622 silly registry.get     'cache-control': 'max-age=30',
+1622 silly registry.get     'content-length': '1093',
+1622 silly registry.get     'accept-ranges': 'bytes',
+1622 silly registry.get     via: '1.1 varnish',
+1622 silly registry.get     age: '0',
+1622 silly registry.get     'x-served-by': 'cache-ty68-TYO',
+1622 silly registry.get     'x-cache': 'MISS',
+1622 silly registry.get     'x-cache-hits': '0',
+1622 silly registry.get     'x-timer': 'S1404916167.869085,VS0,VE204',
+1622 silly registry.get     vary: 'Accept',
+1622 silly registry.get     'keep-alive': 'timeout=10, max=50',
+1622 silly registry.get     connection: 'Keep-Alive' } ]
+1623 silly lockFile 1966dbe9-try-npmjs-org-yui-yui-3-14-1-tgz https://registry.npmjs.org/yui/-/yui-3.14.1.tgz
+1624 verbose lock https://registry.npmjs.org/yui/-/yui-3.14.1.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\1966dbe9-try-npmjs-org-yui-yui-3-14-1-tgz.lock
+1625 verbose addRemoteTarball [ 'https://registry.npmjs.org/yui/-/yui-3.14.1.tgz',
+1625 verbose addRemoteTarball   '87ec1c20d91c12f579ff64f638eeb91900129183' ]
+1626 info retry fetch attempt 1 at 22:29:27
+1627 verbose fetch to= C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167568-0.7858612013515085\tmp.tgz
+1628 http GET https://registry.npmjs.org/yui/-/yui-3.14.1.tgz
+1629 http 304 https://registry.npmjs.org/graceful-fs
+1630 silly registry.get cb [ 304,
+1630 silly registry.get   { date: 'Wed, 09 Jul 2014 14:29:28 GMT',
+1630 silly registry.get     server: 'Apache',
+1630 silly registry.get     via: '1.1 varnish',
+1630 silly registry.get     'last-modified': 'Wed, 09 Jul 2014 14:27:59 GMT',
+1630 silly registry.get     'cache-control': 'max-age=30',
+1630 silly registry.get     etag: '"145MGZ0PS989HAZJ4FIPCV93V"',
+1630 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+1630 silly registry.get     'x-cache': 'HIT',
+1630 silly registry.get     'x-cache-hits': '3',
+1630 silly registry.get     'x-timer': 'S1404916168.106869,VS0,VE0',
+1630 silly registry.get     vary: 'Accept',
+1630 silly registry.get     'content-length': '0',
+1630 silly registry.get     'keep-alive': 'timeout=10, max=49',
+1630 silly registry.get     connection: 'Keep-Alive' } ]
+1631 verbose etag graceful-fs from cache
+1632 silly addNameRange number 2 { name: 'graceful-fs',
+1632 silly addNameRange   range: '>=2.0.0-0 <3.0.0-0',
+1632 silly addNameRange   hasData: true }
+1633 silly addNameRange versions [ 'graceful-fs',
+1633 silly addNameRange   [ '1.0.0',
+1633 silly addNameRange     '1.0.1',
+1633 silly addNameRange     '1.0.2',
+1633 silly addNameRange     '1.1.0',
+1633 silly addNameRange     '1.1.1',
+1633 silly addNameRange     '1.1.2',
+1633 silly addNameRange     '1.1.3',
+1633 silly addNameRange     '1.1.4',
+1633 silly addNameRange     '1.1.5',
+1633 silly addNameRange     '1.1.6',
+1633 silly addNameRange     '1.1.7',
+1633 silly addNameRange     '1.1.8',
+1633 silly addNameRange     '1.1.9',
+1633 silly addNameRange     '1.1.10',
+1633 silly addNameRange     '1.1.11',
+1633 silly addNameRange     '1.1.12',
+1633 silly addNameRange     '1.1.13',
+1633 silly addNameRange     '1.1.14',
+1633 silly addNameRange     '1.2.0',
+1633 silly addNameRange     '1.2.1',
+1633 silly addNameRange     '1.2.2',
+1633 silly addNameRange     '1.2.3',
+1633 silly addNameRange     '2.0.0',
+1633 silly addNameRange     '2.0.1',
+1633 silly addNameRange     '2.0.2',
+1633 silly addNameRange     '2.0.3',
+1633 silly addNameRange     '3.0.0',
+1633 silly addNameRange     '3.0.1',
+1633 silly addNameRange     '3.0.2' ] ]
+1634 verbose addNamed [ 'graceful-fs', '2.0.3' ]
+1635 verbose addNamed [ '2.0.3', '2.0.3' ]
+1636 silly lockFile aa717173-graceful-fs-2-0-3 graceful-fs@2.0.3
+1637 verbose lock graceful-fs@2.0.3 C:\Users\toshiba\AppData\Roaming\npm-cache\aa717173-graceful-fs-2-0-3.lock
+1638 silly lockFile aa717173-graceful-fs-2-0-3 graceful-fs@2.0.3
+1639 silly lockFile aa717173-graceful-fs-2-0-3 graceful-fs@2.0.3
+1640 http 304 https://registry.npmjs.org/rimraf
+1641 silly registry.get cb [ 304,
+1641 silly registry.get   { date: 'Wed, 09 Jul 2014 14:29:28 GMT',
+1641 silly registry.get     server: 'Apache',
+1641 silly registry.get     via: '1.1 varnish',
+1641 silly registry.get     'last-modified': 'Wed, 09 Jul 2014 14:29:28 GMT',
+1641 silly registry.get     'cache-control': 'max-age=30',
+1641 silly registry.get     etag: '"B71MQGPUIHT0VNWECLBE6RNUI"',
+1641 silly registry.get     'x-served-by': 'cache-ty68-TYO',
+1641 silly registry.get     'x-cache': 'HIT',
+1641 silly registry.get     'x-cache-hits': '2',
+1641 silly registry.get     'x-timer': 'S1404916168.121407,VS0,VE0',
+1641 silly registry.get     vary: 'Accept',
+1641 silly registry.get     'content-length': '0',
+1641 silly registry.get     'keep-alive': 'timeout=10, max=50',
+1641 silly registry.get     connection: 'Keep-Alive' } ]
+1642 verbose etag rimraf from cache
+1643 silly lockFile 32313432-graceful-fs-2-x graceful-fs@2.x
+1644 silly lockFile 32313432-graceful-fs-2-x graceful-fs@2.x
+1645 silly addNameRange number 2 { name: 'rimraf', range: '>=2.0.0-0 <3.0.0-0', hasData: true }
+1646 silly addNameRange versions [ 'rimraf',
+1646 silly addNameRange   [ '1.0.0',
+1646 silly addNameRange     '1.0.1',
+1646 silly addNameRange     '1.0.2',
+1646 silly addNameRange     '1.0.4',
+1646 silly addNameRange     '1.0.5',
+1646 silly addNameRange     '1.0.6',
+1646 silly addNameRange     '1.0.7',
+1646 silly addNameRange     '1.0.8',
+1646 silly addNameRange     '1.0.9',
+1646 silly addNameRange     '2.0.0',
+1646 silly addNameRange     '2.0.1',
+1646 silly addNameRange     '2.0.2',
+1646 silly addNameRange     '2.0.3',
+1646 silly addNameRange     '2.1.0',
+1646 silly addNameRange     '2.1.1',
+1646 silly addNameRange     '2.1.2',
+1646 silly addNameRange     '2.1.3',
+1646 silly addNameRange     '2.1.4',
+1646 silly addNameRange     '2.2.0',
+1646 silly addNameRange     '2.2.1',
+1646 silly addNameRange     '2.2.2',
+1646 silly addNameRange     '2.2.3',
+1646 silly addNameRange     '2.2.4',
+1646 silly addNameRange     '2.2.5',
+1646 silly addNameRange     '2.2.6',
+1646 silly addNameRange     '2.2.8' ] ]
+1647 verbose addNamed [ 'rimraf', '2.2.8' ]
+1648 verbose addNamed [ '2.2.8', '2.2.8' ]
+1649 silly lockFile b87241a4-rimraf-2-2-8 rimraf@2.2.8
+1650 verbose lock rimraf@2.2.8 C:\Users\toshiba\AppData\Roaming\npm-cache\b87241a4-rimraf-2-2-8.lock
+1651 silly lockFile b87241a4-rimraf-2-2-8 rimraf@2.2.8
+1652 silly lockFile b87241a4-rimraf-2-2-8 rimraf@2.2.8
+1653 silly lockFile 4ad82ad8-rimraf-2-x rimraf@2.x
+1654 silly lockFile 4ad82ad8-rimraf-2-x rimraf@2.x
+1655 http 200 https://registry.npmjs.org/marked
+1656 silly registry.get cb [ 200,
+1656 silly registry.get   { date: 'Wed, 09 Jul 2014 14:29:28 GMT',
+1656 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+1656 silly registry.get     etag: '"4UB6GT2AYAW1O5ILV28GSH8LD"',
+1656 silly registry.get     'content-type': 'application/json',
+1656 silly registry.get     'cache-control': 'max-age=30',
+1656 silly registry.get     'content-length': '43863',
+1656 silly registry.get     'accept-ranges': 'bytes',
+1656 silly registry.get     via: '1.1 varnish',
+1656 silly registry.get     age: '912',
+1656 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+1656 silly registry.get     'x-cache': 'HIT',
+1656 silly registry.get     'x-cache-hits': '1',
+1656 silly registry.get     'x-timer': 'S1404916167.894238,VS0,VE183',
+1656 silly registry.get     vary: 'Accept',
+1656 silly registry.get     'keep-alive': 'timeout=10, max=50',
+1656 silly registry.get     connection: 'Keep-Alive' } ]
+1657 silly addNameRange number 2 { name: 'marked', range: '>=0.2.8-0 <0.3.0-0', hasData: true }
+1658 silly addNameRange versions [ 'marked',
+1658 silly addNameRange   [ '0.0.1',
+1658 silly addNameRange     '0.0.2',
+1658 silly addNameRange     '0.0.3',
+1658 silly addNameRange     '0.0.4',
+1658 silly addNameRange     '0.0.5',
+1658 silly addNameRange     '0.0.6',
+1658 silly addNameRange     '0.0.7',
+1658 silly addNameRange     '0.0.8',
+1658 silly addNameRange     '0.0.9',
+1658 silly addNameRange     '0.1.0',
+1658 silly addNameRange     '0.1.1',
+1658 silly addNameRange     '0.1.2',
+1658 silly addNameRange     '0.1.3',
+1658 silly addNameRange     '0.1.4',
+1658 silly addNameRange     '0.1.5',
+1658 silly addNameRange     '0.1.6',
+1658 silly addNameRange     '0.1.7',
+1658 silly addNameRange     '0.1.8',
+1658 silly addNameRange     '0.1.9',
+1658 silly addNameRange     '0.2.0',
+1658 silly addNameRange     '0.2.1',
+1658 silly addNameRange     '0.2.2',
+1658 silly addNameRange     '0.2.2-1',
+1658 silly addNameRange     '0.2.3',
+1658 silly addNameRange     '0.2.4',
+1658 silly addNameRange     '0.2.4-1',
+1658 silly addNameRange     '0.2.5',
+1658 silly addNameRange     '0.2.6',
+1658 silly addNameRange     '0.2.7',
+1658 silly addNameRange     '0.2.8',
+1658 silly addNameRange     '0.2.9',
+1658 silly addNameRange     '0.2.10',
+1658 silly addNameRange     '0.3.0',
+1658 silly addNameRange     '0.3.1',
+1658 silly addNameRange     '0.3.2' ] ]
+1659 verbose addNamed [ 'marked', '0.2.10' ]
+1660 verbose addNamed [ '0.2.10', '0.2.10' ]
+1661 silly lockFile 956b78f1-marked-0-2-10 marked@0.2.10
+1662 verbose lock marked@0.2.10 C:\Users\toshiba\AppData\Roaming\npm-cache\956b78f1-marked-0-2-10.lock
+1663 silly lockFile 70546185-mjs-org-marked-marked-0-2-10-tgz https://registry.npmjs.org/marked/-/marked-0.2.10.tgz
+1664 verbose lock https://registry.npmjs.org/marked/-/marked-0.2.10.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\70546185-mjs-org-marked-marked-0-2-10-tgz.lock
+1665 verbose addRemoteTarball [ 'https://registry.npmjs.org/marked/-/marked-0.2.10.tgz',
+1665 verbose addRemoteTarball   'd5fd68271caae61c55d291d07bd5034cff5e73ee' ]
+1666 info retry fetch attempt 1 at 22:29:27
+1667 verbose fetch to= C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\tmp.tgz
+1668 http GET https://registry.npmjs.org/marked/-/marked-0.2.10.tgz
+1669 http 200 https://registry.npmjs.org/yui/-/yui-3.14.1.tgz
+1670 http 200 https://registry.npmjs.org/express
+1671 silly registry.get cb [ 200,
+1671 silly registry.get   { date: 'Wed, 09 Jul 2014 14:29:27 GMT',
+1671 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+1671 silly registry.get     etag: '"A3H9LQBD80P3QZB80CNNUCNI2"',
+1671 silly registry.get     'content-type': 'application/json',
+1671 silly registry.get     'cache-control': 'max-age=30',
+1671 silly registry.get     'content-length': '253712',
+1671 silly registry.get     'accept-ranges': 'bytes',
+1671 silly registry.get     via: '1.1 varnish',
+1671 silly registry.get     age: '135',
+1671 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+1671 silly registry.get     'x-cache': 'HIT',
+1671 silly registry.get     'x-cache-hits': '1',
+1671 silly registry.get     'x-timer': 'S1404916167.920655,VS0,VE1',
+1671 silly registry.get     vary: 'Accept',
+1671 silly registry.get     'keep-alive': 'timeout=10, max=50',
+1671 silly registry.get     connection: 'Keep-Alive' } ]
+1672 silly addNameRange number 2 { name: 'express', range: '>=3.1.2-0 <3.2.0-0', hasData: true }
+1673 silly addNameRange versions [ 'express',
+1673 silly addNameRange   [ '0.14.0',
+1673 silly addNameRange     '0.14.1',
+1673 silly addNameRange     '1.0.0',
+1673 silly addNameRange     '1.0.1',
+1673 silly addNameRange     '1.0.2',
+1673 silly addNameRange     '1.0.3',
+1673 silly addNameRange     '1.0.4',
+1673 silly addNameRange     '1.0.5',
+1673 silly addNameRange     '1.0.6',
+1673 silly addNameRange     '1.0.7',
+1673 silly addNameRange     '1.0.8',
+1673 silly addNameRange     '2.0.0',
+1673 silly addNameRange     '2.1.0',
+1673 silly addNameRange     '2.1.1',
+1673 silly addNameRange     '2.2.0',
+1673 silly addNameRange     '2.2.1',
+1673 silly addNameRange     '2.2.2',
+1673 silly addNameRange     '2.3.0',
+1673 silly addNameRange     '2.3.1',
+1673 silly addNameRange     '2.3.2',
+1673 silly addNameRange     '2.3.3',
+1673 silly addNameRange     '2.3.4',
+1673 silly addNameRange     '2.3.5',
+1673 silly addNameRange     '2.3.6',
+1673 silly addNameRange     '2.3.7',
+1673 silly addNameRange     '2.3.8',
+1673 silly addNameRange     '2.3.9',
+1673 silly addNameRange     '2.3.10',
+1673 silly addNameRange     '2.3.11',
+1673 silly addNameRange     '2.3.12',
+1673 silly addNameRange     '2.4.0',
+1673 silly addNameRange     '2.4.1',
+1673 silly addNameRange     '2.4.2',
+1673 silly addNameRange     '2.4.3',
+1673 silly addNameRange     '2.4.4',
+1673 silly addNameRange     '2.4.5',
+1673 silly addNameRange     '2.4.6',
+1673 silly addNameRange     '2.4.7',
+1673 silly addNameRange     '2.5.0',
+1673 silly addNameRange     '2.5.1',
+1673 silly addNameRange     '2.5.2',
+1673 silly addNameRange     '2.5.3',
+1673 silly addNameRange     '2.5.4',
+1673 silly addNameRange     '2.5.5',
+1673 silly addNameRange     '2.5.6',
+1673 silly addNameRange     '2.5.7',
+1673 silly addNameRange     '2.5.8',
+1673 silly addNameRange     '2.5.9',
+1673 silly addNameRange     '2.5.10',
+1673 silly addNameRange     '2.5.11',
+1673 silly addNameRange     '3.0.0',
+1673 silly addNameRange     '3.0.1',
+1673 silly addNameRange     '3.0.2',
+1673 silly addNameRange     '3.0.3',
+1673 silly addNameRange     '3.0.4',
+1673 silly addNameRange     '3.0.5',
+1673 silly addNameRange     '3.0.6',
+1673 silly addNameRange     '3.1.0',
+1673 silly addNameRange     '3.1.1',
+1673 silly addNameRange     '3.1.2',
+1673 silly addNameRange     '3.2.0',
+1673 silly addNameRange     '3.2.1',
+1673 silly addNameRange     '3.2.2',
+1673 silly addNameRange     '3.2.3',
+1673 silly addNameRange     '3.2.4',
+1673 silly addNameRange     '3.2.5',
+1673 silly addNameRange     '3.2.6',
+1673 silly addNameRange     '3.3.0',
+1673 silly addNameRange     '3.3.1',
+1673 silly addNameRange     '3.3.2',
+1673 silly addNameRange     '3.3.3',
+1673 silly addNameRange     '3.3.4',
+1673 silly addNameRange     '3.3.5',
+1673 silly addNameRange     '3.3.6',
+1673 silly addNameRange     '1.0.0-beta',
+1673 silly addNameRange     '1.0.0-beta2',
+1673 silly addNameRange     '1.0.0-rc',
+1673 silly addNameRange     '1.0.0-rc2',
+1673 silly addNameRange     '1.0.0-rc3',
+1673 silly addNameRange     '1.0.0-rc4',
+1673 silly addNameRange     '2.0.0-beta',
+1673 silly addNameRange     '2.0.0-beta2',
+1673 silly addNameRange     '2.0.0-beta3',
+1673 silly addNameRange     '2.0.0-rc',
+1673 silly addNameRange     '2.0.0-rc2',
+1673 silly addNameRange     '2.0.0-rc3',
+1673 silly addNameRange     '3.0.0-alpha1',
+1673 silly addNameRange     '3.0.0-alpha2',
+1673 silly addNameRange     '3.0.0-alpha3',
+1673 silly addNameRange     '3.0.0-alpha4',
+1673 silly addNameRange     '3.0.0-alpha5',
+1673 silly addNameRange     '3.0.0-beta1',
+1673 silly addNameRange     '3.0.0-beta2',
+1673 silly addNameRange     '3.0.0-beta3',
+1673 silly addNameRange     '3.0.0-beta4',
+1673 silly addNameRange     '3.0.0-beta6',
+1673 silly addNameRange     '3.0.0-beta7',
+1673 silly addNameRange     '3.0.0-rc1',
+1673 silly addNameRange     '3.0.0-rc2',
+1673 silly addNameRange     '3.0.0-rc3',
+1673 silly addNameRange     '3.0.0-rc4',
+1673 silly addNameRange     '3.0.0-rc5',
+1673 silly addNameRange     '3.3.7',
+1673 silly addNameRange     '3.3.8',
+1673 silly addNameRange     '3.4.0',
+1673 silly addNameRange     '3.4.1',
+1673 silly addNameRange     '3.4.2',
+1673 silly addNameRange     '3.4.3',
+1673 silly addNameRange     '3.4.4',
+1673 silly addNameRange     '3.4.5',
+1673 silly addNameRange     '3.4.6',
+1673 silly addNameRange     '3.4.7',
+1673 silly addNameRange     '3.4.8',
+1673 silly addNameRange     '4.0.0-rc1',
+1673 silly addNameRange     '4.0.0-rc2',
+1673 silly addNameRange     '3.5.0',
+1673 silly addNameRange     '4.0.0-rc3',
+1673 silly addNameRange     '4.0.0-rc4',
+1673 silly addNameRange     '3.5.1',
+1673 silly addNameRange     '4.0.0',
+1673 silly addNameRange     '3.5.2',
+1673 silly addNameRange     '4.1.0',
+1673 silly addNameRange     '4.1.1',
+1673 silly addNameRange     '3.5.3',
+1673 silly addNameRange     '4.1.2',
+1673 silly addNameRange     '3.6.0',
+1673 silly addNameRange     '4.2.0',
+1673 silly addNameRange     '3.7.0',
+1673 silly addNameRange     '3.8.0',
+1673 silly addNameRange     '4.3.0',
+1673 silly addNameRange     '4.3.1',
+1673 silly addNameRange     '3.8.1',
+1673 silly addNameRange     '4.3.2',
+1673 silly addNameRange     '3.9.0',
+1673 silly addNameRange     '4.4.0',
+1673 silly addNameRange     '4.4.1',
+1673 silly addNameRange     '3.10.0',
+1673 silly addNameRange     '3.10.1',
+1673 silly addNameRange     '3.10.2',
+1673 silly addNameRange     '3.10.3',
+1673 silly addNameRange     '3.10.4',
+1673 silly addNameRange     '4.4.2',
+1673 silly addNameRange     '3.10.5',
+1673 silly addNameRange     '4.4.3',
+1673 silly addNameRange     '3.11.0',
+1673 silly addNameRange     '4.4.4',
+1673 silly addNameRange     '3.12.0',
+1673 silly addNameRange     '3.12.1',
+1673 silly addNameRange     '4.4.5',
+1673 silly addNameRange     '3.13.0',
+1673 silly addNameRange     '4.5.0',
+1673 silly addNameRange     '4.5.1' ] ]
+1674 verbose addNamed [ 'express', '3.1.2' ]
+1675 verbose addNamed [ '3.1.2', '3.1.2' ]
+1676 silly lockFile 71c9dc33-express-3-1-2 express@3.1.2
+1677 verbose lock express@3.1.2 C:\Users\toshiba\AppData\Roaming\npm-cache\71c9dc33-express-3-1-2.lock
+1678 silly lockFile a59cc68a-js-org-express-express-3-1-2-tgz https://registry.npmjs.org/express/-/express-3.1.2.tgz
+1679 verbose lock https://registry.npmjs.org/express/-/express-3.1.2.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\a59cc68a-js-org-express-express-3-1-2-tgz.lock
+1680 verbose addRemoteTarball [ 'https://registry.npmjs.org/express/-/express-3.1.2.tgz',
+1680 verbose addRemoteTarball   '52a02c8db8f22bbfa0d7478d847cd45161f985f7' ]
+1681 info retry fetch attempt 1 at 22:29:28
+1682 verbose fetch to= C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\tmp.tgz
+1683 http GET https://registry.npmjs.org/express/-/express-3.1.2.tgz
+1684 http 200 https://registry.npmjs.org/marked/-/marked-0.2.10.tgz
+1685 verbose tar unpack C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\tmp.tgz
+1686 silly lockFile b383e323-67961-0-8323569865897298-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\package
+1687 verbose lock tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\package C:\Users\toshiba\AppData\Roaming\npm-cache\b383e323-67961-0-8323569865897298-package.lock
+1688 silly lockFile 6ed6de0a-67961-0-8323569865897298-tmp-tgz tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\tmp.tgz
+1689 verbose lock tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\tmp.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\6ed6de0a-67961-0-8323569865897298-tmp-tgz.lock
+1690 silly gunzTarPerm modes [ '755', '644' ]
+1691 silly gunzTarPerm extractEntry package.json
+1692 silly gunzTarPerm extractEntry .npmignore
+1693 silly gunzTarPerm extractEntry README.md
+1694 silly gunzTarPerm extractEntry LICENSE
+1695 silly gunzTarPerm extractEntry index.js
+1696 silly gunzTarPerm extractEntry Makefile
+1697 silly gunzTarPerm extractEntry lib/marked.js
+1698 silly gunzTarPerm extractEntry bin/marked
+1699 silly gunzTarPerm extractEntry man/marked.1
+1700 silly gunzTarPerm extractEntry component.json
+1701 silly lockFile b383e323-67961-0-8323569865897298-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\package
+1702 silly lockFile b383e323-67961-0-8323569865897298-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\package
+1703 silly lockFile 6ed6de0a-67961-0-8323569865897298-tmp-tgz tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\tmp.tgz
+1704 silly lockFile 6ed6de0a-67961-0-8323569865897298-tmp-tgz tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\tmp.tgz
+1705 verbose tar pack [ 'C:\\Users\\toshiba\\AppData\\Roaming\\npm-cache\\marked\\0.2.10\\package.tgz',
+1705 verbose tar pack   'C:\\Users\\toshiba\\AppData\\Local\\Temp\\npm-5916-8zmZmFUo\\1404916167961-0.8323569865897298\\package' ]
+1706 verbose tarball C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package.tgz
+1707 verbose folder C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\package
+1708 silly lockFile b383e323-67961-0-8323569865897298-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\package
+1709 verbose lock tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\package C:\Users\toshiba\AppData\Roaming\npm-cache\b383e323-67961-0-8323569865897298-package.lock
+1710 silly lockFile dc640933--cache-marked-0-2-10-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package.tgz
+1711 verbose lock tar://C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\dc640933--cache-marked-0-2-10-package-tgz.lock
+1712 silly lockFile b383e323-67961-0-8323569865897298-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\package
+1713 silly lockFile b383e323-67961-0-8323569865897298-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167961-0.8323569865897298\package
+1714 silly lockFile dc640933--cache-marked-0-2-10-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package.tgz
+1715 silly lockFile dc640933--cache-marked-0-2-10-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package.tgz
+1716 silly lockFile bd305c23--npm-cache-marked-0-2-10-package C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package
+1717 verbose lock C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package C:\Users\toshiba\AppData\Roaming\npm-cache\bd305c23--npm-cache-marked-0-2-10-package.lock
+1718 silly lockFile bd305c23--npm-cache-marked-0-2-10-package C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package
+1719 silly lockFile bd305c23--npm-cache-marked-0-2-10-package C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package
+1720 verbose tar unpack C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package.tgz
+1721 silly lockFile 5e292220--npm-cache-marked-0-2-10-package tar://C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package
+1722 verbose lock tar://C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package C:\Users\toshiba\AppData\Roaming\npm-cache\5e292220--npm-cache-marked-0-2-10-package.lock
+1723 silly lockFile dc640933--cache-marked-0-2-10-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package.tgz
+1724 verbose lock tar://C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\dc640933--cache-marked-0-2-10-package-tgz.lock
+1725 silly gunzTarPerm modes [ '755', '644' ]
+1726 silly gunzTarPerm extractEntry package.json
+1727 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+1728 silly gunzTarPerm extractEntry .npmignore
+1729 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+1730 silly gunzTarPerm extractEntry README.md
+1731 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+1732 silly gunzTarPerm extractEntry LICENSE
+1733 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+1734 silly gunzTarPerm extractEntry index.js
+1735 silly gunzTarPerm modified mode [ 'index.js', 438, 420 ]
+1736 silly gunzTarPerm extractEntry Makefile
+1737 silly gunzTarPerm modified mode [ 'Makefile', 438, 420 ]
+1738 silly gunzTarPerm extractEntry bin/marked
+1739 silly gunzTarPerm modified mode [ 'bin/marked', 438, 420 ]
+1740 silly gunzTarPerm extractEntry component.json
+1741 silly gunzTarPerm modified mode [ 'component.json', 438, 420 ]
+1742 silly gunzTarPerm extractEntry lib/marked.js
+1743 silly gunzTarPerm modified mode [ 'lib/marked.js', 438, 420 ]
+1744 silly gunzTarPerm extractEntry man/marked.1
+1745 silly gunzTarPerm modified mode [ 'man/marked.1', 438, 420 ]
+1746 silly lockFile 5e292220--npm-cache-marked-0-2-10-package tar://C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package
+1747 silly lockFile 5e292220--npm-cache-marked-0-2-10-package tar://C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package
+1748 silly lockFile dc640933--cache-marked-0-2-10-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package.tgz
+1749 silly lockFile dc640933--cache-marked-0-2-10-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package.tgz
+1750 verbose chmod C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package.tgz 644
+1751 silly chown skipping for windows C:\Users\toshiba\AppData\Roaming\npm-cache\marked\0.2.10\package.tgz
+1752 silly lockFile 70546185-mjs-org-marked-marked-0-2-10-tgz https://registry.npmjs.org/marked/-/marked-0.2.10.tgz
+1753 silly lockFile 70546185-mjs-org-marked-marked-0-2-10-tgz https://registry.npmjs.org/marked/-/marked-0.2.10.tgz
+1754 silly lockFile 956b78f1-marked-0-2-10 marked@0.2.10
+1755 silly lockFile 956b78f1-marked-0-2-10 marked@0.2.10
+1756 silly lockFile 42f986f3-marked-0-2-8 marked@~0.2.8
+1757 silly lockFile 42f986f3-marked-0-2-8 marked@~0.2.8
+1758 http 200 https://registry.npmjs.org/express/-/express-3.1.2.tgz
+1759 verbose tar unpack C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\tmp.tgz
+1760 silly lockFile 9dbaf1d1-726-0-055616445606574416-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\package
+1761 verbose lock tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\package C:\Users\toshiba\AppData\Roaming\npm-cache\9dbaf1d1-726-0-055616445606574416-package.lock
+1762 silly lockFile 595aa7a4-726-0-055616445606574416-tmp-tgz tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\tmp.tgz
+1763 verbose lock tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\tmp.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\595aa7a4-726-0-055616445606574416-tmp-tgz.lock
+1764 silly gunzTarPerm modes [ '755', '644' ]
+1765 silly gunzTarPerm extractEntry package.json
+1766 silly gunzTarPerm extractEntry .npmignore
+1767 silly gunzTarPerm extractEntry LICENSE
+1768 silly gunzTarPerm extractEntry client.js
+1769 silly gunzTarPerm extractEntry index.js
+1770 silly gunzTarPerm extractEntry test.js
+1771 silly gunzTarPerm extractEntry .travis.yml
+1772 silly gunzTarPerm extractEntry History.md
+1773 silly gunzTarPerm extractEntry Makefile
+1774 silly gunzTarPerm extractEntry bin/express
+1775 silly gunzTarPerm extractEntry Readme.md
+1776 silly gunzTarPerm extractEntry lib/application.js
+1777 silly gunzTarPerm extractEntry lib/express.js
+1778 silly gunzTarPerm extractEntry lib/middleware.js
+1779 silly gunzTarPerm extractEntry lib/request.js
+1780 silly gunzTarPerm extractEntry lib/response.js
+1781 silly gunzTarPerm extractEntry lib/utils.js
+1782 silly gunzTarPerm extractEntry lib/view.js
+1783 silly gunzTarPerm extractEntry lib/router/index.js
+1784 silly gunzTarPerm extractEntry lib/router/route.js
+1785 silly lockFile 9dbaf1d1-726-0-055616445606574416-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\package
+1786 silly lockFile 9dbaf1d1-726-0-055616445606574416-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\package
+1787 silly lockFile 595aa7a4-726-0-055616445606574416-tmp-tgz tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\tmp.tgz
+1788 silly lockFile 595aa7a4-726-0-055616445606574416-tmp-tgz tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\tmp.tgz
+1789 verbose tar pack [ 'C:\\Users\\toshiba\\AppData\\Roaming\\npm-cache\\express\\3.1.2\\package.tgz',
+1789 verbose tar pack   'C:\\Users\\toshiba\\AppData\\Local\\Temp\\npm-5916-8zmZmFUo\\1404916168726-0.055616445606574416\\package' ]
+1790 verbose tarball C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package.tgz
+1791 verbose folder C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\package
+1792 silly lockFile 9dbaf1d1-726-0-055616445606574416-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\package
+1793 verbose lock tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\package C:\Users\toshiba\AppData\Roaming\npm-cache\9dbaf1d1-726-0-055616445606574416-package.lock
+1794 silly lockFile a43355f7--cache-express-3-1-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package.tgz
+1795 verbose lock tar://C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\a43355f7--cache-express-3-1-2-package-tgz.lock
+1796 silly lockFile 9dbaf1d1-726-0-055616445606574416-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\package
+1797 silly lockFile 9dbaf1d1-726-0-055616445606574416-package tar://C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916168726-0.055616445606574416\package
+1798 silly lockFile a43355f7--cache-express-3-1-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package.tgz
+1799 silly lockFile a43355f7--cache-express-3-1-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package.tgz
+1800 silly lockFile c8fbaa85--npm-cache-express-3-1-2-package C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package
+1801 verbose lock C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package C:\Users\toshiba\AppData\Roaming\npm-cache\c8fbaa85--npm-cache-express-3-1-2-package.lock
+1802 silly lockFile c8fbaa85--npm-cache-express-3-1-2-package C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package
+1803 silly lockFile c8fbaa85--npm-cache-express-3-1-2-package C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package
+1804 verbose tar unpack C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package.tgz
+1805 silly lockFile 0fa54769--npm-cache-express-3-1-2-package tar://C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package
+1806 verbose lock tar://C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package C:\Users\toshiba\AppData\Roaming\npm-cache\0fa54769--npm-cache-express-3-1-2-package.lock
+1807 silly lockFile a43355f7--cache-express-3-1-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package.tgz
+1808 verbose lock tar://C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package.tgz C:\Users\toshiba\AppData\Roaming\npm-cache\a43355f7--cache-express-3-1-2-package-tgz.lock
+1809 silly gunzTarPerm modes [ '755', '644' ]
+1810 silly gunzTarPerm extractEntry package.json
+1811 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+1812 silly gunzTarPerm extractEntry .npmignore
+1813 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+1814 silly gunzTarPerm extractEntry LICENSE
+1815 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+1816 silly gunzTarPerm extractEntry index.js
+1817 silly gunzTarPerm modified mode [ 'index.js', 438, 420 ]
+1818 silly gunzTarPerm extractEntry client.js
+1819 silly gunzTarPerm modified mode [ 'client.js', 438, 420 ]
+1820 silly gunzTarPerm extractEntry test.js
+1821 silly gunzTarPerm modified mode [ 'test.js', 438, 420 ]
+1822 silly gunzTarPerm extractEntry .travis.yml
+1823 silly gunzTarPerm modified mode [ '.travis.yml', 438, 420 ]
+1824 silly gunzTarPerm extractEntry Readme.md
+1825 silly gunzTarPerm modified mode [ 'Readme.md', 438, 420 ]
+1826 silly gunzTarPerm extractEntry Makefile
+1827 silly gunzTarPerm modified mode [ 'Makefile', 438, 420 ]
+1828 silly gunzTarPerm extractEntry lib/application.js
+1829 silly gunzTarPerm modified mode [ 'lib/application.js', 438, 420 ]
+1830 silly gunzTarPerm extractEntry lib/express.js
+1831 silly gunzTarPerm modified mode [ 'lib/express.js', 438, 420 ]
+1832 silly gunzTarPerm extractEntry lib/middleware.js
+1833 silly gunzTarPerm modified mode [ 'lib/middleware.js', 438, 420 ]
+1834 silly gunzTarPerm extractEntry lib/request.js
+1835 silly gunzTarPerm modified mode [ 'lib/request.js', 438, 420 ]
+1836 silly gunzTarPerm extractEntry lib/response.js
+1837 silly gunzTarPerm modified mode [ 'lib/response.js', 438, 420 ]
+1838 silly gunzTarPerm extractEntry lib/utils.js
+1839 silly gunzTarPerm modified mode [ 'lib/utils.js', 438, 420 ]
+1840 silly gunzTarPerm extractEntry lib/view.js
+1841 silly gunzTarPerm modified mode [ 'lib/view.js', 438, 420 ]
+1842 silly gunzTarPerm extractEntry lib/router/index.js
+1843 silly gunzTarPerm modified mode [ 'lib/router/index.js', 438, 420 ]
+1844 silly gunzTarPerm extractEntry lib/router/route.js
+1845 silly gunzTarPerm modified mode [ 'lib/router/route.js', 438, 420 ]
+1846 silly gunzTarPerm extractEntry History.md
+1847 silly gunzTarPerm modified mode [ 'History.md', 438, 420 ]
+1848 silly gunzTarPerm extractEntry bin/express
+1849 silly gunzTarPerm modified mode [ 'bin/express', 438, 420 ]
+1850 silly lockFile 0fa54769--npm-cache-express-3-1-2-package tar://C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package
+1851 silly lockFile 0fa54769--npm-cache-express-3-1-2-package tar://C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package
+1852 silly lockFile a43355f7--cache-express-3-1-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package.tgz
+1853 silly lockFile a43355f7--cache-express-3-1-2-package-tgz tar://C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package.tgz
+1854 verbose chmod C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package.tgz 644
+1855 silly chown skipping for windows C:\Users\toshiba\AppData\Roaming\npm-cache\express\3.1.2\package.tgz
+1856 silly lockFile a59cc68a-js-org-express-express-3-1-2-tgz https://registry.npmjs.org/express/-/express-3.1.2.tgz
+1857 silly lockFile a59cc68a-js-org-express-express-3-1-2-tgz https://registry.npmjs.org/express/-/express-3.1.2.tgz
+1858 silly lockFile 71c9dc33-express-3-1-2 express@3.1.2
+1859 silly lockFile 71c9dc33-express-3-1-2 express@3.1.2
+1860 silly lockFile bc2fe255-express-3-1-2 express@~3.1.2
+1861 silly lockFile bc2fe255-express-3-1-2 express@~3.1.2
+1862 silly lockFile 1966dbe9-try-npmjs-org-yui-yui-3-14-1-tgz https://registry.npmjs.org/yui/-/yui-3.14.1.tgz
+1863 silly lockFile 1966dbe9-try-npmjs-org-yui-yui-3-14-1-tgz https://registry.npmjs.org/yui/-/yui-3.14.1.tgz
+1864 silly lockFile 3eac3aad-yui-3-14-1 yui@3.14.1
+1865 silly lockFile 3eac3aad-yui-3-14-1 yui@3.14.1
+1866 verbose about to build E:\doc\node_modules\grunt-contrib-yuidoc\node_modules\yuidocjs
+1867 info E:\doc\node_modules\grunt-contrib-yuidoc\node_modules\yuidocjs unbuild
+1868 info preuninstall yuidocjs@0.3.50
+1869 info uninstall yuidocjs@0.3.50
+1870 verbose false,E:\doc\node_modules,E:\doc\node_modules\grunt-contrib-yuidoc\node_modules unbuild yuidocjs@0.3.50
+1871 verbose E:\doc\node_modules\grunt-contrib-yuidoc\node_modules\.bin,[object Object] binRoot
+1872 info postuninstall yuidocjs@0.3.50
+1873 verbose about to build E:\doc\node_modules\grunt-contrib-yuidoc
+1874 info E:\doc\node_modules\grunt-contrib-yuidoc unbuild
+1875 info preuninstall grunt-contrib-yuidoc@0.5.2
+1876 info uninstall grunt-contrib-yuidoc@0.5.2
+1877 verbose true,E:\doc\node_modules,E:\doc\node_modules unbuild grunt-contrib-yuidoc@0.5.2
+1878 info postuninstall grunt-contrib-yuidoc@0.5.2
+1879 error Error: shasum check failed for C:\Users\toshiba\AppData\Local\Temp\npm-5916-8zmZmFUo\1404916167568-0.7858612013515085\tmp.tgz
+1879 error Expected: 87ec1c20d91c12f579ff64f638eeb91900129183
+1879 error Actual:   dc1e005e76255b9a28de3fdee00a759190eb913c
+1879 error From:     https://registry.npmjs.org/yui/-/yui-3.14.1.tgz
+1879 error     at D:\program file\nodejs\node_modules\npm\node_modules\sha\index.js:38:8
+1879 error     at ReadStream.<anonymous> (D:\program file\nodejs\node_modules\npm\node_modules\sha\index.js:85:7)
+1879 error     at ReadStream.EventEmitter.emit (events.js:117:20)
+1879 error     at _stream_readable.js:920:16
+1879 error     at process._tickCallback (node.js:415:13)
+1880 error If you need help, you may report this *entire* log,
+1880 error including the npm and node versions, at:
+1880 error     <http://github.com/npm/npm/issues>
+1881 error System Windows_NT 6.1.7601
+1882 error command "D:\\program file\\nodejs\\\\node.exe" "D:\\program file\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "grunt-contrib-yuidoc" "--save-dev"
+1883 error cwd E:\doc
+1884 error node -v v0.10.26
+1885 error npm -v 1.4.3
+1886 verbose exit [ 1, true ]
