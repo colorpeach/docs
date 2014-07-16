@@ -11,14 +11,14 @@ var User = {};
 User.fetch_user_docs = function(req,res){
     doc.query({user:req.query.owner,auth:'public'},function(list){
         res.end(baseRes({docs:list}));
-    },{content:0});
+    },{content:0,thumbnail:0});
 }
 
 //获取用户创建的文档
 User.get_user_docs = function(req,res){
     doc.query({user:req.session.user.login},function(list){
         res.end(baseRes({docs:list}));
-    },{content:0});
+    },{content:0,thumbnail:0});
 }
 
 //获取用户创建的幻灯片
@@ -51,7 +51,7 @@ User.get_user_orgs_docs = function(req,res){
         var l = list.map(function(n){ return n.org;});
         orgDoc.queryDocs({org:{$in:l}},function(list){
             res.end(baseRes({docs:list}));
-        },{content:0})
+        },{content:0,thumbnail:0})
     });
 }
 
