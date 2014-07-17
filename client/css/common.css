@@ -867,6 +867,7 @@ input:focus{
 
 .form-inline .line-input{
 	display:inline-block;
+	vertical-align:top;
 }
 
 .form-inline label{

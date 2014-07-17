@@ -3,6 +3,7 @@ var doc = require('../controller/doc.js');
 var deck = require('../controller/deck.js');
 var user = require('../controller/user.js');
 var page = require('../controller/page.js');
+var tools = require('../controller/tools.js');
 
 var settings = require('../settings');
 var authPath = settings.authPath;
@@ -33,7 +34,7 @@ module.exports = function(app){
             
             next();
         }else{
-            res.render('notfound');
+            res.render('notfound',{user:req.session.user});
         }
     });
     
@@ -62,7 +63,7 @@ module.exports = function(app){
     app.get('/doc/:user/:doc',page.doc_User_Doc);
     
     //box-shadow编辑器
-    app.get('/boxshadoweditor',page.boxshadoweditor);
+    app.get('/tools/boxshadoweditor',tools.boxshadoweditor);
     
     
      //获取用户公开文档

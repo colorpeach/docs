@@ -8,7 +8,7 @@
     bottom:10px;
     right:15px;
     width:500px;
-    border-left:1px solid #ccc;
+    border-left:1px solid #ddd;
     padding:10px 10px 10px 30px;
     background-color:#fff;
     z-index:1;
@@ -54,9 +54,13 @@
 }
 
 .account-left{
-    border-right:1px solid #ccc;
-    width:280px;
+    width:220px;
     float:left;
+    background-image: -webkit-linear-gradient(right, #f6f6f6 0%, #fff 8px);
+    background-image: -moz-linear-gradient(right, #f6f6f6 0%, #fff 8px);
+    background-image: linear-gradient(to left, #f6f6f6 0%, #fff 8px);
+    box-shadow: inset -1px 0 0 #eee;
+    overflow:hidden;
 }
 
 .account-info{
@@ -90,59 +94,22 @@
 .slide-tabs li{
     display:block;
     cursor:pointer;
-    padding:10px;
-    border-bottom: 1px solid #ddd;
+    padding:10px 10px 10px 75px;
+    margin-right: 5px;
 }
 
-.slide-tabs li.active,
-.item-list li.active{
+.slide-tabs li.active{
     position:relative;
-}
-
-.slide-tabs li.active:before,
-.item-list li.active:before{
-    display:block;
-    content:" ";
-    position:absolute;
-    right:-1px;
-    top: 0;
-    height: 0;
-    width: 0;
-    bottom:0;
-    margin:auto;
-    border-width: 10px 10px 10px 0;
+    background:#fff;
+    margin-right: 0;
     border-style:solid;
-    border-color:rgba(255,255,255,0) #ccc rgba(255,255,255,0) rgba(255,255,255,0);
-    z-index:2;
-}
-
-.slide-tabs li.active:after,
-.item-list li.active:after{
-    display:block;
-    content:" ";
-    position:absolute;
-    right:-1px;
-    top: 0;
-    height: 0;
-    width: 0;
-    bottom:0;
-    margin:auto;
-    border-width: 8px 8px 8px 0;
-    border-style:solid;
-    border-color:rgba(255,255,255,0) #fff rgba(255,255,255,0) rgba(255,255,255,0);
-    z-index:2;
+    border-width:1px 2px 1px 0;
+    border-color:#eee transparent #eee #ddd;
+    box-shadow: -1px 0 3px rgba(0,0,0,0.1);
 }
 
 .account-right{
-    margin-left:300px;
-}
-
-.item-list li.active:before{
-    right:499px;
-}
-
-.item-list li.active:after{
-    right:499px;
+    margin-left:240px;
 }
 
 .item-list,.item-list ul{
@@ -155,6 +122,18 @@
     border-bottom:1px solid #ddd;
     display:block;
     position: relative;
+}
+
+.item-list li.active:before{
+    position: absolute;
+    top: 0;
+    right: 499px;
+    width: 1px;
+    height: 100%;
+    background-color: #fff;
+    content: "";
+    display: block;
+    z-index: 99;
 }
 
 .item-header{
@@ -175,8 +154,4 @@
 
 li:hover{
     background:#fafafa;
-}
-
-li.active{
-    border-left:3px solid #ddd;
 }

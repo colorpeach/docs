@@ -99,12 +99,5 @@ page.doc_User_Doc = function(req,res){
     });
 }
 
-//box-shadow编辑器
-page.boxshadoweditor = function(req,res){
-    res.render('boxshadoweditor',{
-        user:req.session.user
-    });
-}
-
 module.exports = page;
 

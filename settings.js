@@ -29,7 +29,7 @@ module.exports = {
         "account",
         "slide",
         "doc",
-        "boxshadoweditor"
+        "tools"
     ],
     //静态文件路径
     staticPath:[
