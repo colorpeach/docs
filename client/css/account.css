@@ -141,8 +141,20 @@
     height: 54px;
 }
 
+.item-list .opera-box{
+    margin-top:5px;
+}
+
 .item-list .opera-box a{
-    margin-left:10px;
+    margin-right:10px;
+}
+
+.opera-box a{
+    color:#ddd;
+}
+
+.opera-box:hover a{
+    color:#428bca;
 }
 
 .create-org-box>div,

@@ -74,7 +74,7 @@
             return $.map(list,function(n){
                 var $li = $("<li>"),
                     html = '<a href="/'+type+'/'+n.user+'/'+n.title+'">'+n.title+'</a>'+
-                            '<div class="pull-right opera-box">'+
+                            '<div class="opera-box">'+
                             '<a href="/'+edit+'?_id='+n._id+'" data-tip="编辑">'+
                                 '<span class="icon-pencil"></span>'+
                             '</a>'+
@@ -113,14 +113,16 @@
             return $.map(list,function(n){
                 var $li = $('<li>'),
                     html = '<p>组织名称：'+n.name+
-                           ' <a href="javascript:;" class="member-item" data-tip="成员列表">'+
-                           '<span class="icon-users"></span>'+
-                           '</a>'+
                            '</p>'+
                            '<p>组织代码：'+n.code+
                            '</p>'+
                            '<span>组织密码：'+n.password+
-                           '</span>';
+                           '</span>'+
+                           '<div class="opera-box">'+
+                           ' <a href="javascript:;" class="member-item" data-tip="成员列表">'+
+                           '<span class="icon-users"></span>'+
+                           '</a>'+
+                           '</div>';
                 return $li.html(html).data('org',n);
             });
         },
