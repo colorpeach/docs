@@ -174,6 +174,36 @@
 })();
 
 (function(){
+    $('body').on("click", function(e){
+        var x = e.pageX;
+        var y = e.pageY;
+        var $this = $(this);
+        var r = 50;
+
+        var $svg = $('<svg class="circle-effect"><circle fill="rgba(0,0,0,.1)" cx="'+r+'" cy="'+r+'" r="'+0+'"></circle>');
+        $svg.css({top:y-r,left:x-r});
+        $this.append($svg);
+
+        var c = $svg.find("circle");
+            c.animate(
+                {
+                    "r" : r
+                },
+                {
+                    duration: 400,
+                    step : function(val){
+                        c.attr("r", val);
+                        c.attr("fill",'rgba(0,0,0,'+(50-val)*3/500+')');
+                    },
+                    done:function(){
+                        $svg.remove();
+                    }
+                }
+            );
+    });
+})();
+
+(function(){
     /**
     *@name docsajax
     *@param loading {string} 'loading...'
