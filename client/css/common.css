@@ -956,7 +956,7 @@ body{
 }
 
 .circle-effect{
-	position:fixed;
+	position:absolute;
 	height:100px;
 	width:100px;
 	z-index:2000;
