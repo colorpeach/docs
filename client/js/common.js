@@ -800,5 +800,5 @@
 
 
 String.prototype.escapeHTML = function () {
-    return this.replace(/&/g,'&amp;').replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+    return this.replace(/<(\/?script.*?)>/g,'&lt;$1&gt;');
 };
