@@ -7,7 +7,7 @@
     var objectId = $("#doc-date").data("id");
     $('#doc-date').text('创建时间：'+new Date(parseInt(objectId.slice(0,8),16)*1000));
     
-    $view.append(converter.makeHtml(content));
+    $view.append(converter.makeHtml(content).escapeHTML());
     
     //滚动效果
     var prev;

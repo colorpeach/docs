@@ -17,7 +17,7 @@
         $title:$('#title'),
         converter:new Showdown.converter(),
         toView:function(con){
-            this.$view.html(this.converter.makeHtml(con));
+            this.$view.html(this.converter.makeHtml(con).escapeHTML());
         },
         generateFileLink:function(){
             if(doc._id){

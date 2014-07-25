@@ -174,17 +174,23 @@
 })();
 
 (function(){
+    var circleTimer;
     $('body').on("click", function(e){
         var x = e.pageX;
         var y = e.pageY;
         var $this = $(this);
         var r = 50;
 
-        var $svg = $('<svg class="circle-effect"><circle fill="rgba(0,0,0,.1)" cx="'+r+'" cy="'+r+'" r="'+0+'"></circle>');
-        $svg.css({top:y-r,left:x-r});
-        $this.append($svg);
-
-        var c = $svg.find("circle");
+        if(circleTimer){
+            clearTimeout(circleTimer);
+        }
+        
+        circleTimer = setTimeout(function(){
+            var $svg = $('<svg class="circle-effect"><circle fill="rgba(0,0,0,.1)" cx="'+r+'" cy="'+r+'" r="'+0+'"></circle>');
+            $svg.css({top:y-r,left:x-r});
+            $this.append($svg);
+    
+            var c = $svg.find("circle");
             c.animate(
                 {
                     "r" : r
@@ -200,6 +206,8 @@
                     }
                 }
             );
+            
+        },150);
     });
 })();
 
@@ -508,10 +516,10 @@
         _submitBind:function(){
             var self = this;
             self.$el.off('keydown.inputBox');
-            self.$el.on('keydown.inputBox','input,textarea',function(e){
+            self.$el.on('keydown.inputBox','input,textarea,select',function(e){
                 if(e.keyCode === 13){
                     var $this = $(this),
-                        $ipt = self.$el.find('input:enabled,textarea:enabled');
+                        $ipt = self.$el.find('input:enabled,textarea:enabled,select:enabled');
                     
                     if($this.is($ipt.filter(":last"))){
                         self._submitButton.click();
@@ -526,10 +534,10 @@
             this._submitBind();
         },
         focus:function(){
-            this.$el.find('input:enabled:visible,textarea:enabled:visible').eq(0).focus();
+            this.$el.find('input:enabled:visible,textarea:enabled:visible,select:enabled:visible').eq(0).focus();
         },
         clear:function(){
-            this.$el.find('input,textarea').removeClass('error').val('');
+            this.$el.find('input,textarea,select').removeClass('error').val('');
         },
         destroy:function(){
             
@@ -551,7 +559,7 @@
                 results = [],
                 opts = opts || {};
             
-            this.$el.find('input').each(function(i,n){
+            this.$el.find('input,textarea,select').each(function(i,n){
                 var $n = $(n),
                     val = $.trim($n.val()),
                     name = $n.attr('name') || $n.attr('id'),
@@ -559,7 +567,7 @@
                     
                 $n.removeClass('error');
                 if(name){
-                    type !== 'valid' && (data[name] = val);
+                    type !== 'valid' && (data[name] = val.escapeHTML());
                     //get the validator
                     if((type === 'valid' || opts.valid) && name in self._validator){
                         result = self._validator[name](val,data);
@@ -789,3 +797,8 @@
         }
     };
 })();
+
+
+String.prototype.escapeHTML = function () {
+    return this.replace(/&/g,'&amp;').replace(/>/g,'&gt;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+};
