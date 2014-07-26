@@ -1,21 +1,40 @@
-.doc-item{
-    padding:0 15px;
-    margin-bottom:15px;
-    width:25%;
+.tab-item{
+    padding: 0 15px;
+    width:33.333333333%;
     float:left;
 }
 
-.doc-item>div{
-    border:1px solid #ddd;
+.tab-head{
     padding:10px;
-    margin-top:-1px;
 }
 
-.doc-item>div>div{
-    height:20px;
+.doc-item{
+    padding:10px 5px;
+    border-bottom:1px solid #ddd;
+}
+
+.doc-item:hover{
+    background-color:#eee;
 }
 
 .box-header{
     margin: 15px;
     padding: 5px 0;
+}
+
+.tool-item{
+    border:1px solid #ddd;
+}
+
+.tool-item:hover{
+    background-color:#eee;
+}
+
+.tool-detail{
+    padding:10px;
+    height:100px;
+}
+
+.tool-title{
+    padding:10px;
 }

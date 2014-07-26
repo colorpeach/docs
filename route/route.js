@@ -63,7 +63,7 @@ module.exports = function(app){
     app.get('/doc/:user/:doc',page.doc_User_Doc);
     
     //box-shadow编辑器
-    app.get('/tools/boxshadoweditor',tools.boxshadoweditor);
+    app.get('/tools/:tool',tools.page);
     
     
      //获取用户公开文档
@@ -74,6 +74,9 @@ module.exports = function(app){
 
     //获取用户创建的幻灯片
     app.get('/get/user/decks',user.get_user_decks);
+    
+     //获取用户公开幻灯片
+    app.get('/fetch/user/decks',user.fetch_user_decks);
 
     //获取用户创建和加入的组织
     app.get('/get/user/orgs',user.get_user_orgs);

@@ -14,6 +14,12 @@ User.fetch_user_docs = function(req,res){
     },{content:0,thumbnail:0});
 }
 
+User.fetch_user_decks = function(req,res){
+    deck.query({user:req.query.owner},function(list){
+        res.end(baseRes({decks:list}));
+    },{content:0,thumbnail:0});
+}
+
 //获取用户创建的文档
 User.get_user_docs = function(req,res){
     doc.query({user:req.session.user.login},function(list){

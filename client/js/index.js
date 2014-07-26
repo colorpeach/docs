@@ -1,29 +1,35 @@
 $.docsajax({
-    url:'/get/user/orgs/docs',
+    url:'/fetch/user/docs',
     success:function(d){
-      $('.org-doc').html(docHtml(d.docs));
+      $('#doc').append(docHtml(d.docs));
     }
 });
 
 $.docsajax({
-    url:'/get/user/docs',
+    url:'/fetch/user/decks',
     success:function(d){
-      $('.private-doc').html(docHtml(d.docs));
+      $('#slide').append(docHtml(d.decks,'deck'));
     }
 });
 
-function docHtml(l){
+// $.docsajax({
+//     url:'/get/user/docs',
+//     success:function(d){
+//       $('#doc').html(docHtml(d.docs));
+//     }
+// });
+
+function docHtml(l,t){
     return $.map(l,function(doc){
         return ['<div class="doc-item">',
-                '<div class="panel panel-default">',
-                '<div class="panel-heading"><a href="',
-                  'doc/'+doc.user+'/'+doc.title,
+                '<a href="',
+                t === 'doc' ? 'doc' : 'slide',
+                '/'+doc.user+'/'+doc.title,
                 '">',
                   doc.title,
-                '</a></div>',
-                '<div class="panel-body">',
+                '</a>',
                 '<a href="/account/'+doc.user+'" class="user-span pull-right">',
                 '<span class="icon-user"></span>'+doc.user,
-                '</a></div></div></div>'].join("");
+                '</a></div>'].join("");
       }).join("");
 }

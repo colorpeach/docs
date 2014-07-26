@@ -7,9 +7,17 @@ var page = {};
 
 //首页
 page.index = function(req,res){
-    doc.query({auth:"public"},function(list){
-        res.render('index',{docs:list,user:req.session.user});
-    },{content:0,thumbnail:0});
+    var data = {
+        user:req.session.user,
+        tools:[
+            {
+                'title':'boxshadow图标工具',
+                'name':'boxshadoweditor',
+                'img':''
+            }
+        ]
+    };
+    res.render('index',data);
 }
 
 //登陆页面

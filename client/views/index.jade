@@ -4,24 +4,18 @@ block css
   link(rel='stylesheet', href='/css/index.css')
   
 block content
-  div.clearfix
-    each doc in docs
-      div.doc-item
-        div.panel.panel-default
-          div.panel-heading
-              a(href='/doc/'+doc.user+'/'+doc.title) #{doc.title}
-          div.panel-body
-            a.user-span.pull-right(href='/account/#{doc.user}')
-              span.icon-user
-              |  #{doc.user}
-  if user
-    div.clearfix
-      h3.box-header 私有文档
-      div.private-doc
-    div.clearfix
-      h3.box-header 组织文档
-      div.org-doc
+  div#doc.tab-item
+    div.tab-head 文档
+  div#slide.tab-item
+    div.tab-head 幻灯片
+  div.tab-item
+    div.tab-head 工具
+    each tool in tools
+      div.tool-item
+        a(href='/tools/'+tool.name)
+          div.tool-detail
+        div.tool-title
+          a(href='/tools/'+tool.name) #{tool.title}
   
 block script
-  if user
     script(type='text/javascript',src='/js/index.js')

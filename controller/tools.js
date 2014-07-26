@@ -1,8 +1,9 @@
 var tools = {}
 
 //box-shadow编辑器
-tools.boxshadoweditor = function(req,res){
-    res.render('tools/boxshadoweditor/boxshadoweditor',{
+tools.page = function(req,res){
+    var name = req.params.tool;
+    res.render('tools/'+name+'/'+name,{
         user:req.session.user
     });
 }
