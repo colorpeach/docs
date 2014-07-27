@@ -20,8 +20,9 @@ block content
     div.box-body.clearfix
       each tool in tools
         div.tool-item
-          a(href='/tools/'+tool.name)
+          a.tool-link(href='/tools/'+tool.name)
             div.tool-detail
+              span(class='#{tool.img}')
           div.tool-title
             a(href='/tools/'+tool.name) #{tool.title}
   

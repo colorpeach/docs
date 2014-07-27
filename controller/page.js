@@ -13,17 +13,17 @@ page.index = function(req,res){
             {
                 'title':'boxshadow图标工具',
                 'name':'boxshadoweditor',
-                'img':''
+                'img':'mark-box-shadow'
             },
             {
                 'title':'markdown编辑器',
                 'name':'edit',
-                'img':''
+                'img':'mark-markdown'
             },
             {
                 'title':'slide幻灯片编辑器',
                 'name':'deck',
-                'img':''
+                'img':'mark-slide'
             }
         ]
     };

@@ -58,15 +58,79 @@
     border-left-width:1px;
 }
 
-.tool-item:hover{
-    background-color:#eee;
+.tool-item .tool-link{
+    text-decoration:none;
+}
+
+.tool-item:hover .tool-detail{
+    background:#428bca;
+    transition:all 0.3s;
 }
 
 .tool-detail{
     padding:10px;
     height:100px;
+    font-size: 4em;
+    color: #fff;
+    background: #eee;
+    text-align: center;
+    line-height: 80px;
 }
 
 .tool-title{
     padding:10px;
+}
+
+.mark-box-shadow{
+    position:relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+
+.mark-box-shadow:before{
+    width:0;
+    height:0;
+    border:.5em solid;
+    display:block;
+    content:' ';
+    position:absolute;
+}
+
+.mark-box-shadow:after{
+    width: 1em;
+    height: 1em;
+    border-style: solid;
+    border-width: 0 .1em .1em 0;
+    display: block;
+    content: ' ';
+    position: absolute;
+    top: .2em;
+    left: .2em;
+}
+
+.mark-markdown{
+    position:relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    font-size:1.2em;
+}
+
+.mark-markdown:before{
+    content:"M"
+}
+
+.mark-slide{
+    position:relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    font-size:1.2em;
+}
+
+.mark-slide:before{
+    content:"slide";
+    position: absolute;
+    left: -.5em;
 }
