@@ -2,7 +2,7 @@ $.docsajax({
     url:'/fetch/user/docs',
     wrap:$('#doc'),
     success:function(d){
-      $('#doc').append(docHtml(d.docs));
+      $('#doc').append(docHtml(d.docs,'doc'));
     }
 });
 
