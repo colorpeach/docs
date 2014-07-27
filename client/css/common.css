@@ -962,6 +962,20 @@ body{
 	z-index:2000;
 }
 
+.overlay{
+  position:fixed;
+  display:none;
+  padding:10px;
+  border:10px solid #eee;
+  background-color:#fff;
+  z-index:5;
+  font-size:12px;
+}
+
+.overlay li{
+  list-style:none;
+}
+
 html,
 body{
     height:100%;
@@ -970,7 +984,7 @@ body{
 .main{
 	margin-top:-77px;
 	padding-top:77px;
-    min-height:100%;
+  min-height:100%;
 	width:1170px;
 }
 

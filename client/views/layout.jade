@@ -19,7 +19,7 @@ html
             li
               a(href='/account/#{user.login}',data-tip='个人中心') #{user.login}
             li
-              a(href='/edit',data-tip='添加文档')
+              a#add-item(href='javascript:;',data-tip='添加文档或幻灯片')
                 span.icon-plus
             li
               a(href='/logout',data-tip='退出登录')
@@ -34,7 +34,11 @@ html
       div.container
         span Create by 
         a(href='https://github.com/colorpeach') @colorpeach
-    
+    ul#add-box.overlay
+      li
+        a(href='/edit') 添加文档
+      li
+        a(href='/deck') 添加幻灯片
     script(type='text/javascript', src='/lib/jquery/1.11.0/jquery.js')
     script(type='text/javascript',src='/js/common.js')
     block script

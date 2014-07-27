@@ -3,14 +3,14 @@ html
   head
     title #{title}
     meta(charset='utf-8')
-    link(rel='stylesheet', href='/css/normalize.css')
-    link(rel='stylesheet', href='/css/common.css')
-    link(rel='stylesheet', href='/css/animate.css')
-    link(rel='stylesheet', href='/css/icon.css')
-    link(rel='stylesheet', href='/css/deck.css')
-    link(rel='stylesheet', href='/lib/reveal/2.6.2/css/reveal.min.css')
-    link(rel='stylesheet', href='/lib/reveal/2.6.2/css/theme/default.css')
-    link(rel='stylesheet', href='/lib/reveal/2.6.2/lib/css/zenburn.css')
+    link(rel='stylesheet', href='../../css/normalize.css')
+    link(rel='stylesheet', href='../../css/common.css')
+    link(rel='stylesheet', href='../../css/animate.css')
+    link(rel='stylesheet', href='../../css/icon.css')
+    link(rel='stylesheet', href='/views/tools/deck/deck.css')
+    link(rel='stylesheet', href='../../lib/reveal/2.6.2/css/reveal.min.css')
+    link(rel='stylesheet', href='../../lib/reveal/2.6.2/css/theme/default.css')
+    link(rel='stylesheet', href='../../lib/reveal/2.6.2/lib/css/zenburn.css')
   body
     if deck
       textarea#deck-content.hidden #{deck.content}
@@ -56,10 +56,11 @@ html
             h2 title
     div#prompt-box
       button.btn.btn-success.opera-btn 完成
-    div#account-box.overlay
-      ul
-        li
-          a(href='account/#{user.login}') 个人中心
+    if user
+      div#account-box.overlay
+        ul
+          li
+            a(href='account/#{user.login}') 个人中心
     div#link-box.overlay
       div.form-group
         input(name='link',type='url',placeholder='请输入链接',data-validator='required:请填写链接')
@@ -74,13 +75,14 @@ html
       button.btn.btn-primary.add-img-btn 确定
     div#html-box
       textarea.highlight
-    div#save-box
-      input(name='_id',type='hidden',value='#{deck._id||""}')
-      div.form-group
-        input(name='title',type='text',placeholder='请输入标题',data-validator='required:请输入标题',value='#{deck.title||""}')
+    if user
+      div#save-box
+        input(name='_id',type='hidden',value='#{deck._id||""}')
+        div.form-group
+          input(name='title',type='text',placeholder='请输入标题',data-validator='required:请输入标题',value='#{deck.title||""}')
     
-    script(type='text/javascript', src='/lib/jquery/1.11.0/jquery.js')
-    script(type='text/javascript',src='/lib/reveal/2.6.2/lib/js/head.min.js')
-    script(type='text/javascript',src='/lib/reveal/2.6.2/js/reveal.js')
-    script(type='text/javascript',src='/js/common.js')
-    script(type='text/javascript',src='/js/deck.js')
+    script(type='text/javascript', src='../../lib/jquery/1.11.0/jquery.js')
+    script(type='text/javascript',src='../../lib/reveal/2.6.2/lib/js/head.min.js')
+    script(type='text/javascript',src='../../lib/reveal/2.6.2/js/reveal.js')
+    script(type='text/javascript',src='../../js/common.js')
+    script(type='text/javascript',src='/views/tools/deck/deck.js')

@@ -4,18 +4,26 @@ block css
   link(rel='stylesheet', href='/css/index.css')
   
 block content
-  div#doc.tab-item
-    div.tab-head 文档
-  div#slide.tab-item
-    div.tab-head 幻灯片
-  div.tab-item
-    div.tab-head 工具
-    each tool in tools
-      div.tool-item
-        a(href='/tools/'+tool.name)
-          div.tool-detail
-        div.tool-title
-          a(href='/tools/'+tool.name) #{tool.title}
+  div.tab-box.clearfix
+    div#doc.tab-item
+      div.tab-head
+        label 文档
+        div.form-group.line-input
+          input
+    div#slide.tab-item
+      div.tab-head
+        label 幻灯片
+        div.form-group.line-input
+          input
+  div.tools-box
+    div.box-head 工具
+    div.box-body.clearfix
+      each tool in tools
+        div.tool-item
+          a(href='/tools/'+tool.name)
+            div.tool-detail
+          div.tool-title
+            a(href='/tools/'+tool.name) #{tool.title}
   
 block script
     script(type='text/javascript',src='/js/index.js')

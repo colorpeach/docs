@@ -594,7 +594,9 @@
     */
     
     $.fn.modal = function(method,arg){
-        var $this = $(this);
+        var $this = $(this),
+            result;
+            
         $this.each(function(_,n){
             var $n = $(n),
                 obj = $n.data('modal');
@@ -802,3 +804,17 @@
 String.prototype.escapeHTML = function () {
     return this.replace(/<(\/?script.*?)>/g,'&lt;$1&gt;');
 };
+
+$("#add-item").click(function(){
+    var $box = $("#add-box");
+            
+    $.fixed($(this),$box,{x:-17});
+    $box.fadeIn();
+    
+    $(document).on('mousedown.add-box',function(e){
+        if(!$.contains($box[0],e.target)){
+            $(document).off('mousedown.add-box');
+            $box.fadeOut();
+        }
+    });
+});

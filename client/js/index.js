@@ -1,5 +1,6 @@
 $.docsajax({
     url:'/fetch/user/docs',
+    wrap:$('#doc'),
     success:function(d){
       $('#doc').append(docHtml(d.docs));
     }
@@ -7,6 +8,7 @@ $.docsajax({
 
 $.docsajax({
     url:'/fetch/user/decks',
+    wrap:$('#slide'),
     success:function(d){
       $('#slide').append(docHtml(d.decks,'deck'));
     }

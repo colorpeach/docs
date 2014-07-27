@@ -1,11 +1,29 @@
 .tab-item{
     padding: 0 15px;
-    width:33.333333333%;
+    width:50%;
     float:left;
+    position:relative;
+    min-height:200px;
 }
 
 .tab-head{
-    padding:10px;
+    padding:5px;
+    position:relative;
+    border-left:1px solid;
+    margin-bottom:10px;
+    color:#428BCA;
+}
+
+.tab-head label{
+    position:absolute;
+    top:13px;
+    left:10px;
+    z-index:1;
+}
+
+.tab-head .form-group{
+    margin-left:60px;
+    margin-bottom:0;
 }
 
 .doc-item{
@@ -17,13 +35,27 @@
     background-color:#eee;
 }
 
-.box-header{
-    margin: 15px;
-    padding: 5px 0;
+.box-head{
+    border-left:1px solid;
+    padding:14px 10px;
+    margin-bottom:10px;
+    color:#428BCA;
+}
+
+.tools-box{
+    margin:20px 15px;
 }
 
 .tool-item{
-    border:1px solid #ddd;
+    border-style:solid;
+    border-width:1px 1px 1px 0;
+    border-color:#ddd;
+    width:25%;
+    float:left;
+}
+
+.tool-item:first-child{
+    border-left-width:1px;
 }
 
 .tool-item:hover{

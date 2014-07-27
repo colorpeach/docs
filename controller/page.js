@@ -14,6 +14,16 @@ page.index = function(req,res){
                 'title':'boxshadow图标工具',
                 'name':'boxshadoweditor',
                 'img':''
+            },
+            {
+                'title':'markdown编辑器',
+                'name':'edit',
+                'img':''
+            },
+            {
+                'title':'slide幻灯片编辑器',
+                'name':'deck',
+                'img':''
             }
         ]
     };
@@ -42,13 +52,13 @@ page.edit = function(req,res){
         doc.query({_id:req.query._id},function(list){
             var doc = list[0];
             if(doc.user === req.session.user.login){
-                res.render('edit',{user:req.session.user,doc:list[0]||{}});
+                res.render('tools/edit/edit',{user:req.session.user,doc:list[0]||{}});
             }else{
                 res.redirect('/');
             }
         });
     }else{
-        res.render('edit',{user:req.session.user,doc:{}});
+        res.render('tools/edit/edit',{user:req.session.user,doc:{}});
     }
 }
 
@@ -58,13 +68,13 @@ page.deck = function(req,res){
         deck.query({_id:req.query._id},function(list){
             var deck = list[0];
             if(deck.user === req.session.user.login){
-                res.render('deck',{user:req.session.user,deck:list[0]||{}});
+                res.render('tools/deck/deck',{user:req.session.user,deck:list[0]||{}});
             }else{
                 res.redirect('/');
             }
         });
     }else{
-        res.render('deck',{user:req.session.user,deck:{}});
+        res.render('tools/deck/deck',{user:req.session.user,deck:{}});
     }
 }
 

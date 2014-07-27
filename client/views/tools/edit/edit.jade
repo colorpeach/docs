@@ -1,16 +1,16 @@
-extends layout
+extends ../../layout
 
 block css
-  link(rel='stylesheet', href='/css/edit.css')
+  link(rel='stylesheet', href='/views/tools/edit/edit.css')
 
 block content
   div.edit-box
     div.edit-left
       div.form-group.line-input
-        input#title(type="text",placeholder="请输入文档名...",value='#{doc.title||""}',data-validator='required:请输入文档名')
+        input#title(type="text",placeholder="请输入文档名...",value='#{(doc && doc.title)||""}',data-validator='required:请输入文档名')
       div.form-group.btn-toolbar
         div.btn-group
-          if doc.auth == "private"
+          if doc && doc.auth == "private"
             button.auth-btn.active.btn.btn-default(type='button') 不公开
           else
             button.auth-btn.btn.btn-default(type='button') 不公开
@@ -21,7 +21,7 @@ block content
       div.editor
         div#editor
         button.btn.btn-primary.col-lg-12.save-btn 保存
-        textarea#content.hidden #{doc.content||""}
+        textarea#content.hidden #{(doc && doc.content)||""}
     div#view.edit-right
     
 block script
@@ -29,8 +29,8 @@ block script
   script(type='text/javascript', src='/lib/showdown/showdown.js')
   script(type='text/javascript').
     var doc = {
-      _id:'#{doc._id}',
-      user:'#{user.login}',
-      title:'#{doc.title}'
+      _id:'#{doc && doc._id}',
+      user:'#{user && user.login}',
+      title:'#{doc && doc.title}'
     };
-  script(type='text/javascript', src='/js/edit.js')
+  script(type='text/javascript', src='/views/tools/edit/edit.js')
