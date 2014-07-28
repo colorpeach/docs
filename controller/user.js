@@ -87,4 +87,22 @@ User.register = function(req,res){
     });
 }
 
+//用户修改密码
+User.post_editpwd = function(req,res){
+    user.query({username:req.body.username,password:req.body.oldpassword},function(list){
+        if(!list.length){
+            res.end(baseRes({errorMsg:['密码错误']}))
+        }else{
+            var body = req.body,
+                data = {
+                    username:body.username,
+                    password:body.newpassword
+                }
+            user.update(data,function(data){
+                res.end(baseRes({d:true}));
+            })
+        }
+    })
+}
+
 module.exports = User;

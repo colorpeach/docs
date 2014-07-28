@@ -89,7 +89,9 @@ module.exports = function(app){
 
     //用户注册
     app.post('/register',user.register);
-    
+
+    //用户修改密码
+    app.post('/post/user/editpwd',user.post_editpwd)
     
     //获取与文档有关联的所有组织
     app.get('/get/doc/orgs',doc.get_doc_orgs);
