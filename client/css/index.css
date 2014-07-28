@@ -64,6 +64,7 @@
 
 .tool-item:hover .tool-detail{
     background:#428bca;
+    color:#fff;
     transition:all 0.3s;
 }
 
@@ -71,10 +72,10 @@
     padding:10px;
     height:100px;
     font-size: 4em;
-    color: #fff;
-    background: #eee;
+    color: #428bca;
     text-align: center;
     line-height: 80px;
+    border-bottom:1px solid #ddd;
 }
 
 .tool-title{
