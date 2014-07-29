@@ -1,6 +1,6 @@
 var Mock = {};
 var mockjs = require("mockjs");
-var mockjs = require('../models/mockjs');
+var mock = require('../models/mock.js');
 
 
 Mock.get = function(req,res){
