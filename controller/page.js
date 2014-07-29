@@ -24,6 +24,11 @@ page.index = function(req,res){
                 'title':'slide幻灯片编辑器',
                 'name':'deck',
                 'img':'mark-slide'
+            },
+            {
+                'title':'Mock数据生成器',
+                'name':'mock',
+                'img':'mark-mock'
             }
         ]
     };

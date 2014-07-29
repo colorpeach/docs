@@ -18,7 +18,8 @@ module.exports = {
     ],
     //不需要权限ajax访问
     unauthAjaxPath:[
-        'fetch'
+        'fetch',
+        'mock'
     ],
     //不需要权限访问
     unauthPath:[
