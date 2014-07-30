@@ -247,6 +247,13 @@
             return;
         }
         
+        if(opts.dataType === 'formData'){
+            opts.data = generateFormdata(opts.data);
+            opts.processData = false;
+            opts.contentType = false;
+            delete opts.dataType;
+        }
+        
         var promise = $.ajax(opts);
         
         addMark(opts);
@@ -379,6 +386,29 @@
             $wrap.find('.reload').off().removeData('opts');
             $wrap.remove();
         }
+    }
+    
+    //generate formdata
+    function generateFormdata(data,formData,prefix,isArray){
+        if(!formData){
+            formData = new FormData();
+        }
+        
+        for (var key in data) {
+			var subData = data[key];
+			var name = isArray ? prefix + '[' + key + ']' : (prefix ? prefix + '.' + key : key);
+			if ($.isArray(subData)) {
+				generateFormdata(subData, formData, name, true);
+			} else {
+				if ($.isPlainObject(subData)) {
+					generateFormdata(subData, formData, name);
+				} else {
+					formData.append(name, subData === null || subData === undefined ? '' : subData);
+				}
+			}
+		}
+		
+		return formData;
     }
 })();
 
@@ -561,13 +591,13 @@
             
             this.$el.find('input,textarea,select').each(function(i,n){
                 var $n = $(n),
-                    val = $.trim($n.val()),
+                    val,
                     name = $n.attr('name') || $n.attr('id'),
                     result;
                     
                 $n.removeClass('error');
                 if(name){
-                    type !== 'valid' && (data[name] = val.escapeHTML());
+                    type !== 'valid' && (val = data[name] = getData($n));
                     //get the validator
                     if((type === 'valid' || opts.valid) && name in self._validator){
                         result = self._validator[name](val,data);
@@ -585,6 +615,17 @@
             
             return type ==='valid' ? results : results.length ? false : data;
         };
+    }
+    
+    function getData($el){
+        var type = $el[0].tagName === 'INPUT' && $el.attr('type');
+        
+        switch(type){
+            case 'file':
+                return $el[0].files[0];
+            default:
+                return $.trim($el.val()).escapeHTML();
+        }
     }
 })();
 
