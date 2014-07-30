@@ -44,7 +44,7 @@ module.exports = {
             function(data){
                 var d = {};
                 for(var m in column){
-                    n = column[m];
+                    var n = column[m];
                     if(data[n] != undefined){
                         if(m !== '_id'){
                             d[m] = data[n];

@@ -135,3 +135,17 @@
     position: absolute;
     left: -.5em;
 }
+
+.mark-mock{
+    position:relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    font-size:1.2em;
+}
+
+.mark-mock:before{
+    content:"mock";
+    position: absolute;
+    left: -.6em;
+}
