@@ -257,7 +257,7 @@
             });
         },
         bindEvent:function(){
-            var $tabCons = $('.item-list'),
+                var $tabCons = $('.item-list'),
                 $tabs = $('.slide-tabs li'),
                 self = this;
 
@@ -270,34 +270,21 @@
                 $(".edit-box").removeClass('hidden');
 
             }),
+           
+            $('.submit-img').click(function(){
+                var data = $(".edit-img").inputBox('data');
 
-                $('#edit-btn').click(function(){
-                    var data = $('.edit-con').inputBox('data',{valid:true});
-                    if(!data)
-                        return false;
+                $.docsajax({
+                    url:'/photo/save_img',
+                    method:'post',
+                    data:data,
+                    dataType:'formData',
+                    success:function(d){
 
-                    if(data.newpassword != data.newpassword2){
-                        $.msg('两次输入的密码不一致');
-                        return false;
                     }
-                    if(data.newpassword == data.oldpassword){
-                        $.msg('新旧密码不能相同');
-                        return false;
-                    }
-                    $.docsajax({
-                        url:'/post/user/editpwd',
-                        method:'post',
-                        data:{'oldpassword':data.oldpassword,'newpassword':data.newpassword,'username':data.username},
-                        block:'请求仍在进行...',
-                        success:function(d){
-                            if(d){
-                                $.msg('修改成功');
-                            }
-                        }
-                    });
-
-                }),
-
+                })
+            })
+           
             $('.slide-tabs').on('click','li',function(){
                 var i = $(this).index();
 

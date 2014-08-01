@@ -272,6 +272,12 @@
                     content:$.map(d.errorMsg,function(n){return '<p>'+n+'</p>';})
                 });
             }else{
+                if(d.successMsg){
+                    $.prompt({
+                        type:'warning',
+                        content: $.map(d.successMsg,function(n){return '<p>'+n+'</p>';})
+                    })
+                }
                 opts._success && opts._success(d,promise);
             }
         });

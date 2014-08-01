@@ -3,6 +3,7 @@ var doc = require('../controller/doc.js');
 var deck = require('../controller/deck.js');
 var user = require('../controller/user.js');
 var page = require('../controller/page.js');
+var photo = require('../controller/photo.js');
 var tools = require('../controller/tools.js');
 var mock = require('../controller/mock.js');
 
@@ -59,6 +60,9 @@ module.exports = function(app){
 
     //个人中心页面
     app.get('/account/:user',page.account_User);
+
+    //修改密码页面
+    app.get('/modifypassword/:user',page.modifypassword);
 
     //文档页面
     app.get('/doc/:user/:doc',page.doc_User_Doc);
@@ -146,4 +150,14 @@ module.exports = function(app){
     
     //用户退出组织
     app.post('/post/org/del/user',org.post_org_del_user);
+
+    //获取图片
+    app.get('/get/img',photo.get_img);
+
+    //保存图片
+    app.post('/photo/save_img',photo.post_save_img);
+
+    app.get('/demo',function(req,res){
+        res.render('demo');
+    });
 };

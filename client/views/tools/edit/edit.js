@@ -53,6 +53,7 @@
                             history.replaceState(null,null,'?_id='+doc._id);
                         }
                     }
+                    $('#content').val(editor.getValue());
                     $.prompt({
                         type:'success',
                         content:'保存成功'
@@ -102,7 +103,33 @@
         
         Edit.save();
     });
-    
+
+    $('.cancer-btn').click(function(){
+        var err = $('.edit-box').inputBox('valid'),
+            preContent = $('#content').val();
+
+        if(err.length)
+            return;
+
+        if(editor.getValue() != preContent){
+            $.msg({
+                    type:'confirm',
+                    msg:'文档尚未保存，是否保存并返回？',
+                    ok:function(){
+                        Edit.save();
+                        location.href = '/account/'+doc.user;
+                    },
+                    cancer:function(){
+                        location.href = '/account/'+doc.user;
+                    }
+                }
+            )
+        }else{
+            location.href = '/account/'+doc.user;
+        }
+
+    })
+
     Edit.generateFileLink();
     
     editor.setValue($('#content').val());

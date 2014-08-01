@@ -5,7 +5,9 @@ var org = require('../models/org');
 var orgUser = require('../models/org.user');
 var orgDoc = require('../models/org.doc');
 var baseRes = require('./baseResponse');
+var fs = require('fs');
 var User = {};
+var photo = require('../models/photo');
 
 //获取用户公开文档
 User.fetch_user_docs = function(req,res){
@@ -89,17 +91,21 @@ User.register = function(req,res){
 
 //用户修改密码
 User.post_editpwd = function(req,res){
-    user.query({username:req.body.username,password:req.body.oldpassword},function(list){
+    var body = req.body,
+        data = {
+        username:body.username,
+        password:body.oldpassword
+    }
+    user.query(data,function(list){
         if(!list.length){
             res.end(baseRes({errorMsg:['密码错误']}))
         }else{
-            var body = req.body,
-                data = {
+                var data = {
                     username:body.username,
                     password:body.newpassword
                 }
             user.update(data,function(data){
-                res.end(baseRes({d:true}));
+                res.end(baseRes({successMsg:['修改成功']}));
             })
         }
     })

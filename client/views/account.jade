@@ -13,11 +13,14 @@ block content
     div.account-info.clearfix
       if user && user.avatar_url
         img(src='#{user.avatar_url}')
+      else if user.portrait_id
+        img(src='/get/img?_id=#{user.portrait_id}')
       else
         span.img-item.icon-user
       if user
         p #{user.login}
-          span.info-edit.icon-pencil
+          a(href='javascript:;',data-tip='修改资料')
+            span.info-edit.icon-pencil
     ul.slide-tabs
       li.active
         a 我的文档
@@ -29,23 +32,13 @@ block content
         a 我创建的组织
       li
         a 我加入的组织
-  div.edit-box.border.hidden
-    div.edit-con
-      div.form-group.line-input
-          label(for="username") 用户名
-          input#username(type="text",value='#{user.login}',readonly)
-      div.form-group.line-input
-          label(for="oldpassword") 旧密码
-          input#oldpassword(type="password",placeholder="请输入旧密码...",data-validator="required:请输入旧密码")
-      div.form-group.line-input
-          label(for="newpassword") 新密码
-          input#newpassword(type="password",placeholder="请输入新密码...",data-validator="required:请输入新密码")
-      div.form-group.line-input
-          label 密码确认
-          input#newpassword2(type="password",placeholder="请再次输入新密码...",data-validator="required:请再次输入新密码")
-      div.form-group
-      button#edit-btn.btn.btn-primary(type="submit") 提交
   div.account-right
+    div.edit-box.hidden
+      div.form-group.line-input
+        label 选择头像
+        input(type='file',name='file')
+      div.form-group
+        button.submit-img.btn.btn-primary 提交
     div#all-docs.item-list
       div.item-header
         a.btn.btn-default(href='/edit',data-tip='添加文档')
