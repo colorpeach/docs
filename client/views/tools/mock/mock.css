@@ -5,3 +5,19 @@ html,body{
 .navbar.container{
     z-index:1;
 }
+
+.mock-box{
+    height:100%;
+}
+
+
+.mock-left{
+    width:300px;
+    float:left;
+    height:100%;
+}
+
+.mock-right{
+    margin-left:320px;
+    height:100%;
+}

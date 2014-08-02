@@ -1,0 +1,23 @@
+.aui-grid{
+    border-collapse:collapse;
+    table-layout:fixed;
+}
+
+.aui-grid th{
+    background-color:#eee;
+    padding:5px 3px;
+}
+
+.aui-grid th,
+.aui-grid td{
+    text-align:center;
+    border:1px solid #fff;
+}
+
+.aui-grid input{
+    text-align:center;
+    box-sizing:border-box;
+    width:100%;
+    padding:5px 3px;
+    border:0 none;
+}

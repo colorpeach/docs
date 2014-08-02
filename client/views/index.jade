@@ -25,6 +25,17 @@ block content
               span(class='#{tool.img}')
           div.tool-title
             a(href='/tools/'+tool.name) #{tool.title}
+  if projects
+    div.tools-box
+      div.box-head 开源项目
+      div.box-body.clearfix
+        each project in projects
+          div.tool-item
+            a.tool-link(href='/project/'+project.name)
+              div.tool-detail
+                span(class='#{project.img}')
+            div.tool-title
+              a(href='/project/'+project.name) #{project.title}
   
 block script
     script(type='text/javascript',src='/js/index.js')

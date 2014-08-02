@@ -10,9 +10,9 @@ module.exports = function(grunt){
             build:{
                 files:[{
                     expand: true,  
-                    cwd: 'client/js',
+                    cwd: 'client',
                     src:'**/*.js',
-                    dest: 'client/minjs/'
+                    dest: 'dist'
                 }]
             }
         },
@@ -26,5 +26,5 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // 默认任务
-    grunt.registerTask('default', ['uglify','jshint']);
+    grunt.registerTask('default', ['uglify']);
 }
