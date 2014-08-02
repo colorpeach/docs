@@ -36,7 +36,7 @@ page.index = function(req,res){
                 'title':'Xicon—纯css图标',
                 'name':'Xicon',
                 'img':'mark-xicon',
-                'github':'https://github.com/colorpeach/Xicon'
+                'github':'https://github.com/colorpeach/Xicon/fork'
             }
         ]
     };
