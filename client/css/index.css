@@ -78,6 +78,11 @@
     border-bottom:1px solid #ddd;
 }
 
+.project-github{
+    float:right;
+    font-size:16px;
+}
+
 .tool-title{
     padding:10px;
 }
@@ -146,6 +151,20 @@
 
 .mark-mock:before{
     content:"mock";
+    position: absolute;
+    left: -.6em;
+}
+
+.mark-xicon{
+    position:relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    font-size:1.2em;
+}
+
+.mark-xicon:before{
+    content:"Xicon";
     position: absolute;
     left: -.6em;
 }

@@ -30,6 +30,14 @@ page.index = function(req,res){
                 'name':'mock',
                 'img':'mark-mock'
             }
+        ],
+        projects:[
+            {
+                'title':'Xicon—纯css图标',
+                'name':'Xicon',
+                'img':'mark-xicon',
+                'github':'https://github.com/colorpeach/Xicon'
+            }
         ]
     };
     res.render('index',data);

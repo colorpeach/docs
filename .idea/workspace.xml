@@ -2,163 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e44a160-d699-4886-8aaf-86e23e9085c6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/citun.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/citun_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/citun_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/doc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/font_1390195989_0386753.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/handle-v.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/other.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/random.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/mockjs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/css/site.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/css/tools.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/colorpicker/angular-colorpicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/colorpicker/controllers/picker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/colorpicker/directives/picker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/colorpicker/services/utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/colorpicker/template/colorpicker.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/grid/angular-grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/grid/controllers/grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/grid/css/grid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/grid/directives/grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/grid/directives/row.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/grid/services/utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/grid/template/grid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/grid/template/row.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/tree/angular-tree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/tree/controllers/tree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/tree/css/tree.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/tree/directives/node.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/tree/directives/tree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/tree/services/utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/tree/template/node.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/angularplugin/tree/template/tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/tools.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/lib/mock/mock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/views/tools/layout.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/views/tools/mock/mock.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/views/tools/mock/mock.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/views/tools/mock/mock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/mock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/mock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.bin/random" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/.jshintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/.spmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/Gruntfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/MIT-LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/TODO.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/bin/random" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/bootstrap/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/bootstrap/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/bootstrap/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/catalog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/editor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/assets/mock.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/image-placeholder.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/mock-kissy.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/mock.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/mock4tpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/demo/mock4xtpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/dist/mock-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/dist/mock-min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/dist/mock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/getting-started.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/index.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/lanlan.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/lanlan.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/mock.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/mock4tpl.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/mock4xtpl.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/mockjax.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/other-bak.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/spec.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/template.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/doc/util.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/editor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/editor/editor.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/editor/editor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/node_modules/commander/History.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/node_modules/commander/Readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/node_modules/commander/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/node_modules/commander/node_modules/keypress/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/node_modules/commander/node_modules/keypress/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/node_modules/commander/node_modules/keypress/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/node_modules/commander/node_modules/keypress/test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/node_modules/commander/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/src/expose.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/src/mock-prefix.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/src/mock-suffix.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/src/mock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/src/mock4tpl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/src/mock4xtpl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/src/mockjax.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/src/random.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/src/util.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/src/xhr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/test/mock-kissy.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/test/mock-seajs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/test/mock-zepto.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/test/mock.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/test/mock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/test/mock4tpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/test/mock4xtpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/test/nodeunit/mock-node.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/test/nodeunit/mock-options.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/test/nodeunit/mock4tpl-node.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/test/nodeunit/mock4xtpl-node.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/test/nodeunit/mock4xtpl-val.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/test/nodeunit/noop.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/mockjs/test/nodeunit/noop.js" />
-      <change type="DELETED" beforePath="E:\doc\client\css\api.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\doc\client\lib\bootstrap\3.0.3\js\bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="E:\doc\client\minjs\account.js" afterPath="" />
-      <change type="DELETED" beforePath="E:\doc\client\minjs\boxshadoweditor.js" afterPath="" />
-      <change type="DELETED" beforePath="E:\doc\client\minjs\common.js" afterPath="" />
-      <change type="DELETED" beforePath="E:\doc\client\minjs\deck.js" afterPath="" />
-      <change type="DELETED" beforePath="E:\doc\client\minjs\doc.js" afterPath="" />
-      <change type="DELETED" beforePath="E:\doc\client\minjs\edit.js" afterPath="" />
-      <change type="DELETED" beforePath="E:\doc\client\minjs\html2canvas.js" afterPath="" />
-      <change type="DELETED" beforePath="E:\doc\client\minjs\index.js" afterPath="" />
-      <change type="DELETED" beforePath="E:\doc\client\minjs\info.js" afterPath="" />
-      <change type="DELETED" beforePath="E:\doc\client\minjs\login.js" afterPath="" />
-      <change type="DELETED" beforePath="E:\doc\client\minjs\slide.js" afterPath="" />
-      <change type="DELETED" beforePath="E:\doc\client\minjs\todo.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/doc.iml" afterPath="$PROJECT_DIR$/.idea/doc.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/account.css" afterPath="$PROJECT_DIR$/client/css/account.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/common.css" afterPath="$PROJECT_DIR$/client/css/common.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/index.css" afterPath="$PROJECT_DIR$/client/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/account.js" afterPath="$PROJECT_DIR$/client/js/account.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/common.js" afterPath="$PROJECT_DIR$/client/js/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/views/account.jade" afterPath="$PROJECT_DIR$/client/views/account.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/views/index.jade" afterPath="$PROJECT_DIR$/client/views/index.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/views/layout.jade" afterPath="$PROJECT_DIR$/client/views/layout.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/views/tools/boxshadoweditor/boxshadoweditor.jade" afterPath="$PROJECT_DIR$/client/views/tools/boxshadoweditor/boxshadoweditor.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/page.js" afterPath="$PROJECT_DIR$/controller/page.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/user.js" afterPath="$PROJECT_DIR$/controller/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/index.js" afterPath="$PROJECT_DIR$/db/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/route/route.js" afterPath="$PROJECT_DIR$/route/route.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.js" afterPath="$PROJECT_DIR$/settings.js" />
     </list>
     <ignored path="doc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -181,15 +27,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="angular-tree.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/angularplugin/tree/angular-tree.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="node.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/angularplugin/tree/directives/node.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -199,10 +36,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mock.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="mock.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/views/tools/mock/mock.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="42" selection-start="978" selection-end="978" vertical-scroll-proportion="0.6764706">
+            <state line="33" column="21" selection-start="755" selection-end="755" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="route.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/route/route.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="0" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/page.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="23" selection-start="953" selection-end="959" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/views/index.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="30" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="81" column="16" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.80588233">
               <folding />
             </state>
           </provider>
@@ -262,12 +135,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/controller/org.js" />
         <option value="$PROJECT_DIR$/settings.js" />
         <option value="$PROJECT_DIR$/controller/tools.js" />
         <option value="$PROJECT_DIR$/client/js/index.js" />
-        <option value="$PROJECT_DIR$/client/views/index.jade" />
-        <option value="$PROJECT_DIR$/controller/page.js" />
         <option value="$PROJECT_DIR$/route/route.js" />
         <option value="$PROJECT_DIR$/controller/user.js" />
         <option value="$PROJECT_DIR$/client/views/account.jade" />
@@ -278,6 +148,9 @@
         <option value="$PROJECT_DIR$/client/js/angularplugin/tree/template/tree.html" />
         <option value="$PROJECT_DIR$/client/js/angularplugin/tree/directives/node.js" />
         <option value="$PROJECT_DIR$/client/views/tools/mock/mock.js" />
+        <option value="$PROJECT_DIR$/controller/page.js" />
+        <option value="$PROJECT_DIR$/client/views/index.jade" />
+        <option value="$PROJECT_DIR$/client/css/index.css" />
       </list>
     </option>
   </component>
@@ -347,6 +220,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="route" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -646,6 +547,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -695,8 +614,24 @@
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" myUseAcceleration="nothing">
-    <configuration />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -728,13 +663,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293919" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25465375" sideWeight="0.6182432" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38175675" sideWeight="0.4944155" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38175675" sideWeight="0.4944155" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38344595" sideWeight="0.5003723" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277027" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -813,32 +748,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/route/route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/connection/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -917,7 +826,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/views/tools/mock/mock.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="42" selection-start="978" selection-end="978" vertical-scroll-proportion="0.6764706">
+        <state line="33" column="21" selection-start="755" selection-end="755" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/route/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="23" selection-start="953" selection-end="959" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="30" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="16" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.80588233">
           <folding />
         </state>
       </provider>
