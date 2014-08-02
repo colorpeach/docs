@@ -4,6 +4,7 @@ var deck = require('../controller/deck.js');
 var user = require('../controller/user.js');
 var page = require('../controller/page.js');
 var tools = require('../controller/tools.js');
+var mock = require('../controller/mock.js');
 
 var settings = require('../settings');
 var authPath = settings.authPath;
@@ -62,8 +63,14 @@ module.exports = function(app){
     //文档页面
     app.get('/doc/:user/:doc',page.doc_User_Doc);
     
-    //box-shadow编辑器
+    //工具
     app.get('/tools/:tool',tools.page);
+    
+    //mock数据get
+    app.get('/mock/*',mock.get);
+    
+    //mock数据post
+    app.post('/mock/*',mock.post);
     
     
      //获取用户公开文档
@@ -89,7 +96,9 @@ module.exports = function(app){
 
     //用户注册
     app.post('/register',user.register);
-    
+
+    //用户修改密码
+    app.post('/post/user/editpwd',user.post_editpwd)
     
     //获取与文档有关联的所有组织
     app.get('/get/doc/orgs',doc.get_doc_orgs);

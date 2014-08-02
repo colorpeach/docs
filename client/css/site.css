@@ -1,0 +1,58 @@
+html,
+body{
+    height:100%;
+}
+
+.main{
+	margin-top:-77px;
+	padding-top:77px;
+  	min-height:100%;
+	width:1170px;
+}
+
+.footer{
+	margin-top:20px;
+	padding:20px 0;
+	background-position: top center;
+}
+
+
+body{
+    font-size:12px;
+	padding-top:70px;
+}
+
+.container{
+	max-width:1170px;
+}
+
+.top-nav{
+	padding-bottom:1px;
+    margin-bottom:20px;
+	background-color:#fff;
+	z-index:999;
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	opacity:.8;
+	transition:all 0.3s;
+}
+
+.top-nav:hover{
+	opacity:1;
+}
+
+.top-nav-list{
+	padding:0;
+	float:left;
+}
+
+.top-nav-list li{
+	display:inline-block;
+}
+
+.top-nav-list li a{
+	padding: 15px;
+	display: inline-block;
+}

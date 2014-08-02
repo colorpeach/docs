@@ -260,10 +260,51 @@
             var $tabCons = $('.item-list'),
                 $tabs = $('.slide-tabs li'),
                 self = this;
-                
+
+            $('.info-edit').on('click',function(){
+                var $tabCons = $('.item-list');
+                for(var i=0;i<$(this).parents('.account-left').find('.slide-tabs').children().length;i++){
+                    $(this).parents('.account-left').find('.slide-tabs').children().eq(i).removeClass('active');
+                }
+                $tabCons.addClass('hidden');
+                $(".edit-box").removeClass('hidden');
+
+            }),
+
+                $('#edit-btn').click(function(){
+                    var data = $('.edit-con').inputBox('data',{valid:true});
+                    if(!data)
+                        return false;
+
+                    if(data.newpassword != data.newpassword2){
+                        $.msg('两次输入的密码不一致');
+                        return false;
+                    }
+                    if(data.newpassword == data.oldpassword){
+                        $.msg('新旧密码不能相同');
+                        return false;
+                    }
+                    $.docsajax({
+                        url:'/post/user/editpwd',
+                        method:'post',
+                        data:{'oldpassword':data.oldpassword,'newpassword':data.newpassword,'username':data.username},
+                        block:'请求仍在进行...',
+                        success:function(d){
+                            if(d){
+                                $.msg('修改成功');
+                            }
+                        }
+                    });
+
+                }),
+
             $('.slide-tabs').on('click','li',function(){
                 var i = $(this).index();
-                
+
+                if(!$(".edit-box").hasClass('hidden')){
+                    $(".edit-box").addClass('hidden');
+                }
+
                 if(!$(this).hasClass('active')){
                     $tabCons.addClass('hidden')
                         .eq(i).removeClass('hidden');

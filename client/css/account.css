@@ -167,3 +167,25 @@
 li:hover{
     background:#fafafa;
 }
+
+span.info-edit{
+    text-align:right
+}
+
+.edit-box{
+    width:400px;
+    padding:20px;
+    margin-right:220px;
+    float:right;
+    border:1px solid #ddd;
+    background-color: #FFF;
+    position:relative;
+}
+.edit-box button{
+    width:100%;
+}
+
+.icon-pencil{
+    font-size: 13px;
+    text-align: right;
+}

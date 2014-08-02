@@ -1,0 +1,25 @@
+extends ../layout
+
+block css
+  link(rel='stylesheet', href='/views/tools/mock/mock.css')
+  link(rel='stylesheet', href='/js/angularplugin/grid/css/grid.css')
+  link(rel='stylesheet', href='/js/angularplugin/tree/css/tree.css')
+
+block content
+  div.mock-box(ng-controller='mockContent')
+    div.mock-left(xtree='list')
+    div.mock-right(xgrid='table')
+    
+block script
+  script(type='text/javascript', src='/js/angularplugin/grid/angular-grid.js')
+  script(type='text/javascript', src='/js/angularplugin/grid/services/utils.js')
+  script(type='text/javascript', src='/js/angularplugin/grid/controllers/grid.js')
+  script(type='text/javascript', src='/js/angularplugin/grid/directives/grid.js')
+  script(type='text/javascript', src='/js/angularplugin/grid/directives/row.js')
+  script(type='text/javascript', src='/js/angularplugin/tree/angular-tree.js')
+  script(type='text/javascript', src='/js/angularplugin/tree/services/utils.js')
+  script(type='text/javascript', src='/js/angularplugin/tree/controllers/tree.js')
+  script(type='text/javascript', src='/js/angularplugin/tree/directives/tree.js')
+  script(type='text/javascript', src='/js/angularplugin/tree/directives/node.js')
+  //script(type='text/javascript', src='/lib/mock/mock.js')
+  script(type='text/javascript', src='/views/tools/mock/mock.js')

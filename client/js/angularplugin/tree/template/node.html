@@ -1,0 +1,5 @@
+<span class="{{iconClass}}"></span>
+<a class="{{nodeClass}}">{{node.name}}</a>
+<ul ng-show="node._collapsed">
+    <li ng-repeat="node in node.children" ng-include="nodeTemplate" ng-click="collapsed($event)" xtreenode></li>
+</ul>
