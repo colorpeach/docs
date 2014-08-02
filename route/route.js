@@ -4,6 +4,7 @@ var deck = require('../controller/deck.js');
 var user = require('../controller/user.js');
 var page = require('../controller/page.js');
 var tools = require('../controller/tools.js');
+var projects = require('../controller/projects.js');
 var mock = require('../controller/mock.js');
 
 var settings = require('../settings');
@@ -65,6 +66,9 @@ module.exports = function(app){
     
     //工具
     app.get('/tools/:tool',tools.page);
+
+    //开源呢项目
+    app.get('/projects/:project',projects.page);
     
     //mock数据get
     app.get('/mock/*',mock.get);

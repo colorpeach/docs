@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    title #{title}
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/css/common.css')
+    link(rel='stylesheet', href='/css/icon.css')
+    link(rel='stylesheet', href='/css/animate.css')
+    link(rel='stylesheet', href='/css/projects.css')
+    block css
+  body(ng-app='app')
+    div.top-nav
+      ul.top-nav-list
+        li
+          a.navbar-brand(href='/') DOCS
+      ul.top-nav-list.pull-right
+        if user
+          li
+            a(href='/account/#{user.login}',data-tip='个人中心') #{user.login}
+          li
+            a#add-item(href='javascript:;',data-tip='添加文档或幻灯片')
+              span.icon-plus
+          li
+            a(href='/logout',data-tip='退出登录')
+              span.icon-exit
+        if !user && !login
+          li
+            a(href='/login') 登录
+    block content
+
+    div.footer.line
+       div.container
+         span Create by
+         a(href='https://github.com/colorpeach') @colorpeach
+    ul#add-box.overlay
+       li
+         a(href='/edit') 添加文档
+       li
+         a(href='/deck') 添加幻灯片
+    script(type='text/javascript', src='/lib/jquery/1.11.0/jquery.js')
+    script(type='text/javascript', src='/js/common.js')
+    block script

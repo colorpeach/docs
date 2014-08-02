@@ -31,11 +31,11 @@ block content
       div.box-body.clearfix
         each project in projects
           div.tool-item
-            a.tool-link(href='/project/'+project.name)
+            a.tool-link(href='/projects/'+project.name)
               div.tool-detail
                 span(class='#{project.img}')
             div.tool-title
-              a(href='/project/'+project.name) #{project.title}
+              a(href='/projects/'+project.name) #{project.title}
               a.project-github(href='#{project.github}')
                 span.icon-github3
   

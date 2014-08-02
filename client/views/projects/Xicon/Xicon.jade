@@ -1,0 +1,20 @@
+extends ../layout
+block css
+  link(rel='stylesheet', href='/views/projects/Xicon/Xicon.css')
+
+block content
+  div.head-box
+    div.head-box-con
+      h1 Xicon
+      p — 纯css实现的icon图标
+      p — Xicon图标主要参照glyphicon
+      p — 兼容ie9+、chrome、firefox、safari
+      p — 部分icon使用box-shadow，在firefox下会有显示模糊问题
+      p — 此项目为主要以学习为目的，生产环境需要自行测试
+    div.btn-box
+      a.download-xicon(href="https://github.com/colorpeach/Xicon/archive/master.zip") download Xicon
+      a.fork-xicon(href="https://github.com/colorpeach/Xicon") Fork me on Github
+  div.box
+
+block script
+  script(type='text/javascript', src='/views/projects/Xicon/Xicon.js')

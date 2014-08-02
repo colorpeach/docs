@@ -1,0 +1,41 @@
+html,
+body{
+    height:100%;
+}
+
+
+body{
+    font-size:12px;
+	padding-top:48px;
+}
+
+.footer{
+	margin-top:20px;
+	padding:20px 0;
+	background-position: top center;
+}
+
+.top-nav{
+	padding-bottom:1px;
+	background-color:#fff;
+	z-index:999;
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	transition:all 0.3s;
+}
+
+.top-nav-list{
+	padding:0;
+	float:left;
+}
+
+.top-nav-list li{
+	display:inline-block;
+}
+
+.top-nav-list li a{
+	padding: 15px;
+	display: inline-block;
+}

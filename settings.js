@@ -30,7 +30,8 @@ module.exports = {
         "account",
         "slide",
         "doc",
-        "tools"
+        "tools",
+        "projects"
     ],
     //静态文件路径
     staticPath:[
