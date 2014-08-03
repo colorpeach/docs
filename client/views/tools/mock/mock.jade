@@ -8,7 +8,13 @@ block css
 block content
   div.mock-box(ng-controller='mockContent')
     div.mock-left(xtree='list')
-    div.mock-right(xgrid='table')
+    div.mock-right
+      h3 请求参数 
+        span.xicon-plus(ng-click='addRequest()')
+      div(xgrid='request')
+      h3 返回字段 
+        span.xicon-plus(ng-click='addResponse()')
+      div(xgrid='response')
     
 block script
   script(type='text/javascript', src='/js/angularplugin/grid/angular-grid.js')

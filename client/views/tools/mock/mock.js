@@ -3,29 +3,60 @@ angular.module('app',['ui.grid','ui.tree'])
 .controller('mockContent',
 ['$scope',
     function($scope){
-        $scope.table = {
+        $scope.request = {
             columns:[
                 {
-                    name:'th1',
-                    width:'5%',
-                    field:'a'
+                    name:'操作',
+                    width:'10%'
                 },
                 {
-                    name:'th1',
-                    width:'5%',
-                    field:'b'
+                    name:'名称',
+                    width:'20%',
+                    field:'name'
+                },
+                {
+                    name:'类型',
+                    width:'20%',
+                    field:'type'
+                },
+                {
+                    name:'规则',
+                    width:'20%',
+                    field:'rule'
+                },
+                {
+                    name:'备注',
+                    width:'40%',
+                    field:'mark'
                 }
             ],
-            rows:[
+            rows:[]
+        };
+        
+        $scope.response = {
+            columns:[
                 {
-                    a:"ddd",
-                    b:"bbb"
+                    name:'名称',
+                    width:'20%',
+                    field:'name'
                 },
                 {
-                    a:"ccc",
-                    b:"aaa"
+                    name:'类型',
+                    width:'20%',
+                    field:'type'
+                },
+                {
+                    name:'规则',
+                    width:'20%',
+                    field:'rule'
+                },
+                {
+                    name:'备注',
+                    width:'40%',
+                    field:'mark'
                 }
-            ]
+            ],
+            rows:[]
         };
         
         $scope.list = [
@@ -50,5 +81,13 @@ angular.module('app',['ui.grid','ui.tree'])
                 id:3
             }
         ];
+        
+        $scope.addRequest = function(){
+            $scope.request.rows.push({});
+        };
+        
+        $scope.addResponse = function(){
+            $scope.response.rows.push({});
+        };
     }    
 ]);

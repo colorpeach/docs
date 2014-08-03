@@ -1,6 +1,7 @@
 .aui-grid{
     border-collapse:collapse;
     table-layout:fixed;
+    width:100%;
 }
 
 .aui-grid th{
@@ -11,7 +12,7 @@
 .aui-grid th,
 .aui-grid td{
     text-align:center;
-    border:1px solid #fff;
+    border:1px solid #ddd;
 }
 
 .aui-grid input{

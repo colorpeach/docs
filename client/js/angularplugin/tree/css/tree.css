@@ -1,3 +1,24 @@
-.aui-tree-hide{
-    display:none;
+.aui-tree{
+    padding-left:20px;
+}
+
+.aui-tree ul{
+    padding-left:20px;
+}
+
+.aui-tree li{
+    list-style:none;
+    padding-left:0;
+}
+
+.aui-active{
+    background-color:#fff;
+}
+
+.aui-tree-expand{
+
+}
+
+.aui-tree-collapse{
+
 }

@@ -8,11 +8,17 @@ angular.module('ui.tree')
             scope: {
                 nodes : '=xtree'
             },
-            controller:'treeController',
+            controller:'xtreeController',
             templateUrl:config.treeTemplate,
             link:function(scope,element,attrs){
-                scope.gridClass = config.treeClass;
-                scope.nodeTemplate = config.nodeTemplate;
+                angular.extend(scope,config);
+                scope.node = {
+                    children:scope.nodes
+                };
+
+                scope.opera = {
+                    activeNode:""
+                };
             }
         };  
     }

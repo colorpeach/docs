@@ -5,11 +5,9 @@ angular.module('ui.tree')
     function(config){
         return {
             restrict:'A',
+            scope:true,
             link:function(scope,element,attrs){
-                scope.collapsed = function(event){
-                    scope.node._collapsed = !scope.node._collapsed;
-                    event.stopPropagation();
-                };
+                scope._collapsed = true;
             }
         };
     }

@@ -47,11 +47,11 @@
 }
 
 .tool-item{
-    border-style:solid;
-    border-width:1px 1px 1px 0;
-    border-color:#ddd;
+    border:1px solid #ddd;
     width:25%;
     float:left;
+    margin-left:-1px;
+    margin-top:-1px;
 }
 
 .tool-item:first-child{
@@ -60,6 +60,13 @@
 
 .tool-item .tool-link{
     text-decoration:none;
+}
+
+.tool-item:hover{
+    border-color:#428bca;
+    position:relative;
+    z-index:1;
+    transition:all 0.3s;
 }
 
 .tool-item:hover .tool-detail{
@@ -167,4 +174,16 @@
     content:"Xicon";
     position: absolute;
     left: -.6em;
+}
+
+@media (max-width : 720px) {
+    .main{
+        width:600px;
+    }
+    .tab-item{
+        width:100%;
+    }
+    .tool-item{
+        width:50%;
+    }
 }
