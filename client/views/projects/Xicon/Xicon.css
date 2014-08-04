@@ -131,7 +131,8 @@ i{
     font-size:15px;
 }
 
-[class^='xicon-'] {
+[class^="xicon-"],
+[class*=" xicon-"] {
   display: inline-block;
   vertical-align: middle;
   position: relative;
@@ -143,14 +144,26 @@ i{
   box-sizing: border-box;
 }
 [class^='xicon-']:before,
-[class^='xicon-']:after {
+[class*=" xicon-"]:before,
+[class^='xicon-']:after,
+[class*=" xicon-"]:after {
   content: '';
   pointer-events: none;
   display: block;
   position: absolute;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.xicon- {
+  /*     &off:before{
+        height:.8em;
+        width:.6em;
+        border-style:solid;
+        border-color:rgba(255,255,255,0) @icon-color;
+        border-width:.1em;
+        .border-radius(50%);
+    } */
 }
 .xicon-user:before {
   left: .25em;
@@ -918,26 +931,6 @@ i{
   height: .1em;
   box-shadow: .1em .1em,.2em .1em,.3em .1em,.4em .1em,.5em .1em,.6em .1em,.7em .1em,.8em .1em,.9em .1em,1em .1em,.1em .2em,.2em .2em,.3em .2em,.4em .2em,.5em .2em,.6em .2em,.7em .2em,.8em .2em,.9em .2em,1em .2em,.1em .3em,1em .3em,.1em .4em,.3em .4em,.5em .4em,.6em .4em,.7em .4em,.8em .4em,1em .4em,.1em .5em,1em .5em,.1em .6em,.3em .6em,.5em .6em,.6em .6em,.7em .6em,.8em .6em,1em .6em,.1em .7em,1em .7em,.1em .8em,.3em .8em,.5em .8em,.6em .8em,.7em .8em,.8em .8em,1em .8em,.1em .9em,1em .9em,.1em 1em,.2em 1em,.3em 1em,.4em 1em,.5em 1em,.6em 1em,.7em 1em,.8em 1em,.9em 1em,1em 1em;
 }
-.xicon- {
-  /*     &heart-empty:before{
-        top:.3em;
-        left:.2em;
-        height:.5em;
-        width:.25em;
-        .border(.07em);
-        .border-radius(.2em .2em 0 .2em);
-        .transform(rotate(-30deg));
-    }
-    &heart-empty:after{
-        top:.3em;
-        left:.4em;
-        height:.5em;
-        width:.25em;
-        .border(.07em);
-         .border-radius(.2em .2em .2em 0);
-        .transform(rotate(30deg));
-    } */
-}
 .xicon-asterisk {
   overflow: visible;
   border-style: solid;
@@ -1218,25 +1211,6 @@ i{
   border-right-color: transparent;
   border-bottom-color: transparent;
 }
-.xicon-ok-sign {
-  border-style: solid;
-  border-width: 0.1em;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -o-border-radius: 100%;
-  border-radius: 100%;
-}
-.xicon-ok-sign:before {
-  width: .4em;
-  height: .2em;
-  left: .15em;
-  top: .2em;
-  border-style: solid;
-  border-width: 0 0 0.05em 0.05em;
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
 .xicon-question-sign {
   border-style: solid;
   border-width: 0.1em;
@@ -1247,20 +1221,27 @@ i{
 }
 .xicon-question-sign:before {
   top: .1em;
-  left: .2em;
+  left: .23em;
+  width: .15em;
+  height: .15em;
   border-style: solid;
-  border-width: 0.2em;
+  border-width: 0.1em;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -o-border-radius: 100%;
   border-radius: 100%;
   border-left-color: transparent;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 .xicon-question-sign:after {
+  width: .1em;
+  height: .05em;
   border-style: solid;
-  border-width: 0.1em;
-  left: .3em;
-  top: .55em;
+  border-width: 0.2em 0 0.1em 0;
+  left: .35em;
+  top: .37em;
 }
 .xicon-arrow-right:before {
   top: .2em;
@@ -1299,9 +1280,9 @@ i{
 .xicon-comment {
   border-style: solid;
   border-width: 0.5em;
-  -webkit-transform: scale(0.8, 0.6);
-  -ms-transform: scale(0.8, 0.6);
-  transform: scale(0.8, 0.6);
+  -webkit-transform: scale(1, 0.7);
+  -ms-transform: scale(1, 0.7);
+  transform: scale(1, 0.7);
   -webkit-border-radius: 0.1em;
   -moz-border-radius: 0.1em;
   -o-border-radius: 0.1em;
@@ -1309,14 +1290,14 @@ i{
   overflow: visible;
 }
 .xicon-comment:before {
-  -webkit-transform: scale(1.25, 1.66666667);
-  -ms-transform: scale(1.25, 1.66666667);
-  transform: scale(1.25, 1.66666667);
+  -webkit-transform: scale(1, 1.42857143);
+  -ms-transform: scale(1, 1.42857143);
+  transform: scale(1, 1.42857143);
 }
 .xicon-comment:after {
-  -webkit-transform: scale(1.25, 1.66666667);
-  -ms-transform: scale(1.25, 1.66666667);
-  transform: scale(1.25, 1.66666667);
+  -webkit-transform: scale(1, 1.42857143);
+  -ms-transform: scale(1, 1.42857143);
+  transform: scale(1, 1.42857143);
 }
 .xicon-comment:before {
   left: -0.5em;
@@ -1334,9 +1315,9 @@ i{
   top: .1em;
   border-style: solid;
   border-width: 0 0.2em 0.2em 0.2em;
-  -webkit-transform: scale(0.5, 0.5);
-  -ms-transform: scale(0.5, 0.5);
-  transform: scale(0.5, 0.5);
+  -webkit-transform: scale(0.7, 0.7);
+  -ms-transform: scale(0.7, 0.7);
+  transform: scale(0.7, 0.7);
   -webkit-border-radius: 0 0 0.3em 0.3em;
   -moz-border-radius: 0 0 0.3em 0.3em;
   -o-border-radius: 0 0 0.3em 0.3em;
@@ -1344,44 +1325,44 @@ i{
   overflow: visible;
 }
 .xicon-magnet:before {
-  -webkit-transform: scale(2, 2);
-  -ms-transform: scale(2, 2);
-  transform: scale(2, 2);
+  -webkit-transform: scale(1.42857143, 1.42857143);
+  -ms-transform: scale(1.42857143, 1.42857143);
+  transform: scale(1.42857143, 1.42857143);
 }
 .xicon-magnet:after {
-  -webkit-transform: scale(2, 2);
-  -ms-transform: scale(2, 2);
-  transform: scale(2, 2);
+  -webkit-transform: scale(1.42857143, 1.42857143);
+  -ms-transform: scale(1.42857143, 1.42857143);
+  transform: scale(1.42857143, 1.42857143);
 }
 .xicon-magnet:before {
   top: -0.3em;
-  left: -0.15em;
+  left: -0.18em;
   border-style: solid;
-  border-width: 0.05em;
+  border-width: 0.08em;
 }
 .xicon-magnet:after {
   top: -0.3em;
-  left: .65em;
+  left: .6em;
   border-style: solid;
-  border-width: 0.05em;
+  border-width: 0.08em;
 }
 .xicon-resize-vertical {
   left: .4em;
   border-left: .1em solid;
-  -webkit-transform: scale(1, 0.6);
-  -ms-transform: scale(1, 0.6);
-  transform: scale(1, 0.6);
+  -webkit-transform: scale(1, 0.8);
+  -ms-transform: scale(1, 0.8);
+  transform: scale(1, 0.8);
   overflow: visible;
 }
 .xicon-resize-vertical:before {
-  -webkit-transform: scale(1, 1.66666667);
-  -ms-transform: scale(1, 1.66666667);
-  transform: scale(1, 1.66666667);
+  -webkit-transform: scale(1, 1.25);
+  -ms-transform: scale(1, 1.25);
+  transform: scale(1, 1.25);
 }
 .xicon-resize-vertical:after {
-  -webkit-transform: scale(1, 1.66666667);
-  -ms-transform: scale(1, 1.66666667);
-  transform: scale(1, 1.66666667);
+  -webkit-transform: scale(1, 1.25);
+  -ms-transform: scale(1, 1.25);
+  transform: scale(1, 1.25);
 }
 .xicon-resize-vertical:before {
   top: -0.4em;
@@ -1403,24 +1384,24 @@ i{
 }
 .xicon-resize-horizontal {
   border-bottom: .1em solid;
-  -webkit-transform: scale(0.7, 1);
-  -ms-transform: scale(0.7, 1);
-  transform: scale(0.7, 1);
+  -webkit-transform: scale(0.9, 1);
+  -ms-transform: scale(0.9, 1);
+  transform: scale(0.9, 1);
   top: -0.5em;
   overflow: visible;
 }
 .xicon-resize-horizontal:before {
-  -webkit-transform: scale(1.42857143, 1);
-  -ms-transform: scale(1.42857143, 1);
-  transform: scale(1.42857143, 1);
+  -webkit-transform: scale(1.11111111, 1);
+  -ms-transform: scale(1.11111111, 1);
+  transform: scale(1.11111111, 1);
 }
 .xicon-resize-horizontal:after {
-  -webkit-transform: scale(1.42857143, 1);
-  -ms-transform: scale(1.42857143, 1);
-  transform: scale(1.42857143, 1);
+  -webkit-transform: scale(1.11111111, 1);
+  -ms-transform: scale(1.11111111, 1);
+  transform: scale(1.11111111, 1);
 }
 .xicon-resize-horizontal:before {
-  left: -0.4em;
+  left: -0.3em;
   top: .75em;
   border-style: solid;
   border-width: 0.2em;
@@ -1447,8 +1428,10 @@ i{
   top: .4em;
 }
 .xicon-wrench:before {
+  width: .2em;
+  height: .2em;
   top: -0.35em;
-  left: -0.3em;
+  left: -0.4em;
   border-style: solid;
   border-width: 0.2em;
   -webkit-border-radius: 100%;
@@ -1463,7 +1446,7 @@ i{
   left: .4em;
   top: .1em;
   border-style: solid;
-  border-width: 0.05em;
+  border-width: 0.1em;
   -webkit-border-radius: 20% 10% 10% 10%;
   -moz-border-radius: 20% 10% 10% 10%;
   -o-border-radius: 20% 10% 10% 10%;
@@ -1477,9 +1460,9 @@ i{
   width: .2em;
   height: .4em;
   left: .35em;
-  top: .3em;
+  top: .4em;
   border-style: solid;
-  border-width: 0.05em;
+  border-width: 0.1em;
   -webkit-border-radius: 20% 10% 10% 10%;
   -moz-border-radius: 20% 10% 10% 10%;
   -o-border-radius: 20% 10% 10% 10%;
@@ -1491,30 +1474,13 @@ i{
 }
 .xicon-collapse-up {
   border-style: solid;
-  border-width: 0.15em;
-  -webkit-border-radius: 0.2em;
-  -moz-border-radius: 0.2em;
-  -o-border-radius: 0.2em;
-  border-radius: 0.2em;
-  -webkit-transform: scale(0.7, 0.7);
-  -ms-transform: scale(0.7, 0.7);
-  transform: scale(0.7, 0.7);
+  border-width: 0.1em;
 }
 .xicon-collapse-up:before {
-  -webkit-transform: scale(1.42857143, 1.42857143);
-  -ms-transform: scale(1.42857143, 1.42857143);
-  transform: scale(1.42857143, 1.42857143);
-}
-.xicon-collapse-up:after {
-  -webkit-transform: scale(1.42857143, 1.42857143);
-  -ms-transform: scale(1.42857143, 1.42857143);
-  transform: scale(1.42857143, 1.42857143);
-}
-.xicon-collapse-up:before {
-  top: .1em;
-  left: .2em;
+  top: -0.1em;
+  left: .1em;
   border-style: solid;
-  border-width: 0.15em;
+  border-width: 0.3em;
   border-top-color: transparent;
   border-right-color: transparent;
   border-left-color: transparent;
@@ -1522,10 +1488,10 @@ i{
 .xicon-log-in {
   left: .2em;
   border-style: solid;
-  border-width: 0.15em;
-  -webkit-transform: scale(0.4, 0.5);
-  -ms-transform: scale(0.4, 0.5);
-  transform: scale(0.4, 0.5);
+  border-width: 0.2em;
+  -webkit-transform: scale(0.7, 1);
+  -ms-transform: scale(0.7, 1);
+  transform: scale(0.7, 1);
   border-left-color: transparent;
   -webkit-border-radius: 0.1em 0.1em 0.1em 0.1em;
   -moz-border-radius: 0.1em 0.1em 0.1em 0.1em;
@@ -1534,27 +1500,27 @@ i{
   overflow: visible;
 }
 .xicon-log-in:before {
-  -webkit-transform: scale(2.5, 2);
-  -ms-transform: scale(2.5, 2);
-  transform: scale(2.5, 2);
+  -webkit-transform: scale(1.42857143, 1);
+  -ms-transform: scale(1.42857143, 1);
+  transform: scale(1.42857143, 1);
 }
 .xicon-log-in:after {
-  -webkit-transform: scale(2.5, 2);
-  -ms-transform: scale(2.5, 2);
-  transform: scale(2.5, 2);
+  -webkit-transform: scale(1.42857143, 1);
+  -ms-transform: scale(1.42857143, 1);
+  transform: scale(1.42857143, 1);
 }
 .xicon-log-in:before {
-  top: .35em;
+  top: .2em;
   left: -0.6em;
-  width: .3em;
+  width: .5em;
   height: .2em;
-  border-top: .1em solid;
+  border-top: .2em solid;
 }
 .xicon-log-in:after {
-  right: .2em;
-  top: .1em;
+  right: 0em;
+  top: .0em;
   border-style: solid;
-  border-width: 0.2em;
+  border-width: 0.3em;
   border-top-color: transparent;
   border-right-color: transparent;
   border-bottom-color: transparent;
@@ -1568,76 +1534,73 @@ i{
   width: .1em;
   height: .05em;
   border-style: solid;
-  border-width: 0.05em 0.2em 0.05em 0.7em;
+  border-width: 0.1em 0.2em 0.1em 0.7em;
 }
 .xicon-saved:after {
-  left: .1em;
   width: .5em;
   height: .2em;
+  left: .15em;
+  top: .2em;
   border-style: solid;
-  border-width: 0.1em;
-  border-top-color: transparent;
-  border-right-color: transparent;
-  -webkit-transform: rotate(-40deg);
-  -ms-transform: rotate(-40deg);
-  transform: rotate(-40deg);
+  border-width: 0 0 0.1em 0.1em;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 .xicon-credit-card {
   overflow: visible;
   border-top: .1em solid;
   top: .2em;
-  -webkit-transform: scale(0.7, 1);
-  -ms-transform: scale(0.7, 1);
-  transform: scale(0.7, 1);
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 .xicon-credit-card:before {
-  -webkit-transform: scale(1.42857143, 1);
-  -ms-transform: scale(1.42857143, 1);
-  transform: scale(1.42857143, 1);
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 .xicon-credit-card:after {
-  -webkit-transform: scale(1.42857143, 1);
-  -ms-transform: scale(1.42857143, 1);
-  transform: scale(1.42857143, 1);
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 .xicon-credit-card:before {
   top: .1em;
-  left: .15em;
   width: .3em;
   height: .1em;
   border-style: solid;
-  border-width: 0.2em 0.3em 0.1em 0.1em;
+  border-width: 0.3em 0.5em 0.1em 0.2em;
 }
 .xicon-stats {
-  top: .3em;
-  left: .1em;
-  border-left: .1em solid;
-  -webkit-transform: scale(1, 0.4);
-  -ms-transform: scale(1, 0.4);
-  transform: scale(1, 0.4);
+  top: .2em;
+  border-left: .2em solid;
+  -webkit-transform: scale(1, 0.6);
+  -ms-transform: scale(1, 0.6);
+  transform: scale(1, 0.6);
   overflow: visible;
 }
 .xicon-stats:before {
-  -webkit-transform: scale(1, 2.5);
-  -ms-transform: scale(1, 2.5);
-  transform: scale(1, 2.5);
+  -webkit-transform: scale(1, 1.66666667);
+  -ms-transform: scale(1, 1.66666667);
+  transform: scale(1, 1.66666667);
 }
 .xicon-stats:after {
-  -webkit-transform: scale(1, 2.5);
-  -ms-transform: scale(1, 2.5);
-  transform: scale(1, 2.5);
+  -webkit-transform: scale(1, 1.66666667);
+  -ms-transform: scale(1, 1.66666667);
+  transform: scale(1, 1.66666667);
 }
 .xicon-stats:before {
   left: .2em;
-  top: -0.2em;
+  top: -0.3em;
   border-style: solid;
-  border-width: 0.7em 0 0 0.1em;
+  border-width: 1em 0 0 0.2em;
 }
 .xicon-stats:after {
-  left: .5em;
-  top: .05em;
+  left: .6em;
+  top: -0.05em;
   border-style: solid;
-  border-width: 0.55em 0 0 0.1em;
+  border-width: 0.8em 0 0 0.2em;
 }
 .xicon-heart {
   overflow: visible;
