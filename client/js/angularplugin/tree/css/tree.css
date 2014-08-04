@@ -1,5 +1,5 @@
 .aui-tree{
-    padding-left:20px;
+    padding-left:0px;
 }
 
 .aui-tree ul{
@@ -9,6 +9,10 @@
 .aui-tree li{
     list-style:none;
     padding-left:0;
+}
+
+.aui-tree a{
+    cursor:pointer;
 }
 
 .aui-active{

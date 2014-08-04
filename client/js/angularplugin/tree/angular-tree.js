@@ -1,5 +1,7 @@
 angular.module('ui.tree',[])
+
 .value('xtree.config',{
+    simpleData:true,
     treeClass:'aui-tree',
     iconClass:'aui-tree-icon',
     nodeClass:'aui-tree-node',
@@ -10,4 +12,9 @@ angular.module('ui.tree',[])
     nodeTemplate:'/js/angularplugin/tree/template/node.html',
     onclick:angular.noop,
     oncollapse:angular.noop
+})
+
+.value('xtree.exportProp',{
+    activeNode:{},
+    data:[]
 });

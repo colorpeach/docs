@@ -267,7 +267,7 @@
                     $(this).parents('.account-left').find('.slide-tabs').children().eq(i).removeClass('active');
                 }
                 $tabCons.addClass('hidden');
-                $(".edit-box").removeClass('hidden');
+                $(".edit-img").removeClass('hidden');
 
             }),
            
@@ -288,8 +288,8 @@
             $('.slide-tabs').on('click','li',function(){
                 var i = $(this).index();
 
-                if(!$(".edit-box").hasClass('hidden')){
-                    $(".edit-box").addClass('hidden');
+                if(!$(".edit-img").hasClass('hidden')){
+                    $(".edit-img").addClass('hidden');
                 }
 
                 if(!$(this).hasClass('active')){

@@ -227,7 +227,7 @@
     var pendingMsg = '加载中...';
     
     $.ajaxSetup({
-        timeout:20000
+        timeout:40000
     });
     
     $.docsajax = function(opts){

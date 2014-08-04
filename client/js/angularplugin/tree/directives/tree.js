@@ -1,8 +1,8 @@
 angular.module('ui.tree')
 
 .directive('xtree',
-['xtree.config',
-    function(config){
+['xtree.config','xtree.utils','xtree.exportProp',
+    function(config,utils,exportProp){
         return {
             restrict:'A',
             scope: {
@@ -12,13 +12,17 @@ angular.module('ui.tree')
             templateUrl:config.treeTemplate,
             link:function(scope,element,attrs){
                 angular.extend(scope,config);
+                
                 scope.node = {
                     children:scope.nodes
                 };
+                
+                if(config.simpleData){
+                    scope.node.children = utils.transformToNexted(scope.nodes);
+                }
 
-                scope.opera = {
-                    activeNode:""
-                };
+                scope.opera = exportProp;
+                exportProp.data = scope.node.children;
             }
         };  
     }

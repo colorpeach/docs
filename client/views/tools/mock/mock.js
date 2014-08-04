@@ -1,93 +1,115 @@
 angular.module('app',['ui.grid','ui.tree'])
 
+.value('requestCols',
+[
+    {
+        name:'操作',
+        width:'10%'
+    },
+    {
+        name:'名称',
+        width:'20%',
+        field:'name'
+    },
+    {
+        name:'类型',
+        width:'20%',
+        field:'type'
+    },
+    {
+        name:'规则',
+        width:'20%',
+        field:'rule'
+    },
+    {
+        name:'备注',
+        width:'40%',
+        field:'mark'
+    }
+])
+
+.value('responseCols',
+[
+    {
+        name:'名称',
+        width:'20%',
+        field:'name'
+    },
+    {
+        name:'类型',
+        width:'20%',
+        field:'type'
+    },
+    {
+        name:'规则',
+        width:'20%',
+        field:'rule'
+    },
+    {
+        name:'备注',
+        width:'40%',
+        field:'mark'
+    }
+])
+
 .controller('mockContent',
-['$scope',
-    function($scope){
-        $scope.request = {
-            columns:[
-                {
-                    name:'操作',
-                    width:'10%'
-                },
-                {
-                    name:'名称',
-                    width:'20%',
-                    field:'name'
-                },
-                {
-                    name:'类型',
-                    width:'20%',
-                    field:'type'
-                },
-                {
-                    name:'规则',
-                    width:'20%',
-                    field:'rule'
-                },
-                {
-                    name:'备注',
-                    width:'40%',
-                    field:'mark'
-                }
-            ],
-            rows:[]
+['$scope','xtree.config','xtree.export','requestCols','responseCols',
+    function($scope,config,xtree,requestCols,responseCols){
+        
+        $scope.requestCols = requestCols;
+        $scope.responseCols = responseCols;
+        $scope.list = [];
+        $scope.baseUrl = 'http://doc.colorpeach.com/mock/';
+        
+        $scope.detail = {
+            name:'',
+            method:'',
+            url:'',
+            description:'',
+            request:[],
+            response:[]
         };
         
-        $scope.response = {
-            columns:[
-                {
-                    name:'名称',
-                    width:'20%',
-                    field:'name'
-                },
-                {
-                    name:'类型',
-                    width:'20%',
-                    field:'type'
-                },
-                {
-                    name:'规则',
-                    width:'20%',
-                    field:'rule'
-                },
-                {
-                    name:'备注',
-                    width:'40%',
-                    field:'mark'
+        $scope.addNode = function(){
+            var node = xtree.getSelected();
+            var newNode = {name:'新建节点'};
+            if(!node || !node.name){
+                xtree.getData().push(newNode);
+            }else{
+                if(!node.children){
+                    node.children = [];
                 }
-            ],
-            rows:[]
-        };
-        
-        $scope.list = [
-            {
-                name:"节点1",
-                id:1,
-                children:[
-                    {
-                        name:"节点2",
-                        id:2,
-                        children:[
-                            {
-                                name:"节点4",
-                                id:2
-                            }
-                        ]
-                    }    
-                ]
-            },
-            {
-                name:"节点3",
-                id:3
+                node.children.push(newNode);
             }
-        ];
+            
+        };
+        
+        $scope.deleteNode = function(){
+            xtree.deleteSelected();  
+        };
+        
+        $scope.cancelNode = function(){
+            xtree.cancelSelected();
+        };
         
         $scope.addRequest = function(){
-            $scope.request.rows.push({});
+            if(!$scope.detail.request){
+                $scope.detail.request = [];
+            }
+            $scope.detail.request.push({});
         };
         
         $scope.addResponse = function(){
-            $scope.response.rows.push({});
+            if(!$scope.detail.response){
+                $scope.detail.response = [];
+            }
+            $scope.detail.response.push({});
         };
+            
+        angular.extend(config,{
+            onclick:function(e,data,scope){
+                $scope.detail = data;
+            }
+        });
     }    
 ]);

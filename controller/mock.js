@@ -5,7 +5,7 @@ var mock = require('../models/mock.js');
 
 Mock.get = function(req,res){
     var url = req.url;
-    Mock.query(req.params,function(err,data){
+    mock.query(req.params,function(err,data){
         
     });
 };

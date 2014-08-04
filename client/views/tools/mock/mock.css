@@ -15,9 +15,26 @@ html,body{
     width:300px;
     float:left;
     height:100%;
+    font-size:14px;
 }
 
 .mock-right{
     margin-left:320px;
+    margin-right:20px;
     height:100%;
+}
+
+.interface-box input{
+    width:200px;
+    display:inline-block;
+    border-width:0 0 1px;
+}
+
+.interface-box label{
+    margin-right:10px;
+}
+
+.interface-box textarea{
+    vertical-align:middle;
+    width:200px;
 }

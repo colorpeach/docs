@@ -6,6 +6,7 @@ angular.module('ui.grid')
         return {
             restrict:'A',
             scope: {
+                cols : '=xgridcols',
                 data : '=xgrid'
             },
             controller:'gridController',
