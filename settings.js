@@ -1,5 +1,5 @@
 module.exports = {
-    secret:'colorpeach',
+    secret:"colorpeach",
     //需要权限访问
     authPath:[
         "edit",
@@ -18,8 +18,9 @@ module.exports = {
     ],
     //不需要权限ajax访问
     unauthAjaxPath:[
-        'fetch',
-        'mock'
+        "fetch",
+        "mock",
+        "photo"
     ],
     //不需要权限访问
     unauthPath:[
@@ -31,7 +32,9 @@ module.exports = {
         "slide",
         "doc",
         "tools",
-        "projects"
+        "projects",
+        "demo",
+        "modifypassword"
     ],
     //静态文件路径
     staticPath:[

@@ -20,6 +20,9 @@ html
             li
               a(href='/account/#{user.login}',data-tip='个人中心') #{user.login}
             li
+              a(href='/modifypassword/#{user.login}',data-tip='修改密码')
+                span.icon-key
+            li
               a#add-item(href='javascript:;',data-tip='添加文档或幻灯片')
                 span.icon-plus
             li

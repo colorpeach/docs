@@ -1,0 +1,6 @@
+extends layout
+
+block content
+  form(action='/photo/save_img',method='post',enctype='multipart/form-data')
+    input(type='file',name='file')
+    input(type='submit',value='提交')

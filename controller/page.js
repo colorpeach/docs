@@ -130,5 +130,13 @@ page.doc_User_Doc = function(req,res){
     });
 }
 
+//修改密码页面
+page.modifypassword = function(req,res){
+    if(req.session.user && req.params.user === req.session.user.login){
+        res.render('modifypassword',{user:req.session.user});
+    }else{
+        res.render('notfound');
+    }
+}
 module.exports = page;
 
