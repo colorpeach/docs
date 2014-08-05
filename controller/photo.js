@@ -8,17 +8,23 @@ var Photo = {};
 
 //获取图片流
 Photo.get_img = function(req,res){
-    photo.query({_id:req.query._id},function(list){
+    photo.query({user:req.session.user},function(list){
         if(list.length){
+            var type = list[0].type;
             fs.readFile(list[0].url,function(err, data){
                 if(err){
                     console.log(err);
                 }else{
-                    res.writeHead(200,{"Content-Type":"image/png"});
+                    res.writeHead(200,{"Content-Type":type});
                     res.write(data,"binary");
                     res.end();
                 }
             })
+        }else{
+            var data ="";
+            res.writeHead(200,{"Content-Type":"image/png"});
+            res.write(data,"binary");
+            res.end();
         }
     });
 }
@@ -26,28 +32,34 @@ Photo.get_img = function(req,res){
 //保存头像
 Photo.post_save_img = function(req,res){
     var form = new formidable.IncomingForm();
+    var login = req.session.user.login;
     form.parse(req, function(error, fields, files){
         for(var key in files){
             var file = files[key];
-            var fName = (new Date()).getTime();
+            if(file.type != "image/jpeg" && file.type != "image/png"){
+                res.end(baseRes({errorMsg:['格式错误']}));
+            }
             fs.readFile(file.path,function(err, data){
                 var pic = {
+                    login:login,
                     url:file.path,
-                    stream:data
+                    stream:data,
+                    type:file.type
                 };
-                var current_user = req.session.user;
-                if(current_user.portrait_id == undefined){
-                    photo.save(pic,function(data){
-                        current_user.portrait_id = data[0]._id;
-                        user.update(current_user,function(list){
-                            req.session.user = list[0];
-                        })
-                    });
-                }else{
-                    photo.update(pic,function(data){
-                        console.log(data);
-                    });
-                }
+                photo.update(pic,function(list){
+                    res.end(baseRes({successMsg:['修改成功']}));
+                })
+//                photo.query({login:login},function(list){
+//                    if(list.length){
+//                        photo.update(pic,function(data){
+//                            res.end(baseRes({successMsg:['修改成功']}));
+//                        });
+//                    }else{
+//                        photo.save(pic,function(data){
+//                            res.end(baseRes({successMsg:['修改成功']}));
+//                        });
+//                    }
+//                })
             })
         }
     })

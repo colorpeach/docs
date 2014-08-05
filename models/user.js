@@ -2,8 +2,7 @@ var dbClient = require('../db');
 var tidy = dbClient.column({
     login:'username',
     email:'email',
-    password:'password',
-    portrait_id:'portrait_id'
+    password:'password'
 });
 var user = {};
 

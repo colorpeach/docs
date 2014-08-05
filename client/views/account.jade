@@ -13,8 +13,8 @@ block content
     div.account-info.clearfix
       if user && user.avatar_url
         img(src='#{user.avatar_url}')
-      else if user.portrait_id
-        img(src='/get/img?_id=#{user.portrait_id}')
+      else if user
+        img(src='/get/img?_id=#{user.login}')
       else
         span.img-item.icon-user
       if user
