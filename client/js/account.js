@@ -275,7 +275,7 @@
                 var data = $(".edit-img").inputBox('data');
 
                 $.docsajax({
-                    url:'/photo/save_img',
+                    url:'/post/photo/save_img',
                     method:'post',
                     data:data,
                     dataType:'formData',

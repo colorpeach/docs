@@ -29,6 +29,11 @@ page.index = function(req,res){
                 'title':'Mock数据生成器',
                 'name':'mock',
                 'img':'mark-mock'
+            },
+            {
+                'title':'网页截图',
+                'name':'screanshot',
+                'img':'xicon-screenshot'
             }
         ],
         projects:[
