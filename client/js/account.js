@@ -280,7 +280,7 @@
                     data:data,
                     dataType:'formData',
                     success:function(d){
-
+                        location.href = '/account/'+user;
                     }
                 })
             })
