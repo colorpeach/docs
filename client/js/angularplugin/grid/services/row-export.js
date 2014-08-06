@@ -1,7 +1,7 @@
-angular.module('ui.tree')
+angular.module('ui.grid')
 
-.factory('xtree.export',
-['xtree.exportProp',
+.factory('grid.export',
+['grid.exportProp',
     function(exportProp){
         var exportObj = {
             getParentNode:function(){
@@ -9,9 +9,6 @@ angular.module('ui.tree')
             },
             getSelected:function(){
                 return exportProp.activeNode;
-            },
-            expandSelected:function(){
-                exportProp.scope._collapsed = false;
             },
             deleteSelected:function(){
                 if(!exportProp.scope){

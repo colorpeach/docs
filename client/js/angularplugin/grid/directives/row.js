@@ -5,11 +5,10 @@ angular.module('ui.grid')
     function(config){
         return {
             restrict:'A',
-            scope: {
-                row:'=xgridrow',
-                cols:'=xgridcols'
-            },
             templateUrl:config.rowTemplate,
+            compile:function(element,attrs){
+                console.log(arguments);
+            },
             link:function(scope,element,attrs){
                 console.log(scope);
             }

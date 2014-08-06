@@ -16,6 +16,9 @@ block content
         button.btn(ng-click='cancelNode()') 取消选中
       div(xtree='list')
     div.mock-right
+      div
+        button.btn.btn-primary(ng-click='saveDetail()') 保存
+        button.btn.btn-success(ng-click='generateData()') 生成模拟数据
       h3 接口信息
       div.interface-box
         div.form-group
@@ -39,18 +42,21 @@ block content
       h3 返回字段 
         span.xicon-plus(ng-click='addResponse()')
       div(xgridcols='responseCols',xgrid='detail.response')
+      p
+        pre {{mockData}}
     
 block script
+  script(type='text/javascript', src='/lib/requirejs/2.1.14/require.js')
   script(type='text/javascript', src='/js/angularplugin/grid/angular-grid.js')
   script(type='text/javascript', src='/js/angularplugin/grid/services/utils.js')
   script(type='text/javascript', src='/js/angularplugin/grid/controllers/grid.js')
   script(type='text/javascript', src='/js/angularplugin/grid/directives/grid.js')
   script(type='text/javascript', src='/js/angularplugin/grid/directives/row.js')
+  script(type='text/javascript', src='/js/angularplugin/grid/directives/row-include.js')
   script(type='text/javascript', src='/js/angularplugin/tree/angular-tree.js')
   script(type='text/javascript', src='/js/angularplugin/tree/services/utils.js')
   script(type='text/javascript', src='/js/angularplugin/tree/services/export.js')
   script(type='text/javascript', src='/js/angularplugin/tree/controllers/tree.js')
   script(type='text/javascript', src='/js/angularplugin/tree/directives/tree.js')
   script(type='text/javascript', src='/js/angularplugin/tree/directives/node.js')
-  //script(type='text/javascript', src='/lib/mock/mock.js')
   script(type='text/javascript', src='/views/tools/mock/mock.js')
