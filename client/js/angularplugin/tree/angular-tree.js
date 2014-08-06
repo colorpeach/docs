@@ -16,5 +16,6 @@ angular.module('ui.tree',[])
 
 .value('xtree.exportProp',{
     activeNode:{},
+    scope:{},
     data:[]
 });

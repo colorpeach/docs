@@ -10,6 +10,7 @@ angular.module('ui.tree')
         
         $scope.click = function($event){
             $scope.opera.activeNode = this.node;
+            $scope.opera.scope = this;
             config.onclick($event,this.node,this);
         };
     }

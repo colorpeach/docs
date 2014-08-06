@@ -85,7 +85,7 @@ angular.module('app',['ui.grid','ui.tree'])
         };
         
         $scope.deleteNode = function(){
-            xtree.deleteSelected();  
+            xtree.deleteSelected();
         };
         
         $scope.cancelNode = function(){
