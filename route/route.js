@@ -156,10 +156,10 @@ module.exports = function(app){
     app.post('/post/org/del/user',org.post_org_del_user);
 
     //获取图片
-    app.get('/get/img',photo.get_img);
+    app.get('/fetch/img',photo.get_img);
 
     //保存图片
-    app.post('/photo/save_img',photo.post_save_img);
+    app.post('/post/photo/save_img',photo.post_save_img);
 
     app.get('/demo',function(req,res){
         res.render('demo');

@@ -31,7 +31,7 @@ function docHtml(l,t){
                   doc.title,
                 '</a>',
                 '<a href="/account/'+doc.user+'" class="user-span pull-right">',
-                '<span class="icon-user"></span>'+doc.user,
+                doc.user+'<img src="/fetch/img?user='+doc.user+'">',
                 '</a></div>'].join("");
       }).join("");
 }

@@ -35,6 +35,13 @@
     background-color:#eee;
 }
 
+.doc-item img{
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
 .box-head{
     border-left:1px solid;
     padding:14px 10px;

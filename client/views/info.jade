@@ -8,6 +8,8 @@ block content
     div.account-info.clearfix
       if owner && owner.avatar_url
         img(src='#{owner.avatar_url}')
+      else if owner
+        img(src='/fetch/img?user=#{owner.login}')
       else
         span.img-item.icon-user
       if owner

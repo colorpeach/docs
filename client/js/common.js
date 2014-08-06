@@ -274,7 +274,6 @@
             }else{
                 if(d.successMsg){
                     $.prompt({
-                        type:'warning',
                         content: $.map(d.successMsg,function(n){return '<p>'+n+'</p>';})
                     })
                 }
