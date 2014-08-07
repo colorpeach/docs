@@ -40,7 +40,18 @@ html
     //     a(href='/edit') 添加文档
     //   li
     //     a(href='/deck') 添加幻灯片
-    script(type='text/javascript', src='/lib/jquery/1.11.0/jquery.js')
-    script(type='text/javascript', src='/lib/angular/1.1.5/angular.js')
-    script(type='text/javascript',src='/js/tools.js')
+    script(type='text/javascript', src='/lib/requirejs/2.1.14/require.js')
+    script.
+      require.config({
+          paths:{
+              mock:'/lib/mock/mock',
+              angular:'/lib/angular/1.1.5/angular',
+              utils:'/js/tools'
+          },
+          shim:{
+              angular:{
+                  exports:'angular'
+              }
+          }
+      });
     block script

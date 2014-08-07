@@ -1,0 +1,39 @@
+script(type='text/ng-template',id='/mock-detail.html')
+  div.mock-box(ng-controller='mockData')
+    div.mock-left
+      div
+        button.btn.btn-success(ng-click='addNode()')
+          span.xicon-plus
+          | 添加节点
+        button.btn.btn-warning(ng-click='deleteNode()') 删除节点
+        button.btn(ng-click='cancelNode()') 取消选中
+      div(xtree='list')
+    div.mock-right
+      div
+        button.btn.btn-primary(ng-click='saveDetail()') 保存
+        button.btn.btn-success(ng-click='generateData()') 生成模拟数据
+      h3 接口信息
+      div.interface-box
+        div.form-group
+          label.sr-only 接口名称
+          input(ng-model='detail.name',type='text')
+        div.form-group
+          label.sr-only 请求方法
+          select(ng-model='detail.method',type='text')
+            option(value='get') GET
+            option(value='post') POST
+        div.form-group
+          label.sr-only 接口地址
+          span(ng-bind='baseUrl')
+          input(ng-model='detail.url',type='text')
+        div.form-group
+          label.sr-only 接口描述
+          textarea(type='text',ng-model='detail.description')
+      h3 请求参数 
+        span.xicon-plus(ng-click='addRequest()')
+      div(xgridcols='requestCols',xgrid='detail.request')
+      h3 返回字段 
+        span.xicon-plus(ng-click='addResponse()')
+      div(xgridcols='responseCols',xgrid='detail.response')
+      p
+        pre(ng-bind='mockData')

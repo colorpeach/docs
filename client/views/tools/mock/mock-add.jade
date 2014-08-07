@@ -1,0 +1,12 @@
+script(type='text/ng-template',id='/mock-add.html')
+  h3 新增项目
+  div.interface-box
+    div.form-group
+      label.sr-only 项目名称
+      input(ng-model='detail.name',type='text')
+    div.form-group
+      label.sr-only 项目描述
+      textarea(type='text',ng-model='detail.description')
+    div
+      button.btn.btn-primary(ng-click='saveDetail()') 保存
+      a.btn.btn-default(href='#/') 取消

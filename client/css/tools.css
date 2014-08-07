@@ -6,13 +6,12 @@ body{
 
 body{
     font-size:12px;
-	padding-top:60px;
+	padding-top:48px;
 	background-color:#5E5E5E;
 }
 
 .main{
-	margin-top:-67px;
-	padding-top:67px;
+	padding:10px;
     min-height:100%;
 }
 
