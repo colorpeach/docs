@@ -1,6 +1,11 @@
 script(type='text/ng-template',id='/mock-dashboard.html')
   h3 项目列表
   div.mock-list.clearfix
+    a(ng-repeat='mock in mocks',href='#/detail/{{mock._id}}')
+      div.mock-item
+        span.xicon-remove(ng-click='delMock($event,$index)')
+        p {{mock.name}}
+        p {{mock.description}}
     if !user
       a(href='#/detail/1')
         div.mock-item

@@ -18,6 +18,7 @@ require.config({
 require([
     'angular',
     'mock',
+    'utils',
     'grid',
     'gridControl',
     'gridDirGrid',
@@ -36,58 +37,25 @@ require([
     .config(
     ['$routeProvider',
         function($routeProvider){
-            $routeProvider.
-                when('/',{
+            $routeProvider
+                .when('/',{
                     controller: 'mockDashboard',
                     templateUrl: '/mock-dashboard.html'
-                }).when('/add',{
+                })
+                .when('/add',{
                     controller: 'mockAdd',
                     templateUrl: '/mock-add.html'
-                }).when('/detail/:mockId',{
+                })
+                .when('/detail/:mockId',{
                     controller: 'mockData',
                     templateUrl: '/mock-detail.html'
-                }).otherwise({
+                })
+                .otherwise({
                     redirectTo:'/'
                 });
         }
     ])
 
-    .value('requestCols',
-    [
-        {
-            name:'操作',
-            width:'10%',
-            template:'<span class="xicon-remove" ng-click="removeRow($parent.$index)"></span>'
-        },
-        {
-            name:'名称',
-            width:'20%',
-            field:'name'
-        },
-        {
-            name:'规则',
-            width:'20%',
-            field:'rule'
-        },
-        {
-            name:'值',
-            width:'20%',
-            field:'value'
-        },
-        {
-            name:'类型',
-            width:'20%',
-            field:'type',
-            necessary:'typeList',
-            type:'select'
-        },
-        {
-            name:'备注',
-            width:'40%',
-            field:'mark'
-        }
-    ])
-    
     .value('responseCols',
     [
         {
@@ -124,30 +92,73 @@ require([
         }
     ])
     
-    .factory('saveDetail',
-    [
-        function(){
+    .factory('mockItem',
+    ['$http',
+        function($http){
             
+            return {
+                query:function(){
+                    return $http.get('/get/user/mocks');
+                },
+                get:function(id){
+                    return $http.get('/get/user/mock',{_id:id});
+                },
+                add:function(mock){
+                    return $http.post('/post/add/mock',mock);
+                },
+                del:function(id){
+                    return $http.post('/post/del/mock',{_id:id});
+                }
+            }
         }
     ])
     
     .controller('mockDashboard',
-    [
-        function(){
+    ['$scope','mockItem',
+        function($scope,mockItem){
+            mockItem.query()
+            .then(function(d){
+                $scope.mocks = d.data.mocks;
+            });
             
+            $scope.delMock = function(e,i){
+                mockItem.del(this.mock._id)
+                .then(function(d){
+                    if(!d.data.error){
+                        $scope.mocks.splice(i,1);
+                    }
+                });
+                e.preventDefault();
+            };
         }
     ])
     
     .controller('mockAdd',
-    [
-        function(){
-            
+    ['$scope','mockItem','$location',
+        function($scope,mockItem,$location){
+            $scope.save = function(){
+                if($scope.addForm.$invalid){
+                    return;
+                }
+                mockItem.add($scope.mock)
+                .then(function(d){
+                    if(!d.data.error){
+                        $location.url('/');
+                    }
+                });
+            }
         }
     ])
     
     .controller('mockData',
-    ['$scope','xtree.config','xtree.export','requestCols','responseCols','xgrid.config',
-        function($scope,config,xtree,requestCols,responseCols,gridConfig){
+    ['$scope','mockItem','$routeParams','xtree.config','xtree.export','responseCols','xgrid.config',
+        function($scope,   mockItem,   $routeParams,   config,   xtree,   responseCols,   gridConfig){
+            mockItem.get($routeParams.mockId)
+            .then(function(d){
+                $scope.list = d.data.mock.list;
+                $scope.name = d.data.mock.name;
+            });
+            
             var detail = {
                 name:'',
                 method:'',
@@ -157,12 +168,12 @@ require([
                 response:[]
             };
             
-            $scope.requestCols = requestCols;
-            $scope.responseCols = responseCols;
             $scope.list = [];
+            $scope.requestCols = angular.copy(responseCols);
+            $scope.responseCols = responseCols;
             $scope.baseUrl = 'http://doc.colorpeach.com/mock/';
             
-            $scope.detail = detail
+            $scope.detail = detail;
             
             $scope.addNode = function(){
                 var node = xtree.getSelected();
