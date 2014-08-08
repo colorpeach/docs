@@ -1,7 +1,5 @@
-<li ng-repeat="node in node.children" xtreenode>
-    <span class="{{collapseClass}}" ng-class="{false:expandClass,true:collapseClass}[_collapsed]" ng-click="collapse($event)"></span>
-    <a class="{{nodeClass}}" ng-class="{true:activeClass}[opera.activeNode === node]" ng-click="click($event)">{{node.name}}</a>
-    <ul ng-show="!_collapsed" ng-include="nodeTemplate">
-
-    </ul>
-</li>
+<span class="{{collapseClass}}" ng-class="{false:expandClass,true:collapseClass}[_collapsed]" ng-click="collapse($event)"></span>
+<a class="{{nodeClass}}" ng-class="{true:activeClass}[opera.activeNode === node]" ng-click="click($event)">{{node.name}}</a>
+<ul ng-show="!_collapsed">
+    <li ng-repeat="node in node.children" xtreenode="nodeTemplate"></li>
+</ul>

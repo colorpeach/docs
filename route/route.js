@@ -71,14 +71,8 @@ module.exports = function(app){
     //工具
     app.get('/tools/:tool',tools.page);
 
-    //开源呢项目
+    //开源项目
     app.get('/projects/:project',projects.page);
-    
-    //mock数据get
-    app.get('/mock/*',mock.get);
-    
-    //mock数据post
-    app.post('/mock/*',mock.post);
     
     
      //获取用户公开文档
@@ -164,4 +158,23 @@ module.exports = function(app){
     app.get('/demo',function(req,res){
         res.render('demo');
     });
+    
+    
+    //查询mock项目
+    app.get('/get/user/mocks',mock.get_user_mocks);
+    
+    //添加mock项目
+    app.post('/post/add/mock',mock.post_add_mock);
+    
+    //取得mock项目明细
+    app.get('/get/user/mock',mock.get_mock_detail);
+    
+    //删除mock项目
+    app.post('/post/del/mock',mock.post_del_mock);
+    
+    //mock数据get
+    app.get('/mock/*',mock.get);
+    
+    //mock数据post
+    app.post('/mock/*',mock.post);
 };

@@ -1,8 +1,10 @@
-angular.module('ui.grid')
+define(['angular','grid'],function(angular){
+    angular.module('ui.grid')
 
-.factory('$utils',
-['$document',
-    function(){
-            
-    }
-]);
+    .factory('$utils',
+    ['$document',
+        function(){
+
+        }
+    ]);
+});

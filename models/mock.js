@@ -1,9 +1,9 @@
 var dbClient = require('../db');
 var tidy = dbClient.column({
-    mock:'mock',
+    name:'name',
     user:'user',
-    url:'url',
-    parentId:"parentId"
+    description:'description',
+    list:"list"
 });
 
 var Mock = {};

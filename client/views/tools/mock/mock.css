@@ -6,6 +6,28 @@ html,body{
     z-index:1;
 }
 
+.mock-item{
+    height:100px;
+    width:200px;
+    border: 1px solid #ddd;
+    background-color:#fff;
+    float:left;
+    margin-left:10px;
+    margin-top:10px;
+}
+
+.add-mock{
+    text-align:center;
+    font-size:60px;
+    color:#ddd;
+    cursor:pointer;
+}
+
+.add-mock:hover{
+    color:#aaa;
+    border-color:#ddd;
+}
+
 .mock-box{
     height:100%;
 }
