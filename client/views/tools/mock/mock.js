@@ -92,6 +92,151 @@ require([
         }
     ])
     
+    .value('typeList',
+    [
+        ["","不使用"],
+        [
+            "boolean",
+            "Basics.boolean"
+        ],
+        [
+            "natural",
+            "Basics.natural"
+        ],
+        [
+            "integer",
+            "Basics.integer"
+        ],
+        [
+            "float",
+            "Basics.float"
+        ],
+        [
+            "character",
+            "Basics.character"
+        ],
+        [
+            "string",
+            "Basics.string"
+        ],
+        [
+            "range",
+            "Basics.range"
+        ],
+        [
+            "date",
+            "Basics.date"
+        ],
+        [
+            "time",
+            "Basics.time"
+        ],
+        [
+            "datetime",
+            "Basics.datetime"
+        ],
+        [
+            "now",
+            "Basics.now"
+        ],
+        [
+            "image",
+            "Image.image"
+        ],
+        [
+            "dataImage",
+            "Image.dataImage"
+        ],
+        [
+            "color",
+            "Color.color"
+        ],
+        [
+            "paragraph",
+            "Text.paragraph"
+        ],
+        [
+            "sentence",
+            "Text.sentence"
+        ],
+        [
+            "word",
+            "Text.word"
+        ],
+        [
+            "title",
+            "Text.title"
+        ],
+        [
+            "first",
+            "Name.first"
+        ],
+        [
+            "last",
+            "Name.last"
+        ],
+        [
+            "name",
+            "Name.name"
+        ],
+        [
+            "url",
+            "Web.url"
+        ],
+        [
+            "domain",
+            "Web.domain"
+        ],
+        [
+            "email",
+            "Web.email"
+        ],
+        [
+            "ip",
+            "Web.ip"
+        ],
+        [
+            "tld",
+            "Web.tld"
+        ],
+        [
+            "area",
+            "Address.area"
+        ],
+        [
+            "region",
+            "Address.region"
+        ],
+        [
+            "capitalize",
+            "Helpers.capitalize"
+        ],
+        [
+            "upper",
+            "Helpers.upper"
+        ],
+        [
+            "lower",
+            "Helpers.lower"
+        ],
+        [
+            "pick",
+            "Helpers.pick"
+        ],
+        [
+            "shuffle",
+            "Helpers.shuffle"
+        ],
+        [
+            "guid",
+            "Miscellaneous.guid"
+        ],
+        [
+            "id",
+            "Miscellaneous.id"
+        ]
+    ])
+    
     .factory('mockItem',
     ['$http',
         function($http){
@@ -100,14 +245,26 @@ require([
                 query:function(){
                     return $http.get('/get/user/mocks');
                 },
-                get:function(id){
-                    return $http.get('/get/user/mock',{_id:id});
-                },
                 add:function(mock){
                     return $http.post('/post/add/mock',mock);
                 },
                 del:function(id){
                     return $http.post('/post/del/mock',{_id:id});
+                },
+                getItem:function(id){
+                    return $http.get('/get/mock/item?id='+id);
+                },
+                getDetail:function(id){
+                    return $http.get('/get/mock/detail?_id='+id);
+                },
+                addItem:function(item){
+                    return $http.post('/post/add/mock/item',item);
+                },
+                updateItem:function(item){
+                    return $http.post('/post/update/mock/item',item);
+                },
+                deleteItem:function(data){
+                    return $http.post('/post/del/mock/item',data);
                 }
             }
         }
@@ -151,12 +308,14 @@ require([
     ])
     
     .controller('mockData',
-    ['$scope','mockItem','$routeParams','xtree.config','xtree.export','responseCols','xgrid.config',
-        function($scope,   mockItem,   $routeParams,   config,   xtree,   responseCols,   gridConfig){
-            mockItem.get($routeParams.mockId)
+    ['$scope','mockItem','$routeParams','xtree.config','xtree.export','responseCols','xgrid.config','typeList',
+        function($scope,   mockItem,   $routeParams,   config,   xtree,   responseCols,   gridConfig,   typeList){
+            var mockId = $routeParams.mockId;
+            
+            mockItem.getDetail(mockId)
             .then(function(d){
-                $scope.list = d.data.mock.list;
-                $scope.name = d.data.mock.name;
+                $scope.list = d.data.nodes.list || [];
+                $scope.name = d.data.nodes.name;
             });
             
             var detail = {
@@ -171,27 +330,53 @@ require([
             $scope.list = [];
             $scope.requestCols = angular.copy(responseCols);
             $scope.responseCols = responseCols;
-            $scope.baseUrl = 'http://doc.colorpeach.com/mock/';
+            $scope.baseUrl = 'http://doc.colorpeach.com/mock/'+mockId+'/';
+            $scope.status = {
+                addNode:false
+            };
             
             $scope.detail = detail;
             
-            $scope.addNode = function(){
-                var node = xtree.getSelected();
-                var newNode = {name:'新建节点'};
-                if(!node || !node.name){
-                    xtree.getData().push(newNode);
-                }else{
-                    if(!node.children){
-                        node.children = [];
+            $scope.addNode = function(e){
+                if(e.keyCode === 13){
+                    var node = xtree.getSelected();
+                    var newNode = {name:$scope.nodeName,_id:mockId};
+                    
+                    if(node && node.name){
+                        newNode.parentId = node.id;
                     }
-                    node.children.push(newNode);
+                    
+                    mockItem.addItem(newNode)
+                    .then(function(d){
+                        newNode.id = d.data.id;
+                        
+                        if(!node || !node.name){
+                            xtree.getData().push(newNode);
+                        }else{
+                            if(!node.children){
+                                node.children = [];
+                            }
+                            node.children.push(newNode);
+                            xtree.expandSelected();
+                        }
+                        $scope.status.addNode = false;
+                        $scope.nodeName = "";
+                    });
                 }
-                xtree.expandSelected();
             };
             
             $scope.deleteNode = function(){
-                xtree.deleteSelected();
-                $scope.detail = detail;
+                var node = xtree.getSelected();
+                
+                if(!node || !node.id){
+                    return;
+                }
+                
+                mockItem.deleteItem({id:node.id,_id:mockId})
+                .then(function(){
+                    xtree.deleteSelected();
+                    $scope.detail = detail;
+                });
             };
             
             $scope.cancelNode = function(){
@@ -254,149 +439,7 @@ require([
                 
             angular.extend(gridConfig,{
                 templateDate:{
-                    typeList:[
-                        ["","不使用"],
-                        [
-                            "boolean",
-                            "Basics.boolean"
-                        ],
-                        [
-                            "natural",
-                            "Basics.natural"
-                        ],
-                        [
-                            "integer",
-                            "Basics.integer"
-                        ],
-                        [
-                            "float",
-                            "Basics.float"
-                        ],
-                        [
-                            "character",
-                            "Basics.character"
-                        ],
-                        [
-                            "string",
-                            "Basics.string"
-                        ],
-                        [
-                            "range",
-                            "Basics.range"
-                        ],
-                        [
-                            "date",
-                            "Basics.date"
-                        ],
-                        [
-                            "time",
-                            "Basics.time"
-                        ],
-                        [
-                            "datetime",
-                            "Basics.datetime"
-                        ],
-                        [
-                            "now",
-                            "Basics.now"
-                        ],
-                        [
-                            "image",
-                            "Image.image"
-                        ],
-                        [
-                            "dataImage",
-                            "Image.dataImage"
-                        ],
-                        [
-                            "color",
-                            "Color.color"
-                        ],
-                        [
-                            "paragraph",
-                            "Text.paragraph"
-                        ],
-                        [
-                            "sentence",
-                            "Text.sentence"
-                        ],
-                        [
-                            "word",
-                            "Text.word"
-                        ],
-                        [
-                            "title",
-                            "Text.title"
-                        ],
-                        [
-                            "first",
-                            "Name.first"
-                        ],
-                        [
-                            "last",
-                            "Name.last"
-                        ],
-                        [
-                            "name",
-                            "Name.name"
-                        ],
-                        [
-                            "url",
-                            "Web.url"
-                        ],
-                        [
-                            "domain",
-                            "Web.domain"
-                        ],
-                        [
-                            "email",
-                            "Web.email"
-                        ],
-                        [
-                            "ip",
-                            "Web.ip"
-                        ],
-                        [
-                            "tld",
-                            "Web.tld"
-                        ],
-                        [
-                            "area",
-                            "Address.area"
-                        ],
-                        [
-                            "region",
-                            "Address.region"
-                        ],
-                        [
-                            "capitalize",
-                            "Helpers.capitalize"
-                        ],
-                        [
-                            "upper",
-                            "Helpers.upper"
-                        ],
-                        [
-                            "lower",
-                            "Helpers.lower"
-                        ],
-                        [
-                            "pick",
-                            "Helpers.pick"
-                        ],
-                        [
-                            "shuffle",
-                            "Helpers.shuffle"
-                        ],
-                        [
-                            "guid",
-                            "Miscellaneous.guid"
-                        ],
-                        [
-                            "id",
-                            "Miscellaneous.id"
-                        ]
-                    ]
+                    typeList:typeList
                 }
             });
         }

@@ -19,14 +19,7 @@ Mock.get_user_mocks = function(req,res){
     var user = req.session.user.login;
     mock.query({user:user},function(list){
         res.end(baseRes({mocks:list}));
-    },{detail:0});
-};
-
-Mock.get_mock_detail = function(req,res){
-    req.query.user = req.session.user.login;
-    mock.query(req.query,function(list){
-        res.end(baseRes({mock:list[0]}));
-    },{'detail':0});
+    },{list:0});
 };
 
 Mock.post_add_mock = function(req,res){
@@ -39,6 +32,40 @@ Mock.post_add_mock = function(req,res){
 Mock.post_del_mock = function(req,res){
     mock.del(req.body,function(data){
         res.end(baseRes(data));
+    });
+};
+
+Mock.get_mock_item = function(req,res){
+    var data = {list:{}};
+    data.user = req.session.user.login;
+    data.list._id = req.query._id;
+    mock.query(data,function(list){
+        res.end(baseRes({nodes:list}));
+    },{'list.detail':1});
+};
+
+Mock.get_mock_detail = function(req,res){
+    req.query.user = req.session.user.login;
+    mock.query(req.query,function(list){
+        res.end(baseRes({nodes:list[0]}));
+    },{'list.detail':0});
+};
+
+Mock.post_add_mock_item = function(req,res){
+    mock.addItem(req.body,function(data){
+        res.end(baseRes(data));
+    });
+};
+
+Mock.post_update_mock_item = function(req,res){
+    mock.updateItem(req.body,function(data){
+        res.end(baseRes({mock:data[0]}));
+    });
+};
+
+Mock.post_del_mock_item = function(req,res){
+    mock.deleteItem(req.body,function(){
+        res.end(baseRes({}));
     });
 };
 

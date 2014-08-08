@@ -153,11 +153,9 @@ module.exports = function(app){
     app.get('/fetch/img',photo.get_img);
 
     //保存图片
-    app.post('/post/photo/save_img',photo.post_save_img);
+    app.post('/post/photo/save/img',photo.post_save_img);
 
-    app.get('/demo',function(req,res){
-        res.render('demo');
-    });
+    app.get('/demo',function(req,res){res.render('demo');});
     
     
     //查询mock项目
@@ -166,11 +164,23 @@ module.exports = function(app){
     //添加mock项目
     app.post('/post/add/mock',mock.post_add_mock);
     
-    //取得mock项目明细
-    app.get('/get/user/mock',mock.get_mock_detail);
-    
     //删除mock项目
     app.post('/post/del/mock',mock.post_del_mock);
+    
+    //取得项目下所有接口文档
+    app.get('/get/mock/detail',mock.get_mock_detail);
+    
+    //取得接口文档详细
+    app.get('/get/mock/item',mock.get_mock_item);
+    
+    //添加单个接口文档
+    app.post('/post/add/mock/item',mock.post_add_mock_item);
+    
+    //更新单个接口文档
+    app.post('/post/update/mock/item',mock.post_update_mock_item);
+    
+    //删除单个接口文档
+    app.post('/post/del/mock/item',mock.post_del_mock_item);
     
     //mock数据get
     app.get('/mock/*',mock.get);
