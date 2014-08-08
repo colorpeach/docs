@@ -251,8 +251,8 @@ require([
                 del:function(id){
                     return $http.post('/post/del/mock',{_id:id});
                 },
-                getItem:function(id){
-                    return $http.get('/get/mock/item?id='+id);
+                getItem:function(id,_id){
+                    return $http.get('/get/mock/item?id='+id+'&_id='+_id);
                 },
                 getDetail:function(id){
                     return $http.get('/get/mock/detail?_id='+id);
@@ -433,7 +433,16 @@ require([
                 
             angular.extend(config,{
                 onclick:function(e,data,scope){
-                    $scope.detail = data;
+                    if(!scope._clicked){
+                        mockItem.getItem(data.id,mockId)
+                        .then(function(d){
+                            scope._clicked = true;
+                            
+                            $scope.detail = d.data.node;
+                        });
+                    }else{
+                        $scope.detail = data;
+                    }
                 }
             });
                 

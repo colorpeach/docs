@@ -36,12 +36,10 @@ Mock.post_del_mock = function(req,res){
 };
 
 Mock.get_mock_item = function(req,res){
-    var data = {list:{}};
-    data.user = req.session.user.login;
-    data.list._id = req.query._id;
-    mock.query(data,function(list){
-        res.end(baseRes({nodes:list}));
-    },{'list.detail':1});
+    req.query.user = req.session.user.login;
+    mock.queryItem(req.query,function(data){
+        res.end(baseRes({node:data[0].list}));
+    });
 };
 
 Mock.get_mock_detail = function(req,res){
@@ -52,6 +50,7 @@ Mock.get_mock_detail = function(req,res){
 };
 
 Mock.post_add_mock_item = function(req,res){
+    req.body.user = req.session.user.login;
     mock.addItem(req.body,function(data){
         res.end(baseRes(data));
     });

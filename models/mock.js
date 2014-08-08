@@ -22,7 +22,9 @@ Mock.add = function(data,fn){
 
 //新增接口文档
 Mock.addItem = function(data,fn){
+    var parentId = data.parentId;
     var d = dbClient.split(tidy(data),['_id','user']);
+    d.data.parentId = parentId;
     dbClient.connect([
         function(db,callback){
             db.collection('mocks').find(d.search).toArray(function(err,data){
@@ -61,11 +63,12 @@ Mock.updateItem = function(data,fn){
 
 //删除接口文档
 Mock.deleteItem = function(data,fn){
+    var id = data.id;
     var d = dbClient.split(tidy(data),['_id','user']);
     
     dbClient.connect([
         function(db,callback){
-            db.collection('mocks').update(d.search,{$pull:{'list.id':d.data.id}},function(err,data){
+            db.collection('mocks').update(d.search,{$pull:{'list.id':id}},function(err,data){
                 callback(err,data);
             });
         }
@@ -92,6 +95,24 @@ Mock.del = function(data,fn){
             db.collection('mocks').remove(d,function(err,data){
                 callback(err,data);
             });
+        }
+    ],fn);
+};
+
+//查询接口文档
+Mock.queryItem = function(data,fn,filter){
+    var d = tidy(data);
+    dbClient.connect([
+        function(db,callback){
+            db.collection('mocks').aggregate(
+                {'$match':d},
+                {'$project':{'list':'$list'}},
+                {'$unwind':'$list'},
+                {'$match':{'list.id':+data.id}},
+                function(err,data){
+                    callback(err,data);
+                }
+            );
         }
     ],fn);
 };
