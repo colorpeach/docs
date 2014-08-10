@@ -20,6 +20,7 @@ module.exports = {
     unauthAjaxPath:[
         "fetch",
         "mock",
+        "mocktpl",
         "photo"
     ],
     //不需要权限访问

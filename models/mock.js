@@ -5,6 +5,15 @@ var tidy = dbClient.column({
     description:'description',
     list:"list"
 });
+var subTidy = dbClient.column({
+    id:'id',
+    name:'name',
+    method:'method',
+    description:'description',
+    url:'url',
+    request:'request',
+    response:'response'
+});
 
 var Mock = {};
 
@@ -23,7 +32,7 @@ Mock.add = function(data,fn){
 //新增接口文档
 Mock.addItem = function(data,fn){
     var parentId = data.parentId;
-    var d = dbClient.split(tidy(data),['_id','user']);
+    var d = dbClient.split(tidy(data));
     d.data.parentId = parentId;
     dbClient.connect([
         function(db,callback){
@@ -49,12 +58,15 @@ Mock.addItem = function(data,fn){
 
 //更新接口文档
 Mock.updateItem = function(data,fn){
-    var d = dbClient.split(tidy(data),['_id','user']);
-    d.search['list.id'] = d.data.id;
-    
+    var list = subTidy(data);
+    var d = dbClient.split(tidy(data));
+    d.search['list.id'] = data.id;
+
+    delete list._id;
+
     dbClient.connect([
         function(db,callback){
-            db.collection('mocks').update(d.search,{$set:{'detail':d.data}},function(err,data){
+            db.collection('mocks').update(d.search,{$set:{'list.$':list}},function(err,data){
                 callback(err,data);
             });
         }
@@ -63,12 +75,17 @@ Mock.updateItem = function(data,fn){
 
 //删除接口文档
 Mock.deleteItem = function(data,fn){
-    var id = data.id;
-    var d = dbClient.split(tidy(data),['_id','user']);
+    data.list = {
+        $or:[
+            {id:data.id},
+            {parentId:data.id}
+        ]
+    };
+    var d = dbClient.split(tidy(data));
     
     dbClient.connect([
         function(db,callback){
-            db.collection('mocks').update(d.search,{$pull:{'list.id':id}},function(err,data){
+            db.collection('mocks').update(d.search,{$pull:d.data},function(err,data){
                 callback(err,data);
             });
         }
@@ -108,7 +125,7 @@ Mock.queryItem = function(data,fn,filter){
                 {'$match':d},
                 {'$project':{'list':'$list'}},
                 {'$unwind':'$list'},
-                {'$match':{'list.id':+data.id}},
+                {'$match':data.search},
                 function(err,data){
                     callback(err,data);
                 }

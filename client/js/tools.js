@@ -117,7 +117,10 @@ define(['angular'],function(angular){
                     },600);
                     showQueue.shift();
                     if(!showQueue.length){
-                        boxTimeout = $timeout(function(){box.hide();boxTimeout=null;},600);
+                        boxTimeout = $timeout(function(){
+                            box[0].style.display = 'block';
+                            boxTimeout=null;
+                        },600);
                     }
                 },removeSpan));
             }else{
@@ -126,8 +129,8 @@ define(['angular'],function(angular){
         },
         box = angular.element("<div class='prompt-box'></div>"),
         prompt = function(options){
-            if(!angular.element(".prompt-box").length){
-                angular.element("body").append(box);
+            if(!document.querySelectorAll(".prompt-box").length){
+                document.body.appendChild(box[0]);
             }
             
             if(!queue.length){
@@ -135,7 +138,7 @@ define(['angular'],function(angular){
                     $timeout.cancel(boxTimeout);
                     boxTimeout = null;
                 }else{
-                    box.show();
+                    box[0].style.display = 'block';
                 }
                 queue.push(options);
                 action();

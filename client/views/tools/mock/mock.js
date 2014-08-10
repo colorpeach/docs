@@ -32,7 +32,7 @@ require([
     'treeSerExport',
     'treeSerUtils'
 ],function(angular,Mock){
-    angular.module('app',['ui.grid','ui.tree'])
+    angular.module('app',['utils','ui.grid','ui.tree'])
     
     .config(
     ['$routeProvider',
@@ -308,8 +308,8 @@ require([
     ])
     
     .controller('mockData',
-    ['$scope','mockItem','$routeParams','xtree.config','xtree.export','responseCols','xgrid.config','typeList',
-        function($scope,   mockItem,   $routeParams,   config,   xtree,   responseCols,   gridConfig,   typeList){
+    ['$scope','mockItem','$routeParams','prompt','xtree.config','xtree.export','responseCols','xgrid.config','typeList',
+        function($scope,   mockItem,   $routeParams,   prompt,   config,   xtree,   responseCols,   gridConfig,   typeList){
             var mockId = $routeParams.mockId;
             
             mockItem.getDetail(mockId)
@@ -402,7 +402,20 @@ require([
             };
             
             $scope.saveDetail = function(){
+                var data = $scope.detail;
                 
+                if(!data.id){
+                    return;
+                }
+                
+                data._id = mockId;
+                
+                mockItem.updateItem(data)
+                .then(function(d){
+                    prompt({
+                        content:'更新接口文档成功'
+                    });
+                });
             };
             
             $scope.generateData = function(){
@@ -438,7 +451,9 @@ require([
                         .then(function(d){
                             scope._clicked = true;
                             
-                            $scope.detail = d.data.node;
+                            angular.extend(data,d.data.node);
+                            
+                            $scope.detail = data;
                         });
                     }else{
                         $scope.detail = data;

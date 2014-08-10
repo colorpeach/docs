@@ -28,6 +28,7 @@ module.exports = function(app){
                     //访问未授权信息
                     res.statusCode = 401;
                     res.end();
+                    return;
                 }else if(authPath.indexOf(path) >= 0){
                     //访问未授权页面
                     res.redirect('/login?backurl='+req.url);
@@ -183,8 +184,11 @@ module.exports = function(app){
     app.post('/post/del/mock/item',mock.post_del_mock_item);
     
     //mock数据get
-    app.get('/mock/*',mock.get);
+    app.get('/mock/:mockId/*',mock.get);
+    
+    //mock模板get ( 通过jsonp获取mock模板，兼容低版本浏览器跨域问题)
+    app.get('/mocktpl/:mockId/*',mock.get_mock_tpl);
     
     //mock数据post
-    app.post('/mock/*',mock.post);
+    app.post('/mock/:mockId/*',mock.post);
 };
