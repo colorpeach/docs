@@ -7,6 +7,7 @@ var tidy = dbClient.column({
 });
 var subTidy = dbClient.column({
     id:'id',
+    parentId:'parentId',
     name:'name',
     method:'method',
     description:'description',
