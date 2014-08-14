@@ -34,6 +34,11 @@ page.index = function(req,res){
                 'title':'网页截图',
                 'name':'screanshot',
                 'img':'xicon-screenshot'
+            },
+            {
+                'title':'可视化布局工具',
+                'name':'layout',
+                'img':'mark-layout'
             }
         ],
         projects:[

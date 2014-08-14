@@ -3,7 +3,8 @@ define(['angular'],function(angular){
 
     .constant('config',{
         docprefix:/^[^\/]+\/\*!?/,
-        docsuffix:/\*\/[^\/]+$/
+        docsuffix:/\*\/[^\/]+$/,
+        docN:/ *\n */g,
     })
     
     //拦截器
@@ -53,7 +54,8 @@ define(['angular'],function(angular){
             return function(f){
                 return f.toString()
                         .replace(c.docprefix, '')
-                        .replace(c.docsuffix, '');
+                        .replace(c.docsuffix, '')
+                        .replace(c.docN, '');
             }
         }
     ])

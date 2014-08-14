@@ -1,0 +1,61 @@
+.main{
+    position:relative;
+}
+
+.layout-box{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.component{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:300px;
+    overflow:auto;
+}
+
+.component dl{
+    border-bottom:1px solid #ccc;
+    margin:0;
+}
+
+.component dt,
+.component dd{
+    cursor:pointer;
+}
+
+.component dt{
+    padding:10px;
+}
+
+.component dd{
+    padding:5px;
+}
+
+.component dd:hover{
+    background:#eee;
+}
+
+.layout{
+    position:absolute;
+    top:0;
+    left:300px;
+    right:0;
+    bottom:0;
+    background:#fff;
+}
+
+.content{
+    height:100%;
+}
+
+.component-item{
+    position:fixed;
+    display:none;
+    z-index:999;
+}

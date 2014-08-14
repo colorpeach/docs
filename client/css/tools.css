@@ -7,7 +7,7 @@ body{
 body{
     font-size:12px;
 	padding-top:48px;
-	background-color:#5E5E5E;
+	background-color:#dcdfef;
 }
 
 .main{
@@ -24,7 +24,7 @@ body{
 .top-nav{
 	padding-bottom:1px;
     margin-bottom:20px;
-	background:#4B4B4B;
+	background:#428bca;
 	z-index:999;
 	position:fixed;
 	left:0;
@@ -45,4 +45,5 @@ body{
 .top-nav-list li a{
 	padding: 15px;
 	display: inline-block;
+	color:#fff;
 }

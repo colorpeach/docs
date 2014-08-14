@@ -1,0 +1,23 @@
+extends ../layout
+
+block css
+  link(rel='stylesheet', href='/views/tools/layout/layout.css')
+  
+block content
+  div.layout-box(ng-app='layout',ng-controller='layoutController')
+    div.layout
+      div.content
+    div.component
+      dl(expander)
+        dt 布局
+        dd.hide(ng-repeat='layout in layouts')
+          span(class='{{layout.className}}')
+          span {{layout.name}}
+      dl(expander)
+        dt 组件
+        dd.hide(ng-repeat='component in components',xcomponent='x{{component}}')
+          | {{component}}
+          span.xicon-plus
+
+block script
+  script(type='text/javascript', src='/views/tools/layout/layout.js')
