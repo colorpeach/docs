@@ -51,14 +51,15 @@
 }
 
 #menu ul{
-    height:0;
-    overflow: hidden;
+    /*height:0;*/
+    /*overflow: hidden;*/
+    padding: 5px 15px;
 }
 
-#menu ul.active{
-    height:auto;
-    max-height:100%;
-}
+/*#menu ul.active{*/
+    /*height:auto;*/
+    /*max-height:100%;*/
+/*}*/
 
 #menu li{
     display:block;
