@@ -19,11 +19,13 @@ define(['angular','tree'],function(angular){
                     };
 
                     if(config.simpleData){
-                        scope.node.children = utils.transformToNexted(scope.nodes);
+                        scope.$watch('nodes',function(){
+                            exportProp.data = scope.node.children = utils.transformToNexted(scope.nodes);
+                        });
                     }
 
                     scope.opera = exportProp;
-                    exportProp.data = scope.node.children;
+                    
                 }
             };  
         }

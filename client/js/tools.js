@@ -3,7 +3,8 @@ define(['angular'],function(angular){
 
     .constant('config',{
         docprefix:/^[^\/]+\/\*!?/,
-        docsuffix:/\*\/[^\/]+$/
+        docsuffix:/\*\/[^\/]+$/,
+        docN:/ *\n */g,
     })
     
     //拦截器
@@ -53,7 +54,8 @@ define(['angular'],function(angular){
             return function(f){
                 return f.toString()
                         .replace(c.docprefix, '')
-                        .replace(c.docsuffix, '');
+                        .replace(c.docsuffix, '')
+                        .replace(c.docN, '');
             }
         }
     ])
@@ -117,7 +119,10 @@ define(['angular'],function(angular){
                     },600);
                     showQueue.shift();
                     if(!showQueue.length){
-                        boxTimeout = $timeout(function(){box.hide();boxTimeout=null;},600);
+                        boxTimeout = $timeout(function(){
+                            box[0].style.display = 'block';
+                            boxTimeout=null;
+                        },600);
                     }
                 },removeSpan));
             }else{
@@ -126,8 +131,8 @@ define(['angular'],function(angular){
         },
         box = angular.element("<div class='prompt-box'></div>"),
         prompt = function(options){
-            if(!angular.element(".prompt-box").length){
-                angular.element("body").append(box);
+            if(!document.querySelectorAll(".prompt-box").length){
+                document.body.appendChild(box[0]);
             }
             
             if(!queue.length){
@@ -135,7 +140,7 @@ define(['angular'],function(angular){
                     $timeout.cancel(boxTimeout);
                     boxTimeout = null;
                 }else{
-                    box.show();
+                    box[0].style.display = 'block';
                 }
                 queue.push(options);
                 action();

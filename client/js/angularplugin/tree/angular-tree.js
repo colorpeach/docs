@@ -6,6 +6,7 @@ define(['angular'],function(angular){
         treeClass:'aui-tree',
         iconClass:'aui-tree-icon',
         nodeClass:'aui-tree-node',
+        singleClass:'xicon-',
         expandClass:'xicon-chevron-down',
         collapseClass:'xicon-chevron-right',
         activeClass:'aui-active',

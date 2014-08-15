@@ -164,9 +164,23 @@
 }
 
 .mark-mock:before{
-    content:"mock";
+    content:"mocker";
     position: absolute;
-    left: -.6em;
+    left: -1em;
+}
+
+.mark-layout{
+    position:relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    font-size:1.2em;
+}
+
+.mark-layout:before{
+    content:"layout";
+    position: absolute;
+    left: -.8em;
 }
 
 .mark-xicon{
