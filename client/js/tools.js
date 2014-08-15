@@ -1,10 +1,10 @@
 define(['angular'],function(angular){
-    angular.module('utils',[])
+    angular.module('tools',[])
 
     .constant('config',{
-        docprefix:/^[^\/]+\/\*!?/,
-        docsuffix:/\*\/[^\/]+$/,
-        docN:/ *\n */g,
+        docprefix:/^[^\/]+\/\*!\s*/,
+        docsuffix:/\s*\*\/[^\/]+$/,
+//         docN:/\s*\n\s*/g,
     })
     
     //拦截器
@@ -55,7 +55,65 @@ define(['angular'],function(angular){
                 return f.toString()
                         .replace(c.docprefix, '')
                         .replace(c.docsuffix, '')
-                        .replace(c.docN, '');
+//                         .replace(c.docN, '');
+            }
+        }
+    ])
+    
+    .factory('fixed',
+    [
+        function(){
+            return function(target,attachment,options){
+                var offset = target[0].getBoundingClientRect(),
+                    tip = attachment,
+                    tipRect = tip[0].getBoundingClientRect(),
+                    arrowGap = 6,
+                    css = {},
+                    tipW,tipH,
+                    opts = {
+                        dir:'b',
+                        x:0,
+                        y:0
+                    };
+
+                angular.extend(opts,options);
+                tipW = tipRect.right - tipRect.left;
+                tipH = tipRect.bottom - tipRect.top;
+
+                switch(opts.dir){
+                    case 'l':
+                        css = {
+                            left:offset.left - tipW - arrowGap,
+                            top:offset.top - tipH/2 + (offset.bottom - offset.top)/2
+                        };
+                        break;
+                    case 'r':
+                        css = {
+                            left:offset.right + tipW +arrowGap,
+                            top:offset.top - tipH/2 + (offset.bottom - offset.top)/2
+                        };
+                        break;
+                    case 't':
+                        css = {
+                            left:offset.left - tipW/2 + (offset.right - offset.left)/2,
+                            top:offset.top - arrowGap
+                        };
+                        break;
+                    default:
+                        css = {
+                            left:offset.left - tipW/2 + (offset.right - offset.left)/2,
+                            top:offset.bottom + arrowGap
+                        };
+                        break;
+                }
+
+                css.left += +opts.x||0;
+                css.top += +opts.y||0;
+                
+                css.left += 'px';
+                css.top += 'px';
+
+                tip.css(css);
             }
         }
     ])
@@ -157,5 +215,70 @@ define(['angular'],function(angular){
         };
             
         return prompt;
-    }]);
+    }])
+    
+    .factory('tipDom',
+    ['heredoc',
+        function(heredoc){
+            var tipHTML = heredoc(function(){/*!
+                <div class="cm-tip hide">
+                    <div class="cm-tip-arrow"></div>
+                    <div class="cm-tip-content"></div>
+                 </div>
+            */});
+            var tip = angular.element(tipHTML);
+
+            angular.element(document.body).append(tip);
+            
+            return tip;
+        }
+    ])
+    
+    /**********************************************
+                     指令 directive 
+    **********************************************/
+    
+    .directive('tip',
+    ['fixed','tipDom',
+        function(fixed,tipDom){
+            return {
+                restrict:'A',
+                compile:function(){
+                    
+                    return function(scope,element,attr){
+                        var tip = tipDom;
+                        
+                        element.bind('mouseenter',function(){
+                            
+                            tip.removeClass('hide');
+                            tip.children().eq(1).text(attr.tip)
+
+                            if(attr.alignment === 'l'){
+                                fixed(element,tip,{dir:'l'});
+                                tip.children().eq(0).addClass('cm-tip-arrow-left');
+                            }else{
+                                fixed(element,tip);
+                                tip.children().eq(0).removeClass('cm-tip-arrow-left');
+                            }
+                        });
+                        
+                        element.bind('mouseleave',function(){
+                            tip.addClass('hide');
+                        })
+                    }
+                }
+            }
+        }
+    ])
+    
+    /**********************************************
+                     控制器 controller 
+    **********************************************/
+    
+    .controller('commonController',
+    [
+        function(){
+            
+        }
+    ]);
 })

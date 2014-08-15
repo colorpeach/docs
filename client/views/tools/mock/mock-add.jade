@@ -2,12 +2,13 @@ script(type='text/ng-template',id='/mock-add.html')
   h3 新增项目
   div.interface-box
     form(name='addForm')
+      div.error(ng-show='errorMsg') {{errorMsg}}
       div.form-group
         label.sr-only 项目名称
-        input(type='text',ng-model='mock.name',ng-required=true)
+        input(type='text',name='name',ng-model='mock.name',ng-required='true')
       div.form-group
         label.sr-only 项目描述
-        textarea(type='text',ng-model='mock.description',ng-required=true)
+        textarea(type='text',name='description',ng-model='mock.description',ng-required='true')
       div
         button.btn.btn-primary(ng-click='save()') 保存
         a.btn.btn-default(href='#/') 取消

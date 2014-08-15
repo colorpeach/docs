@@ -7,6 +7,10 @@ define(['angular','grid'],function(angular){
             $scope.removeRow = function(i){
                 $scope.data.splice(i,1);
             };
+            
+            $scope.insertAfter = function(i,data){
+                $scope.data.splice(i,0,data||{});
+            }
         }
     ]);
 });

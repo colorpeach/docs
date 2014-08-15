@@ -1,6 +1,6 @@
-define(['angular','utils'],function(angular,utils){
+define(['angular','tools'],function(angular,tools){
     
-    angular.module('layout',['utils'])
+    angular.module('layout',['tools'])
     
     .constant('components',[
         'button',

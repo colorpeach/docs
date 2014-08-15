@@ -18,7 +18,7 @@ require.config({
 require([
     'angular',
     'mock',
-    'utils',
+    'tools',
     'grid',
     'gridControl',
     'gridDirGrid',
@@ -32,7 +32,7 @@ require([
     'treeSerExport',
     'treeSerUtils'
 ],function(angular,Mock){
-    angular.module('app',['utils','ui.grid','ui.tree'])
+    angular.module('mock',['tools','ui.grid','ui.tree'])
     
     .config(
     ['$routeProvider',
@@ -40,7 +40,12 @@ require([
             $routeProvider
                 .when('/',{
                     controller: 'mockDashboard',
-                    templateUrl: '/mock-dashboard.html'
+                    templateUrl: '/mock-dashboard.html',
+                    resolve:{
+                        mockItems:function(){
+                            
+                        }
+                    }
                 })
                 .when('/add',{
                     controller: 'mockAdd',
@@ -61,7 +66,8 @@ require([
         {
             name:'操作',
             width:'10%',
-            template:'<span class="xicon-remove" ng-click="removeRow($parent.$index)"></span>'
+            template:'<span class="xicon-remove" data-tip="删除数据" ng-click="removeRow($parent.$index)" ng-show="status.edit"></span>'+
+                     '<span class="xicon-plus" data-tip="添加子数据" ng-show="status.edit && (row.type == \'array\'||row.type == \'object\')" ng-click="insertAfter($parent.$index+1,{level:1})"></span>'
         },
         {
             name:'名称',
@@ -95,6 +101,8 @@ require([
     .value('typeList',
     [
         ["","不使用"],
+        ["array","Array"],
+        ["object","Object"],
         [
             "boolean",
             "Basics.boolean"
@@ -295,8 +303,17 @@ require([
         function($scope,mockItem,$location){
             $scope.save = function(){
                 if($scope.addForm.$invalid){
+                    if($scope.addForm.name.$error.required){
+                        $scope.errorMsg = '请输入项目名称';
+                    }
+                    if($scope.addForm.description.$error.required){
+                        $scope.errorMsg = '请输入项目描述';
+                    }
                     return;
                 }
+                
+                $scope.errorMsg = '';
+                
                 mockItem.add($scope.mock)
                 .then(function(d){
                     if(!d.data.error){
@@ -330,9 +347,10 @@ require([
             $scope.list = [];
             $scope.requestCols = angular.copy(responseCols);
             $scope.responseCols = responseCols;
-            $scope.baseUrl = 'http://doc.colorpeach.com/mock/'+mockId+'/';
+            $scope.baseUrl = location.origin+'/mock/'+mockId+'/';
             $scope.status = {
-                addNode:false
+                addNode:false,
+                edit:false
             };
             
             $scope.detail = detail;
@@ -381,6 +399,7 @@ require([
             
             $scope.cancelNode = function(){
                 xtree.cancelSelected();
+                $scope.detail = detail;
             };
             
             $scope.addRequest = function(){
@@ -469,6 +488,6 @@ require([
         }
     ]);
     
-    angular.bootstrap(document,["app"]);
+    angular.bootstrap(document,['mock']);
 });
 

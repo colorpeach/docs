@@ -815,7 +815,9 @@ fieldset[disabled] .btn-link:focus {
 /*****************************
            form
 ******************************/
-input{
+input,
+select,
+textarea{
 	border:1px solid #ddd;
 }
 
