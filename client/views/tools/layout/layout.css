@@ -2,6 +2,15 @@
     position:relative;
 }
 
+.function-bar{
+    text-align:right;
+    position:absolute;
+    top:0;
+    left:0;
+    width:300px;
+    height:30px;
+}
+
 .layout-box{
     position:absolute;
     top:0;
@@ -12,11 +21,13 @@
 
 .component{
     position:absolute;
-    top:0;
+    top:30px;
     left:0;
     bottom:0;
     width:300px;
     overflow:auto;
+    padding-left:30px;
+    border-right: 1px solid #ccc;
 }
 
 .component dl{
@@ -48,14 +59,98 @@
     right:0;
     bottom:0;
     background:#fff;
+    padding:10px;
 }
 
 .content{
     height:100%;
+    box-shadow:0 0 3px 3px #ddd;
+    overflow:auto;
 }
 
 .component-item{
     position:fixed;
     display:none;
     z-index:999;
+    opacity:.5;
+}
+
+.component-item.draging{
+    pointer-events: none;
+}
+
+.component-item:before{
+    content:attr(data-component);
+    display:block;
+    height:20px;
+    padding:2px 5px;
+    position:absolute;
+    top:-20px;
+    right:0;
+    background-color:#000;
+    color:#fff;
+}
+
+.slide-bar{
+    position:absolute;
+    top:-30px;
+    left:0;
+    width:30px;
+    bottom:0;
+    padding:30px 0 0;
+    background-color:#666;
+    border-right:1px solid #999;
+}
+
+.slide-bar li{
+    padding: 10px 5px;
+    text-align: center;
+    margin: 0 -1px 0 0;
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    cursor:pointer;
+}
+
+.slide-bar li.active{
+    background-color:#F7F6FB;
+    color:#666;
+    border-right:1px solid #F7F6FB;
+    border-top:1px solid #999;
+    border-bottom:1px solid #999;
+    cursor:auto;
+}
+
+.slide-item{
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:30px;
+}
+
+.contain-rect{
+    pointer-events: none;
+    position:fixed;
+    border:1px solid #47a447;
+}
+
+.contain-rect.error{
+    border-color:#d9534f;
+}
+
+.component-placeholder{
+    pointer-events: none;
+    background-color:#47a447 !important;
+    opacity:.5 !important;
+    border-width:0 !important;
+}
+
+/*********************************************
+                组件样式
+*********************************************/
+.fm-row{
+    min-height:30px;
+    padding:10px;
+    background-color:#ccc;
 }

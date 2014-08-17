@@ -1,16 +1,18 @@
 script(type='text/ng-template',id='/mock-dashboard.html')
-  h3 项目列表
-  div.mock-list.clearfix
-    a(ng-repeat='mock in mocks',href='#/detail/{{mock._id}}')
-      div.mock-item
-        span.xicon-remove(ng-click='delMock($event,$index)')
-        p {{mock.name}}
-        p {{mock.description}}
-    if !user
-      a(href='#/detail/1')
+  div.mock-dashboard
+    h3 项目列表
+    div.mock-list.clearfix
+      a(ng-repeat='mock in mocks',href='#/detail/{{mock._id}}')
         div.mock-item
-          p 临时项目
-    if user
-      a(href='#/add')
-        div.mock-item.add-mock(title="添加新项目")
-          span.xicon-plus
+          span.mock-item-remove.xicon-remove(ng-click='delMock($event,$index)',data-tip='删除项目')
+          div.mock-item-title {{mock.name}}
+          div.mock-item-description {{mock.description}}
+      if !user
+        p 请登录后使用...
+        //a(href='#/detail/1')
+          //div.mock-item
+            //p 临时项目
+      if user
+        a(href='#/add')
+          div.mock-item.add-mock(title="添加新项目")
+            span.xicon-plus

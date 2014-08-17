@@ -2,6 +2,10 @@ html,body{
     height:100%;
 }
 
+h3{
+    margin:10px 0;
+}
+
 .main{
     position:relative;
     padding:0;
@@ -19,6 +23,10 @@ html,body{
     z-index:1;
 }
 
+.mock-dashboard{
+    padding:10px;
+}
+
 .mock-item{
     height:100px;
     width:200px;
@@ -27,6 +35,26 @@ html,body{
     float:left;
     margin-left:10px;
     margin-top:10px;
+    position:relative;
+}
+
+.mock-item-remove{
+    position:absolute;
+    right:8px;
+    top:8px;
+}
+
+.mock-item-title{
+    border-bottom:1px solid #ddd;
+    height:30px;
+    padding:5px 10px;
+    line-height:20px;
+}
+
+.mock-item-description{
+    height:70px;
+    overflow:auto;
+    padding:5px 10px;
 }
 
 .add-mock{
@@ -39,6 +67,11 @@ html,body{
 .add-mock:hover{
     color:#aaa;
     border-color:#ddd;
+}
+
+.mock-add-box{
+    padding:10px;
+    text-align:center;
 }
 
 .mock-box{
@@ -60,9 +93,23 @@ html,body{
 
 .mock-right{
     margin-left:300px;
-    height:100%;
-    padding:10px;
+    min-height:100%;
     background-color:#fff;
+    padding: 1px 20px;
+}
+
+.mock-detail-btns{
+    margin:10px 0;
+}
+
+.mock-add-box .interface-box{
+    width:400px;
+    margin:0 auto;
+}
+
+.mock-detail-url{
+    margin-left:10px;
+    margin-bottom:0;
 }
 
 .interface-box input,
@@ -82,4 +129,28 @@ html,body{
     vertical-align:top;
     width:200px;
     height:60px;
+}
+
+.alert{
+    display: inline-block;
+    padding: 5px 15px;
+}
+
+[class*=' xicon-'],
+[class^='xicon-']{
+    cursor:pointer;
+}
+
+.btn-xicon{
+    color: #666;
+    background-color: transparent;
+    border-color: transparent;
+    padding: 4px 7px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.btn-xicon:focus,
+.btn-xicon:hover{
+    color: #333333;
 }
