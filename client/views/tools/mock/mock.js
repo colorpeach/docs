@@ -289,6 +289,10 @@ require([
                 var map = {};
                 var r = {};
                 
+                if(!data){
+                    return r;
+                }
+                
                 addUnique(data);
 
                 for(var i=0,len=data.length;i<len;i++){
