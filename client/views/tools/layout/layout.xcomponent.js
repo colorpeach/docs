@@ -17,9 +17,30 @@ define(['angular','init'],function(angular){
         }
     ])
     
+    .factory('allComponents',
+    ['components','layoutComponents','groupComponents','otherComponents',
+        function(components,layouts,groups,others){
+            var all = angular.copy(components);
+            
+            angular.forEach(layouts,function(n){
+                all[n.name] = n.contain;
+            });
+            
+            angular.forEach(groups,function(n){
+                all[n.name] = n.contain;
+            });
+            
+            angular.forEach(others,function(n){
+                all[n.name] = n.contain;
+            });
+            
+            return all;
+        }
+    ])
+    
     .directive('xcomponent',
-    ['$compile','componentTpls','$timeout','components','rectDom','xdragGenerateElement',
-        function($compile,   componentTpls,   $timeout,   components,   rectDom,   generateElement){
+    ['$compile','componentTpls','$timeout','allComponents','rectDom','xdragGenerateElement',
+        function($compile,   componentTpls,   $timeout,   allComponents,   rectDom,   generateElement){
             
             return {
                 restrict:'A',
@@ -34,10 +55,10 @@ define(['angular','init'],function(angular){
                         var prefix = component.split('-')[0];
                         
                         if(prefix === 'self'){
-                            component = component.split('-')[1];
+                            component = component.split('-').slice(1).join('-');
                         }
                         
-                        scope.xcontain = attr.xcontain === '*' ? '*' : components[attr.xcontain];
+                        scope.xcontain = attr.xcontain === '*' ? '*' : allComponents[attr.xcontain];
                         
                         scope.showRect = function(isContain){
                             var rect = element[0].getBoundingClientRect();

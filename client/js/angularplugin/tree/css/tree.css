@@ -16,10 +16,13 @@
 }
 
 .aui-active{
-    background-color: #fff;
-    border: 1px solid;
-    /* border-radius: 4px; */
-    padding: 2px;
+    background-color: #428BCA;
+    color:#fff;
+    padding: 1px 5px;
+}
+
+.aui-active:hover{
+    color:#fff;
 }
 
 .aui-tree-expand{

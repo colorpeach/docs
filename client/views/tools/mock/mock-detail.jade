@@ -13,7 +13,7 @@ script(type='text/ng-template',id='/mock-detail.html')
           span.xicon-remove-circle
           | 取消选中
       div.form-group
-        input(ng-model='nodeName',type='text',ng-show='status.addNode',ng-keydown='addNode($event)',placeholder='输入接口名称')
+        input(ng-model='nodeName',type='text',ng-show='status.addNode',ng-keydown='addNode($event)',placeholder='输入接口名称，回车添加')
       div(xtree='list')
     div.mock-right
       h3 接口信息 
@@ -30,6 +30,8 @@ script(type='text/ng-template',id='/mock-detail.html')
           span.xicon-open
         button.btn.btn-xicon(data-tip='导入模板')
           span.xicon-save
+        a.btn.btn-xicon(data-tip='mock语法',href='http://mockjs.com/#语法规范',target='_blank')
+          span.xicon-question-sign
       div.interface-box
         form(name='detailForm')
           div.form-group

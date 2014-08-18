@@ -18,18 +18,23 @@ block content
       div.slide-item
         dl(expander)
           dt 布局组件
-          dd.hide(ng-repeat='layout in layouts')
-            span(class='{{layout.className}}')
-            span {{layout.name}}
+          dd.hide(ng-repeat='layout in layouts',xcomponent='{{$parent.layout.name}}')
+            span {{$parent.layout.title}}
+            span.xicon-plus
         dl(expander)
           dt 原子组件
           dd.hide(ng-repeat='(component,_) in components',xcomponent='{{$parent.component}}')
             | {{$parent.component}}
             span.xicon-plus
         dl(expander)
+          dt 组合组件
+          dd.hide(ng-repeat='group in groups',xcomponent='{{$parent.group.name}}')
+            span {{$parent.group.title}}
+            span.xicon-plus
+        dl(expander)
           dt 其他组件
-          dd.hide(ng-repeat='(component,_) in components',xcomponent='{{$parent.component}}')
-            | {{$parent.component}}
+          dd.hide(ng-repeat='other in others',xcomponent='{{$parent.other.name}}')
+            span {{$parent.other.title}}
             span.xicon-plus
       div.slide-item.hide
       div.slide-item.hide

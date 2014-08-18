@@ -67,7 +67,7 @@ require([
             name:'操作',
             width:'10%',
             template:'<span class="xicon-remove" data-tip="删除数据" ng-click="removeRow($parent.$index)" ng-show="params.edit"></span>'+
-                     '<span class="xicon-plus" data-tip="添加子数据" ng-show="params.edit && (row.type == \'array\'||row.type == \'object\')" ng-click="insertAfter($parent.$index+1,{pKey:data[$parent.$index].$$hashKey})"></span>'
+                     '<span class="xicon-plus" data-tip="添加子数据" ng-show="params.edit && (row.type == \'array\'||row.type == \'object\')" ng-click="insertAfter($parent.$index+1,{pKey:data[$parent.$index].unique || data[$parent.$index].$$hashKey})"></span>'
         },
         {
             name:'名称',
@@ -92,8 +92,13 @@ require([
             type:'select'
         },
         {
+            name:'参数',
+            width:'15%',
+            field:'params'
+        },
+        {
             name:'备注',
-            width:'40%',
+            width:'25%',
             field:'mark'
         }
     ])
@@ -281,6 +286,8 @@ require([
     .factory('generateMock',
     ['addUnique',
         function(addUnique){
+            var num = /^\d+$/;
+            
             return function(list,isTpl){
                 return !isTpl ? Mock.mock(nestedData(list)) : nestedData(list);
             };
@@ -305,6 +312,10 @@ require([
                     var value = n.type ? ('@'+n.type) : n.value;
                     var temp;
                     
+                    try{
+                        value = JSON.parse(value);
+                    }catch(e){}
+                    
                     if(map[n.pKey] && n.unique != n.pKey){
                         if(angular.isArray(map[n.pKey])){
                             temp = map[n.pKey][0];
@@ -316,7 +327,7 @@ require([
                     }
                     
                     if(map[n.unique].unique){
-                        temp[key] = value;
+                        temp[key] = num.test(value) ? +value : value;
                     }else{
                         temp[key] = map[n.unique];
                     }
@@ -430,6 +441,11 @@ require([
             
             $scope.addNode = function(e){
                 if(e.keyCode === 13){
+                    
+                    if(!$scope.nodeName){
+                        return;
+                    }
+                    
                     var node = xtree.getSelected();
                     var newNode = {name:$scope.nodeName,_id:mockId};
                     
@@ -477,6 +493,7 @@ require([
             $scope.cancelNode = function(){
                 xtree.cancelSelected();
                 $scope.detail = detail;
+                $scope.mockData = "";
             };
             
             $scope.addRequest = function(){
@@ -555,6 +572,7 @@ require([
                     }else{
                         $scope.detail = data;
                     }
+                    $scope.mockData = '';
                 }
             });
                 
