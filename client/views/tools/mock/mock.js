@@ -434,7 +434,8 @@ require([
             $scope.saving = false;
             $scope.status = {
                 addNode:false,
-                edit:false
+                edit:false,
+                exchange:''
             };
             
             $scope.detail = detail;
@@ -493,7 +494,6 @@ require([
             $scope.cancelNode = function(){
                 xtree.cancelSelected();
                 $scope.detail = detail;
-                $scope.mockData = "";
             };
             
             $scope.addRequest = function(){
@@ -549,14 +549,32 @@ require([
                 });
             };
             
-            $scope.generateData = function(){
+            $scope.generateData = function(isTpl){
                 var data = {};
                 
-                data.request = generateMock($scope.detail.request);
-                data.response = generateMock($scope.detail.response);;
+                data.request = generateMock($scope.detail.request,isTpl);
+                data.response = generateMock($scope.detail.response,isTpl);
                 
-                $scope.mockData = JSON.stringify(data,null,4);
+                return JSON.stringify(data,null,4);
             };
+            
+            $scope.openModal = function(type){
+                $scope.modalOpened = true;
+                $scope.status.exchange = type;
+                
+                if(type === 'export' || type === 'data'){
+                    if(type === 'export')
+                        $scope.exportData = $scope.generateData(true);
+                    else
+                        $scope.exportData = $scope.generateData();
+                }else{
+                    $scope.exportData = '';
+                }
+            }
+            
+            $scope.preventHide = function(e){
+                e.stopPropagation();
+            }
                 
             angular.extend(config,{
                 onclick:function(e,data,scope){
@@ -572,7 +590,6 @@ require([
                     }else{
                         $scope.detail = data;
                     }
-                    $scope.mockData = '';
                 }
             });
                 

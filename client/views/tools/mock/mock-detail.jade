@@ -24,11 +24,11 @@ script(type='text/ng-template',id='/mock-detail.html')
           span.xicon-pencil
         button.btn.btn-xicon(ng-click='status.edit = false',ng-show='status.edit',data-tip='取消编辑')
           span.xicon-ban-circle
-        button.btn.btn-xicon(ng-click='generateData()',data-tip='生成模拟数据')
+        button.btn.btn-xicon(ng-click='openModal("data")',data-tip='生成模拟数据')
           span.xicon-download
-        button.btn.btn-xicon(data-tip='导出模板')
+        button.btn.btn-xicon(ng-click='openModal("export")',data-tip='导出模板')
           span.xicon-open
-        button.btn.btn-xicon(data-tip='导入模板')
+        button.btn.btn-xicon(ng-click='openModal("import")',data-tip='导入模板')
           span.xicon-save
         a.btn.btn-xicon(data-tip='mock语法',href='http://mockjs.com/#语法规范',target='_blank')
           span.xicon-question-sign
@@ -51,14 +51,21 @@ script(type='text/ng-template',id='/mock-detail.html')
       h3 请求参数 
         button.btn.btn-xicon(data-tip='添加请求参数',ng-click='addRequest()',ng-show='status.edit')
           span.xicon-plus
-        button.btn.btn-xicon(data-tip='导入模板')
+        button.btn.btn-xicon(ng-click='openModal("request")',data-tip='导入模板')
           span.xicon-save
       div(xgridcols='requestCols',xgrid='detail.request',xgridparams='status')
       h3 返回字段 
         button.btn.btn-xicon(data-tip='添加返回数据',ng-show='status.edit',ng-click='addResponse()')
           span.xicon-plus
-        button.btn.btn-xicon(data-tip='导入模板')
+        button.btn.btn-xicon(ng-click='openModal("response")',data-tip='导入模板')
           span.xicon-save
       div(xgridcols='responseCols',xgrid='detail.response',xgridparams='status')
-      p
-        pre(ng-bind='mockData')
+    div.cm-modal-box(ng-class='modalOpened ? "active" : ""',ng-click='modalOpened = false')
+      div.cm-modal(ng-class='modalOpened ? "active" : ""',ng-click='preventHide($event)')
+        div.cm-modal-head
+          span.icon-close(ng-click='modalOpened = false')
+        div.cm-modal-body
+          textarea(ng-model='exportData')
+        div.cm-modal-foot(ng-class='status.exchange === "export" || status.exchange === "data" ? "hide" : ""')
+          button.btn.btn-primary(ng-click='',data-tip='直接覆盖原有模板') 覆盖
+          button.btn.btn-success(ng-click='',data-tip='扩展原有模板') 扩展

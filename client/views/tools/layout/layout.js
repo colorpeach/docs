@@ -28,4 +28,6 @@ require([
             $scope.others = others;
         }
     ]);
+    
+    angular.bootstrap(document,['layout']);
 });

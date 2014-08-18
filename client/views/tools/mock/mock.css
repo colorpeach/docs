@@ -153,3 +153,33 @@ h3{
 .btn-xicon:hover{
     color: #333333;
 }
+
+.cm-modal-box{
+    opacity:0;
+    transition:all .3s;
+}
+
+.cm-modal-box.active{
+    opacity:1;
+    display:block;
+}
+
+.cm-modal{
+    height:600px;
+    width:800px;
+    transition:all .3s;
+    background-color:#eee;
+}
+
+.cm-modal.active{
+    top:0;
+}
+
+.cm-modal-head .icon-close{
+    cursor:pointer;
+}
+
+.cm-modal-body textarea{
+    height:460px;
+    width:768px;
+}
