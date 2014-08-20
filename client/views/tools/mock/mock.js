@@ -1,5 +1,6 @@
 require.config({
     paths:{
+        generateMock     :'/utils/generateMock',
         grid             :'/js/angularplugin/grid/angular-grid',
         gridControl      :'/js/angularplugin/grid/controllers/grid',
         gridDirGrid      :'/js/angularplugin/grid/directives/grid',
@@ -18,6 +19,7 @@ require.config({
 require([
     'angular',
     'mock',
+    'generateMock',
     'tools',
     'grid',
     'gridControl',
@@ -31,7 +33,7 @@ require([
     'treeDirNode',
     'treeSerExport',
     'treeSerUtils'
-],function(angular,Mock){
+],function(angular,Mock,generateMockTpl){
     angular.module('mock',['tools','ui.grid','ui.tree'])
     
     .config(
@@ -286,54 +288,9 @@ require([
     .factory('generateMock',
     ['addUnique',
         function(addUnique){
-            var num = /^\d+$/;
-            
-            return function(list,isTpl){
-                return !isTpl ? Mock.mock(nestedData(list)) : nestedData(list);
-            };
-            
-            function nestedData(data){
-                var map = {};
-                var r = {};
-                
-                if(!data){
-                    return r;
-                }
-                
+            return function(data,isTpl){
                 addUnique(data);
-
-                for(var i=0,len=data.length;i<len;i++){
-                    map[data[i].unique] = data[i].type === 'array' ? [{}] : data[i].type === 'object' ? {} : data[i];
-                }
-                
-                for(i=0;i<len;i++){
-                    var n = data[i];
-                    var key = n.name + (n.rule ? ('|'+n.rule) : '');
-                    var value = n.type ? ('@'+n.type) : n.value;
-                    var temp;
-                    
-                    try{
-                        value = JSON.parse(value);
-                    }catch(e){}
-                    
-                    if(map[n.pKey] && n.unique != n.pKey){
-                        if(angular.isArray(map[n.pKey])){
-                            temp = map[n.pKey][0];
-                        }else{
-                            temp = map[n.pKey];
-                        }
-                    }else{
-                        temp = r;
-                    }
-                    
-                    if(map[n.unique].unique){
-                        temp[key] = num.test(value) ? +value : value;
-                    }else{
-                        temp[key] = map[n.unique];
-                    }
-                }
-                
-                return r;
+                return generateMockTpl.do(Mock,data,isTpl);
             }
         }
     ])

@@ -1,6 +1,7 @@
 var Mock = {};
 var mockjs = require("mockjs");
 var mock = require('../models/mock.js');
+var generateMock = require('../client/utils/generateMock.js').do;
 var baseRes = require('./baseResponse');
 
 Mock.get_user_mocks = function(req,res){
@@ -70,7 +71,7 @@ Mock.get = function(req,res){
     };
 
     mock.queryItem(data,function(data){
-        var resData = generateMockData(safeGetValue(data,'0.list.response'));
+        var resData = generateMock(mockjs,safeGetValue(data,'0.list.response'));
         res.set({
             'Access-Control-Allow-Origin':'*'
         });
@@ -89,7 +90,7 @@ Mock.get_mock_tpl = function(req,res){
     };
 
     mock.queryItem(data,function(data){
-        var resData = safeGetValue(data,'0.list');
+        var resData = generateMock(mockjs,safeGetValue(data,'0.list'),true);
         
         res.jsonp(baseRes(resData));
     });
@@ -106,64 +107,13 @@ Mock.post = function(req,res){
     };
 
     mock.queryItem(data,function(data){
-        var resData = generateMockData(safeGetValue(data,'0.list.response'));
+        var resData = generateMock(mockjs,safeGetValue(data,'0.list.response'));
         res.set({
             'Access-Control-Allow-Origin':'*'
         });
         res.end(baseRes(resData));
     });
 };
-
-function generateMockData(list,isTpl){
-    return !isTpl ? mockjs.mock(nestedData(list)) : nestedData(list);
-}
-
-var num = /^\d+$/;
-function nestedData(data){
-    var map = {};
-    var r = {};
-
-    if(!data){
-        return r;
-    }
-
-    for(var i=0,len=data.length;i<len;i++){
-        map[data[i].unique] = data[i].type === 'array' ? [{}] : data[i].type === 'object' ? {} : data[i];
-    }
-
-    for(i=0;i<len;i++){
-        var n = data[i];
-        var key = n.name + (n.rule ? ('|'+n.rule) : '');
-        var value = n.type ? ('@'+n.type) : n.value;
-        var temp;
-
-        try{
-            value = JSON.parse(value);
-        }catch(e){}
-
-        if(map[n.pKey] && n.unique != n.pKey){
-            if(isArray(map[n.pKey])){
-                temp = map[n.pKey][0];
-            }else{
-                temp = map[n.pKey];
-            }
-        }else{
-            temp = r;
-        }
-
-        if(map[n.unique].unique){
-            temp[key] = num.test(value) ? +value : value;
-        }else{
-            temp[key] = map[n.unique];
-        }
-    }
-
-    return r;
-}
-
-function isArray(value) {
-  return Object.prototype.toString.apply(value) == '[object Array]';
-}
 
 function safeGetValue(o,exp){
     var exps = exp.split('.');
