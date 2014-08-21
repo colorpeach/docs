@@ -8,10 +8,56 @@
     }
 })(this,function(exports){
     var num = /^\d+$/;
-
+    
+    //将扁平数据转为有层级的mock模板
     exports.do = function(Mock,list,isTpl){
         return !isTpl ? Mock.mock(nestedData(list)) : nestedData(list);
     };
+    
+    //将mock模板或者真实数据转化为扁平数据
+    exports.convert = function(d){
+        var data = {};
+        try{
+            if(isObject(d)){
+                data = d;
+            }else{
+                data = JSON.parse(d);
+            }
+            return flatData(data);
+        }catch(e){
+            throw e;
+        }
+    };
+    
+    function flatData(data,l,pKey){
+        var list = l || [];
+        var item = {};
+        
+        for(var i in data){
+            
+            item = {
+                name : i.split('|')[0],
+                rule : i.split('|')[1],
+                unique : guid()
+            };
+            pKey && (item.pKey = pKey);
+            list.push(item);
+            
+            if(isArray(data[i])){
+                item.type = 'array';
+                flatData(data[i][0], list, item.unique);
+            }else if(isObject(data[i])){
+                item.type = 'object';
+                flatData(data[i], list, item.unique);
+            }else{
+                var mark = data[i][0] === '@';
+                item.type = mark ? data[i].slice(1) : null;
+                item.value = mark ? null : data[i];
+            }
+        }
+        
+        return list;
+    }
 
     function nestedData(data){
         var map = {};
@@ -54,8 +100,16 @@
 
         return r;
     }
+    
+    function guid(){
+        return new Date().getTime() + '' + Math.random();
+    }
 
     function isArray(value) {
       return Object.prototype.toString.apply(value) == '[object Array]';
+    }
+    
+    function isObject(value){
+        return value != null && typeof value == 'object';
     }
 });

@@ -135,6 +135,15 @@
     overflow:auto;
 }
 
+.slide-item ul{
+    padding:0;
+}
+
+.slide-item li{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+
 .contain-rect{
     pointer-events: none;
     position:fixed;

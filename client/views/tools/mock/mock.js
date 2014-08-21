@@ -69,7 +69,7 @@ require([
             name:'操作',
             width:'10%',
             template:'<span class="xicon-remove" data-tip="删除数据" ng-click="removeRow($parent.$index)" ng-show="params.edit"></span>'+
-                     '<span class="xicon-plus" data-tip="添加子数据" ng-show="params.edit && (row.type == \'array\'||row.type == \'object\')" ng-click="insertAfter($parent.$index+1,{pKey:data[$parent.$index].unique || data[$parent.$index].$$hashKey})"></span>'
+                     '<span class="xicon-plus" data-tip="添加子数据" ng-show="params.edit && (row.type == \'array\'||row.type == \'object\')" ng-click="insertAfter($parent.$index+1,{pKey:data[$parent.$index].unique})"></span>'
         },
         {
             name:'名称',
@@ -252,6 +252,10 @@ require([
         ]
     ])
     
+    .value('guid',function(){
+        return new Date().getTime() + '' + Math.random();
+    })
+    
     .factory('mockItem',
     ['$http',
         function($http){
@@ -295,17 +299,20 @@ require([
         }
     ])
     
-    .factory('addUnique',function(){
-        return function(list){
-            if(!list) return;
-            
-            for(var i=0,l=list.length;i<l;i++){
-                if(!list[i].unique){
-                    list[i].unique = list[i].$$hashKey;
+    .factory('addUnique',
+    ['guid',
+        function(guid){
+            return function(list){
+                if(!list) return;
+
+                for(var i=0,l=list.length;i<l;i++){
+                    if(!list[i].unique){
+                        list[i].unique = guid();
+                    }
                 }
             }
         }
-    })
+    ])
     
     .controller('mockDashboard',
     ['$scope','mockItem',
@@ -365,8 +372,10 @@ require([
     ])
     
     .controller('mockData',
-    ['$scope','mockItem','$routeParams','prompt','xtree.config','xtree.export','responseCols','xgrid.config','typeList','generateMock','addUnique',
-        function($scope,   mockItem,   $routeParams,   prompt,   config,   xtree,   responseCols,   gridConfig,   typeList,   generateMock,   addUnique){
+    ['$scope','mockItem','$routeParams','prompt','xtree.config',
+    'xtree.export','responseCols','xgrid.config','typeList','generateMock','addUnique','guid',
+        function($scope,   mockItem,   $routeParams,   prompt,   config,
+        xtree,   responseCols,   gridConfig,   typeList,   generateMock,   addUnique,   guid){
             var mockId = $routeParams.mockId;
             
             mockItem.getDetail(mockId)
@@ -457,7 +466,7 @@ require([
                 if(!$scope.detail.request){
                     $scope.detail.request = [];
                 }
-                $scope.detail.request.push({});
+                $scope.detail.request.push({unique:guid()});
             };
             
             $scope.removeRequest = function(i){
@@ -468,13 +477,13 @@ require([
                 if(!$scope.detail.response){
                     $scope.detail.response = [];
                 }
-                $scope.detail.response.push({});
+                $scope.detail.response.push({unique:guid()});
             };
             
             $scope.saveDetail = function(){
                 //给数据加上unique
                 addUnique($scope.detail.request);
-                addUnique($scope.detail.request);
+                addUnique($scope.detail.response);
                 
                 var data = angular.copy($scope.detail);
                 
@@ -532,6 +541,20 @@ require([
             $scope.preventHide = function(e){
                 e.stopPropagation();
             }
+            
+            $scope.import = function(){
+                var type = $scope.status.exchange;
+                var data = JSON.parse($scope.exportData);
+                
+                if(type === 'request' || type === 'response'){
+                    $scope.detail[type] = generateMockTpl.convert(data);
+                }else if(type === 'import'){
+                    angular.extend($scope.detail,data);
+                    $scope.detail['request'] = generateMockTpl.convert(data.request);
+                    $scope.detail['response'] = generateMockTpl.convert(data.response);
+                }
+                $scope.modalOpened = false;
+            };
                 
             angular.extend(config,{
                 onclick:function(e,data,scope){

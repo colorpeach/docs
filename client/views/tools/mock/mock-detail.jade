@@ -67,5 +67,5 @@ script(type='text/ng-template',id='/mock-detail.html')
         div.cm-modal-body
           textarea(ng-model='exportData')
         div.cm-modal-foot(ng-class='status.exchange === "export" || status.exchange === "data" ? "hide" : ""')
-          button.btn.btn-primary(ng-click='',data-tip='直接覆盖原有模板') 覆盖
+          button.btn.btn-primary(ng-click='import()',data-tip='直接覆盖原有模板') 覆盖
           button.btn.btn-success(ng-click='',data-tip='扩展原有模板') 扩展

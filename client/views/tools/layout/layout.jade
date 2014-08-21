@@ -38,6 +38,12 @@ block content
             span.xicon-plus
       div.slide-item.hide
       div.slide-item.hide
+        ul
+          li
+            label 页面大小
+            input(type='number',ng-model='page.width')
+            | × 
+            input(type='number',ng-model='page.height')
 
 block script
   script(type='text/javascript', src='/views/tools/layout/layout.js')
