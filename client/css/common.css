@@ -573,7 +573,7 @@ fieldset[disabled] .btn-link:focus {
     background:rgba(0,0,0,.9);
     border-radius:4px;
     color:#fff;
-	z-index:1000;
+	z-index:1050;
 }
 
 .cm-tip-arrow{
@@ -815,7 +815,9 @@ fieldset[disabled] .btn-link:focus {
 /*****************************
            form
 ******************************/
-input{
+input,
+select,
+textarea{
 	border:1px solid #ddd;
 }
 

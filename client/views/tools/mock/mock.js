@@ -1,5 +1,6 @@
 require.config({
     paths:{
+        generateMock     :'/utils/generateMock',
         grid             :'/js/angularplugin/grid/angular-grid',
         gridControl      :'/js/angularplugin/grid/controllers/grid',
         gridDirGrid      :'/js/angularplugin/grid/directives/grid',
@@ -18,7 +19,8 @@ require.config({
 require([
     'angular',
     'mock',
-    'utils',
+    'generateMock',
+    'tools',
     'grid',
     'gridControl',
     'gridDirGrid',
@@ -31,8 +33,8 @@ require([
     'treeDirNode',
     'treeSerExport',
     'treeSerUtils'
-],function(angular,Mock){
-    angular.module('app',['utils','ui.grid','ui.tree'])
+],function(angular,Mock,generateMockTpl){
+    angular.module('mock',['tools','ui.grid','ui.tree'])
     
     .config(
     ['$routeProvider',
@@ -40,7 +42,12 @@ require([
             $routeProvider
                 .when('/',{
                     controller: 'mockDashboard',
-                    templateUrl: '/mock-dashboard.html'
+                    templateUrl: '/mock-dashboard.html',
+                    resolve:{
+                        mockItems:function(){
+                            
+                        }
+                    }
                 })
                 .when('/add',{
                     controller: 'mockAdd',
@@ -61,7 +68,8 @@ require([
         {
             name:'操作',
             width:'10%',
-            template:'<span class="xicon-remove" ng-click="removeRow($parent.$index)"></span>'
+            template:'<span class="xicon-remove" data-tip="删除数据" ng-click="removeRow($parent.$index)" ng-show="params.edit"></span>'+
+                     '<span class="xicon-plus" data-tip="添加子数据" ng-show="params.edit && (row.type == \'array\'||row.type == \'object\')" ng-click="insertAfter($parent.$index+1,{pKey:data[$parent.$index].unique})"></span>'
         },
         {
             name:'名称',
@@ -86,8 +94,13 @@ require([
             type:'select'
         },
         {
+            name:'参数',
+            width:'15%',
+            field:'params'
+        },
+        {
             name:'备注',
-            width:'40%',
+            width:'25%',
             field:'mark'
         }
     ])
@@ -95,6 +108,8 @@ require([
     .value('typeList',
     [
         ["","不使用"],
+        ["array","Array"],
+        ["object","Object"],
         [
             "boolean",
             "Basics.boolean"
@@ -237,6 +252,10 @@ require([
         ]
     ])
     
+    .value('guid',function(){
+        return new Date().getTime() + '' + Math.random();
+    })
+    
     .factory('mockItem',
     ['$http',
         function($http){
@@ -270,6 +289,31 @@ require([
         }
     ])
     
+    .factory('generateMock',
+    ['addUnique',
+        function(addUnique){
+            return function(data,isTpl){
+                addUnique(data);
+                return generateMockTpl.do(Mock,data,isTpl);
+            }
+        }
+    ])
+    
+    .factory('addUnique',
+    ['guid',
+        function(guid){
+            return function(list){
+                if(!list) return;
+
+                for(var i=0,l=list.length;i<l;i++){
+                    if(!list[i].unique){
+                        list[i].unique = guid();
+                    }
+                }
+            }
+        }
+    ])
+    
     .controller('mockDashboard',
     ['$scope','mockItem',
         function($scope,mockItem){
@@ -279,13 +323,17 @@ require([
             });
             
             $scope.delMock = function(e,i){
+                e.preventDefault();
+                e.stopPropagation();
+                if(!confirm('确认删除 '+this.mock.name)){
+                    return;
+                }
                 mockItem.del(this.mock._id)
                 .then(function(d){
                     if(!d.data.error){
                         $scope.mocks.splice(i,1);
                     }
                 });
-                e.preventDefault();
             };
         }
     ])
@@ -293,12 +341,28 @@ require([
     .controller('mockAdd',
     ['$scope','mockItem','$location',
         function($scope,mockItem,$location){
+            $scope.saving = false;
+            
             $scope.save = function(){
-                if($scope.addForm.$invalid){
+                if($scope.saving){
                     return;
                 }
+                
+                if($scope.addForm.$invalid){
+                    if($scope.addForm.name.$error.required){
+                        $scope.errorMsg = '请输入项目名称';
+                    }else if($scope.addForm.description.$error.required){
+                        $scope.errorMsg = '请输入项目描述';
+                    }
+                    return;
+                }
+                
+                $scope.saving = true;
+                $scope.errorMsg = '';
+                
                 mockItem.add($scope.mock)
                 .then(function(d){
+                    $scope.saving = false;
                     if(!d.data.error){
                         $location.url('/');
                     }
@@ -308,8 +372,10 @@ require([
     ])
     
     .controller('mockData',
-    ['$scope','mockItem','$routeParams','prompt','xtree.config','xtree.export','responseCols','xgrid.config','typeList',
-        function($scope,   mockItem,   $routeParams,   prompt,   config,   xtree,   responseCols,   gridConfig,   typeList){
+    ['$scope','mockItem','$routeParams','prompt','xtree.config',
+    'xtree.export','responseCols','xgrid.config','typeList','generateMock','addUnique','guid',
+        function($scope,   mockItem,   $routeParams,   prompt,   config,
+        xtree,   responseCols,   gridConfig,   typeList,   generateMock,   addUnique,   guid){
             var mockId = $routeParams.mockId;
             
             mockItem.getDetail(mockId)
@@ -330,15 +396,23 @@ require([
             $scope.list = [];
             $scope.requestCols = angular.copy(responseCols);
             $scope.responseCols = responseCols;
-            $scope.baseUrl = 'http://doc.colorpeach.com/mock/'+mockId+'/';
+            $scope.baseUrl = location.origin+'/mock/'+mockId+'/';
+            $scope.saving = false;
             $scope.status = {
-                addNode:false
+                addNode:false,
+                edit:false,
+                exchange:''
             };
             
             $scope.detail = detail;
             
             $scope.addNode = function(e){
                 if(e.keyCode === 13){
+                    
+                    if(!$scope.nodeName){
+                        return;
+                    }
+                    
                     var node = xtree.getSelected();
                     var newNode = {name:$scope.nodeName,_id:mockId};
                     
@@ -372,6 +446,10 @@ require([
                     return;
                 }
                 
+                if(!confirm('确认删除 ' + node.name)){
+                    return;
+                }
+                
                 mockItem.deleteItem({id:node.id,_id:mockId})
                 .then(function(){
                     xtree.deleteSelected();
@@ -381,13 +459,14 @@ require([
             
             $scope.cancelNode = function(){
                 xtree.cancelSelected();
+                $scope.detail = detail;
             };
             
             $scope.addRequest = function(){
                 if(!$scope.detail.request){
                     $scope.detail.request = [];
                 }
-                $scope.detail.request.push({});
+                $scope.detail.request.push({unique:guid()});
             };
             
             $scope.removeRequest = function(i){
@@ -398,50 +477,83 @@ require([
                 if(!$scope.detail.response){
                     $scope.detail.response = [];
                 }
-                $scope.detail.response.push({});
+                $scope.detail.response.push({unique:guid()});
             };
             
             $scope.saveDetail = function(){
-                var data = $scope.detail;
+                //给数据加上unique
+                addUnique($scope.detail.request);
+                addUnique($scope.detail.response);
+                
+                var data = angular.copy($scope.detail);
+                
+                if($scope.saving){
+                    prompt({
+                        type:'warning',
+                        content:'正在保存...'
+                    });
+                    return;
+                }
                 
                 if(!data.id){
                     return;
                 }
                 
+                $scope.saving = true;
+                
                 data._id = mockId;
+                delete data.children;
                 
                 mockItem.updateItem(data)
                 .then(function(d){
-                    prompt({
-                        content:'更新接口文档成功'
-                    });
+                    $scope.saving = false;
+                    if(!d.data.error){
+                        prompt({
+                            content:'更新接口文档成功'
+                        });
+                    }
                 });
             };
             
-            $scope.generateData = function(){
-                var data = {
-                        request:{},
-                        response:{}
-                    };
+            $scope.generateData = function(isTpl){
+                var data = {};
                 
-                angular.forEach($scope.detail.request,function(n){
-                    var key = n.name + (n.rule ? ('|'+n.rule) : '');
-                    var value = n.type ? ('@'+n.type) : n.value;
-                    
-                    data.request[key] = value;
-                });
+                data.request = generateMock($scope.detail.request,isTpl);
+                data.response = generateMock($scope.detail.response,isTpl);
                 
-                angular.forEach($scope.detail.response,function(n){
-                    var key = n.name + (n.rule ? ('|'+n.rule) : '');
-                    var value = n.type ? ('@'+n.type) : n.value;
-                    
-                    data.response[key] = value;
-                });
+                return JSON.stringify(data,null,4);
+            };
+            
+            $scope.openModal = function(type){
+                $scope.modalOpened = true;
+                $scope.status.exchange = type;
                 
-                data.request = Mock.mock(data.request);
-                data.response = Mock.mock(data.response);
+                if(type === 'export' || type === 'data'){
+                    if(type === 'export')
+                        $scope.exportData = $scope.generateData(true);
+                    else
+                        $scope.exportData = $scope.generateData();
+                }else{
+                    $scope.exportData = '';
+                }
+            }
+            
+            $scope.preventHide = function(e){
+                e.stopPropagation();
+            }
+            
+            $scope.import = function(){
+                var type = $scope.status.exchange;
+                var data = JSON.parse($scope.exportData);
                 
-                $scope.mockData = JSON.stringify(data,null,4);
+                if(type === 'request' || type === 'response'){
+                    $scope.detail[type] = generateMockTpl.convert(data);
+                }else if(type === 'import'){
+                    angular.extend($scope.detail,data);
+                    $scope.detail['request'] = generateMockTpl.convert(data.request);
+                    $scope.detail['response'] = generateMockTpl.convert(data.response);
+                }
+                $scope.modalOpened = false;
             };
                 
             angular.extend(config,{
@@ -469,6 +581,6 @@ require([
         }
     ]);
     
-    angular.bootstrap(document,["app"]);
+    angular.bootstrap(document,['mock']);
 });
 

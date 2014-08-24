@@ -1,42 +1,71 @@
 script(type='text/ng-template',id='/mock-detail.html')
   div.mock-box
     div.mock-left
-      h3 {{name}}——接口文档
-      div
+      h3 {{name}}
+      div.mock-left-btns(ng-show='status.edit')
         button.btn.btn-success(ng-click='status.addNode = !status.addNode')
-          span.xicon-plus
+          span.xicon-plus 
           | 添加节点
-        button.btn.btn-warning(ng-click='deleteNode()') 删除节点
-        button.btn(ng-click='cancelNode()') 取消选中
+        button.btn.btn-warning(ng-click='deleteNode()')
+          span.xicon-remove 
+          | 删除节点
+        button.btn.btn-default(ng-click='cancelNode()')
+          span.xicon-remove-circle
+          | 取消选中
       div.form-group
-        input(ng-model='nodeName',type='text',ng-show='status.addNode',ng-keydown='addNode($event)',placeholder='输入接口名称')
+        input(ng-model='nodeName',type='text',ng-show='status.addNode',ng-keydown='addNode($event)',placeholder='输入接口名称，回车添加')
       div(xtree='list')
     div.mock-right
-      div
-        button.btn.btn-primary(ng-click='saveDetail()') 保存
-        button.btn.btn-success(ng-click='generateData()') 生成模拟数据
-      h3 接口信息
+      h3 接口信息 
+        span.mock-detail-url.alert(ng-class='detail.url ? "alert-success" : "alert-warning"') {{baseUrl}}{{detail.url}}
+      div.mock-detail-btns
+        button.btn.btn-primary(ng-click='saveDetail()',ng-show='status.edit') 保存
+        button.btn.btn-xicon(ng-click='status.edit = true',ng-show='!status.edit',data-tip='编辑')
+          span.xicon-pencil
+        button.btn.btn-xicon(ng-click='status.edit = false',ng-show='status.edit',data-tip='取消编辑')
+          span.xicon-ban-circle
+        button.btn.btn-xicon(ng-click='openModal("data")',data-tip='生成模拟数据')
+          span.xicon-download
+        button.btn.btn-xicon(ng-click='openModal("export")',data-tip='导出模板')
+          span.xicon-open
+        button.btn.btn-xicon(ng-click='openModal("import")',data-tip='导入模板')
+          span.xicon-save
+        a.btn.btn-xicon(data-tip='mock语法',href='http://mockjs.com/#语法规范',target='_blank')
+          span.xicon-question-sign
       div.interface-box
-        div.form-group
-          label.sr-only 接口名称
-          input(ng-model='detail.name',type='text')
-        div.form-group
-          label.sr-only 请求方法
-          select(ng-model='detail.method',type='text')
-            option(value='get') GET
-            option(value='post') POST
-        div.form-group
-          label.sr-only 接口地址
-          span(ng-bind='baseUrl')
-          input(ng-model='detail.url',type='text')
-        div.form-group
-          label.sr-only 接口描述
-          textarea(type='text',ng-model='detail.description')
+        form(name='detailForm')
+          div.form-group
+            label.sr-only 接口名称：
+            input(ng-model='detail.name',name='name',type='text')
+          div.form-group
+            label.sr-only 请求方法：
+            select(ng-model='detail.method',name='method',type='text')
+              option(value='get') GET
+              option(value='post') POST
+          div.form-group
+            label.sr-only 接口地址：
+            input(ng-model='detail.url',name='url',type='text')
+          div.form-group
+            label.sr-only 接口描述：
+            textarea(type='text',ng-model='detail.description',name='description')
       h3 请求参数 
-        span.xicon-plus(ng-click='addRequest()')
-      div(xgridcols='requestCols',xgrid='detail.request')
+        button.btn.btn-xicon(data-tip='添加请求参数',ng-click='addRequest()',ng-show='status.edit')
+          span.xicon-plus
+        button.btn.btn-xicon(ng-click='openModal("request")',data-tip='导入模板')
+          span.xicon-save
+      div(xgridcols='requestCols',xgrid='detail.request',xgridparams='status')
       h3 返回字段 
-        span.xicon-plus(ng-click='addResponse()')
-      div(xgridcols='responseCols',xgrid='detail.response')
-      p
-        pre(ng-bind='mockData')
+        button.btn.btn-xicon(data-tip='添加返回数据',ng-show='status.edit',ng-click='addResponse()')
+          span.xicon-plus
+        button.btn.btn-xicon(ng-click='openModal("response")',data-tip='导入模板')
+          span.xicon-save
+      div(xgridcols='responseCols',xgrid='detail.response',xgridparams='status')
+    div.cm-modal-box(ng-class='modalOpened ? "active" : ""',ng-click='modalOpened = false')
+      div.cm-modal(ng-class='modalOpened ? "active" : ""',ng-click='preventHide($event)')
+        div.cm-modal-head
+          span.icon-close(ng-click='modalOpened = false')
+        div.cm-modal-body
+          textarea(ng-model='exportData')
+        div.cm-modal-foot(ng-class='status.exchange === "export" || status.exchange === "data" ? "hide" : ""')
+          button.btn.btn-primary(ng-click='import()',data-tip='直接覆盖原有模板') 覆盖
+          button.btn.btn-success(ng-click='',data-tip='扩展原有模板') 扩展

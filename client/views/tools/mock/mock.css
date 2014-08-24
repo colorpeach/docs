@@ -2,8 +2,29 @@ html,body{
     height:100%;
 }
 
+h3{
+    margin:10px 0;
+}
+
+.main{
+    position:relative;
+    padding:0;
+}
+
+.main > div{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
 .navbar.container{
     z-index:1;
+}
+
+.mock-dashboard{
+    padding:10px;
 }
 
 .mock-item{
@@ -14,6 +35,26 @@ html,body{
     float:left;
     margin-left:10px;
     margin-top:10px;
+    position:relative;
+}
+
+.mock-item-remove{
+    position:absolute;
+    right:8px;
+    top:8px;
+}
+
+.mock-item-title{
+    border-bottom:1px solid #ddd;
+    height:30px;
+    padding:5px 10px;
+    line-height:20px;
+}
+
+.mock-item-description{
+    height:70px;
+    overflow:auto;
+    padding:5px 10px;
 }
 
 .add-mock{
@@ -28,6 +69,11 @@ html,body{
     border-color:#ddd;
 }
 
+.mock-add-box{
+    padding:10px;
+    text-align:center;
+}
+
 .mock-box{
     height:100%;
 }
@@ -37,19 +83,41 @@ html,body{
     width:300px;
     float:left;
     height:100%;
-    font-size:14px;
+    padding:10px;
+}
+
+.mock-left-btns button{
+    width:33.33333333333334%;
 }
 
 .mock-right{
-    margin-left:320px;
-    margin-right:20px;
-    height:100%;
+    margin-left:300px;
+    min-height:100%;
+    background-color:#fff;
+    padding: 1px 20px;
 }
 
-.interface-box input{
+.mock-detail-btns{
+    margin:10px 0;
+}
+
+.mock-add-box .interface-box{
+    width:400px;
+    margin:0 auto;
+}
+
+.mock-detail-url{
+    margin-left:10px;
+    margin-bottom:0;
+}
+
+.interface-box input,
+.interface-box select{
     width:200px;
     display:inline-block;
     border-width:0 0 1px;
+    padding:5px 3px;
+    outline:0 none;
 }
 
 .interface-box label{
@@ -57,6 +125,61 @@ html,body{
 }
 
 .interface-box textarea{
-    vertical-align:middle;
+    vertical-align:top;
     width:200px;
+    height:60px;
+}
+
+.alert{
+    display: inline-block;
+    padding: 5px 15px;
+}
+
+[class*=' xicon-'],
+[class^='xicon-']{
+    cursor:pointer;
+}
+
+.btn-xicon{
+    color: #666;
+    background-color: transparent;
+    border-color: transparent;
+    padding: 4px 7px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.btn-xicon:focus,
+.btn-xicon:hover{
+    color: #333333;
+}
+
+.cm-modal-box{
+    opacity:0;
+    transition:all .3s;
+}
+
+.cm-modal-box.active{
+    opacity:1;
+    display:block;
+}
+
+.cm-modal{
+    height:600px;
+    width:800px;
+    transition:all .3s;
+    background-color:#eee;
+}
+
+.cm-modal.active{
+    top:0;
+}
+
+.cm-modal-head .icon-close{
+    cursor:pointer;
+}
+
+.cm-modal-body textarea{
+    height:460px;
+    width:768px;
 }

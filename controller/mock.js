@@ -1,6 +1,7 @@
 var Mock = {};
 var mockjs = require("mockjs");
 var mock = require('../models/mock.js');
+var generateMock = require('../client/utils/generateMock.js').do;
 var baseRes = require('./baseResponse');
 
 Mock.get_user_mocks = function(req,res){
@@ -70,7 +71,7 @@ Mock.get = function(req,res){
     };
 
     mock.queryItem(data,function(data){
-        var resData = generateMockData(safeGetValue(data,'0.list.response'));
+        var resData = generateMock(mockjs,safeGetValue(data,'0.list.response'));
         res.set({
             'Access-Control-Allow-Origin':'*'
         });
@@ -89,7 +90,7 @@ Mock.get_mock_tpl = function(req,res){
     };
 
     mock.queryItem(data,function(data){
-        var resData = safeGetValue(data,'0.list');
+        var resData = generateMock(mockjs,safeGetValue(data,'0.list'),true);
         
         res.jsonp(baseRes(resData));
     });
@@ -106,31 +107,13 @@ Mock.post = function(req,res){
     };
 
     mock.queryItem(data,function(data){
-        var resData = generateMockData(safeGetValue(data,'0.list.response'));
+        var resData = generateMock(mockjs,safeGetValue(data,'0.list.response'));
         res.set({
             'Access-Control-Allow-Origin':'*'
         });
         res.end(baseRes(resData));
     });
 };
-
-function generateMockData(list){
-    var data = {};
-
-    if(!list || !list.length){
-        return data;
-    }
-
-    for(var i= 0,l=list.length;i<l;i++){
-        var n = list[i];
-        var key = n.name + (n.rule ? ('|'+n.rule) : '');
-        var value = n.type ? ('@'+n.type) : n.value;
-
-        data[key] = value;
-    }
-
-    return mockjs.mock(data);
-}
 
 function safeGetValue(o,exp){
     var exps = exp.split('.');

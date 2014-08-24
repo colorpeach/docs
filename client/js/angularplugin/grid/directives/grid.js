@@ -8,7 +8,8 @@ define(['angular','grid'],function(angular){
                 restrict:'A',
                 scope: {
                     cols : '=xgridcols',
-                    data : '=xgrid'
+                    data : '=xgrid',
+                    params : '=xgridparams'
                 },
                 controller:'gridController',
                 templateUrl:config.gridTemplate,
