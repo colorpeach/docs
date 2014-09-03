@@ -4,17 +4,6 @@ block css
   link(rel='stylesheet', href='/css/index.css')
   
 block content
-  div.tab-box.clearfix
-    div#doc.tab-item
-      div.tab-head
-        label 文档
-        div.form-group.line-input
-          input
-    div#slide.tab-item
-      div.tab-head
-        label 幻灯片
-        div.form-group.line-input
-          input
   div.tools-box
     div.box-head 工具
     div.box-body.clearfix
@@ -38,6 +27,16 @@ block content
               a(href='/projects/'+project.name) #{project.title}
               a.project-github(href='#{project.github}')
                 span.icon-github3
+  div#doc.tools-box
+    div.box-head
+      label 文档
+      //div.form-group.line-input
+        //input
+  div#slide.tools-box
+    div.box-head
+      label 幻灯片
+      //div.form-group.line-input
+        //input
   
 block script
     script(type='text/javascript',src='/js/index.js')

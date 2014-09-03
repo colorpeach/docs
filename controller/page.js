@@ -10,11 +10,11 @@ page.index = function(req,res){
     var data = {
         user:req.session.user,
         tools:[
-            {
-                'title':'boxshadow图标工具',
-                'name':'boxshadoweditor',
-                'img':'mark-box-shadow'
-            },
+//             {
+//                 'title':'boxshadow图标工具',
+//                 'name':'boxshadoweditor',
+//                 'img':'mark-box-shadow'
+//             },
             {
                 'title':'markdown编辑器',
                 'name':'edit',
@@ -30,11 +30,11 @@ page.index = function(req,res){
                 'name':'mock',
                 'img':'mark-mock'
             },
-            {
-                'title':'网页截图',
-                'name':'screanshot',
-                'img':'xicon-screenshot'
-            },
+//             {
+//                 'title':'网页截图',
+//                 'name':'screanshot',
+//                 'img':'xicon-screenshot'
+//             },
             {
                 'title':'可视化布局工具',
                 'name':'layout',

@@ -61,10 +61,14 @@
     padding:10px;
 }
 
-.content{
+.layout-content{
     height:100%;
     box-shadow:0 0 3px 3px #ddd;
     overflow:auto;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
 }
 
 .component-item{

@@ -83,7 +83,7 @@ define(['angular','init'],function(angular){
                         element.unbind('mouseup');
                         
                         element.bind('mousedown',function(e){
-                            prefix !== 'self' && e.preventDefault();
+                            e.preventDefault();
                             e.stopPropagation();
                             
                             if(timer){
