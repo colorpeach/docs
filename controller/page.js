@@ -16,6 +16,16 @@ page.index = function(req,res){
 //                 'img':'mark-box-shadow'
 //             },
             {
+                'title':'Mock数据生成器',
+                'name':'mock',
+                'img':'mark-mock'
+            },
+            {
+                'title':'可视化布局工具',
+                'name':'layout',
+                'img':'mark-layout'
+            },
+            {
                 'title':'markdown编辑器',
                 'name':'edit',
                 'img':'mark-markdown'
@@ -24,22 +34,12 @@ page.index = function(req,res){
                 'title':'slide幻灯片编辑器',
                 'name':'deck',
                 'img':'mark-slide'
-            },
-            {
-                'title':'Mock数据生成器',
-                'name':'mock',
-                'img':'mark-mock'
-            },
+            }
 //             {
 //                 'title':'网页截图',
 //                 'name':'screanshot',
 //                 'img':'xicon-screenshot'
 //             },
-            {
-                'title':'可视化布局工具',
-                'name':'layout',
-                'img':'mark-layout'
-            }
         ],
         projects:[
             {
