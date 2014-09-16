@@ -61,6 +61,7 @@
 
 .tools-box{
     margin:0 15px 20px;
+    position: relative;
 }
 
 .tool-item{
