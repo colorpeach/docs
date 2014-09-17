@@ -10,6 +10,7 @@ require.config({
 
 require([
     'angular',
+    'tools',
     'init',
     'expander',
     'xcomponent',

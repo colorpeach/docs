@@ -4,15 +4,23 @@ define(['angular','tools'],function(angular,tools){
     
     .constant('components',{
         'button':{},
-        'select':{},
         'input':{},
+        'select':{},
         'date':{},
         'choose':{},
-        'grid':{},
-        'tab':{}
+        'tab':{},
+        'pager':{},
+        'upload':{},
+        'checkbox':{},
+        'radio':{}
     })
     
     .constant('layoutComponents',[
+        {
+            title:'布局',
+            name:'content',
+            contain:'*'
+        },
         {
             title:'两列布局',
             name:'layout-col2',
@@ -56,6 +64,16 @@ define(['angular','tools'],function(angular,tools){
             contain:{
                 button:true
             }
+        },
+        {
+            title:'grid',
+            name:'grid',
+            contain:{}
+        },
+        {
+            title:'tree',
+            name:'tree',
+            contain:{}
         }
     ])
     
@@ -96,6 +114,24 @@ define(['angular','tools'],function(angular,tools){
                         <select xcomponent='self-select'>
                             <option value=''>默认选项</option>
                         </select>
+                    </div>
+                */}),
+                'tab':heredoc(function(){/*!
+                    <div class="component-item" xdrag=true data-component="tab">
+                        <ul class="tab" xcomponent='self-tab'>
+                            <li>
+                                <span>出库管理</span>
+                                <ul>
+                                    <li><span>出库查询</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                */}),
+                'content':heredoc(function(){/*!
+                    <div class="component-item" xdrag=true data-component="content">
+                        <div class="content flex-box flex-item" xcontain="content" xcomponent='self-content'>
+                        </div>
                     </div>
                 */})
             }

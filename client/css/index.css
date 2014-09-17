@@ -1,3 +1,13 @@
+.left-box{
+    float: left;
+    width: 50%;
+}
+
+.right-box{
+    float: left;
+    width: 50%;
+}
+
 .tab-item{
     padding: 0 15px;
     width:50%;
@@ -50,14 +60,15 @@
 }
 
 .tools-box{
-    margin:20px 15px;
+    margin:0 15px 20px;
+    position: relative;
 }
 
 .tool-item{
     border:1px solid #ddd;
-    width:25%;
-    float:left;
-    margin-left:-1px;
+    float: left;
+    width: 50%;
+    margin-left: -1px;
     margin-top:-1px;
 }
 

@@ -1,12 +1,13 @@
 extends ../layout
 
 block css
+  link(rel='stylesheet', href='/views/tools/layout/style.css')
   link(rel='stylesheet', href='/views/tools/layout/layout.css')
   
 block content
   div.layout-box(ng-controller='layoutController')
     div.layout
-      div.content(xcontain='*',xcomponent)
+      div.layout-content(xcontain='*',xcomponent)
     div.function-bar
       button.btn.btn-default 预览
       button.btn.btn-default 全屏

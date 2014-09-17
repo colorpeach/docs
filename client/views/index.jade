@@ -4,28 +4,24 @@ block css
   link(rel='stylesheet', href='/css/index.css')
   
 block content
-  div.tab-box.clearfix
-    div#doc.tab-item
-      div.tab-head
+  div.left-box
+    div#doc.tools-box
+      div.box-head
         label 文档
-        div.form-group.line-input
-          input
-    div#slide.tab-item
-      div.tab-head
+    div#slide.tools-box
+      div.box-head
         label 幻灯片
-        div.form-group.line-input
-          input
-  div.tools-box
-    div.box-head 工具
-    div.box-body.clearfix
-      each tool in tools
-        div.tool-item
-          a.tool-link(href='/tools/'+tool.name)
-            div.tool-detail
-              span(class='#{tool.img}')
-          div.tool-title
-            a(href='/tools/'+tool.name) #{tool.title}
-  if projects
+  div.right-box
+    div.tools-box
+      div.box-head 工具
+      div.box-body.clearfix
+        each tool in tools
+          div.tool-item
+            a.tool-link(href='/tools/'+tool.name)
+              div.tool-detail
+                span(class='#{tool.img}')
+            div.tool-title
+              a(href='/tools/'+tool.name) #{tool.title}
     div.tools-box
       div.box-head 开源项目
       div.box-body.clearfix
