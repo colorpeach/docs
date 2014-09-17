@@ -33,16 +33,25 @@
                     endHtml = "</li>";
                     break;
                 case "H2":case "H3":case "H4":case "H5":case "H6":
-                    if(lastId == id){
+                    var idNum = id.split("H")[1],
+                        lastIdNum = lastId.split("H")[1];
+                    if(lastIdNum == idNum){
                         html += "<li title='"+name+"'><a href='#"+name+"'>"+name+"</a>";
                         endHtml = "</li>"+endHtml;
-                    }else{
+                    }else if(lastIdNum < idNum){
                         html += "<ul><li title='"+name+"'><a href='#"+name+"'>"+name+"</a>";
                         endHtml = "</li></ul>"+endHtml;
+                    }else{
+                        var index = endHtml.indexOf("</li></ul>");
+                        html += endHtml.slice(0,index+10);
+                        endHtml = endHtml.slice(index+10);
+                        html += "<li title='"+name+"'><a href='#"+name+"'>"+name+"</a>";
+                        endHtml = "</li>"+endHtml;
                     }
                     break;
             }
             lastId = id;
+
             return {
                 top:$(el).offset().top,
                 id:id,
