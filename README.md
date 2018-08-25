@@ -2,6 +2,8 @@
 docs
 ====
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/colorpeach/docs.svg)](https://greenkeeper.io/)
+
 share your docs with your friend
 
 todo
